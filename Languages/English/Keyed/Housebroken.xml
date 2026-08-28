@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Housebroken.Settings.Intro>Trained and clever animals produce less filth, and hold it until they are outside the base.</Housebroken.Settings.Intro>
+
+  <Housebroken.Settings.TrainingHeader>Training of the individual</Housebroken.Settings.TrainingHeader>
+  <Housebroken.Settings.Obedient>Obedience learned: -{0}% filth</Housebroken.Settings.Obedient>
+  <Housebroken.Settings.ObedientTip>Applies as soon as the animal has learned obedience.</Housebroken.Settings.ObedientTip>
+  <Housebroken.Settings.WellTrained>Trained further: -{0}% filth</Housebroken.Settings.WellTrained>
+  <Housebroken.Settings.WellTrainedTip>Applies once the animal has learned at least one training beyond obedience (release, hauling, rescue…). Replaces the obedience value, it does not stack with it.</Housebroken.Settings.WellTrainedTip>
+
+  <Housebroken.Settings.SpeciesHeader>Trainability of the species</Housebroken.Settings.SpeciesHeader>
+  <Housebroken.Settings.Intermediate>Intermediate: -{0}% filth</Housebroken.Settings.Intermediate>
+  <Housebroken.Settings.Advanced>Advanced: -{0}% filth</Housebroken.Settings.Advanced>
+  <Housebroken.Settings.AdvancedTip>Multiplies with the training reduction. A sentience catalyst raises trainability by one tier, so it counts here.</Housebroken.Settings.AdvancedTip>
+
+  <Housebroken.Settings.ColonyOnly>Colony animals only</Housebroken.Settings.ColonyOnly>
+  <Housebroken.Settings.ColonyOnlyTip>Leave wild animals and visitors' animals untouched.</Housebroken.Settings.ColonyOnlyTip>
+
+  <Housebroken.Settings.ManureOutdoors>Manure outside the base</Housebroken.Settings.ManureOutdoors>
+  <Housebroken.Settings.ManureOutdoorsTip>An animal already made cleaner by the settings above holds it while inside the base, and relieves itself once outside. Animals with no reduction at all are unaffected.</Housebroken.Settings.ManureOutdoorsTip>
+  <Housebroken.Settings.WholeHomeArea>Whole home area counts as "inside"</Housebroken.Settings.WholeHomeArea>
+  <Housebroken.Settings.WholeHomeAreaTip>Off: only roofed rooms of the home area count, so an unroofed pasture still gets manure. On: nothing is dropped anywhere in the home area.</Housebroken.Settings.WholeHomeAreaTip>
+  <Housebroken.Settings.Indoor>Inside the base: -{0}% filth</Housebroken.Settings.Indoor>
+  <Housebroken.Settings.IndoorTip>At 100% the animal drops nothing at all indoors.</Housebroken.Settings.IndoorTip>
+  <Housebroken.Settings.Outdoor>Outside: x{0}% filth</Housebroken.Settings.Outdoor>
+  <Housebroken.Settings.OutdoorTip>Raise this above 100% if you want what was held in to come back out, instead of simply vanishing.</Housebroken.Settings.OutdoorTip>
+
+  <Housebroken.Settings.ExemptAlert>Exempt clean animals from the "animal filth" alert</Housebroken.Settings.ExemptAlert>
+  <Housebroken.Settings.ExemptAlertTip>Any animal getting a reduction from this mod stops triggering the alert, however dirty it still is.</Housebroken.Settings.ExemptAlertTip>
+
+  <Housebroken.Settings.Reset>Restore defaults</Housebroken.Settings.Reset>
+
+  <Housebroken.Stat.Trained>Housebroken (training and trainability): x{0}</Housebroken.Stat.Trained>
+  <Housebroken.Stat.HoldingIt>Holding it inside the base: x{0}</Housebroken.Stat.HoldingIt>
+  <Housebroken.Stat.Outside>Outside the base: x{0}</Housebroken.Stat.Outside>
+
+</LanguageData>

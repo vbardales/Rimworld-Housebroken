@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Housebroken</name>
+  <author>vbardales</author>
+  <packageId>vbardales.housebroken</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>Un animal dresse ou intelligent salit moins, et fait son fumier dehors plutot que dans la base.
+
+- Reduction du taux de salete selon le dressage de l'individu (obeissance, puis dressages suivants) et selon la trainabilite de l'espece (intermediaire, avancee). Le catalyseur de sentience compte, puisqu'il fait monter la trainabilite d'un cran.
+- Fumier dehors : un animal assez propre se retient tant qu'il est dans la base, et se soulage une fois dehors.
+- Exemption de l'alerte "salete animale" pour les animaux propres.
+
+Tout est reglable dans les options du mod. Aucune donnee ajoutee a la sauvegarde : le mod peut etre ajoute ou retire d'une partie en cours.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+    <!-- Rien d'autre a declarer : le seul patch XML du mod vise le StatDef FilthRate
+         et il est conditionnel (il s'ajoute au noeud <parts> existant, ou le cree),
+         donc il tolere les deux ordres de chargement. Les mods qui reglent la salete
+         ou la trainabilite par espece (Customize Animals) ecrivent des valeurs de
+         base : un StatPart multiplie par-dessus, et lit la trainabilite au runtime. -->
+  </loadAfter>
+</ModMetaData>

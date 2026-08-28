@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Greffe le StatPart sur FilthRate. Le conditionnel gere le cas ou un autre
+       mod a deja cree le noeud <parts> sur ce StatDef. -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/StatDef[defName="FilthRate"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/StatDef[defName="FilthRate"]/parts</xpath>
+      <value>
+        <li Class="Housebroken.StatPart_Housebroken" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/StatDef[defName="FilthRate"]</xpath>
+      <value>
+        <parts>
+          <li Class="Housebroken.StatPart_Housebroken" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+
+</Patch>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <Housebroken.Settings.Intro>Les animaux dressés et les espèces intelligentes salissent moins, et se retiennent tant qu'ils sont dans la base.</Housebroken.Settings.Intro>
+
+  <Housebroken.Settings.TrainingHeader>Dressage de l'individu</Housebroken.Settings.TrainingHeader>
+  <Housebroken.Settings.Obedient>Obéissance apprise : −{0} % de saleté</Housebroken.Settings.Obedient>
+  <Housebroken.Settings.ObedientTip>S'applique dès que l'animal a appris l'obéissance.</Housebroken.Settings.ObedientTip>
+  <Housebroken.Settings.WellTrained>Dressage poussé : −{0} % de saleté</Housebroken.Settings.WellTrained>
+  <Housebroken.Settings.WellTrainedTip>S'applique dès que l'animal a appris au moins un dressage au-delà de l'obéissance (attaque, transport, secours…). Remplace la valeur d'obéissance, il ne s'y ajoute pas.</Housebroken.Settings.WellTrainedTip>
+
+  <Housebroken.Settings.SpeciesHeader>Trainabilité de l'espèce</Housebroken.Settings.SpeciesHeader>
+  <Housebroken.Settings.Intermediate>Intermédiaire : −{0} % de saleté</Housebroken.Settings.Intermediate>
+  <Housebroken.Settings.Advanced>Avancée : −{0} % de saleté</Housebroken.Settings.Advanced>
+  <Housebroken.Settings.AdvancedTip>Se multiplie avec la réduction due au dressage. Le catalyseur de sentience fait monter la trainabilité d'un cran : il compte donc ici.</Housebroken.Settings.AdvancedTip>
+
+  <Housebroken.Settings.ColonyOnly>Animaux de la colonie uniquement</Housebroken.Settings.ColonyOnly>
+  <Housebroken.Settings.ColonyOnlyTip>Laisse les animaux sauvages et ceux des visiteurs tels quels.</Housebroken.Settings.ColonyOnlyTip>
+
+  <Housebroken.Settings.ManureOutdoors>Fumier à l'extérieur de la base</Housebroken.Settings.ManureOutdoors>
+  <Housebroken.Settings.ManureOutdoorsTip>Un animal déjà rendu plus propre par les réglages ci-dessus se retient tant qu'il est dans la base, et se soulage une fois sorti. Un animal qui ne bénéficie d'aucune réduction n'est pas concerné.</Housebroken.Settings.ManureOutdoorsTip>
+  <Housebroken.Settings.WholeHomeArea>Toute la zone de résidence compte comme « dans la base »</Housebroken.Settings.WholeHomeArea>
+  <Housebroken.Settings.WholeHomeAreaTip>Décoché : seules les pièces couvertes de la zone de résidence comptent, un pâturage à ciel ouvert reçoit donc du fumier. Coché : plus rien n'est déposé nulle part dans la zone de résidence.</Housebroken.Settings.WholeHomeAreaTip>
+  <Housebroken.Settings.Indoor>Dans la base : −{0} % de saleté</Housebroken.Settings.Indoor>
+  <Housebroken.Settings.IndoorTip>À 100 %, l'animal ne dépose plus rien du tout à l'intérieur.</Housebroken.Settings.IndoorTip>
+  <Housebroken.Settings.Outdoor>Dehors : ×{0} % de saleté</Housebroken.Settings.Outdoor>
+  <Housebroken.Settings.OutdoorTip>Monte au-dessus de 100 % pour que ce qui a été retenu ressorte dehors, au lieu de disparaître.</Housebroken.Settings.OutdoorTip>
+
+  <Housebroken.Settings.ExemptAlert>Exempter les animaux propres de l'alerte « saleté animale »</Housebroken.Settings.ExemptAlert>
+  <Housebroken.Settings.ExemptAlertTip>Tout animal qui bénéficie d'une réduction de ce mod cesse de déclencher l'alerte, quel que soit son taux de saleté restant.</Housebroken.Settings.ExemptAlertTip>
+
+  <Housebroken.Settings.Reset>Rétablir les valeurs par défaut</Housebroken.Settings.Reset>
+
+  <Housebroken.Stat.Trained>Propreté acquise (dressage et trainabilité) : ×{0}</Housebroken.Stat.Trained>
+  <Housebroken.Stat.HoldingIt>Se retient dans la base : ×{0}</Housebroken.Stat.HoldingIt>
+  <Housebroken.Stat.Outside>Dehors : ×{0}</Housebroken.Stat.Outside>
+
+</LanguageData>
