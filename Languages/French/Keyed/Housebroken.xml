@@ -24,12 +24,13 @@
   <Housebroken.Settings.Indoor>Dans la base : −{0} % de saleté</Housebroken.Settings.Indoor>
   <Housebroken.Settings.IndoorTip>À 100 %, l'animal ne dépose plus rien du tout à l'intérieur.</Housebroken.Settings.IndoorTip>
   <Housebroken.Settings.Outdoor>Dehors : ×{0} % de saleté</Housebroken.Settings.Outdoor>
-  <Housebroken.Settings.OutdoorTip>Monte au-dessus de 100 % pour que ce qui a été retenu ressorte dehors, au lieu de disparaître.</Housebroken.Settings.OutdoorTip>
+  <Housebroken.Settings.OutdoorTip>À 200 % par défaut : ce qui a été retenu dans la base ressort dehors, au lieu de disparaître. À 100 %, la colonie produit simplement moins de saleté au total. La valeur juste dépend du temps que les bêtes passent réellement dehors.</Housebroken.Settings.OutdoorTip>
 
   <Housebroken.Settings.ExemptAlert>Exempter les animaux propres de l'alerte « saleté animale »</Housebroken.Settings.ExemptAlert>
   <Housebroken.Settings.ExemptAlertTip>Tout animal qui bénéficie d'une réduction de ce mod cesse de déclencher l'alerte, quel que soit son taux de saleté restant.</Housebroken.Settings.ExemptAlertTip>
 
   <Housebroken.Settings.Reset>Rétablir les valeurs par défaut</Housebroken.Settings.Reset>
+  <Housebroken.Settings.ConfirmReset>Rétablir toutes les valeurs par défaut de Housebroken ?</Housebroken.Settings.ConfirmReset>
 
   <Housebroken.Stat.Trained>Propreté acquise (dressage et trainabilité) : ×{0}</Housebroken.Stat.Trained>
   <Housebroken.Stat.HoldingIt>Se retient dans la base : ×{0}</Housebroken.Stat.HoldingIt>

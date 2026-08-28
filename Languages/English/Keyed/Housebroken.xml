@@ -24,12 +24,13 @@
   <Housebroken.Settings.Indoor>Inside the base: -{0}% filth</Housebroken.Settings.Indoor>
   <Housebroken.Settings.IndoorTip>At 100% the animal drops nothing at all indoors.</Housebroken.Settings.IndoorTip>
   <Housebroken.Settings.Outdoor>Outside: x{0}% filth</Housebroken.Settings.Outdoor>
-  <Housebroken.Settings.OutdoorTip>Raise this above 100% if you want what was held in to come back out, instead of simply vanishing.</Housebroken.Settings.OutdoorTip>
+  <Housebroken.Settings.OutdoorTip>At 200% by default, what was held inside comes back out rather than simply vanishing. Lower it to 100% if you would rather the colony just produce less filth overall. The right value depends on how much time your animals really spend outdoors.</Housebroken.Settings.OutdoorTip>
 
   <Housebroken.Settings.ExemptAlert>Exempt clean animals from the "animal filth" alert</Housebroken.Settings.ExemptAlert>
   <Housebroken.Settings.ExemptAlertTip>Any animal getting a reduction from this mod stops triggering the alert, however dirty it still is.</Housebroken.Settings.ExemptAlertTip>
 
   <Housebroken.Settings.Reset>Restore defaults</Housebroken.Settings.Reset>
+  <Housebroken.Settings.ConfirmReset>Restore every Housebroken setting to its default?</Housebroken.Settings.ConfirmReset>
 
   <Housebroken.Stat.Trained>Housebroken (training and trainability): x{0}</Housebroken.Stat.Trained>
   <Housebroken.Stat.HoldingIt>Holding it inside the base: x{0}</Housebroken.Stat.HoldingIt>

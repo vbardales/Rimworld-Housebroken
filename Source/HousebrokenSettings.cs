@@ -15,7 +15,7 @@ namespace Housebroken
         public bool manureOutdoors = true;
         public bool wholeHomeArea;
         public float indoorFactor;
-        public float outdoorFactor = 1f;
+        public float outdoorFactor = 2f;
 
         public bool exemptFromAlert = true;
 
@@ -29,7 +29,7 @@ namespace Housebroken
             manureOutdoors = true;
             wholeHomeArea = false;
             indoorFactor = 0f;
-            outdoorFactor = 1f;
+            outdoorFactor = 2f;
             exemptFromAlert = true;
         }
 
@@ -44,7 +44,7 @@ namespace Housebroken
             Scribe_Values.Look(ref manureOutdoors, "manureOutdoors", true);
             Scribe_Values.Look(ref wholeHomeArea, "wholeHomeArea", false);
             Scribe_Values.Look(ref indoorFactor, "indoorFactor", 0f);
-            Scribe_Values.Look(ref outdoorFactor, "outdoorFactor", 1f);
+            Scribe_Values.Look(ref outdoorFactor, "outdoorFactor", 2f);
             Scribe_Values.Look(ref exemptFromAlert, "exemptFromAlert", true);
         }
     }

@@ -89,7 +89,10 @@ namespace Housebroken
             listing.Gap();
             if (listing.ButtonText("Housebroken.Settings.Reset".Translate()))
             {
-                settings.Reset();
+                Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
+                    "Housebroken.Settings.ConfirmReset".Translate(),
+                    settings.Reset,
+                    destructive: true));
             }
 
             viewHeight = listing.CurHeight + 12f;

@@ -21,8 +21,9 @@ donc automatiquement.
 **2. Fumier dehors.** Un animal qui beneficie deja d'une reduction se retient tant qu'il est
 dans la base, et se soulage une fois sorti. « Dans la base » = piece couverte de la zone de
 residence, la definition qu'utilise deja l'alerte vanille ; une option elargit le critere a
-toute la zone de residence. Un curseur « dehors » permet de faire ressortir dehors ce qui a
-ete retenu au lieu de le faire disparaitre.
+toute la zone de residence. Le curseur « dehors » vaut 200 % par defaut : ce qui a ete retenu
+dans la base ressort dehors, au lieu de disparaitre. A 100 %, la colonie produit simplement
+moins de salete au total.
 
 **3. Alerte.** Les animaux concernes ne declenchent plus l'alerte « salete animale ».
 
