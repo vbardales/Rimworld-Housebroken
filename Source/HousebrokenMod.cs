@@ -6,7 +6,7 @@ namespace Housebroken
 {
     public class HousebrokenMod : Mod
     {
-        public const string HarmonyId = "vbardales.housebroken";
+        public const string HarmonyId = "nelim.housebroken";
 
         public static HousebrokenMod Instance { get; private set; }
         public static HousebrokenSettings Settings { get; private set; }

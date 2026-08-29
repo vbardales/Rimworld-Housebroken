@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>Housebroken</name>
-  <author>vbardales</author>
-  <packageId>vbardales.housebroken</packageId>
+  <author>nelim</author>
+  <packageId>nelim.housebroken</packageId>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
