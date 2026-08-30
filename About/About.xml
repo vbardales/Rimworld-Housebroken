@@ -6,22 +6,24 @@
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
-  <description>Un animal dresse ou intelligent salit moins, et fait son fumier dehors plutot que dans la base.
+  <description>A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
 
-- Reduction du taux de salete selon le dressage de l'individu (obeissance, puis dressages suivants) et selon la trainabilite de l'espece (intermediaire, avancee). Le catalyseur de sentience compte, puisqu'il fait monter la trainabilite d'un cran.
-- Fumier dehors : un animal assez propre se retient tant qu'il est dans la base, et se soulage une fois dehors.
-- Exemption de l'alerte "salete animale" pour les animaux propres.
+- Filth rate reduced according to the individual animal's training (obedience, then the later training steps) and to its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
+- Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
+- Clean animals are exempted from the "animal filth" alert.
 
-Tout est reglable dans les options du mod. Aucune donnee ajoutee a la sauvegarde : le mod peut etre ajoute ou retire d'une partie en cours.
+Everything is adjustable in the mod options. No data is added to the save: the mod can be added to or removed from a game in progress.
 
-GENERE PAR IA
+Interface in English and French.
 
-Le code de ce mod a ete ecrit avec Claude Code (Anthropic) et ses images generees avec DALL-E (OpenAI), sous direction, relecture et test humains. C'est assume : concevoir avec ces outils est mon metier.
+AI-GENERATED
 
-REMERCIEMENTS
+This mod's code was written with Claude Code (Anthropic) and its images generated with DALL-E (OpenAI), under human direction, review and testing. Stated openly: designing with these tools is my job.
 
-Claude Code (Anthropic) et DALL-E (OpenAI).
-Andreas Pardeike pour Harmony.</description>
+THANKS
+
+Claude Code (Anthropic) and DALL-E (OpenAI).
+Andreas Pardeike for Harmony.</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>
