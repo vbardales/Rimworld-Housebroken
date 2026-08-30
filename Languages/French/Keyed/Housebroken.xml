@@ -9,10 +9,10 @@
   <Housebroken.Settings.WellTrained>Dressage poussé : −{0} % de saleté</Housebroken.Settings.WellTrained>
   <Housebroken.Settings.WellTrainedTip>S'applique dès que l'animal a appris au moins un dressage au-delà de l'obéissance (attaque, transport, secours…). Remplace la valeur d'obéissance, il ne s'y ajoute pas.</Housebroken.Settings.WellTrainedTip>
 
-  <Housebroken.Settings.SpeciesHeader>Trainabilité de l'espèce</Housebroken.Settings.SpeciesHeader>
+  <Housebroken.Settings.SpeciesHeader>Dressabilité de l'espèce</Housebroken.Settings.SpeciesHeader>
   <Housebroken.Settings.Intermediate>Intermédiaire : −{0} % de saleté</Housebroken.Settings.Intermediate>
   <Housebroken.Settings.Advanced>Avancée : −{0} % de saleté</Housebroken.Settings.Advanced>
-  <Housebroken.Settings.AdvancedTip>Se multiplie avec la réduction due au dressage. Le catalyseur de sentience fait monter la trainabilité d'un cran : il compte donc ici.</Housebroken.Settings.AdvancedTip>
+  <Housebroken.Settings.AdvancedTip>Se multiplie avec la réduction due au dressage. Le catalyseur de sentience fait monter la dressabilité d'un cran : il compte donc ici.</Housebroken.Settings.AdvancedTip>
 
   <Housebroken.Settings.ColonyOnly>Animaux de la colonie uniquement</Housebroken.Settings.ColonyOnly>
   <Housebroken.Settings.ColonyOnlyTip>Laisse les animaux sauvages et ceux des visiteurs tels quels.</Housebroken.Settings.ColonyOnlyTip>
@@ -26,13 +26,16 @@
   <Housebroken.Settings.Outdoor>Dehors : ×{0} % de saleté</Housebroken.Settings.Outdoor>
   <Housebroken.Settings.OutdoorTip>À 200 % par défaut : ce qui a été retenu dans la base ressort dehors, au lieu de disparaître. À 100 %, la colonie produit simplement moins de saleté au total. La valeur juste dépend du temps que les bêtes passent réellement dehors.</Housebroken.Settings.OutdoorTip>
 
+  <Housebroken.Settings.WipeFeet>Ne rapporte pas la boue dans la base</Housebroken.Settings.WipeFeet>
+  <Housebroken.Settings.WipeFeetTip>Un animal assez propre garde sur ses pattes la boue et le sang qu'il a ramassés tant qu'il est dans la base, et les dépose une fois dehors. Sans ce réglage, le dressage ne change rien à ce qu'un animal traîne derrière lui : la saleté transportée suit un tout autre chemin que celle qu'il produit.</Housebroken.Settings.WipeFeetTip>
+
   <Housebroken.Settings.ExemptAlert>Exempter les animaux propres de l'alerte « saleté animale »</Housebroken.Settings.ExemptAlert>
   <Housebroken.Settings.ExemptAlertTip>Tout animal qui bénéficie d'une réduction de ce mod cesse de déclencher l'alerte, quel que soit son taux de saleté restant.</Housebroken.Settings.ExemptAlertTip>
 
   <Housebroken.Settings.Reset>Rétablir les valeurs par défaut</Housebroken.Settings.Reset>
   <Housebroken.Settings.ConfirmReset>Rétablir toutes les valeurs par défaut de Housebroken ?</Housebroken.Settings.ConfirmReset>
 
-  <Housebroken.Stat.Trained>Propreté acquise (dressage et trainabilité) : ×{0}</Housebroken.Stat.Trained>
+  <Housebroken.Stat.Trained>Propreté acquise (dressage et dressabilité) : ×{0}</Housebroken.Stat.Trained>
   <Housebroken.Stat.HoldingIt>Se retient dans la base : ×{0}</Housebroken.Stat.HoldingIt>
   <Housebroken.Stat.Outside>Dehors : ×{0}</Housebroken.Stat.Outside>
 

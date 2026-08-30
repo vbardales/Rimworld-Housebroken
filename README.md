@@ -25,11 +25,15 @@ toute la zone de residence. Le curseur « dehors » vaut 200 % par defaut : ce q
 dans la base ressort dehors, au lieu de disparaitre. A 100 %, la colonie produit simplement
 moins de salete au total.
 
-**3. Alerte.** Les animaux concernes ne declenchent plus l'alerte « salete animale ».
+**3. Boue rapportee.** Le meme animal garde sur ses pattes la boue et le sang qu'il a
+ramasses tant qu'il est dans la base, et les depose une fois dehors. C'est un reglage
+distinct : on peut vouloir des pattes propres sans la regle du fumier.
+
+**4. Alerte.** Les animaux concernes ne declenchent plus l'alerte « salete animale ».
 
 ## Comment c'est branche
 
-Toute la generation de salete du jeu passe par un seul point :
+La salete qu'un pion **produit** passe par un seul point :
 
 ```
 Pawn_FilthTracker.Notify_EnteredNewCell()
@@ -46,8 +50,12 @@ Le StatPart depend de la position du pion, ce qui est licite ici : les deux appe
 dressage/espece du calcul, elle, est mise en cache par le mod (250 ticks) parce que le
 StatPart est interroge a chaque case franchie.
 
-Seul patch Harmony : un postfix sur `Alert_AnimalFilth.CalculateTargets` pour retirer les
-animaux propres des deux listes paralleles de l'alerte.
+Deux patchs Harmony seulement. Un postfix sur `Alert_AnimalFilth.CalculateTargets`, qui
+retire les animaux propres des deux listes paralleles de l'alerte. Et un prefixe sur
+`Pawn_FilthTracker.TryDropFilth` pour la boue rapportee : celle-la, le StatPart ne peut pas
+l'atteindre, car `Notify_EnteredNewCell` appelle `TryDropFilth` sur une constante fixe
+(0,05 par case) sans aucun lien avec `FilthRate`. La salete transportee etant deja serialisee
+par `Pawn_FilthTracker.ExposeData`, la retenir n'ajoute rien a la sauvegarde non plus.
 
 ## Sauvegardes
 

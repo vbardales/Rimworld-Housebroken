@@ -83,6 +83,11 @@ namespace Housebroken
 
             listing.GapLine();
 
+            listing.CheckboxLabeled("Housebroken.Settings.WipeFeet".Translate(),
+                ref settings.wipeFeetIndoors, "Housebroken.Settings.WipeFeetTip".Translate());
+
+            listing.GapLine();
+
             listing.CheckboxLabeled("Housebroken.Settings.ExemptAlert".Translate(),
                 ref settings.exemptFromAlert, "Housebroken.Settings.ExemptAlertTip".Translate());
 

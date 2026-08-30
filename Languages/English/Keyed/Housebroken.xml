@@ -26,6 +26,9 @@
   <Housebroken.Settings.Outdoor>Outside: x{0}% filth</Housebroken.Settings.Outdoor>
   <Housebroken.Settings.OutdoorTip>At 200% by default, what was held inside comes back out rather than simply vanishing. Lower it to 100% if you would rather the colony just produce less filth overall. The right value depends on how much time your animals really spend outdoors.</Housebroken.Settings.OutdoorTip>
 
+  <Housebroken.Settings.WipeFeet>Don't track mud into the base</Housebroken.Settings.WipeFeet>
+  <Housebroken.Settings.WipeFeetTip>A clean enough animal keeps the mud and blood it picked up on its feet while inside the base, and drops it once outside. Without this, training changes nothing about what an animal tracks in: carried filth follows a different code path from the filth it produces.</Housebroken.Settings.WipeFeetTip>
+
   <Housebroken.Settings.ExemptAlert>Exempt clean animals from the "animal filth" alert</Housebroken.Settings.ExemptAlert>
   <Housebroken.Settings.ExemptAlertTip>Any animal getting a reduction from this mod stops triggering the alert, however dirty it still is.</Housebroken.Settings.ExemptAlertTip>
 

@@ -17,6 +17,8 @@ namespace Housebroken
         public float indoorFactor;
         public float outdoorFactor = 2f;
 
+        public bool wipeFeetIndoors = true;
+
         public bool exemptFromAlert = true;
 
         public void Reset()
@@ -30,6 +32,7 @@ namespace Housebroken
             wholeHomeArea = false;
             indoorFactor = 0f;
             outdoorFactor = 2f;
+            wipeFeetIndoors = true;
             exemptFromAlert = true;
         }
 
@@ -45,6 +48,7 @@ namespace Housebroken
             Scribe_Values.Look(ref wholeHomeArea, "wholeHomeArea", false);
             Scribe_Values.Look(ref indoorFactor, "indoorFactor", 0f);
             Scribe_Values.Look(ref outdoorFactor, "outdoorFactor", 2f);
+            Scribe_Values.Look(ref wipeFeetIndoors, "wipeFeetIndoors", true);
             Scribe_Values.Look(ref exemptFromAlert, "exemptFromAlert", true);
         }
     }
