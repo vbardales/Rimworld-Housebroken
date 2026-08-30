@@ -10,6 +10,7 @@
 
 - Filth rate reduced according to the individual animal's training (obedience, then the later training steps) and to its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
 - Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
+- Mud stays outside: the same animal keeps the mud and blood it picked up on its feet while inside the base, and drops them once out.
 - Clean animals are exempted from the "animal filth" alert.
 
 Everything is adjustable in the mod options. No data is added to the save: the mod can be added to or removed from a game in progress.
@@ -25,6 +26,9 @@ AI-GENERATED
 This mod's code was written with Claude Code (Anthropic) and its images generated with DALL-E (OpenAI), under human direction, review and testing. Stated openly: designing with these tools is my job.
 
 THANKS
+
+FlyingSloth, for Sentience Catalyst Filth Rate Reducer, which gave me the idea. Housebroken keeps the principle but changes the criterion, from the sentience catalyst to training and trainability. None of their code is used here.
+https://steamcommunity.com/sharedfiles/filedetails/?id=3525790312
 
 Claude Code (Anthropic) and DALL-E (OpenAI).
 Andreas Pardeike for Harmony.</description>
