@@ -1,72 +1,80 @@
 # Housebroken
 
-Un animal dresse ou intelligent salit moins, et fait son fumier dehors plutot que dans la base.
-RimWorld 1.6.
+A trained or intelligent animal makes less mess, and does its business outside instead of in
+your base. RimWorld 1.6.
 
-## Ce que fait le mod
+## What the mod does
 
-**1. Reduction du taux de salete.** Deux facteurs multiplicatifs, tous deux reglables :
+**1. A lower filth rate.** Two multiplicative factors, both adjustable:
 
-| Critere | Defaut |
+| Criterion | Default |
 | --- | --- |
-| Obeissance apprise | −50 % |
-| Au moins un dressage au-dela de l'obeissance | −75 % |
-| Espece a trainabilite intermediaire | −20 % |
-| Espece a trainabilite avancee | −40 % |
+| Obedience learned | −50 % |
+| Trained beyond obedience | −75 % |
+| Species of intermediate trainability | −20 % |
+| Species of advanced trainability | −40 % |
 
-Un husky (avancee) ayant appris l'obeissance et le transport : 0,25 x 0,6 = **0,15**, soit
-85 % de salete en moins. Le catalyseur de sentience monte la trainabilite d'un cran, il compte
-donc automatiquement.
+A husky (advanced) that has learned obedience and hauling: 0.25 × 0.6 = **0.15**, that is 85 %
+less filth. The sentience catalyst raises trainability by one step, so it counts here on its own.
 
-**2. Fumier dehors.** Un animal qui beneficie deja d'une reduction se retient tant qu'il est
-dans la base, et se soulage une fois sorti. « Dans la base » = piece couverte de la zone de
-residence, la definition qu'utilise deja l'alerte vanille ; une option elargit le critere a
-toute la zone de residence. Le curseur « dehors » vaut 200 % par defaut : ce qui a ete retenu
-dans la base ressort dehors, au lieu de disparaitre. A 100 %, la colonie produit simplement
-moins de salete au total.
+**2. Manure outside.** An animal that already gets a reduction holds it while inside the base,
+and relieves itself once out. "Inside the base" means a roofed room of the home area — the very
+definition the vanilla alert already uses — and an option widens it to the whole home area. The
+"outside" slider sits at 200 % by default: what was held in comes back out rather than vanishing.
+At 100 %, the colony simply produces less filth overall.
 
-**3. Boue rapportee.** Le meme animal garde sur ses pattes la boue et le sang qu'il a
-ramasses tant qu'il est dans la base, et les depose une fois dehors. C'est un reglage
-distinct : on peut vouloir des pattes propres sans la regle du fumier.
+**3. Mud tracked in.** The same animal keeps the mud and blood it picked up on its feet while
+inside the base, and drops them once outside. This is a separate setting: clean feet are worth
+having even without the manure rule.
 
-**4. Alerte.** Les animaux concernes ne declenchent plus l'alerte « salete animale ».
+**4. The alert.** Animals the mod has made cleaner no longer trigger the "animal filth" alert.
 
-## Comment c'est branche
+## How it hooks in
 
-La salete qu'un pion **produit** passe par un seul point :
+Everything a pawn **produces** goes through a single point:
 
 ```
 Pawn_FilthTracker.Notify_EnteredNewCell()
     → Rand.Value < pawn.GetStatValue(StatDefOf.FilthRate) * 0.005f
 ```
 
-et l'alerte compare ce meme stat a 4. Le mod se greffe donc par un **StatPart** sur
-`FilthRate` (`Patches/FilthRate.xml`), pas par un patch Harmony du tracker : c'est la
-methode vanille (cf. `StatPart_Trainable`), le tooltip du stat explique la reduction, et
-la compatibilite avec les autres mods est maximale.
+and the alert compares that same stat against 4. So the mod grafts itself on with a **StatPart**
+on `FilthRate` (`Patches/FilthRate.xml`) rather than a Harmony patch on the tracker. That is the
+vanilla way — see `StatPart_Trainable` — the stat tooltip explains the reduction on its own, and
+compatibility with other mods stays as wide as it can be.
 
-Le StatPart depend de la position du pion, ce qui est licite ici : les deux appelants passent
-`cacheStaleAfterTicks = -1`, donc `StatWorker.GetValue` ne met rien en cache. La partie
-dressage/espece du calcul, elle, est mise en cache par le mod (250 ticks) parce que le
-StatPart est interroge a chaque case franchie.
+The StatPart depends on the pawn's position, which is legitimate here: both callers pass
+`cacheStaleAfterTicks = -1`, so `StatWorker.GetValue` caches nothing. This is what makes the
+manure rule possible without storing a single byte in the save. The training-and-species half of
+the calculation is cached by the mod instead (250 ticks), because the StatPart is asked for a
+value on every cell a pawn walks into.
 
-Deux patchs Harmony seulement. Un postfix sur `Alert_AnimalFilth.CalculateTargets`, qui
-retire les animaux propres des deux listes paralleles de l'alerte. Et un prefixe sur
-`Pawn_FilthTracker.TryDropFilth` pour la boue rapportee : celle-la, le StatPart ne peut pas
-l'atteindre, car `Notify_EnteredNewCell` appelle `TryDropFilth` sur une constante fixe
-(0,05 par case) sans aucun lien avec `FilthRate`. La salete transportee etant deja serialisee
-par `Pawn_FilthTracker.ExposeData`, la retenir n'ajoute rien a la sauvegarde non plus.
+Two Harmony patches, no more. A postfix on `Alert_AnimalFilth.CalculateTargets`, which drops
+clean animals from the alert's two parallel lists. And a prefix on
+`Pawn_FilthTracker.TryDropFilth` for the mud: that one is out of the StatPart's reach, because
+`Notify_EnteredNewCell` calls `TryDropFilth` on a fixed constant — 0.05 per cell — with no link
+to `FilthRate` at all. Carried filth is already serialised by `Pawn_FilthTracker.ExposeData`, so
+holding it in adds nothing to the save either.
 
-## Sauvegardes
+## Saves
 
-Le mod n'ajoute aucun comp ni aucune donnee a la sauvegarde. Il peut etre ajoute ou retire
-d'une partie en cours sans consequence.
+The mod adds no comp and no data to the save. It can be added to or removed from a game in
+progress with no consequence.
+
+## Repository layout
+
+The Workshop uploader sends the mod folder as it stands, with no filtering —
+`SteamUGC.SetItemContent` takes the root directory and nothing else. `Source/` therefore ships
+with the mod, which is harmless at 36 KB and fits an MIT mod. What must not ship is the build
+intermediates: `Source/Directory.Build.props` keeps `obj/` out, since the publicised
+`Assembly-CSharp.dll` it holds — about 6 MB of Ludeon's own code — would otherwise go to every
+subscriber.
 
 ## Build
 
-```
-dotnet build Housebroken/Source/Housebroken.csproj -c Release
-```
+    dotnet build Source/Housebroken.csproj -c Release
 
-La DLL sort dans `Housebroken/Assemblies/`. Une jonction NTFS relie
-`RimWorld\Mods\Housebroken` a ce dossier : aucune copie n'est necessaire.
+The assembly lands in `Assemblies/`. Reference assemblies come from NuGet
+(`Krafs.Rimworld.Ref`), so no RimWorld installation is needed to compile.
+
+See `ATTRIBUTION.md` for where the idea came from, and `CHANGELOG.md` for the history.
