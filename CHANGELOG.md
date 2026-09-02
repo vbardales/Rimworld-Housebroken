@@ -1,22 +1,22 @@
-# Journal des modifications
+# Changelog
 
-Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
-Ce fichier sert au dépôt et à rédiger les notes de version Steam ; RimWorld ne l'affiche pas en jeu.
+Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+This file serves the repository and the writing of Steam patch notes; RimWorld does not display it in game.
 
-## [1.0.0] — non publié
+## [1.0.0] — unreleased
 
-À la publication : créer le tag `v1.0.0` et la release GitHub correspondante.
+On release: create the `v1.0.0` tag and the matching GitHub release.
 
-Première version. RimWorld 1.6.
+First version. RimWorld 1.6.
 
-### Ajouté
+### Added
 
-- Réduction du taux de saleté d'un animal selon son dressage individuel (obéissance, puis dressages suivants) et selon la dressabilité de son espèce (intermédiaire, avancée). Le catalyseur de sentience est pris en compte, puisqu'il fait monter la dressabilité d'un cran.
-- Fumier dehors : un animal assez propre se retient tant qu'il est dans la base et se soulage une fois sorti.
-- Boue rapportée : un animal assez propre garde sur ses pattes la boue et le sang qu'il a ramassés tant qu'il est dans la base, et les dépose une fois dehors. Réglage distinct du fumier.
-- Exemption de l'alerte « saleté animale » pour les animaux devenus propres.
-- Tout est réglable dans les options du mod.
+- An animal's filth rate is reduced according to its individual training (obedience, then later training) and its species' trainability (intermediate, advanced). The sentience catalyst is accounted for, since it raises trainability by one step.
+- Dung outdoors: a clean enough animal holds it in while inside the base and relieves itself once out.
+- Tracked-in mud: a clean enough animal keeps the mud and blood it picked up on its paws while inside the base, and drops it once outside. Set separately from dung.
+- Animals that have become clean are exempt from the "animal filth" alert.
+- Everything is adjustable in the mod settings.
 
 ### Notes
 
-- Aucune donnée ajoutée à la sauvegarde : le mod peut être ajouté ou retiré d'une partie en cours.
+- No data is added to the save: the mod can be added to or removed from an ongoing game.
