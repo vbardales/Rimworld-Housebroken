@@ -3,6 +3,7 @@
   <name>Housebroken</name>
   <author>nelim</author>
   <packageId>nelim.housebroken</packageId>
+  <url>https://github.com/vbardales/Rimworld-Housebroken</url>
   <supportedVersions>
     <li>1.6</li>
   </supportedVersions>
