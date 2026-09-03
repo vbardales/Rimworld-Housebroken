@@ -39,7 +39,7 @@ Pawn_FilthTracker.Notify_EnteredNewCell()
 ```
 
 and the alert compares that same stat against 4. So the mod grafts itself on with a **StatPart**
-on `FilthRate` (`Patches/FilthRate.xml`) rather than a Harmony patch on the tracker. That is the
+on `FilthRate` (`Mod/Patches/FilthRate.xml`) rather than a Harmony patch on the tracker. That is the
 vanilla way — see `StatPart_Trainable` — the stat tooltip explains the reduction on its own, and
 compatibility with other mods stays as wide as it can be.
 
@@ -63,18 +63,23 @@ progress with no consequence.
 
 ## Repository layout
 
+```
+Mod/       published to the Workshop; target of the junction into RimWorld/Mods
+Source/    never published
+.build/    build intermediates, ignored by git
+```
+
 The Workshop uploader sends the mod folder as it stands, with no filtering —
-`SteamUGC.SetItemContent` takes the root directory and nothing else. `Source/` therefore ships
-with the mod, which is harmless at 36 KB and fits an MIT mod. What must not ship is the build
-intermediates: `Source/Directory.Build.props` keeps `obj/` out, since the publicised
-`Assembly-CSharp.dll` it holds — about 6 MB of Ludeon's own code — would otherwise go to every
-subscriber.
+`SteamUGC.SetItemContent` takes the root directory and nothing else. Keeping the sources out of
+`Mod/` is the only way not to publish them, and `Source/Directory.Build.props` keeps `obj/` out
+too: without it, the publicised `Assembly-CSharp.dll` it contains — about 6 MB of Ludeon's own
+code — would ship to every subscriber.
 
 ## Build
 
     dotnet build Source/Housebroken.csproj -c Release
 
-The assembly lands in `Assemblies/`. Reference assemblies come from NuGet
+The assembly lands in `Mod/Assemblies/`. Reference assemblies come from NuGet
 (`Krafs.Rimworld.Ref`), so no RimWorld installation is needed to compile.
 
 See `ATTRIBUTION.md` for where the idea came from, and `CHANGELOG.md` for the history.
