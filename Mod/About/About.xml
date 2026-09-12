@@ -50,10 +50,10 @@ Andreas Pardeike for Harmony.</description>
     <li>Ludeon.RimWorld.Biotech</li>
     <li>Ludeon.RimWorld.Anomaly</li>
     <li>Ludeon.RimWorld.Odyssey</li>
-    <!-- Rien d'autre a declarer : le seul patch XML du mod vise le StatDef FilthRate
-         et il est conditionnel (il s'ajoute au noeud <parts> existant, ou le cree),
-         donc il tolere les deux ordres de chargement. Les mods qui reglent la salete
-         ou la trainabilite par espece (Customize Animals) ecrivent des valeurs de
-         base : un StatPart multiplie par-dessus, et lit la trainabilite au runtime. -->
+    <!-- Nothing else to declare. The mod's only XML patch targets the FilthRate StatDef and
+         is conditional: it appends to an existing <parts> node, or creates one, so either
+         load order works. Mods that set filth rates or per-species trainability (Customize
+         Animals) write base values; this StatPart multiplies on top of them, and reads
+         trainability at runtime. -->
   </loadAfter>
 </ModMetaData>
