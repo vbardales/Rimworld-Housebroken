@@ -83,3 +83,9 @@ The assembly lands in `Mod/Assemblies/`. Reference assemblies come from NuGet
 (`Krafs.Rimworld.Ref`), so no RimWorld installation is needed to compile.
 
 See `ATTRIBUTION.md` for where the idea came from, and `CHANGELOG.md` for the history.
+
+Manual functional test scenarios (French): [TESTS_FONCTIONNELS.md](TESTS_FONCTIONNELS.md).
+These scenarios have not yet been executed in game.
+
+Automated logic tests: `dotnet run --project Tests/Housebroken.Tests.csproj -c Release`.
+See [Tests/README.md](Tests/README.md) for coverage and integration-test limits.

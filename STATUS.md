@@ -12,8 +12,8 @@ showcase:     complete
 tested_on:
 workshop:
 remaining:
-  - unverified: never seen running. No off-game test suite either, so the whole runtime side
-    is unchecked: the StatPart multiplier, the held-filth rule, and the two Harmony patches.
+  - unverified: never seen running in game. Automated logic tests pass, but actual Harmony
+    installation, engine filth behavior, XML patching and save integration remain unchecked.
   - defect: the C# comments are in French, in a public repository. Six files, all of Source/
     plus the patch comment in `Mod/Patches/FilthRate.xml`. The About was fixed on 2026-09-12,
     these were not.
@@ -27,6 +27,14 @@ Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by
 that holds this mod, not by the sweep that first wrote it.
 
 ## Where it stands
+
+Manual functional test scenarios were written on 2026-09-12 in
+`TESTS_FONCTIONNELS.md`. They have not been executed; runtime verification remains open.
+
+Automated tests added on 2026-09-12: 47 passing cases against linked production
+sources with game boundary doubles (`Tests/README.md`). Release compilation against
+the RimWorld reference assemblies passes with no warnings or errors. Cache reuse
+now rejects clock rewinds and a different pawn sharing an old pawn ID.
 
 Detached from the monorepo on 2026-09-12 and living in its own repository at
 `https://github.com/vbardales/Rimworld-Housebroken`, public. The junction from `RimWorld/Mods`

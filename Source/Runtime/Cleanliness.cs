@@ -13,6 +13,7 @@ namespace Housebroken
     {
         private struct Cached
         {
+            public Pawn pawn;
             public int tick;
             public float factor;
         }
@@ -57,13 +58,15 @@ namespace Housebroken
             }
 
             int id = pawn.thingIDNumber;
-            if (cache.TryGetValue(id, out var cached) && tick - cached.tick < StaleTicks)
+            // IDs can be reused after loading another game, and its clock can be earlier.
+            if (cache.TryGetValue(id, out var cached) && ReferenceEquals(cached.pawn, pawn)
+                && tick >= cached.tick && tick - cached.tick < StaleTicks)
             {
                 return cached.factor;
             }
 
             float factor = ComputeTraitFactor(pawn);
-            cache[id] = new Cached { tick = tick, factor = factor };
+            cache[id] = new Cached { pawn = pawn, tick = tick, factor = factor };
             return factor;
         }
 
