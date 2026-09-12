@@ -5,16 +5,16 @@ using Verse;
 namespace Housebroken
 {
     /// <summary>
-    /// Un animal propre ne depose pas dans la base la boue qu'il a ramassee : il la garde
-    /// sur ses pattes et l'essuie une fois dehors. C'est le pendant exact de la regle du
-    /// fumier, mais sur l'autre chemin de code.
+    /// A clean animal does not drop the mud it picked up inside the base: it keeps it on its
+    /// feet and wipes them once out. This is the exact counterpart of the manure rule, on the
+    /// other code path.
     ///
-    /// Le StatPart ne peut rien ici : <c>Notify_EnteredNewCell</c> appelle
-    /// <c>TryDropFilth</c> sur une constante fixe (0,05 par case franchie), sans aucun
-    /// lien avec le stat FilthRate. Seul un patch atteint cette moitie du probleme.
+    /// The StatPart can do nothing here: <c>Notify_EnteredNewCell</c> calls
+    /// <c>TryDropFilth</c> against a fixed constant (0.05 per cell walked into), with no link
+    /// to the FilthRate stat. Only a patch reaches this half of the problem.
     ///
-    /// La salete transportee est deja serialisee par <c>Pawn_FilthTracker.ExposeData</c> :
-    /// la retenir n'ajoute toujours rien a la sauvegarde.
+    /// Carried filth is already serialised by <c>Pawn_FilthTracker.ExposeData</c>: holding it
+    /// back still adds nothing to the save.
     /// </summary>
     [HarmonyPatch(typeof(Pawn_FilthTracker), "TryDropFilth")]
     public static class Patch_TryDropFilth
@@ -28,7 +28,7 @@ namespace Housebroken
             if (!Cleanliness.AppliesTo(pawn)) return true;
             if (Cleanliness.TraitFactor(pawn) >= 1f) return true;
 
-            // Dehors, la boue retenue tombe normalement.
+            // Outside, the held mud drops as usual.
             return !Cleanliness.IsInsideBase(pawn);
         }
     }

@@ -105,7 +105,7 @@ namespace Housebroken
             Widgets.EndScrollView();
         }
 
-        /// <summary>Curseur exprime en pourcentage de reduction, stocke en facteur multiplicatif.</summary>
+        /// <summary>Slider shown as a percentage reduction, stored as a multiplicative factor.</summary>
         private static float ReductionRow(Listing_Standard listing, string key, float factor, string tooltipKey = null)
         {
             int reduction = Mathf.RoundToInt((1f - factor) * 100f);

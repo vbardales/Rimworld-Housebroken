@@ -5,9 +5,9 @@ using Verse;
 namespace Housebroken
 {
     /// <summary>
-    /// Calcule a quel point un animal est propre. Deux facteurs multiplicatifs :
-    /// son dressage individuel, et la trainabilite de son espece (que le catalyseur
-    /// de sentience fait monter d'un cran - <see cref="TrainableUtility.GetTrainability"/>).
+    /// Works out how clean an animal is. Two multiplicative factors: its individual
+    /// training, and its species' trainability (which the sentience catalyst raises by one
+    /// step - <see cref="TrainableUtility.GetTrainability"/>).
     /// </summary>
     public static class Cleanliness
     {
@@ -17,8 +17,8 @@ namespace Housebroken
             public float factor;
         }
 
-        // Le StatPart est interroge a chaque case franchie par chaque pion : on met
-        // en cache la partie qui ne depend pas de la position.
+        // The StatPart is asked for a value on every cell every pawn walks into, so the
+        // part that does not depend on position is cached.
         private const int StaleTicks = 250;
         private const int ClearTicks = 60000;
 
@@ -27,7 +27,7 @@ namespace Housebroken
 
         private static HousebrokenSettings Settings => HousebrokenMod.Settings;
 
-        /// <summary>Appele quand les reglages changent, pour ne pas garder de facteur perime.</summary>
+        /// <summary>Called when the settings change, so no stale factor is kept.</summary>
         public static void ClearCache()
         {
             cache.Clear();
@@ -43,7 +43,7 @@ namespace Housebroken
             return true;
         }
 
-        /// <summary>Facteur du au dressage et a l'intelligence, hors regle du fumier dehors.</summary>
+        /// <summary>Factor owed to training and intelligence, before the manure-outdoors rule.</summary>
         public static float TraitFactor(Pawn pawn)
         {
             var tickManager = Find.TickManager;
@@ -67,15 +67,15 @@ namespace Housebroken
             return factor;
         }
 
-        /// <summary>Facteur complet applique au taux de salete, position comprise.</summary>
+        /// <summary>Full factor applied to the filth rate, position included.</summary>
         public static float TotalFactor(Pawn pawn)
         {
             return TraitFactor(pawn) * PlaceFactor(pawn);
         }
 
         /// <summary>
-        /// Regle du fumier dehors : un animal deja rendu propre par son dressage ou son
-        /// espece se retient dans la base, et se soulage une fois sorti.
+        /// The manure-outdoors rule: an animal already made cleaner by its training or its
+        /// species holds it while inside the base, and relieves itself once out.
         /// </summary>
         public static float PlaceFactor(Pawn pawn)
         {
@@ -85,7 +85,7 @@ namespace Housebroken
             return IsInsideBase(pawn) ? settings.indoorFactor : settings.outdoorFactor;
         }
 
-        /// <summary>La regle du fumier dehors est-elle active pour cet animal ?</summary>
+        /// <summary>Is the manure-outdoors rule in force for this animal?</summary>
         public static bool PlaceRuleApplies(Pawn pawn)
         {
             var settings = Settings;
@@ -139,8 +139,8 @@ namespace Housebroken
         {
             var trainability = TrainableUtility.GetTrainability(pawn);
             int order = trainability?.intelligenceOrder ?? 0;
-            // Vanille : Aucune = 0, Intermediaire = 20, Avancee = 30. Les seuils
-            // laissent de la place aux paliers ajoutes par d'autres mods.
+            // Vanilla: None = 0, Intermediate = 20, Advanced = 30. The thresholds leave
+            // room for steps added by other mods.
             if (order >= 25) return settings.advancedSpeciesFactor;
             if (order >= 10) return settings.intermediateSpeciesFactor;
             return 1f;

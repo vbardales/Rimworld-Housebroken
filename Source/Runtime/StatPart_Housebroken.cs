@@ -5,10 +5,10 @@ using Verse;
 namespace Housebroken
 {
     /// <summary>
-    /// Greffe sur le stat FilthRate (voir Patches/FilthRate.xml). Tout passe par la :
-    /// <c>Pawn_FilthTracker.Notify_EnteredNewCell</c> tire la salete sur
-    /// <c>GetStatValue(FilthRate) * 0.005</c>, et <c>Alert_AnimalFilth</c> compare
-    /// ce meme stat a 4.
+    /// Grafted onto the FilthRate stat (see Patches/FilthRate.xml). Everything goes through
+    /// it: <c>Pawn_FilthTracker.Notify_EnteredNewCell</c> rolls filth against
+    /// <c>GetStatValue(FilthRate) * 0.005</c>, and <c>Alert_AnimalFilth</c> compares that
+    /// same stat to 4.
     /// </summary>
     public class StatPart_Housebroken : StatPart
     {

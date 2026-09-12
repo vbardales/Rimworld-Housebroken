@@ -5,9 +5,9 @@ using Verse;
 namespace Housebroken
 {
     /// <summary>
-    /// Retire les animaux rendus propres par le mod de l'alerte "salete animale".
-    /// <c>Alert_AnimalFilth.CalculateTargets</c> remplit deux listes paralleles ;
-    /// on les filtre par le meme index.
+    /// Takes the animals this mod has made cleaner out of the "animal filth" alert.
+    /// <c>Alert_AnimalFilth.CalculateTargets</c> fills two parallel lists; they are
+    /// filtered by the same index.
     /// </summary>
     [HarmonyPatch(typeof(Alert_AnimalFilth), "CalculateTargets")]
     public static class Patch_AlertAnimalFilth

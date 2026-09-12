@@ -4,14 +4,14 @@ namespace Housebroken
 {
     public class HousebrokenSettings : ModSettings
     {
-        // Facteurs multiplicatifs appliques au taux de salete. 1 = aucun changement.
+        // Multiplicative factors applied to the filth rate. 1 = no change.
         public float obedientFactor = 0.5f;
         public float wellTrainedFactor = 0.25f;
         public float intermediateSpeciesFactor = 0.8f;
         public float advancedSpeciesFactor = 0.6f;
         public bool colonyAnimalsOnly = true;
 
-        // Fumier dehors.
+        // Manure outdoors.
         public bool manureOutdoors = true;
         public bool wholeHomeArea;
         public float indoorFactor;
