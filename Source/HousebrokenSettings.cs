@@ -36,6 +36,23 @@ namespace Housebroken
             exemptFromAlert = true;
         }
 
+        // Old or externally edited settings must not produce negative or non-finite rates.
+        public void Normalize()
+        {
+            obedientFactor = Bounded(obedientFactor, 0f, 1f, 0.5f);
+            wellTrainedFactor = Bounded(wellTrainedFactor, 0f, 1f, 0.25f);
+            intermediateSpeciesFactor = Bounded(intermediateSpeciesFactor, 0f, 1f, 0.8f);
+            advancedSpeciesFactor = Bounded(advancedSpeciesFactor, 0f, 1f, 0.6f);
+            indoorFactor = Bounded(indoorFactor, 0f, 1f, 0f);
+            outdoorFactor = Bounded(outdoorFactor, 1f, 4f, 2f);
+        }
+
+        private static float Bounded(float value, float min, float max, float fallback)
+        {
+            if (float.IsNaN(value) || float.IsInfinity(value)) return fallback;
+            return System.Math.Max(min, System.Math.Min(max, value));
+        }
+
         public override void ExposeData()
         {
             base.ExposeData();
@@ -50,6 +67,7 @@ namespace Housebroken
             Scribe_Values.Look(ref outdoorFactor, "outdoorFactor", 2f);
             Scribe_Values.Look(ref wipeFeetIndoors, "wipeFeetIndoors", true);
             Scribe_Values.Look(ref exemptFromAlert, "exemptFromAlert", true);
+            Normalize();
         }
     }
 }

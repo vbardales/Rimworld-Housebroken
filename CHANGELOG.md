@@ -7,10 +7,18 @@ This file serves the repository and the writing of Steam patch notes; RimWorld d
 
 ### Fixed
 
+- Normalize stored numeric settings to safe slider ranges, with defaults for non-finite values.
+- Put the required Steam-formatted GitHub source link at the end of the About description.
+- Recompose the Preview with an overhead illustration, contrasting blue accent and 1.6 badge.
+
 - Reject stale cleanliness cache entries when the game clock moves backwards or a
   different pawn reuses an earlier pawn's ID after loading another game.
 
 ### Added
+
+- An optional MainButtons shortcut, hidden by default, opening the native Housebroken settings dialog.
+- English/French settings scope guidance and French shortcut translation.
+- Technical settings and shortcut tests; translated manual scenarios with shortcut and migration cases.
 
 - A standalone automated logic test suite and manual functional test scenarios.
 

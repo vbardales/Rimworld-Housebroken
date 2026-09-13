@@ -27,7 +27,9 @@ internal static class Program
     }
     static void Test(string name, Action body)
     {
-        HousebrokenMod.Settings = new();
+        Scribe_Values.Mode = LoadSaveMode.Inactive;
+        Scribe_Values.Data.Clear();
+        new HousebrokenMod(new ModContentPack());
         Find.TickManager = new() { TicksGame = 1000 };
         Cleanliness.ClearCache();
         DefDatabase<TrainableDef>.AllDefsListForReading = new() { TrainableDefOf.Tameness, TrainableDefOf.Obedience, Haul, Rescue };
@@ -50,7 +52,7 @@ internal static class Program
             Settings.colonyAnimalsOnly=false; Equal(true,Cleanliness.AppliesTo(p));
             p.RaceProps.Animal=false; Equal(false,Cleanliness.AppliesTo(p)); p.RaceProps=null; Equal(false,Cleanliness.AppliesTo(p));
             p=Animal(); p.def=null; Equal(false,Cleanliness.AppliesTo(p));
-            HousebrokenMod.Settings=null; Equal(false,Cleanliness.AppliesTo(Animal()));
+            typeof(HousebrokenMod).GetProperty(nameof(HousebrokenMod.Settings)).SetValue(null, null); Equal(false,Cleanliness.AppliesTo(Animal()));
         });
         Test("Cache expires at exactly 250 ticks", () => { var p=Animal(); Near(.6f,Cleanliness.TraitFactor(p)); p.training.Learned.Add(TrainableDefOf.Obedience); Find.TickManager.TicksGame+=249; Near(.6f,Cleanliness.TraitFactor(p)); Find.TickManager.TicksGame++; Near(.3f,Cleanliness.TraitFactor(p)); });
         Test("Cache clear applies settings immediately", () => { var p=Animal(); Near(.6f,Cleanliness.TraitFactor(p)); Settings.advancedSpeciesFactor=.9f; Cleanliness.ClearCache(); Near(.9f,Cleanliness.TraitFactor(p)); });
@@ -75,7 +77,7 @@ internal static class Program
         Test("Unreduced animal ignores all cleanliness rules", () => { var p=Animal(0); Near(1,Cleanliness.TotalFactor(p)); Equal(false,Cleanliness.PlaceRuleApplies(p)); Equal(true,Drop(p)); });
         foreach (bool manure in new[]{false,true}) foreach (bool feet in new[]{false,true})
             Test($"Independent options manure={manure}, feet={feet}", () => { var p=Animal(); Settings.manureOutdoors=manure; Settings.wipeFeetIndoors=feet; Equal(!feet,Drop(p)); Near(manure?0:.6f,Cleanliness.TotalFactor(p)); p.Map.areaManager.Home.Value=false; Equal(true,Drop(p)); });
-        Test("Feet respect scope and retained whole-home setting", () => { var p=Animal(); p.Faction=null; Equal(true,Drop(p)); Settings.colonyAnimalsOnly=false; Equal(false,Drop(p)); Settings.wholeHomeArea=true; Settings.manureOutdoors=false; p.Map.Roof=null; Equal(false,Drop(p)); HousebrokenMod.Settings=null; Equal(true,Drop(p)); });
+        Test("Feet respect scope and retained whole-home setting", () => { var p=Animal(); p.Faction=null; Equal(true,Drop(p)); Settings.colonyAnimalsOnly=false; Equal(false,Drop(p)); Settings.wholeHomeArea=true; Settings.manureOutdoors=false; p.Map.Roof=null; Equal(false,Drop(p)); typeof(HousebrokenMod).GetProperty(nameof(HousebrokenMod.Settings)).SetValue(null, null); Equal(true,Drop(p)); });
         Test("Mixed alert preserves names and targets", () => {
             var dirty=Animal(0); var clean=Animal(); var visitor=Animal(); visitor.Faction=new(); var thing=new Thing();
             var alert=new Alert_AnimalFilth { targets=new(){new(){Thing=clean},new(){Thing=dirty},new(){Thing=Animal()},new(){Thing=visitor},new(){Thing=thing}}, pawnEntries=new(){"clean","dirty","clean2","visitor","thing"} };
@@ -86,6 +88,8 @@ internal static class Program
         Test("Stat transforms and explains applicable pawn", () => { Settings.manureOutdoors=false; var part=new StatPart_Housebroken(); var req=new StatRequest{Thing=Animal(30,true,1)}; float value=10; part.TransformValue(req,ref value); Near(1.5f,value); Equal(true,part.ForceShow(req)); Equal(true,part.ExplanationPart(req).Contains("Housebroken.Stat.Trained")); Equal(false,part.ExplanationPart(req).Contains("Housebroken.Stat.Outside")); Settings.manureOutdoors=true; Equal(true,part.ExplanationPart(req).Contains("Housebroken.Stat.HoldingIt")); ((Pawn)req.Thing).Map.areaManager.Home.Value=false; Equal(true,part.ExplanationPart(req).Contains("Housebroken.Stat.Outside")); });
         Test("Stat ignores non-pawn and excluded pawn", () => { var part=new StatPart_Housebroken(); var visitor=Animal(); visitor.Faction=null; foreach(var thing in new Thing[]{null,new Thing(),visitor}) { var req=new StatRequest{Thing=thing}; float value=10; part.TransformValue(req,ref value); Near(10,value); Equal(false,part.ForceShow(req)); Equal<string>(null,part.ExplanationPart(req)); } });
         Test("Reset restores every persisted setting", () => { var defaults=new HousebrokenSettings(); foreach(var f in typeof(HousebrokenSettings).GetFields()) { if(f.FieldType==typeof(bool)) f.SetValue(Settings,!(bool)f.GetValue(defaults)); else f.SetValue(Settings, .123f); } Settings.Reset(); foreach(var f in typeof(HousebrokenSettings).GetFields()) Equal(f.GetValue(defaults),f.GetValue(Settings)); });
+        XmlTests.Register(Test);
+        SettingsTests.Register(Test);
         Console.WriteLine($"\n{passed} passed; {failed} failed.");
         return failed==0?0:1;
     }

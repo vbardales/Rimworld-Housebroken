@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Housebroken preview</title>
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 896px; height: 504px; overflow: hidden; }
+body { font-family: "Segoe UI", system-ui, sans-serif; background: url('{{source}}') center / cover; }
+.veil { position: absolute; inset: 0; background: linear-gradient(90deg, {{veil95}} 0%, {{veil94}} 48%, {{veil0}} 79%); }
+.copy { position: absolute; left: 50px; top: 54px; color: {{inkPrimary}}; text-shadow: 0 3px 10px rgba(0,0,0,.75); }
+h1 { margin: 0; font-size: 46px; font-weight: 600; line-height: 1.1; letter-spacing: 0; }
+.rule { width: 58px; height: 3px; margin-top: 20px; margin-bottom: 16px; background: {{accent}}; }
+p { margin: 0; width: 430px; font-size: 21px; font-weight: 400; line-height: 1.45; letter-spacing: 0; }
+.badge { position: absolute; right: 0; top: 0; width: 80px; height: 80px; background: {{accent}}; clip-path: polygon(0 0,100% 0,100% 100%); }
+.version { position: absolute; left: 869px; top: 27px; transform: translate(-50%,-50%) rotate(45deg); font-size: 26px; line-height: 1; font-weight: 700; color: {{badgeInk}}; }
+</style>
+<div class="veil"></div>
+<div class="copy"><h1>Housebroken</h1><div class="rule"></div><p>A trained animal makes less mess, and goes outside.</p></div>
+<div class="badge"></div><div class="version">{{version}}</div>
+</html>

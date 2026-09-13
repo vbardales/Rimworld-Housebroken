@@ -1,215 +1,231 @@
-# Housebroken — scénarios de test fonctionnels
+# Housebroken — functional test scenarios
 
-Recette manuelle pour RimWorld 1.6. Scénarios rédigés le 12 septembre 2026 à partir du code et de la documentation ; **aucun scénario n'a encore été exécuté en jeu**.
+Manual acceptance tests for RimWorld 1.6. Originally written on September 12, 2026 from the code and documentation; translated and extended on September 13. **No scenario has yet been executed in game.** Existing scenario IDs and execution history are preserved.
 
-## Préparation et méthode
+## Preparation and method
 
-- Utiliser une copie de sauvegarde dédiée, avec Harmony et Housebroken, puis ajouter les autres mods seulement pour les essais de compatibilité. Consigner la version exacte du jeu, les DLC, l'ordre des mods et la version de la DLL testée.
-- Activer le mode développeur pour préparer les animaux et leur dressage. Désactiver le nettoyage et éloigner les autres sources de saleté des parcours observés.
-- Préparer une pièce fermée et couverte dans la zone de résidence, un enclos découvert dans cette zone, une pièce couverte hors zone, une porte et un parcours extérieur hors zone. Vérifier les toits et la zone case par case.
-- Préparer des animaux de dressabilité nulle, intermédiaire et avancée ; relever leur dressabilité réelle dans le jeu. Préparer un animal avancé sans obéissance, avec obéissance seule, puis avec obéissance et au moins un autre dressage appris. Un dressage seulement coché ou partiellement appris ne suffit pas.
-- Relever pour chaque sujet son taux de saleté de référence **B**, sans Housebroken, dans les mêmes conditions et avec les mêmes autres mods. Utiliser un sujet dont B est strictement positif pour les comparaisons.
-- Sauf indication contraire, rétablir les réglages par défaut avant chaque scénario. Pour isoler les facteurs de dressage, désactiver « Fumier à l'extérieur de la base ».
-- Après un changement de dressage ou de dressabilité, laisser passer au moins 250 ticks de simulation avant de relire la statistique. Après un changement de réglages, fermer la fenêtre pour les enregistrer, puis rouvrir la fiche de l'animal.
-- Comparer les taux dans la fiche détaillée, en tenant compte de l'arrondi affiché. Les dépôts sont aléatoires : faire marcher les sujets sur un parcours répété, noter le nombre de cases parcourues et répéter avec un témoin. L'absence de dépôt sur un court trajet ne prouve pas une réduction ; un dépôt interdit, dont l'origine est identifiée, suffit à signaler un échec.
+- Use dedicated save copies with Harmony and Housebroken. Add other mods only for compatibility cases. Record the exact game version, DLC, mod order and tested DLL hash.
+- Enable development mode to prepare animals and training. Disable cleaning and keep unrelated filth sources away from the test routes.
+- Prepare a closed roofed room in the home area, an unroofed home-area pen, a roofed room outside the home area, a doorway and an outdoor route outside the home area. Verify roofs and area membership cell by cell.
+- Prepare animals of none, intermediate and advanced trainability. Record their actual trainability. Prepare an advanced animal without obedience, with obedience only, and with obedience plus another learned training. Selected or partially learned training does not count.
+- Measure each subject's baseline filth rate **B** without Housebroken under otherwise identical conditions. Use subjects with B greater than zero.
+- Restore defaults before each scenario unless stated otherwise. Disable manure outdoors to isolate training factors.
+- After changing training or trainability, wait at least 250 simulation ticks before checking again. Close the settings window to save and apply settings, then reopen the animal's stat details.
+- Account for displayed rounding. Deposits are random: repeat routes, count walked cells and compare with a control animal. A short deposit-free walk does not prove a reduction; one forbidden deposit with a confirmed source can establish failure.
 
-## Calcul du taux de saleté
+## Filth rate calculation
 
-### TF-01 — Chargement et valeurs par défaut
+### TF-01 — Loading and defaults
 
-**Préconditions :** configuration minimale, réglages réinitialisés.
+**Preconditions:** minimal mod configuration, settings reset.
 
-**Étapes :** lancer une partie, ouvrir les options Housebroken, parcourir tous les réglages et consulter le journal développeur.
+**Actions:** start a new colony, open Housebroken mod options, inspect every setting and check the developer log.
 
-**Attendu :** aucune erreur de chargement XML ou Harmony liée à Housebroken. Réductions obéissance 50 %, dressage poussé 75 %, intermédiaire 20 %, avancée 40 %. Options colonie uniquement, fumier extérieur, boue et exemption d'alerte activées ; toute la zone de résidence désactivée ; réduction intérieure 100 %, multiplicateur extérieur 200 %.
+**Expected:** no Housebroken XML or Harmony loading errors. Reductions: obedience 50%, further training 75%, intermediate 20%, advanced 40%. Colony-only, manure outdoors, clean feet and alert exemption enabled; whole-home disabled; indoor reduction 100%, outdoor multiplier 200%. No visible or greyed-out Housebroken MainButton.
 
-### TF-02 — Facteurs individuels et d'espèce
+### TF-02 — Individual and species factors
 
-**Préconditions :** fumier extérieur désactivé ; animaux apprivoisés de la colonie.
+**Preconditions:** manure outdoors disabled; tame colony animals.
 
-**Étapes :** consulter le taux et son explication pour chaque ligne réalisable avec les espèces disponibles.
+**Actions:** inspect the filth rate and explanation for each available combination.
 
-| Dressabilité | Dressage appris | Taux attendu |
+| Trainability | Learned training | Expected rate |
 | --- | --- | --- |
-| Nulle | Apprivoisement seul | B |
-| Intermédiaire | Apprivoisement seul | B × 0,8 |
-| Avancée | Apprivoisement seul | B × 0,6 |
-| Intermédiaire | Obéissance seule | B × 0,4 |
-| Avancée | Obéissance seule | B × 0,3 |
-| Avancée | Obéissance + un dressage supplémentaire | B × 0,15 |
-| Avancée | Obéissance + plusieurs dressages supplémentaires | B × 0,15 |
+| None | Tameness only | B |
+| Intermediate | Tameness only | B × 0.8 |
+| Advanced | Tameness only | B × 0.6 |
+| Intermediate | Obedience only | B × 0.4 |
+| Advanced | Obedience only | B × 0.3 |
+| Advanced | Obedience plus one additional training | B × 0.15 |
+| Advanced | Obedience plus several additional trainings | B × 0.15 |
 
-**Attendu :** le dressage poussé remplace le facteur d'obéissance ; les dressages supplémentaires ne cumulent pas leurs réductions. Le facteur d'espèce se multiplie avec celui du dressage. L'explication Housebroken apparaît pour un facteur inférieur à 1, sans ligne de lieu lorsque le fumier extérieur est désactivé.
+**Expected:** further training replaces the obedience factor; extra trainings do not stack. Species and training factors multiply. The Housebroken explanation appears when the factor is below one, with no location line when manure outdoors is disabled.
 
-### TF-03 — Acquisition et perte du dressage
+### TF-03 — Learning and losing training
 
-**Préconditions :** animal avancé apprivoisé, fumier extérieur désactivé.
+**Preconditions:** tame advanced animal; manure outdoors disabled.
 
-**Étapes :** mesurer sans obéissance, commencer sans terminer l'obéissance, la terminer, apprendre un dressage supplémentaire, puis retirer ce dernier et enfin l'obéissance. Attendre 250 ticks après chaque changement effectif.
+**Actions:** measure without obedience, with partially learned obedience, with learned obedience, with an additional learned training, after removing that additional training, then after removing obedience. Wait 250 ticks after each effective change.
 
-**Attendu :** taux successifs B × 0,6 ; B × 0,6 ; B × 0,3 ; B × 0,15 ; B × 0,3 ; B × 0,6. Pas de réduction accordée à un apprentissage incomplet.
+**Expected:** successive rates B × 0.6, B × 0.6, B × 0.3, B × 0.15, B × 0.3, B × 0.6. Incomplete training gives no reduction.
 
-### TF-04 — Curseurs et absence totale de réduction
+### TF-04 — Sliders and no reduction
 
-**Préconditions :** animal avancé avec obéissance et transport, B > 0.
+**Preconditions:** advanced animal with obedience and hauling; B > 0.
 
-**Étapes :** désactiver le fumier extérieur ; régler le dressage poussé à 60 % de réduction et l'espèce avancée à 25 %. Fermer les options et mesurer. Puis mettre les quatre réductions à 0 %, réactiver les options de lieu, de boue et d'alerte. Enfin tester une réduction de dressage poussé à 100 %.
+**Actions:** disable manure outdoors; set further-training reduction to 60% and advanced-species reduction to 25%. Close options and measure. Set all four trait reductions to 0%, then enable location, feet and alert options. Finally test an applicable training reduction of 100%.
 
-**Attendu :** premier taux B × 0,4 × 0,75 = B × 0,3. Avec les quatre réductions à 0 %, taux B partout, aucune explication de réduction et aucune exemption Housebroken pour les dépôts ou l'alerte. Avec une réduction applicable à 100 %, taux nul. Les curseurs de réduction restent entre 0 et 100 % et celui d'extérieur entre 100 et 400 %.
+**Expected:** initial rate B × 0.4 × 0.75 = B × 0.3. With all trait reductions zero, rate B everywhere, no reduction explanation and no Housebroken deposit or alert exemption. With an applicable 100% reduction, rate zero. Reduction sliders stay within 0–100%; outdoor multiplier within 100–400%.
 
-### TF-05 — Périmètre des animaux concernés
+### TF-05 — Eligible animals
 
-**Préconditions :** sujets de dressabilité avancée : animal de colonie, animal sauvage, animal d'une autre faction ; colon humain et méchanoïde témoins. Fumier extérieur désactivé.
+**Preconditions:** advanced colony, wild and other-faction animals; human colonist and mechanoid controls. Manure outdoors disabled.
 
-**Étapes :** comparer les statistiques avec « Animaux de la colonie uniquement » activé puis désactivé. Apprivoiser un sujet sauvage, puis tester un sujet quittant la faction de la colonie si la préparation le permet.
+**Actions:** compare stats with colony-only enabled and disabled. Tame a wild subject, then test an animal leaving the player's faction if preparation permits.
 
-**Attendu :** option activée, seuls les animaux du joueur reçoivent la réduction. Option désactivée, les autres animaux en bénéficient selon leur dressage et dressabilité. Humains et méchanoïdes restent inchangés. Le changement de faction modifie l'éligibilité ; laisser expirer le cache pour tout changement simultané de dressage.
+**Expected:** with colony-only enabled, only player animals receive reductions. Otherwise other animals qualify according to training and trainability. Humans and mechanoids are unchanged. Faction changes affect eligibility; allow cache expiry for simultaneous training changes.
 
-### TF-06 — Catalyseur de sentience
+### TF-06 — Sentience catalyst
 
-**Préconditions :** contenu donnant accès au catalyseur disponible ; animal compatible, fumier extérieur désactivé, dressage inchangé.
+**Preconditions:** catalyst content available; compatible animal; manure outdoors disabled; unchanged training.
 
-**Étapes :** relever dressabilité et taux avant et après application du catalyseur ; attendre 250 ticks.
+**Actions:** record trainability and rate before and after applying the catalyst; wait 250 ticks.
 
-**Attendu :** la réduction suit la nouvelle dressabilité réellement affichée : facteur d'espèce 1, 0,8 ou 0,6 selon le palier. Aucun bonus indépendant ne s'ajoute au titre du catalyseur. Marquer « Non applicable » si le contenu requis n'est pas disponible.
+**Expected:** the reduction follows actual new trainability: species factor 1, 0.8 or 0.6. No separate catalyst bonus. Mark not applicable if the required content is unavailable.
 
-## Lieu et fumier produit
+## Location and produced manure
 
-### TF-07 — Frontières de la base
+### TF-07 — Base boundaries
 
-**Préconditions :** animal avancé avec obéissance et transport, facteur de traits 0,15 ; réglages par défaut.
+**Preconditions:** advanced animal with obedience and hauling, trait factor 0.15; default settings.
 
-**Étapes :** déplacer le même animal dans chaque emplacement et rouvrir sa statistique dès son arrivée, sans attendre 250 ticks.
+**Actions:** move the same animal to each location and reopen its stat immediately, without waiting 250 ticks.
 
-| Emplacement | Taux attendu |
+| Location | Expected rate |
 | --- | --- |
-| Pièce fermée, couverte, dans la zone de résidence | 0 |
-| Enclos découvert dans la zone de résidence | B × 0,3 |
-| Pièce couverte hors zone de résidence | B × 0,3 |
-| Extérieur hors zone de résidence | B × 0,3 |
-| Case de porte, même couverte et en zone de résidence | B × 0,3 |
-| Case couverte en zone de résidence, dans une pièce touchant le bord de carte | B × 0,3 |
+| Closed roofed room in home area | 0 |
+| Unroofed pen in home area | B × 0.3 |
+| Roofed room outside home area | B × 0.3 |
+| Outdoors outside home area | B × 0.3 |
+| Doorway, even roofed and in home area | B × 0.3 |
+| Roofed home-area cell in a room touching the map edge | B × 0.3 |
 
-**Attendu :** explication « Se retient dans la base » à l'intérieur et « Dehors » ailleurs. Le changement de position est pris en compte immédiatement. Préparer le dernier cas avec une pièce dont le contact avec le bord de carte est vérifiable.
+**Expected:** holding-it explanation inside and outside explanation elsewhere. Position changes apply immediately. Prepare the final case with verifiable room contact with the map edge.
 
-### TF-08 — Toute la zone de résidence
+### TF-08 — Whole home area
 
-**Préconditions :** même sujet que TF-07.
+**Preconditions:** same subject as TF-07.
 
-**Étapes :** activer « Toute la zone de résidence ». Refaire les positions de TF-07 ; retirer puis réajouter la case occupée à la zone de résidence.
+**Actions:** enable whole-home mode. Repeat TF-07 positions; remove and restore the occupied cell's home-area membership.
 
-**Attendu :** taux nul sur toutes les cases de résidence, y compris découvertes et portes ; B × 0,3 hors zone. Modifier la zone change le taux sans délai de cache de dressage.
+**Expected:** zero rate in every home-area cell, including unroofed cells and doorways; B × 0.3 outside. Area changes apply without the training-cache delay.
 
-### TF-09 — Réglages intérieur, extérieur et désactivation
+### TF-09 — Indoor/outdoor factors and disabling
 
-**Préconditions :** même sujet ; définition de base par défaut.
+**Preconditions:** same subject; default base definition.
 
-**Étapes :** régler la réduction intérieure à 50 % et l'extérieur à 300 %. Mesurer dedans puis dehors. Désactiver ensuite le fumier extérieur et répéter.
+**Actions:** set indoor reduction to 50% and outdoor multiplier to 300%. Measure inside and outside. Disable manure outdoors and repeat.
 
-**Attendu :** taux intérieur B × 0,075 ; extérieur B × 0,45. Option désactivée : B × 0,15 aux deux endroits, sans ligne de lieu dans l'explication.
+**Expected:** indoor rate B × 0.075, outdoor B × 0.45. Disabled: B × 0.15 in both places with no location explanation.
 
-### TF-10 — Dépôts produits pendant les déplacements
+### TF-10 — Deposits while moving
 
-**Préconditions :** parcours propres et sujets ne transportant pas de boue ou de sang ; sujet réduit et témoin sans réduction.
+**Preconditions:** clean routes; subjects carry no mud or blood; reduced subject and unreduced control.
 
-**Étapes :** faire marcher le sujet réduit dans la pièce intérieure puis dehors ; refaire avec le fumier extérieur désactivé. Observer aussi le témoin sans réduction dans la pièce.
+**Actions:** walk the reduced subject through the interior and outside. Repeat with manure outdoors disabled. Observe the unreduced control inside too.
 
-**Attendu :** aux réglages par défaut, aucun fumier produit par le sujet réduit à l'intérieur. Dehors, les dépôts redeviennent possibles. Option désactivée, ils redeviennent possibles à l'intérieur. Le témoin reste soumis à son fonctionnement habituel. Ne pas exiger un dépôt dès la première case extérieure ni une quantité compensant exactement le séjour intérieur : aucun stock de fumier n'est mémorisé, seul le taux extérieur est multiplié.
+**Expected:** by default the reduced subject produces no manure indoors; outside deposits remain possible. Disabling the option allows indoor deposits again. The control behaves normally. Do not require an immediate outdoor deposit or exact compensation for time indoors: no manure stock is stored; only the outdoor rate is multiplied.
 
-## Boue et sang transportés
+## Carried mud and blood
 
-### TF-11 — Rétention puis dépôt extérieur
+### TF-11 — Holding and outdoor release
 
-**Préconditions :** animal bénéficiant d'une réduction, fumier extérieur désactivé pour isoler les mécanismes ; parcours intérieur propre. Préparer séparément de la boue puis du sang transportés, avec un témoin confirmant que la source est effectivement ramassable et transportable.
+**Preconditions:** reduced animal; manure outdoors disabled to isolate mechanisms; clean indoor route. Prepare carried mud and blood separately, using a control to confirm each source can actually be picked up and carried.
 
-**Étapes :** faire traverser la source puis la pièce au sujet ; prolonger son parcours dehors. Répéter avec « Ne rapporte pas la boue dans la base » désactivé, puis avec un animal sans réduction.
+**Actions:** walk the subject through the source and interior, then extend the route outside. Repeat with clean feet disabled, and with an unreduced animal.
 
-**Attendu :** option activée, le sujet réduit ne dépose pas la saleté transportée dans la base ; le dépôt reste possible dehors. Option désactivée ou animal sans réduction, le dépôt reste possible dedans. Distinguer le sang transporté d'un saignement actif, qui n'est pas l'objet du test. Si la charge transportée n'a pas pu être confirmée, noter le résultat comme bloqué plutôt que réussi.
+**Expected:** with clean feet enabled, the reduced subject does not drop carried filth in the base; outdoor drops remain possible. Disabled or unreduced, indoor drops remain possible. Distinguish carried blood from active bleeding. If the carried load cannot be confirmed, record blocked rather than passed.
 
-### TF-12 — Indépendance des options et zone étendue
+### TF-12 — Independent options and extended area
 
-**Préconditions :** sujet réduit chargé de saleté transportée ; tester chaque combinaison sur un parcours remis au propre.
+**Preconditions:** reduced animal with confirmed carried filth; reset the route between combinations.
 
-**Étapes :** tester les quatre combinaisons fumier extérieur activé/désactivé × protection contre la boue activée/désactivée. Puis activer toute la zone de résidence et faire traverser un enclos découvert en zone. Désactiver le fumier extérieur en conservant ce réglage de zone.
+**Actions:** test all four manure outdoors on/off × clean feet on/off combinations. Enable whole-home mode and cross an unroofed home-area pen. Disable manure outdoors while retaining whole-home mode.
 
-**Attendu :** la protection contre la boue dépend uniquement de son option, de l'éligibilité du sujet et de la définition de la base. Elle fonctionne même si la règle de fumier est désactivée. La zone étendue continue à la gouverner lorsque son contrôle est masqué par la désactivation du fumier. Le taux de fumier suit uniquement son propre réglage.
+**Expected:** clean feet depends only on its own toggle, eligibility and the base definition. It works with manure outdoors disabled. Whole-home mode still governs it while that control is hidden by the manure toggle. Manure rate follows its own setting.
 
-## Alerte de saleté animale
+## Animal filth alert
 
-### TF-13 — Exemption et retour à la règle normale
+### TF-13 — Exemption and restoration
 
-**Préconditions :** fumier extérieur désactivé. Préparer dans une pièce admissible à l'alerte un animal réduit dont le taux final reste strictement supérieur à 4 ; ajuster légèrement les réductions si nécessaire. Vérifier d'abord qu'il apparaît avec l'exemption désactivée.
+**Preconditions:** manure outdoors disabled. In an alert-eligible room, prepare a reduced animal whose final rate remains strictly above 4; adjust reductions if necessary. First confirm it appears with exemption disabled.
 
-**Étapes :** activer puis désactiver l'exemption, en laissant l'alerte se recalculer entre les mesures.
+**Actions:** enable and disable exemption, allowing alert recalculation between observations.
 
-**Attendu :** l'animal disparaît avec l'exemption et réapparaît sans elle. Un animal dont le taux passe sous le seuil normal ne doit pas être utilisé pour prouver l'effet de cette option.
+**Expected:** the animal disappears with exemption and returns without it. Do not use an animal below the ordinary alert threshold to prove this option's effect.
 
-### TF-14 — Liste mixte et cibles cliquables
+### TF-14 — Mixed list and clickable targets
 
-**Préconditions :** plusieurs animaux déclenchant l'alerte sans exemption, dont au moins deux bénéficient d'une réduction et deux n'en bénéficient pas ; fumier extérieur désactivé.
+**Preconditions:** several animals triggering the alert without exemption, including at least two reduced and two unreduced animals; manure outdoors disabled.
 
-**Étapes :** relever les noms, activer l'exemption, examiner les entrées restantes et cliquer leurs cibles. Refaire après le départ d'un animal ; terminer avec uniquement des animaux réduits.
+**Actions:** record names, enable exemption, inspect remaining entries and click their targets. Repeat after an animal leaves; finish with only reduced animals.
 
-**Attendu :** seuls les animaux non réduits restent listés ; chaque nom correspond à la bonne cible. Aucune entrée fantôme ni erreur. Lorsque tous les candidats sont exemptés, l'alerte disparaît.
+**Expected:** only unreduced animals remain listed; names correspond to the correct targets. No ghost entries or errors. If all candidates are exempt, the alert disappears.
 
-## Réglages, sauvegardes et compatibilité
+## Settings, saves and compatibility
 
-### TF-15 — Enregistrement et réinitialisation
+### TF-15 — Saving and resetting
 
-**Préconditions :** partie ouverte.
+**Preconditions:** game open.
 
-**Étapes :** modifier chaque curseur et case avec des valeurs différentes des défauts ; fermer les options et vérifier les effets. Redémarrer le jeu et vérifier les valeurs. Demander une réinitialisation puis l'annuler ; recommencer et confirmer ; fermer les options et contrôler les taux.
+**Actions:** change every slider and checkbox from its default; close options and verify effects. Restart the game and check values. Request reset and cancel; repeat and confirm; close options and check rates.
 
-**Attendu :** réglages persistants après redémarrage ; annulation sans changement ; confirmation rétablissant toutes les valeurs de TF-01. Aucun ancien facteur de réduction conservé après enregistrement des options.
+**Expected:** values persist after restart. Cancelling changes nothing. Confirmation restores every TF-01 default. No stale reduction factor remains after saving options. The global scope and close-to-apply explanation is visible.
 
-### TF-16 — Interface française et anglaise
+### TF-16 — French and English interface
 
-**Préconditions :** exécuter une fois en français puis en anglais.
+**Preconditions:** run once in French and once in English.
 
-**Étapes :** lire tous les réglages, les infobulles, le dialogue de réinitialisation et les explications de taux dedans/dehors ; parcourir la fenêtre à une petite résolution supportée.
+**Actions:** read all settings, tooltips, reset confirmation and indoor/outdoor stat explanations. Scroll at a small supported resolution. Include the revealed shortcut label and tooltip.
 
-**Attendu :** aucune clé brute « Housebroken.… », aucun texte manquant, curseurs et bouton accessibles par défilement, pourcentages cohérents avec les taux constatés. Les contrôles de lieu apparaissent et disparaissent correctement avec la règle de fumier.
+**Expected:** no raw Housebroken keys or missing text; sliders and reset button accessible; percentages agree with measured rates. Location controls appear/disappear with manure outdoors. No clipping, overlapping controls or untranslated shortcut description.
 
-### TF-17 — Sauvegarde et reprise avec saleté transportée
+### TF-17 — Save/reload with carried filth
 
-**Préconditions :** sujet réduit en intérieur avec une charge de saleté transportée confirmée, protection active.
+**Preconditions:** reduced subject inside with a confirmed carried load; protection enabled.
 
-**Étapes :** sauvegarder, quitter, recharger ; faire marcher le sujet dedans puis dehors.
+**Actions:** save, quit, reload; walk inside and outside.
 
-**Attendu :** chargement sans erreur liée au mod, taux cohérents, protection maintenue dedans et dépôt de la charge toujours possible dehors. La sauvegarde ne doit pas effacer artificiellement la charge retenue.
+**Expected:** no mod-related loading error; coherent rates; indoor protection preserved and outdoor release still possible. Saving must not erase the carried load artificially.
 
-### TF-18 — Ajout et retrait sur une sauvegarde existante
+### TF-18 — Add/remove on an existing save
 
-**Préconditions :** copies séparées d'une sauvegarde sans Housebroken et d'une sauvegarde avec Housebroken.
+**Preconditions:** separate copies of saves without and with Housebroken.
 
-**Étapes :** activer le mod et charger la première copie ; vérifier TF-02 et TF-07. Désactiver le mod, redémarrer et charger la seconde copie ; poursuivre la simulation puis sauvegarder dans un nouveau fichier.
+**Actions:** enable the mod and load the first copy; verify TF-02 and TF-07. Disable the mod, restart and load the second copy; continue simulation and save to a new file.
 
-**Attendu :** ajout fonctionnel, retrait sans donnée Housebroken manquante ni erreur associée ; fonctionnement du jeu sans les réductions après retrait. Un avertissement habituel de différence de liste de mods au chargement n'est pas à lui seul un échec.
+**Expected:** successful addition and removal without missing Housebroken data or related errors. Vanilla behavior resumes after removal. An ordinary changed-mod-list warning alone is not failure.
 
-### TF-19 — Plusieurs cartes et changements de partie
+### TF-19 — Multiple maps and switching games
 
-**Préconditions :** deux cartes avec des zones de résidence différentes et un sujet réduit.
+**Preconditions:** two maps with different home areas; reduced subject.
 
-**Étapes :** transférer le sujet entre cartes, par exemple via une caravane ; consulter sa fiche en transit puis à l'arrivée. Charger ensuite une autre sauvegarde sans fermer le jeu, avec des animaux de dressage différent ; vérifier immédiatement puis après 250 ticks.
+**Actions:** transfer the animal between maps, for example via caravan; inspect in transit and after arrival. Load another save without quitting, containing differently trained animals; check immediately and after 250 ticks.
 
-**Attendu :** aucune erreur sur un animal hors carte ; à l'arrivée, la définition de base de la carte courante s'applique. Aucun facteur provenant de la partie précédente ne doit contaminer la nouvelle ; relever tout taux transitoire incorrect, même s'il disparaît après 250 ticks.
+**Expected:** no error off-map; destination map's base definition applies on arrival. No previous-game factor contaminates the new game. Record any transient incorrect rate even if it disappears after 250 ticks.
 
-### TF-20 — Coexistence avec une autre modification de FilthRate
+### TF-20 — Another FilthRate modification
 
-**Préconditions :** configuration minimale validée, puis mod de test identifié ajoutant une autre partie à la statistique FilthRate ; relever son effet sans Housebroken.
+**Preconditions:** validated minimal configuration, then an identified test mod adding another FilthRate stat part; record its effect without Housebroken.
 
-**Étapes :** charger les deux mods dans chaque ordre autorisé par leurs dépendances ; examiner le journal, l'explication de taux et refaire un cas chiffré TF-02. Consigner les noms et versions des mods testés.
+**Actions:** load both mods in each dependency-permitted order; inspect logs and explanations; repeat a numeric TF-02 case. Record tested names and versions.
 
-**Attendu :** pas d'échec du patch XML, contribution Housebroken présente une seule fois, contribution de l'autre mod conservée. Calcul conforme à l'ordre effectif des opérations ; ne pas exiger le même résultat entre ordres si l'autre mod ajoute une constante. Ce test valide uniquement les combinaisons effectivement essayées.
+**Expected:** no XML patch failure; exactly one Housebroken contribution; other contribution preserved. Calculation follows actual operation order; identical results are not required if the other mod adds a constant. Only the tested combinations are validated.
 
-## Fiche d'exécution
+### TF-21 — Optional MainButtons shortcut
 
-Copier une ligne par scénario, et par variante lorsqu'elles ont des résultats différents.
+**Preconditions:** clean configuration with Harmony and Housebroken; then repeat with an identified RIMMSQOL version. Record its version and load order.
 
-| ID / variante | Version jeu, DLC, DLL et mods | Sauvegarde / sujets / réglages | Résultat observé et preuve | Statut | Anomalie |
+**Actions:** first open Housebroken through Mod options without RIMMSQOL. Confirm no visible or greyed-out MainButton. With RIMMSQOL, reveal Housebroken_Settings through MainButton customization, open it, change a setting and close. Reopen through Mod options and verify the same value and actual effect. Reverse the two routes. Restart and check settings and chosen visibility. Hide the shortcut and restart again. Repeat for any other customization tool claimed as tested.
+
+**Expected:** primary access always works independently; shortcut opens the same native settings dialog and shares values and persistence. Visibility is controlled by the customization tool and is not forced back each frame. Hidden shortcut occupies no visible or disabled button. No related errors in logs. A tool that cannot expose the Def is recorded precisely as an integration limitation, not silently passed.
+
+### TF-22 — Older settings and numeric limits
+
+**Preconditions:** dedicated backed-up test configuration, game closed. This is a developer fixture test, not a player configuration procedure.
+
+**Actions:** prepare an older settings fixture missing newly added fields and a fixture with numeric factors outside slider bounds. Load each and open options. Check defaults, safe ranges and actual rates. Close, restart and verify the normalized values. Then restore the user's original configuration.
+
+**Expected:** missing fields receive defaults; finite out-of-range values clamp to slider bounds; non-finite numeric values use defaults. No negative/non-finite filth rate from settings. Normal players use the options UI, not manual XML editing.
+
+## Execution record
+
+Copy one row per scenario and variant. Historical status on September 12 remains **not executed**; translation and additions on September 13 do not establish runtime success.
+
+| ID / variant | Game, DLC, DLL and mods | Save / subjects / settings | Observed result and evidence | Status | Issue |
 | --- | --- | --- | --- | --- | --- |
-| TF-… | À renseigner | À renseigner | Capture de taux, journal ou observation du parcours | Non exécuté | — |
+| TF-… | To record | To record | Stat screenshot, log or route observation | Not executed | — |
 
-Statuts : **Non exécuté**, **Réussi**, **Échoué**, **Bloqué**, **Non applicable**. Pour un échec, joindre les étapes exactes, le résultat attendu et observé, ainsi que le journal si une erreur apparaît. Pour « Bloqué » ou « Non applicable », consigner la raison.
+Statuses: **Not executed**, **Passed**, **Failed**, **Blocked**, **Not applicable**. For failure, attach exact steps, expected and observed results, and logs where relevant. For blocked/not applicable cases, state the reason.
 
-La recette est validée lorsque tous les scénarios applicables ont été exécutés sans anomalie fonctionnelle ouverte. Les cas bloqués restent explicitement non vérifiés. La rédaction de ce document ne constitue pas une validation du fonctionnement en jeu.
+Acceptance requires every applicable scenario to pass with no open functional defect. Blocked cases remain unverified. Writing these scenarios does not validate in-game behavior.

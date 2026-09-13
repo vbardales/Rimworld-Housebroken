@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <Housebroken.Settings.Scope>Réglages globaux, communs à toutes les sauvegardes. Fermez cette fenêtre pour enregistrer et appliquer les changements. Les nombres enregistrés hors limites sont ramenés à la plage du curseur ; les nombres non finis reprennent leur valeur par défaut.</Housebroken.Settings.Scope>
 
   <Housebroken.Settings.Intro>Les animaux dressés et les espèces intelligentes salissent moins, et se retiennent tant qu'ils sont dans la base.</Housebroken.Settings.Intro>
 

@@ -19,6 +19,9 @@ Everything is adjustable in the mod options. No data is added to the save: the m
 
 Interface in English and French.
 
+Source code and issue tracker:
+https://github.com/vbardales/Rimworld-Housebroken
+
 IF I GO QUIET
 
 If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
@@ -33,7 +36,9 @@ FlyingSloth, for Sentience Catalyst Filth Rate Reducer, which gave me the idea. 
 https://steamcommunity.com/sharedfiles/filedetails/?id=3525790312
 
 Claude Code (Anthropic) and DALL-E (OpenAI).
-Andreas Pardeike for Harmony.</description>
+Andreas Pardeike for Harmony.
+
+[url=https://github.com/vbardales/Rimworld-Housebroken]Source code on GitHub[/url]</description>
   <modDependencies>
     <li>
       <packageId>brrainz.harmony</packageId>

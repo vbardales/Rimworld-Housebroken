@@ -28,6 +28,7 @@ namespace Housebroken
 
         public override void WriteSettings()
         {
+            Settings.Normalize();
             base.WriteSettings();
             Cleanliness.ClearCache();
         }
@@ -42,6 +43,7 @@ namespace Housebroken
             listing.Begin(viewRect);
 
             listing.Label("Housebroken.Settings.Intro".Translate());
+            listing.Label("Housebroken.Settings.Scope".Translate());
             listing.GapLine();
 
             listing.Label("Housebroken.Settings.TrainingHeader".Translate());

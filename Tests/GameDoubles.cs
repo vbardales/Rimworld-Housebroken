@@ -1,6 +1,7 @@
 // Minimal boundary doubles, not an implementation of RimWorld or Harmony.
 namespace HarmonyLib
 {
+    public class Harmony { public Harmony(string id) { } public void PatchAll() { } }
     [AttributeUsage(AttributeTargets.Class)]
     public sealed class HarmonyPatch : Attribute
     {
@@ -39,13 +40,21 @@ namespace Verse
         public object GetRoof(Map map) => map.Roof;
         public Room GetRoom(Map map) => map.Room;
     }
-    public static class Find { public static TickManager TickManager; }
+    public static class Find { public static TickManager TickManager; public static WindowStack WindowStack = new(); }
     public class TickManager { public int TicksGame; }
     public static class DefDatabase<T> { public static List<T> AllDefsListForReading = new(); }
     public class ModSettings { public virtual void ExposeData() { } }
     public static class Scribe_Values
     {
-        public static void Look<T>(ref T value, string key, T defaultValue) { }
+        public static LoadSaveMode Mode;
+        public static Dictionary<string, string> Data = new();
+        public static void Look<T>(ref T value, string key, T defaultValue)
+        {
+            if (Mode == LoadSaveMode.Saving) Data[key] = Convert.ToString(value, System.Globalization.CultureInfo.InvariantCulture);
+            if (Mode == LoadSaveMode.LoadingVars)
+                value = Data.TryGetValue(key, out var text)
+                    ? (T)Convert.ChangeType(text, typeof(T), System.Globalization.CultureInfo.InvariantCulture) : defaultValue;
+        }
     }
     public class Pawn_FilthTracker { public Pawn pawn; }
     public class Target { public Thing Thing; }
@@ -90,7 +99,78 @@ namespace RimWorld
         public abstract bool ForceShow(StatRequest req);
     }
 }
-namespace Housebroken
+namespace UnityEngine
 {
-    public static class HousebrokenMod { public static HousebrokenSettings Settings = new(); }
+    public struct Vector2 { }
+    public struct Rect
+    {
+        public float x, y, width, height;
+        public Rect(float x, float y, float width, float height) { this.x=x; this.y=y; this.width=width; this.height=height; }
+    }
+    public static class Mathf
+    {
+        public static float Max(float a,float b)=>Math.Max(a,b);
+        public static int RoundToInt(float v)=>(int)Math.Round(v);
+        public static float Round(float v)=>(float)Math.Round(v);
+        public static float Clamp01(float v)=>Math.Clamp(v,0,1);
+        public static float Clamp(float v,float min,float max)=>Math.Clamp(v,min,max);
+    }
+}
+namespace Verse
+{
+    public enum LoadSaveMode { Inactive, Saving, LoadingVars }
+    public class ModContentPack { }
+    public class Mod
+    {
+        private ModSettings settings;
+        public int Writes;
+        public Mod(ModContentPack content) { }
+        public T GetSettings<T>() where T:ModSettings,new() => (T)(settings ??= new T());
+        public virtual string SettingsCategory()=>"";
+        public virtual void WriteSettings() { Writes++; Scribe_Values.Mode=LoadSaveMode.Saving; settings.ExposeData(); Scribe_Values.Mode=LoadSaveMode.Inactive; }
+        public virtual void DoSettingsWindowContents(UnityEngine.Rect rect) { }
+    }
+    public class WindowStack { public object Last; public void Add(object window) { Last=window; } }
+    public class Dialog_MessageBox
+    {
+        public Action Confirm;
+        public static Dialog_MessageBox CreateConfirmation(string text,Action action,bool destructive=false)=>new(){Confirm=action};
+    }
+    public static class Widgets
+    {
+        public static void BeginScrollView(UnityEngine.Rect rect,ref UnityEngine.Vector2 position,UnityEngine.Rect view) { }
+        public static void EndScrollView() { }
+    }
+    public class Listing_Standard
+    {
+        public static Func<string,float,float> SliderInput;
+        public static bool ResetClicked;
+        public float CurHeight;
+        public void Begin(UnityEngine.Rect rect) { }
+        public void End() { }
+        public void Label(string text) { CurHeight+=25; }
+        public void GapLine() { CurHeight+=12; }
+        public void Gap() { CurHeight+=12; }
+        public void CheckboxLabeled(string label,ref bool value,string tip) { CurHeight+=25; }
+        public bool ButtonText(string text) => ResetClicked;
+        public float SliderLabeled(string label,float value,float min,float max,float labelPct,string tooltip)
+            => SliderInput?.Invoke(label,value) ?? value;
+    }
+}
+namespace RimWorld
+{
+    public class MainButtonDef { public bool buttonVisible; }
+    public abstract class MainButtonWorker
+    {
+        public MainButtonDef def;
+        public virtual bool Visible=>def.buttonVisible;
+        public abstract void Activate();
+    }
+    // Boundary contract only: native constructor and PreClose verified by decompilation.
+    public class Dialog_ModSettings
+    {
+        public Verse.Mod Mod;
+        public Dialog_ModSettings(Verse.Mod mod) { Mod=mod; }
+        public void PreClose()=>Mod.WriteSettings();
+    }
 }

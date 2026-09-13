@@ -8,5 +8,7 @@
     <Compile Include="../Source/Runtime/*.cs" Link="Production/%(Filename)%(Extension)" />
     <Compile Include="../Source/Patches/*.cs" Link="Production/%(Filename)%(Extension)" />
     <Compile Include="../Source/HousebrokenSettings.cs" Link="Production/HousebrokenSettings.cs" />
+    <Compile Include="../Source/HousebrokenMod.cs" Link="Production/HousebrokenMod.cs" />
+    <Compile Include="../Source/MainButtonWorker_Housebroken.cs" Link="Production/MainButtonWorker_Housebroken.cs" />
   </ItemGroup>
 </Project>

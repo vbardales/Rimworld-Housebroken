@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+  <Housebroken.Settings.Scope>Global settings, shared by all saves. Close this window to save and apply changes. Invalid stored numbers are limited to the slider range; non-finite numbers use the defaults.</Housebroken.Settings.Scope>
 
   <Housebroken.Settings.Intro>Trained and clever animals produce less filth, and hold it until they are outside the base.</Housebroken.Settings.Intro>
 

@@ -58,8 +58,15 @@ holding it in adds nothing to the save either.
 
 ## Saves
 
+Open **Mod options → Housebroken** to change settings. Values are global across saves;
+close the window to save and apply them. A hidden `Housebroken_Settings` MainButton
+is available for customization tools such as RIMMSQOL to reveal. It opens the same
+native settings dialog. No customization mod is required for the primary options page.
+Interactive RIMMSQOL compatibility is awaiting in-game validation.
+
 The mod adds no comp and no data to the save. It can be added to or removed from a game in
-progress with no consequence.
+progress without a custom save-data migration. Functional add/remove validation remains
+pending; see the manual scenarios below.
 
 ## Repository layout
 
@@ -84,7 +91,7 @@ The assembly lands in `Mod/Assemblies/`. Reference assemblies come from NuGet
 
 See `ATTRIBUTION.md` for where the idea came from, and `CHANGELOG.md` for the history.
 
-Manual functional test scenarios (French): [TESTS_FONCTIONNELS.md](TESTS_FONCTIONNELS.md).
+Manual functional test scenarios: [TESTS_FONCTIONNELS.md](TESTS_FONCTIONNELS.md).
 These scenarios have not yet been executed in game.
 
 Automated logic tests: `dotnet run --project Tests/Housebroken.Tests.csproj -c Release`.
