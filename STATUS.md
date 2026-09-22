@@ -64,6 +64,13 @@ left intact. The Pickle reports establish these UI paths only, not TF-01..22 gam
 new/existing save acceptance, or a general compatibility guarantee. `stage: done`
 remains unchanged.
 
+`TESTING.md` now names the required minimal English/French and optional RIMMSQOL passes,
+links their preserved evidence, and separates the remaining manual acceptance. TF-21 was
+corrected so a post-restart RIMMSQOL visibility choice is no longer a Housebroken test.
+The 59-case offline runner passed again; the development-only steps project compiled with
+zero warnings/errors. Its rebuilt DLL was restored to the tracked hash above so the
+delivered companion remains the exact binary used by these Pickle runs.
+
 ### Earlier English pass
 
 The WSL `runtime-evidence` English pass launched under the shared lock (PID 33800;
