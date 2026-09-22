@@ -16,18 +16,19 @@ showcase:     complete
 tested_on:
 workshop:      3806137798
 remaining:
-  - unverified: run TF-01 through TF-22 in game, including logs, FR/EN UI, native settings
-    disk persistence, new colony, existing saves and the revealed MainButtons shortcut.
-  - unverified: RIMMSQOL and other customization tools have not been tested interactively;
-    record exact versions and results before claiming runtime integration compatibility.
+  - unverified: run TF-01 through TF-22 in game, including animal behavior, native settings
+    persistence across restart, new colony and existing-save acceptance; Pickle UI-path passes
+    do not cover these manual scenarios.
+  - unverified: RIMMSQOL's Housebroken shortcut reveal/hide path passed once in WSL, but
+    other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
     messages for item 3806137798 have not been evidenced in this audit.
   - defect: the distributed metadata and local tag identify 1.0.0, while the maintainer
     reports the Workshop publication as 0.1.0; reconcile the version record before any
     further release claim.
-  - defect: commit 61b00c5 is one commit ahead of origin/main and is not pushed.
+  - defect: the local main branch is ahead of origin/main and has not been pushed.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-22, Pickle suite written and compiled; runtime validation still pending
+updated:      2026-09-22, English/French and RIMMSQOL Pickle reports preserved and reviewed; gameplay acceptance pending
 ---
 
 # Housebroken — status
@@ -35,7 +36,56 @@ updated:      2026-09-22, Pickle suite written and compiled; runtime validation 
 Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by the session
 that holds this mod, not by the sweep that first wrote it.
 
-## Current result — workflow audit, 2026-09-22
+## Current result — three distinct Pickle passes, 2026-09-22
+
+After the first queued French/RIMMSQOL tickets disappeared without running, the maintainer
+authorized a requeue. The French `runtime-evidence` pass (PID 28556; machine log `LOCK`
+23:19:39, `STAGE` 23:21:03, `UNLOCK` 23:24:25) completed with 3 passed, 0 failed and
+1 skipped: the optional RIMMSQOL case was not staged in that pass. Its complete report,
+including `Player.log`, was preserved from shared archive `0922-2324` at
+`Tests/Pickle/evidence/2026-09-22/runtime-evidence-French/`. All three Housebroken
+screenshots were opened; the French labels and accents are legible, with no visible raw
+keys or clipping. The native path and MainButtons shortcut show the same settings page.
+
+The separate English `avec-rimmsqol` pass (PID 13800; `LOCK` 23:27:03, `STAGE` 23:27:37,
+`UNLOCK` 23:29:25) completed with 1 passed, 0 failed and 0 skipped. Its complete report
+was preserved from archive `0922-2329` at
+`Tests/Pickle/evidence/2026-09-22/avec-rimmsqol-English/`, with only the Housebroken
+capture. That capture was opened: the settings page is legible and unclipped after the
+RIMMSQOL reveal/activation path. The scenario also asserted the initial hidden state,
+main-bar appearance, subsequent hide and forgotten choice. It did **not** test whether
+RIMMSQOL persists button visibility across a game restart; that belongs to RIMMSQOL,
+not Housebroken.
+
+Together with the earlier English pass below, these are three distinct evidence sets,
+so this session retains all three and has no redundant older Housebroken report to cycle.
+Only Housebroken screenshots were copied; shared archives and other mods' reports were
+left intact. The Pickle reports establish these UI paths only, not TF-01..22 gameplay,
+new/existing save acceptance, or a general compatibility guarantee. `stage: done`
+remains unchanged.
+
+### Earlier English pass
+
+The WSL `runtime-evidence` English pass launched under the shared lock (PID 33800;
+machine log `LOCK` 17:44:53, `STAGE` 17:45:11, `UNLOCK` 17:46:59). Its report has
+`exitReason: passed`: three scenarios passed, none failed, and the RIMMSQOL scenario
+was skipped because its optional dependencies were not staged. The report, `Player.log`,
+JUnit, messages and the three Housebroken captures were copied from archive `0922-1746`
+to `Tests/Pickle/evidence/2026-09-22/runtime-evidence-English/` before the shared archive
+rotates. All three captures were opened: each shows the Housebroken settings page with its
+controls legible and unclipped. This includes the capture from the MainButtons shortcut;
+an earlier description of that image as a blank window was incorrect. These screenshots
+show the English page, not animal behavior or French rendering. At that point French,
+RIMMSQOL and TF-01..22 remained open; `stage: done` was unchanged.
+
+Earlier on 2026-09-22, French and RIMMSQOL tickets (PIDs 38980 and 13640) entered the
+shared queue. Both ticket processes disappeared before obtaining `LOCK`: the machine log
+contains no `LOCK`, `STAGE` or `UNLOCK` for either PID, and no Housebroken report was produced.
+Read-only checks found neither process alive and no RimWorldLinux process. A single request
+to requeue the French pass was rejected by automatic approval review; it did not launch.
+Neither ticket provided evidence; the successful replacement runs are documented above.
+
+## Historical workflow audit, 2026-09-22
 
 **done -> preTest.** The prior `done` claim was no longer supported by the current shared
 workflow: `Tests/` has no Pickle/Gherkin suite and no written scope justification for its

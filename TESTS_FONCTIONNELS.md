@@ -206,9 +206,9 @@ Manual acceptance tests for RimWorld 1.6. Originally written on September 12, 20
 
 **Preconditions:** clean configuration with Harmony and Housebroken; then repeat with an identified RIMMSQOL version. Record its version and load order.
 
-**Actions:** first open Housebroken through Mod options without RIMMSQOL. Confirm no visible or greyed-out MainButton. With RIMMSQOL, reveal Housebroken_Settings through MainButton customization, open it, change a setting and close. Reopen through Mod options and verify the same value and actual effect. Reverse the two routes. Restart and check settings and chosen visibility. Hide the shortcut and restart again. Repeat for any other customization tool claimed as tested.
+**Actions:** first open Housebroken through Mod options without RIMMSQOL. Confirm no visible or greyed-out MainButton. With RIMMSQOL, reveal Housebroken_Settings through MainButton customization, open it, change a setting and close. Reopen through Mod options and verify the same value and actual effect. Reverse the two routes. Restart and check Housebroken settings. In the same session, hide the shortcut and confirm that Housebroken does not force it visible again. Repeat for any other customization tool claimed as tested.
 
-**Expected:** primary access always works independently; shortcut opens the same native settings dialog and shares values and persistence. Visibility is controlled by the customization tool and is not forced back each frame. Hidden shortcut occupies no visible or disabled button. No related errors in logs. A tool that cannot expose the Def is recorded precisely as an integration limitation, not silently passed.
+**Expected:** primary access always works independently; shortcut opens the same native settings dialog and shares Housebroken values and persistence. Visibility is controlled by the customization tool and is not forced back each frame. Hidden shortcut occupies no visible or disabled button. No related errors in logs. A tool that cannot expose the Def is recorded precisely as an integration limitation, not silently passed. Persistence of a RIMMSQOL visibility choice across a restart is a RIMMSQOL feature, outside Housebroken's acceptance scope.
 
 ### TF-22 — Older settings and numeric limits
 

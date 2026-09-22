@@ -29,3 +29,10 @@ powershell.exe -ExecutionPolicy Bypass -File scripts/Run-PickleWsl.ps1 -Mod Hous
 Each `@review` screenshot needs a human review after a complete report: check French for raw
 keys/accented fallback or clean English literals, confirm controls are not clipped, and confirm
 the shortcut opens the Housebroken settings page. A green capture proves only that it was taken.
+
+The 2026-09-22 evidence is preserved under `evidence/2026-09-22/`: the English and French
+`runtime-evidence` reports each have 3 passed, 0 failed, 1 skipped (RIMMSQOL absent), while
+`avec-rimmsqol-English` has 1 passed, 0 failed. Each folder retains the complete report files
+and only its Housebroken screenshots. All seven captures were reviewed as legible and unclipped;
+the three runs cover different configurations, so none was cycled. They do not establish the
+manual animal/gameplay scenarios or RIMMSQOL's own persistence across a restart.
