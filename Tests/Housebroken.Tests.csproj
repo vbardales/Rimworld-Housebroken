@@ -5,6 +5,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
+    <!-- Pickle has its own net48 project and real runner references; keep its companion sources
+         out of this package-free net8 logic runner's default recursive Compile glob. -->
+    <Compile Remove="Pickle\**\*.cs" />
     <Compile Include="../Source/Runtime/*.cs" Link="Production/%(Filename)%(Extension)" />
     <Compile Include="../Source/Patches/*.cs" Link="Production/%(Filename)%(Extension)" />
     <Compile Include="../Source/HousebrokenSettings.cs" Link="Production/HousebrokenSettings.cs" />

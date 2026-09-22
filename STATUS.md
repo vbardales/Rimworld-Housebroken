@@ -14,14 +14,20 @@ licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 dependencies: declared
 showcase:     complete
 tested_on:
-workshop:
+workshop:      3806137798
 remaining:
   - unverified: run TF-01 through TF-22 in game, including logs, FR/EN UI, native settings
     disk persistence, new colony, existing saves and the revealed MainButtons shortcut.
   - unverified: RIMMSQOL and other customization tools have not been tested interactively;
     record exact versions and results before claiming runtime integration compatibility.
+  - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
+    messages for item 3806137798 have not been evidenced in this audit.
+  - defect: the distributed metadata and local tag identify 1.0.0, while the maintainer
+    reports the Workshop publication as 0.1.0; reconcile the version record before any
+    further release claim.
+  - defect: commit 61b00c5 is one commit ahead of origin/main and is not pushed.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-13, audit fixes and technical revalidation
+updated:      2026-09-22, Pickle suite written and compiled; runtime validation still pending
 ---
 
 # Housebroken — status
@@ -29,7 +35,83 @@ updated:      2026-09-13, audit fixes and technical revalidation
 Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by the session
 that holds this mod, not by the sweep that first wrote it.
 
-## Current result — audit fixes, 2026-09-13
+## Current result — workflow audit, 2026-09-22
+
+**done -> preTest.** The prior `done` claim was no longer supported by the current shared
+workflow: `Tests/` has no Pickle/Gherkin suite and no written scope justification for its
+absence. `AUDIT.md` requires that artifact before `done`; this is an observed documentation/test
+gap, not an assertion that a runtime scenario has failed. The next cumulative transition is
+therefore `preTest -> done`.
+
+## Current result — Pickle suite written, 2026-09-22
+
+**preTest -> done.** `Tests/Pickle/` now provides a non-distributed companion mod
+`Housebroken - Pickle tests`, four Gherkin features and explicit WSL pass maps. The scope is
+documented in `Tests/Pickle/README.md`: it exercises only real-game concerns absent from the
+offline runner — native settings rendering/write path, the hidden MainButtons shortcut,
+RIMMSQOL reveal/hide, and English/French review captures. Deterministic rate, serialization and
+XML contracts remain in the 59-case .NET runner; the broad animal/map scenarios remain in
+`TESTS_FONCTIONNELS.md` until dedicated observable fixtures justify their Gherkin form.
+
+`dotnet build Tests/Pickle/Source/Housebroken.PickleSteps.csproj -c Release` succeeded with zero
+warnings/errors and produced `Tests/Pickle/Mod/Pickle/Assemblies/Housebroken.PickleSteps.dll`
+(SHA256 `566A8F07A9BB9F0C71A5A396AAFCF6D7C9DA5D4E4845B76C09D2F6799C539653`). No Pickle or RimWorld
+run was launched. Execution, complete reports, review of each `@review` capture, gameplay
+scenarios and the RIMMSQOL integration outcome remain **unverified**, not failed.
+
+Audited revision: `61b00c5baa4ea69e7a4a2b65d71a556aa1534533`; the audit began with only
+the untracked `Mod/About/PublishedFileId.txt` requested for commit and ended with the working
+tree otherwise clean. This audit committed that file as `61b00c5` at the maintainer's request.
+It contains `3806137798`, the item reported by the maintainer as the public 0.1.0 Workshop
+publication. `git ls-remote` verified that
+`origin/main` remains `0cd6a5595caf3d7ee7a7dea178a9d4a1be558ede`, so this publication-ID
+commit is not pushed. The local checkout has no `PUBLICATION.md`, no capture order or
+thank-you-message drafts, and no local evidence of a subscriber test, public-visibility
+change or messages having been posted. Those independent publication facts remain unverified.
+
+### 2026-09-22 audit evidence
+
+- **horsMonoRepo — validated.** This is an autonomous Git checkout with an `origin` GitHub
+  remote, a configured `origin/main` upstream, English root documentation, original MIT
+  licensing and byte-identical distributed LICENSE/ATTRIBUTION copies. Package ID
+  `nelim.housebroken`, name `Housebroken`, folder and repository identity agree.
+- **ModIcon générée / Preview générée / preOptions — validated.** Direct inspection found a
+  readable 128 x 128 PNG icon (21,277 bytes) and the 896 x 504 Preview PNG (460,606 bytes),
+  under the 1 MB limit. The preview has a high overhead RimWorld-like view, distinct blue
+  version accent and legible uncropped English overlay. `About.xml` has an English description
+  ending in the exact Steam-formatted source link; its original-work licence/title decision is
+  coherent with ATTRIBUTION.md.
+- **options — validated technically.** Eleven useful persisted settings use the native Mod
+  options page; the hidden (`buttonVisible=false`) MainButtons definition opens the same
+  `Dialog_ModSettings`. The 59 passing runner cases cover defaults, effect logic, XML-backed
+  Scribe round trips, old values, normalization, slider bounds, shared dialog/cache write and
+  reset. This certifies the mod-side technical contract only; native UI, disk and RIMMSQOL
+  interaction remain unverified in `tested`.
+- **l10n — validated technically.** The runner checked XML parsing, Keyed parity,
+  placeholders, production-source key coverage and both French MainButton DefInjected paths;
+  59 passed, 0 failed. English source fields cover the MainButton English text; no redundant
+  English DefInjected file is required. Runtime FR/EN layout remains unverified.
+- **preTest — validated.** Harmony is the only hard dependency and its About declaration
+  matches source use. The conditional FilthRate patch and DLC load order entries are coherent.
+  `TESTS_FONCTIONNELS.md` supplies TF-01..22 with preconditions/actions/expected results.
+  `dotnet build Source/Housebroken.csproj -c Release --no-restore -t:Rebuild
+  -p:OutputPath=../.build/audit-2026-09-22/` succeeded with zero warnings/errors; its DLL and
+  `Mod/Assemblies/Housebroken.dll` share SHA256
+  `8DF40BAEF199F4A896390C438AEB42DAB1623227A029521F92F3C779462E871A`.
+- **done and later — not established.** No Pickle/Gherkin test artifact exists. No gameplay,
+  log, UI, save, translated-layout or integration run was launched or claimed. Since `done` is
+  not established, `tested`, `prepublished` and `published` cannot be cumulative statuses.
+  Separately, the published-item ID is now committed locally, but a local `v1.0.0` tag and
+  `About.xml` `modVersion` `1.0.0` conflict with the reported 0.1.0 publication; the audit
+  records the conflict rather than changing release metadata.
+
+### Next transition
+
+Add a focused Pickle/Gherkin suite (or a documented, evidence-based scope justification) that
+keeps only behavior a running game can establish, then execute the existing offline checks
+against the delivered DLL. Do not treat this missing artifact as a failed in-game test.
+
+## Superseded current result — audit fixes, 2026-09-13
 
 **dansMonoRepo -> done.** All cumulative technical gates are now satisfied under the
 user's override placing interactive settings verification at `done -> tested`.
