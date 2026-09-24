@@ -25,6 +25,7 @@ namespace Housebroken.PickleSteps
         public const string EdgeRoom = "edge room";
 
         private static readonly Dictionary<string, List<IntVec3>> cells = new Dictionary<string, List<IntVec3>>();
+        private static readonly Dictionary<IntVec3, bool> homeIntent = new Dictionary<IntVec3, bool>();
 
         [BeforeScenario]
         public void Forget(PickleContext ctx)
@@ -70,6 +71,7 @@ namespace Housebroken.PickleSteps
             var cleared = new List<IntVec3>();
             cleared.AddRange(Rect(origin.x, origin.z, 23, 5));
             cleared.AddRange(Rect(edgeOrigin.x, edgeOrigin.z, 4, 5));
+            homeIntent.Clear();
             foreach (var c in cleared) Prepare(map, c);
 
             int ox = origin.x, oz = origin.z;
@@ -83,6 +85,12 @@ namespace Housebroken.PickleSteps
             OpenArea(map, ox + 18, oz, ox + 22, oz + 4, false);
             // Edge room: its west side is the map edge itself, so no wall is built there.
             Ring(map, edgeOrigin.x - 1, edgeOrigin.z, edgeOrigin.x + 3, edgeOrigin.z + 4, null, true);
+
+            // The game marks home area around buildings of the player, on its own, each time one is spawned:
+            // the walls of the room that must stay outside the home area would pull it in. The homes are
+            // therefore applied once, here, after every wall stands, and the walls belong to nobody.
+            foreach (var c in cleared) map.areaManager.Home[c] = false;
+            foreach (var pair in homeIntent) map.areaManager.Home[pair.Key] = pair.Value;
 
             map.regionAndRoomUpdater.RebuildAllRegionsAndRooms();
 
@@ -200,11 +208,10 @@ namespace Housebroken.PickleSteps
                     {
                         var isDoor = door.HasValue && door.Value == c;
                         var building = ThingMaker.MakeThing(isDoor ? ThingDefOf.Door : ThingDefOf.Wall, ThingDefOf.WoodLog);
-                        building.SetFaction(Faction.OfPlayer);
                         GenSpawn.Spawn(building, c, map, WipeMode.Vanish);
                     }
                     map.roofGrid.SetRoof(c, RoofDefOf.RoofConstructed);
-                    map.areaManager.Home[c] = home;
+                    homeIntent[c] = home;
                 }
         }
 
@@ -212,7 +219,7 @@ namespace Housebroken.PickleSteps
         {
             for (int x = x0; x <= x1; x++)
                 for (int z = z0; z <= z1; z++)
-                    map.areaManager.Home[new IntVec3(x, 0, z)] = home;
+                    homeIntent[new IntVec3(x, 0, z)] = home;
         }
     }
 }

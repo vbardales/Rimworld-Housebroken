@@ -1,6 +1,6 @@
 Feature: A game saved with Housebroken, loaded without it
 
-  Scenario: TF-18 the game loads and runs without Housebroken, and saves again
+  Scenario: TF-18 loads and runs without the mod
     Given mod "nelim.housebroken" is not loaded
     And the save "housebroken-tf18-with-mod" is loaded
     And game speed is fast

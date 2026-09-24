@@ -1,5 +1,5 @@
 @review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.interfacescale @requires:nelim.pickletools.keyedclick @requires:nelim.pickletools.hoversteps
-Feature: The Housebroken settings page at the sizes a player uses, in the language of the pass
+Feature: Settings page sizes and tooltips
 
   Background:
     Given the save "test-colony" is loaded
@@ -8,7 +8,7 @@ Feature: The Housebroken settings page at the sizes a player uses, in the langua
     And Housebroken settings are at their documented defaults
     And Housebroken settings are written to disk
 
-  Scenario: TF-16 the page draws at 100 and at 200 percent, and the reset confirmation fits
+  Scenario: TF-16 page at 100 and 200 percent
     When I open the Housebroken settings dialog
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     And I take a screenshot "housebroken settings page at 100 percent"
@@ -26,7 +26,7 @@ Feature: The Housebroken settings page at the sizes a player uses, in the langua
     And I close all dialogs
     Then no errors were logged
 
-  Scenario: TF-16 every tooltip of the page is drawn, and read
+  Scenario: TF-16 every tooltip is drawn
     When I open the Housebroken settings dialog
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.ObedientTip"

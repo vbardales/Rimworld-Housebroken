@@ -1,6 +1,6 @@
-Feature: Housebroken settings return after a separate-process restart
+Feature: Settings read after a restart
 
-  Scenario: TF-15 read every distinctive value in the next launch, then restore the original file
+  Scenario: TF-15 read settings after restart
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

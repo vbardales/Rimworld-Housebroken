@@ -1,4 +1,4 @@
-Feature: Housebroken deposits: manure while walking, and mud and blood carried
+Feature: Housebroken deposits
 
   Background:
     Given the save "test-colony" is loaded
@@ -14,7 +14,7 @@ Feature: Housebroken deposits: manure while walking, and mud and blood carried
     And Housebroken spawns the colony animal "TfControl" as "Cow"
     And Housebroken teaches "TfControl" the training "Tameness"
 
-  Scenario: TF-10 manure while moving: none inside by default, some outside, and again inside once the rule is off
+  Scenario: TF-10 manure while moving
     Then Housebroken filth rate of "TfControl" is "1" times its base rate
     When Housebroken walks "TfReduced" for 3000 steps at "closed room"
     Then Housebroken counted no manure from "TfReduced"
@@ -28,7 +28,7 @@ Feature: Housebroken deposits: manure while walking, and mud and blood carried
     Then Housebroken counted manure from "TfReduced"
     And no errors were logged
 
-  Scenario: TF-11 carried mud is held inside and released outside
+  Scenario: TF-11 carried mud
     Given Housebroken setting "manureOutdoors" is set to "false"
     And Housebroken settings are written to disk
     And Housebroken loads "TfReduced" with carried Dirt
@@ -46,7 +46,7 @@ Feature: Housebroken deposits: manure while walking, and mud and blood carried
     Then Housebroken counted dropped filth from "TfReduced"
     And no errors were logged
 
-  Scenario: TF-11 carried blood is held inside and released outside
+  Scenario: TF-11 carried blood
     Given Housebroken setting "manureOutdoors" is set to "false"
     And Housebroken settings are written to disk
     And Housebroken loads "TfReduced" with carried Blood
@@ -60,7 +60,7 @@ Feature: Housebroken deposits: manure while walking, and mud and blood carried
     Then Housebroken counted dropped filth from "TfReduced"
     And no errors were logged
 
-  Scenario: TF-12 the two options are independent, and whole-home mode governs feet on its own
+  Scenario: TF-12 independent options
     Given Housebroken loads "TfReduced" with carried Dirt
     When Housebroken walks "TfReduced" for 3000 steps at "closed room"
     Then Housebroken counted no manure from "TfReduced"

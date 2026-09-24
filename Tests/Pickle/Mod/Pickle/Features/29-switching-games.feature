@@ -1,6 +1,6 @@
 Feature: Nothing of a game leaks into the next one
 
-  Scenario: TF-19 an animal of the next game that reuses an ID gets its own factor
+  Scenario: TF-19 a reused ID gets its own factor
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

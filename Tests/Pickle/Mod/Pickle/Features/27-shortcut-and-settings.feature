@@ -1,5 +1,5 @@
 @review @rimmsqol @requires:MalteSchulze.RIMMSqol @requires:nelim.pickletools.rimmsqol @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.hoversteps
-Feature: The two routes to the settings share one page, one value and one effect
+Feature: Settings routes
 
   Background:
     Given the save "test-colony" is loaded
@@ -15,7 +15,7 @@ Feature: The two routes to the settings share one page, one value and one effect
     Then mod "MalteSchulze.RIMMSqol" is loaded
     And RIMMSQOL is ready to be driven
 
-  Scenario: TF-21 change through the shortcut, read through Mod options, and the reverse
+  Scenario: TF-21 shortcut and Mod options routes
     Then Housebroken shortcut is hidden and not greyed on a clean configuration
     When RIMMSQOL reveals the main button "Housebroken_Settings"
     Then the main bar draws the button "Housebroken_Settings"

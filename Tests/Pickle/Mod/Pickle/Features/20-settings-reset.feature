@@ -1,5 +1,5 @@
 @review @requires:nelim.pickletools.keyedclick @requires:nelim.pickletools.screenshotmode
-Feature: Housebroken settings: every value changes, applies, and the reset button restores them
+Feature: Housebroken settings and reset
 
   Background:
     Given the save "test-colony" is loaded
@@ -13,7 +13,7 @@ Feature: Housebroken settings: every value changes, applies, and the reset butto
     And Housebroken teaches "TfElephant" the training "Obedience"
     And Housebroken teaches "TfElephant" the training "Haul"
 
-  Scenario: TF-15 a change applies on close, cancelling the reset changes nothing, confirming it restores the defaults
+  Scenario: TF-15 change, cancel reset, confirm reset
     Given Housebroken setting "obedientFactor" is set to "0.9"
     And Housebroken setting "wellTrainedFactor" is set to "0.8"
     And Housebroken setting "intermediateSpeciesFactor" is set to "0.7"

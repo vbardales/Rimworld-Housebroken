@@ -1,4 +1,4 @@
-Feature: Housebroken filth rate, from loading to the individual and species factors
+Feature: Housebroken filth rate factors
 
   Background:
     Given the save "test-colony" is loaded
@@ -23,7 +23,7 @@ Feature: Housebroken filth rate, from loading to the individual and species fact
     And Housebroken shortcut is hidden and not greyed on a clean configuration
     And no errors were logged
 
-  Scenario: TF-02 individual and species factors multiply, and extra training does not stack
+  Scenario: TF-02 factors multiply, extra training does not stack
     Given Housebroken setting "manureOutdoors" is set to "false"
     And Housebroken settings are written to disk
     And Housebroken spawns the colony animal "TfCow" as "Cow"
@@ -63,7 +63,7 @@ Feature: Housebroken filth rate, from loading to the individual and species fact
     And Housebroken explanation for "TfElephantOne" names no location rule
     And no errors were logged
 
-  Scenario: TF-03 learning and losing training moves the rate step by step
+  Scenario: TF-03 learning and losing training
     Given Housebroken setting "manureOutdoors" is set to "false"
     And Housebroken settings are written to disk
     And Housebroken spawns the colony animal "TfElephant" as "Elephant"

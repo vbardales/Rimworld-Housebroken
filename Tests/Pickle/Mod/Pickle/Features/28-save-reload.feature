@@ -12,7 +12,7 @@ Feature: Housebroken across a save and a reload
     And Housebroken teaches "TfReduced" the training "Obedience"
     And Housebroken teaches "TfReduced" the training "Haul"
 
-  Scenario: TF-17 the carried mud survives a save and a reload, and the rules still hold
+  Scenario: TF-17 carried mud survives save and reload
     Given Housebroken loads "TfReduced" with carried Dirt
     And Housebroken puts "TfReduced" at "closed room"
     When I save and reload as "housebroken-tf17"

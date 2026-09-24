@@ -1,6 +1,6 @@
 Feature: An animal travels to another map by caravan
 
-  Scenario: TF-19 the rate follows the map the animal is on, in transit and after arrival
+  Scenario: TF-19 the rate follows the map
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

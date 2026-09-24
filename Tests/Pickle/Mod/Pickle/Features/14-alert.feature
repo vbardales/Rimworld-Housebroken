@@ -9,7 +9,7 @@ Feature: Housebroken and the animal filth alert
     And Housebroken settings are written to disk
     And Housebroken builds its test yard
 
-  Scenario: TF-13 the exemption removes a reduced animal from the alert and gives it back
+  Scenario: TF-13 the alert exemption
     Given Housebroken spawns the colony animal "TfElephant" as "Elephant"
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
@@ -29,7 +29,7 @@ Feature: Housebroken and the animal filth alert
     Then Housebroken alert lists "TfElephant"
     And no errors were logged
 
-  Scenario: TF-14 a mixed list keeps only the unreduced animals, each on its own target
+  Scenario: TF-14 a mixed list in the alert
     Given Housebroken spawns the colony animal "TfReducedOne" as "Elephant"
     And Housebroken spawns the colony animal "TfReducedTwo" as "Elephant"
     And Housebroken spawns the colony animal "TfCowOne" as "Cow"

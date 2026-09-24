@@ -1,4 +1,4 @@
-Feature: Housebroken sliders, eligible animals and the sentience catalyst
+Feature: Housebroken sliders, eligibility, catalyst
 
   Background:
     Given the save "test-colony" is loaded
@@ -41,7 +41,7 @@ Feature: Housebroken sliders, eligible animals and the sentience catalyst
     Then Housebroken filth rate of "TfElephant" is "0" times its base rate
     And no errors were logged
 
-  Scenario: TF-05 only colony animals are reduced, and a faction change follows at once
+  Scenario: TF-05 only colony animals are reduced
     Given Housebroken setting "manureOutdoors" is set to "false"
     And Housebroken settings are written to disk
     And Housebroken spawns the colony animal "TfColony" as "Elephant"
@@ -70,7 +70,7 @@ Feature: Housebroken sliders, eligible animals and the sentience catalyst
     And no errors were logged
 
   @requires:ludeon.rimworld.odyssey
-  Scenario: TF-06 the sentience catalyst counts through the trainability it gives
+  Scenario: TF-06 the sentience catalyst
     Given Housebroken setting "manureOutdoors" is set to "false"
     And Housebroken settings are written to disk
     And Housebroken spawns the colony animal "TfCow" as "Cow"

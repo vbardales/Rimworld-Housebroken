@@ -1,5 +1,5 @@
 @requires:nelim.housebroken.pickletests.otherfilthafter
-Feature: Another mod adds a FilthRate stat part, loaded after Housebroken
+Feature: Other FilthRate part, after
 
   Background:
     Given the save "test-colony" is loaded
@@ -15,7 +15,7 @@ Feature: Another mod adds a FilthRate stat part, loaded after Housebroken
     And Housebroken spawns the colony animal "TfCow" as "Cow"
     And Housebroken teaches "TfCow" the training "Tameness"
 
-  Scenario: TF-20 both contributions stand and the Housebroken one appears once
+  Scenario: TF-20 both contributions stand
     Then mod "nelim.housebroken.pickletests.otherfilthafter" loads after "nelim.housebroken"
     And Housebroken filth rate of "TfCow" is "1.5" times its base rate
     And Housebroken explanation for "TfCow" names no Housebroken factor

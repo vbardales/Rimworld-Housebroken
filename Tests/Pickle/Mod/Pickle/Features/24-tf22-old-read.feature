@@ -1,6 +1,6 @@
-Feature: The older settings file, read again after a restart
+Feature: Older settings file, after restart
 
-  Scenario: TF-22 the values written on close come back, and the original file is put back
+  Scenario: TF-22 old file, read after restart
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

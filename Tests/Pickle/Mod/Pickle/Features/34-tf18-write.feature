@@ -1,7 +1,7 @@
 @requires:nelim.housebroken.pickleremoval
-Feature: A game is saved with Housebroken, for a launch that has to load it without the mod
+Feature: Save with Housebroken for removal
 
-  Scenario: TF-18 save with the mod active, check what the save holds, hand it to the removal check
+  Scenario: TF-18 save, check, hand over
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

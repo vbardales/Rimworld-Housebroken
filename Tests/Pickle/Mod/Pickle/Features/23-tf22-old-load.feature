@@ -1,7 +1,7 @@
 @review @requires:nelim.pickletools.screenshotmode
-Feature: An older settings file, missing the fields added since
+Feature: Older settings file
 
-  Scenario: TF-22 missing fields take their defaults and the rates follow
+  Scenario: TF-22 missing fields take defaults
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

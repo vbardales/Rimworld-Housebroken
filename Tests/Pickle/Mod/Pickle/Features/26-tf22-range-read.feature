@@ -1,6 +1,6 @@
-Feature: The out-of-range settings file, read again after a restart
+Feature: Out-of-range file, after restart
 
-  Scenario: TF-22 the normalized values were written on close and come back
+  Scenario: TF-22 range file, read after restart
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

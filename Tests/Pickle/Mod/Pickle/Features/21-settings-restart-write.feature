@@ -1,6 +1,6 @@
-Feature: Housebroken settings are written for a separate-process restart
+Feature: Settings written for a restart
 
-  Scenario: TF-15 write a distinctive value for every setting and keep the file for the next launch
+  Scenario: TF-15 write settings, keep the file
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs

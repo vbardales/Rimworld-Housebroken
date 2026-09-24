@@ -42,7 +42,7 @@ Feature: Housebroken holds it inside the base and lets it out
     Then Housebroken filth rate of "TfElephant" is "0" times its base rate
     And no errors were logged
 
-  Scenario: TF-09 the indoor and outdoor factors, and switching the rule off
+  Scenario: TF-09 indoor and outdoor factors
     Given Housebroken setting "indoorFactor" is set to "0.5"
     And Housebroken setting "outdoorFactor" is set to "3"
     And Housebroken settings are written to disk

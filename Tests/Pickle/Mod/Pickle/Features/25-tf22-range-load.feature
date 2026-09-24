@@ -1,7 +1,7 @@
 @review @requires:nelim.pickletools.screenshotmode
-Feature: A settings file with numbers outside the slider ranges
+Feature: Out-of-range settings file
 
-  Scenario: TF-22 finite values clamp, non-finite values fall back, and no rate goes negative
+  Scenario: TF-22 out-of-range values are normalized
     Given the save "test-colony" is loaded
     And game speed is paused
     And I close all dialogs
