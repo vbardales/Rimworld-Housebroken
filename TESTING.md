@@ -13,9 +13,9 @@ RIMMSQOL is a separately requested shortcut integration check.
 
 | Pass | Map and language | Scope | Evidence / state |
 | --- | --- | --- | --- |
-| Minimal EN | `wsl-deps.runtime-evidence.map`, English | Native options, hidden MainButton and EN page | `Tests/Pickle/evidence/2026-09-22/runtime-evidence-English/`; 3 passed, 1 skipped (RIMMSQOL absent) |
-| Minimal FR | `wsl-deps.runtime-evidence.map`, French | Same UI paths and FR page | `Tests/Pickle/evidence/2026-09-22/runtime-evidence-French/`; 3 passed, 1 skipped (RIMMSQOL absent) |
-| With RIMMSQOL EN | `wsl-deps.avec-rimmsqol.map`, English, `04-rimmsqol.feature` | List, reveal, activate, hide and forget the Housebroken shortcut | `Tests/Pickle/evidence/2026-09-22/avec-rimmsqol-English/`; 1 passed |
+| Minimal EN | `wsl-deps.runtime-evidence.map`, English | Native options, hidden MainButton and EN page | 3 passed, 1 skipped (RIMMSQOL absent); [docs/runs/2026-09-22.md](docs/runs/2026-09-22.md) |
+| Minimal FR | `wsl-deps.runtime-evidence.map`, French | Same UI paths and FR page | 3 passed, 1 skipped (RIMMSQOL absent); [docs/runs/2026-09-22.md](docs/runs/2026-09-22.md) |
+| With RIMMSQOL EN | `wsl-deps.avec-rimmsqol.map`, English, `04-rimmsqol.feature` | List, reveal, activate, hide and forget the Housebroken shortcut | 1 passed; [docs/runs/2026-09-22.md](docs/runs/2026-09-22.md) |
 
 All three reports ended with `exitReason: passed`; their seven Housebroken captures were
 opened and reviewed. The English RIMMSQOL pass does not establish French shortcut text or
@@ -33,6 +33,9 @@ Housebroken's own values after restart; whether RIMMSQOL remembers a button-visi
 choice after restart belongs to RIMMSQOL, not Housebroken.
 
 For every future WSL Pickle run, use the shared `scripts/Run-PickleWsl.ps1` launcher and
-its `-EvidenceDir` option pointing inside this repository. Inspect `exitReason`, the
-discovered/playable scenario count, logs and every `@review` capture, then retain or cycle
-the report inside this mod before handing over. Never launch the Windows RimWorld.
+its `-EvidenceDir` option pointing inside this repository (`Tests/Pickle/Evidence/<run>`,
+ignored by git). Inspect `exitReason`, the discovered/playable scenario count, logs and every
+`@review` capture. Then **minify before handing over** and add one line to `docs/runs/`;
+[docs/runs/README.md](docs/runs/README.md) lists what is kept (summary, JUnit, a log check,
+a few small captures) and what is dropped (PNGs, HTML report, message stream, `Player.log`).
+Never launch the Windows RimWorld.

@@ -30,9 +30,8 @@ Each `@review` screenshot needs a human review after a complete report: check Fr
 keys/accented fallback or clean English literals, confirm controls are not clipped, and confirm
 the shortcut opens the Housebroken settings page. A green capture proves only that it was taken.
 
-The 2026-09-22 evidence is preserved under `evidence/2026-09-22/`: the English and French
-`runtime-evidence` reports each have 3 passed, 0 failed, 1 skipped (RIMMSQOL absent), while
-`avec-rimmsqol-English` has 1 passed, 0 failed. Each folder retains the complete report files
-and only its Housebroken screenshots. All seven captures were reviewed as legible and unclipped;
-the three runs cover different configurations, so none was cycled. They do not establish the
-manual animal/gameplay scenarios or RIMMSQOL's own persistence across a restart.
+Run reports are **on disk and ignored by git** (`Tests/Pickle/evidence/`), and only in a minified form:
+`summary.md`, `junit.xml`, a `log-check.txt` and a few 1280 px JPEG captures per run. What each run showed is
+written in text in [`../../docs/runs/`](../../docs/runs/README.md), which also says which proofs to keep and which
+to drop after a test. The 2026-09-22 runs are listed there; they do not establish the manual animal/gameplay
+scenarios, that a written setting survives a restart, or RIMMSQOL's own persistence.

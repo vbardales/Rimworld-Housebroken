@@ -38,3 +38,10 @@ desktop.ini
 # attribute and ignore patterns are not case-folded on every platform.
 *.dds
 *.DDS
+
+# Evidence of Pickle runs: on disk, never in git. Both spellings, since the launcher's -EvidenceDir
+# writes to Tests/Pickle/Evidence/ and the runs of 2026-09-22 sit in Tests/Pickle/evidence/. The text that says
+# what was concluded is docs/runs/. Films are as heavy as the captures and just as local.
+Tests/Pickle/evidence/
+Tests/Pickle/Evidence/
+*.webm

@@ -29,7 +29,7 @@ remaining:
     until the next upload.
   - defect: the local main branch is ahead of origin/main and has not been pushed.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-24, modVersion set to 0.1.0; v1.0.0 tag still to decide
+updated:      2026-09-24, Pickle evidence taken out of git and minified; docs/runs added
 ---
 
 # Housebroken — status
@@ -52,15 +52,16 @@ Three conditions, all required. The stage stays `done` until the third holds.
 After the first queued French/RIMMSQOL tickets disappeared without running, the maintainer
 authorized a requeue. The French `runtime-evidence` pass (PID 28556; machine log `LOCK`
 23:19:39, `STAGE` 23:21:03, `UNLOCK` 23:24:25) completed with 3 passed, 0 failed and
-1 skipped: the optional RIMMSQOL case was not staged in that pass. Its complete report,
-including `Player.log`, was preserved from shared archive `0922-2324` at
-`Tests/Pickle/evidence/2026-09-22/runtime-evidence-French/`. All three Housebroken
-screenshots were opened; the French labels and accents are legible, with no visible raw
+1 skipped: the optional RIMMSQOL case was not staged in that pass. Its report was copied
+from shared archive `0922-2324`, then minified on 2026-09-24 to
+`Tests/Pickle/evidence/2026-09-22/runtime-evidence-French/` (summary, JUnit, a log check
+and two captures; `docs/runs/`). All three Housebroken
+screenshots were opened before that; the French labels and accents are legible, with no visible raw
 keys or clipping. The native path and MainButtons shortcut show the same settings page.
 
 The separate English `avec-rimmsqol` pass (PID 13800; `LOCK` 23:27:03, `STAGE` 23:27:37,
-`UNLOCK` 23:29:25) completed with 1 passed, 0 failed and 0 skipped. Its complete report
-was preserved from archive `0922-2329` at
+`UNLOCK` 23:29:25) completed with 1 passed, 0 failed and 0 skipped. Its report
+was copied from archive `0922-2329`, then minified on 2026-09-24 to
 `Tests/Pickle/evidence/2026-09-22/avec-rimmsqol-English/`, with only the Housebroken
 capture. That capture was opened: the settings page is legible and unclipped after the
 RIMMSQOL reveal/activation path. The scenario also asserted the initial hidden state,
@@ -71,7 +72,8 @@ not Housebroken.
 Together with the earlier English pass below, these are three distinct evidence sets,
 so this session retains all three and has no redundant older Housebroken report to cycle.
 Only Housebroken screenshots were copied; shared archives and other mods' reports were
-left intact. The Pickle reports establish these UI paths only, not TF-01..22 gameplay,
+left intact. The reports are on disk and ignored by git, minified to text plus a few
+captures; `docs/runs/README.md` says which proofs to keep. The Pickle reports establish these UI paths only, not TF-01..22 gameplay,
 new/existing save acceptance, or a general compatibility guarantee. `stage: done`
 remains unchanged.
 
@@ -87,10 +89,10 @@ delivered companion remains the exact binary used by these Pickle runs.
 The WSL `runtime-evidence` English pass launched under the shared lock (PID 33800;
 machine log `LOCK` 17:44:53, `STAGE` 17:45:11, `UNLOCK` 17:46:59). Its report has
 `exitReason: passed`: three scenarios passed, none failed, and the RIMMSQOL scenario
-was skipped because its optional dependencies were not staged. The report, `Player.log`,
-JUnit, messages and the three Housebroken captures were copied from archive `0922-1746`
-to `Tests/Pickle/evidence/2026-09-22/runtime-evidence-English/` before the shared archive
-rotates. All three captures were opened: each shows the Housebroken settings page with its
+was skipped because its optional dependencies were not staged. The full report was copied
+from archive `0922-1746` before the shared archive rotated, then minified on 2026-09-24 to
+`Tests/Pickle/evidence/2026-09-22/runtime-evidence-English/` (see `docs/runs/`). All three
+captures were opened before that; each shows the Housebroken settings page with its
 controls legible and unclipped. This includes the capture from the MainButtons shortcut;
 an earlier description of that image as a blank window was incorrect. These screenshots
 show the English page, not animal behavior or French rendering. At that point French,
