@@ -17,6 +17,9 @@
     <PackageReference Include="RimWorks.Pickle.Ref" Version="4.*" ExcludeAssets="runtime" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
+    <Publicize Include="Assembly-CSharp" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="Housebroken"><HintPath>..\..\..\Mod\Assemblies\Housebroken.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
 </Project>
