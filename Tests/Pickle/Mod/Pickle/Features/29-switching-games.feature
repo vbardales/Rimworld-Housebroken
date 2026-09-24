@@ -12,6 +12,7 @@ Feature: Nothing of a game leaks into the next one
     And Housebroken teaches "TfFirst" the training "Tameness"
     And Housebroken teaches "TfFirst" the training "Obedience"
     And Housebroken teaches "TfFirst" the training "Haul"
+    And Housebroken lets 251 game ticks pass
     Then Housebroken filth rate of "TfFirst" is "0.15" times its base rate
     When Housebroken records the thing ID of "TfFirst"
     Given the save "test-colony" is loaded

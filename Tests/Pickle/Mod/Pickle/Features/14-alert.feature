@@ -13,6 +13,7 @@ Feature: Housebroken and the animal filth alert
     Given Housebroken spawns the colony animal "TfElephant" as "Elephant"
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
+    And Housebroken lets 251 game ticks pass
     When Housebroken puts "TfElephant" at "closed room"
     Then Housebroken filth rate of "TfElephant" is "0.3" times its base rate
     When Housebroken setting "exemptFromAlert" is set to "false"
@@ -40,6 +41,7 @@ Feature: Housebroken and the animal filth alert
     And Housebroken teaches "TfReducedTwo" the training "Obedience"
     And Housebroken teaches "TfCowOne" the training "Tameness"
     And Housebroken teaches "TfCowTwo" the training "Tameness"
+    And Housebroken lets 251 game ticks pass
     And Housebroken setting "exemptFromAlert" is set to "false"
     And Housebroken settings are written to disk
     When Housebroken puts "TfReducedOne" at "closed room"

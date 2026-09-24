@@ -12,6 +12,7 @@ Feature: Housebroken settings and reset
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
     And Housebroken teaches "TfElephant" the training "Haul"
+    And Housebroken lets 251 game ticks pass
 
   Scenario: TF-15 change, cancel reset, confirm reset
     Given Housebroken setting "obedientFactor" is set to "0.9"

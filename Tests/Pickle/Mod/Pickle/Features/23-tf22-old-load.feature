@@ -20,6 +20,7 @@ Feature: Older settings file
     And Housebroken spawns the colony animal "TfElephant" as "Elephant"
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
+    And Housebroken lets 251 game ticks pass
     Then Housebroken filth rate of "TfElephant" is "0.42" times its base rate
     When I open the Housebroken settings dialog
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows

@@ -11,6 +11,7 @@ Feature: An animal travels to another map by caravan
     And Housebroken teaches "TfTraveller" the training "Tameness"
     And Housebroken teaches "TfTraveller" the training "Obedience"
     And Housebroken teaches "TfTraveller" the training "Haul"
+    And Housebroken lets 251 game ticks pass
     Then Housebroken filth rate of "TfTraveller" at "closed room" is "0" times its base rate
     Given Housebroken founds a second colony map
     When Housebroken sends "TfTraveller" on a caravan towards the second map

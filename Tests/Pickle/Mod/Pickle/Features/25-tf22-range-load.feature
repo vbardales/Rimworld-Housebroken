@@ -21,6 +21,7 @@ Feature: Out-of-range settings file
     And Housebroken teaches "TfMore" the training "Tameness"
     And Housebroken teaches "TfMore" the training "Obedience"
     And Housebroken teaches "TfMore" the training "Haul"
+    And Housebroken lets 251 game ticks pass
     Then Housebroken filth rate of "TfTame" at "outdoors" is "2.4" times its base rate
     And Housebroken filth rate of "TfTame" at "closed room" is "0.6" times its base rate
     And Housebroken filth rate of "TfObey" at "closed room" is "0.6" times its base rate

@@ -13,6 +13,7 @@ Feature: Housebroken deposits
     And Housebroken teaches "TfReduced" the training "Haul"
     And Housebroken spawns the colony animal "TfControl" as "Cow"
     And Housebroken teaches "TfControl" the training "Tameness"
+    And Housebroken lets 251 game ticks pass
 
   Scenario: TF-10 manure while moving
     Then Housebroken filth rate of "TfControl" is "1" times its base rate

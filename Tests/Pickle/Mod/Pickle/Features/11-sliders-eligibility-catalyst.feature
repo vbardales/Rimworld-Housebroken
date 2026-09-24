@@ -14,6 +14,7 @@ Feature: Housebroken sliders, eligibility, catalyst
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
     And Housebroken teaches "TfElephant" the training "Haul"
+    And Housebroken lets 251 game ticks pass
     Then Housebroken filth rate of "TfElephant" is "0.15" times its base rate
     When Housebroken setting "wellTrainedFactor" is set to "0.4"
     And Housebroken setting "advancedSpeciesFactor" is set to "0.75"

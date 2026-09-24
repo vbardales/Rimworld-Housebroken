@@ -12,6 +12,7 @@ Feature: Settings routes
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
     And Housebroken teaches "TfElephant" the training "Haul"
+    And Housebroken lets 251 game ticks pass
     Then mod "MalteSchulze.RIMMSqol" is loaded
     And RIMMSQOL is ready to be driven
 

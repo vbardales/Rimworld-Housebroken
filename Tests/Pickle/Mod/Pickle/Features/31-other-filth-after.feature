@@ -14,6 +14,7 @@ Feature: Other FilthRate part, after
     And Housebroken teaches "TfElephant" the training "Haul"
     And Housebroken spawns the colony animal "TfCow" as "Cow"
     And Housebroken teaches "TfCow" the training "Tameness"
+    And Housebroken lets 251 game ticks pass
 
   Scenario: TF-20 both contributions stand
     Then mod "nelim.housebroken.pickletests.otherfilthafter" loads after "nelim.housebroken"

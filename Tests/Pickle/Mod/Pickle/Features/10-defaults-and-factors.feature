@@ -48,6 +48,7 @@ Feature: Housebroken filth rate factors
     And Housebroken teaches "TfElephantSeveral" the training "Haul"
     And Housebroken teaches "TfElephantSeveral" the training "Rescue"
     And Housebroken teaches "TfElephantSeveral" the training "Release"
+    And Housebroken lets 251 game ticks pass
     Then Housebroken trainability of "TfCow" is None
     And Housebroken trainability of "TfRhino" is Intermediate
     And Housebroken trainability of "TfElephant" is Advanced

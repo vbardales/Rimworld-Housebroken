@@ -11,6 +11,7 @@ Feature: Housebroken holds it inside the base and lets it out
     And Housebroken teaches "TfElephant" the training "Tameness"
     And Housebroken teaches "TfElephant" the training "Obedience"
     And Housebroken teaches "TfElephant" the training "Haul"
+    And Housebroken lets 251 game ticks pass
 
   Scenario: TF-07 the boundaries of the base
     Then Housebroken filth rate of "TfElephant" at "closed room" is "0" times its base rate

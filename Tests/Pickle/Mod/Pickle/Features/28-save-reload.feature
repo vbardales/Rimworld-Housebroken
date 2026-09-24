@@ -11,6 +11,7 @@ Feature: Housebroken across a save and a reload
     And Housebroken teaches "TfReduced" the training "Tameness"
     And Housebroken teaches "TfReduced" the training "Obedience"
     And Housebroken teaches "TfReduced" the training "Haul"
+    And Housebroken lets 251 game ticks pass
 
   Scenario: TF-17 carried mud survives save and reload
     Given Housebroken loads "TfReduced" with carried Dirt
