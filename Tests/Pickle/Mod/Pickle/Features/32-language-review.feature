@@ -1,4 +1,4 @@
-@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.interfacescale @requires:nelim.pickletools.keyedclick @requires:nelim.pickletools.hoversteps
+@review @requires:nelim.pickletools.screenshotmode @requires:nelim.pickletools.interfacescale @requires:nelim.pickletools.keyedclick
 Feature: Settings page sizes and tooltips
 
   Background:
@@ -26,6 +26,7 @@ Feature: Settings page sizes and tooltips
     And I close all dialogs
     Then no errors were logged
 
+  @requires:nelim.pickletools.hoversteps
   Scenario: TF-16 every tooltip is drawn
     When I open the Housebroken settings dialog
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows

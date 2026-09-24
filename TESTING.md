@@ -35,7 +35,8 @@ teleport from cell to cell. **None of these passes has run yet**; each result go
 | Pass | Command, from the collection root | Features | Covers |
 | --- | --- | --- | --- |
 | Minimal | `Run-PickleWsl.ps1 -Mod Housebroken -Filter '10-defaults-and-factors,11-sliders-eligibility-catalyst,12-location,13-deposits,14-alert'` | 10 to 14 | TF-01 to TF-14. TF-06 needs Odyssey |
-| Settings | `-DepMap wsl-deps.settings.map -Filter '20-settings-reset,29-switching-games,32-language-review'`, English then French | 20, 29, 32 | TF-15 reset, TF-19 switching games, TF-16 page at two scales and every tooltip |
+| Settings | `-DepMap wsl-deps.settings.map -Filter '20-settings-reset,29-switching-games,32-language-review'`, English then French | 20, 29, 32 | TF-15 reset, TF-19 switching games, TF-16 page at two scales |
+| Tooltips | `-DepMap wsl-deps.hover.map -Filter 32-language-review`, English then French | 32 | TF-16 every tooltip, hovered and captured (the HoverSteps tool, first played here) |
 | Restart | `-DepMap wsl-deps.settings.map -Filter 21-settings-restart-write -Then 22-settings-restart-read` | 21, 22 | TF-15 persistence |
 | Save and reload | `-Filter 28-save-reload` | 28 | TF-17, and TF-18 first half: a save holds no data of the mod |
 | Caravan | `-Filter 33-caravan-to-second-map` | 33 | TF-19 transfer between two maps |
