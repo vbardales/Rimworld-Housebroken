@@ -23,12 +23,13 @@ remaining:
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
     messages for item 3806137798 have not been evidenced in this audit.
-  - defect: `Mod/About/About.xml` still says `modVersion` 1.0.0 and `v1.0.0` exists on origin
-    (commit 21719c6, before the prepublication), while the Workshop item and CHANGELOG.md say
-    0.1.0. Decide which side moves before the CI creates any tag.
+  - defect: `modVersion` now says 0.1.0, matching the Workshop item and CHANGELOG.md, but a
+    `v1.0.0` tag still exists on origin (commit 21719c6, before the prepublication). Remove or
+    keep it before the CI creates any tag; the change to `modVersion` is not on the Workshop
+    until the next upload.
   - defect: the local main branch is ahead of origin/main and has not been pushed.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-24, CHANGELOG restarted at 0.1.0; tested gate recorded, not yet met
+updated:      2026-09-24, modVersion set to 0.1.0; v1.0.0 tag still to decide
 ---
 
 # Housebroken — status
