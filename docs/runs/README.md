@@ -38,3 +38,4 @@ Rules kept here:
 | File | Covers |
 | --- | --- |
 | [2026-09-22.md](2026-09-22.md) | The first runs of the Pickle suite: English, French and RIMMSQOL, and two tickets that never ran |
+| [2026-09-24.md](2026-09-24.md) | The first runs of the functional scenarios TF-01 to TF-22 |
