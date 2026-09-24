@@ -23,13 +23,11 @@ remaining:
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
     messages for item 3806137798 have not been evidenced in this audit.
-  - defect: `modVersion` now says 0.1.0, matching the Workshop item and CHANGELOG.md, but a
-    `v1.0.0` tag still exists on origin (commit 21719c6, before the prepublication). Remove or
-    keep it before the CI creates any tag; the change to `modVersion` is not on the Workshop
-    until the next upload.
-  - defect: the local main branch is ahead of origin/main and has not been pushed.
+  - defect: the Workshop item was uploaded before `modVersion` moved to 0.1.0, so the About it
+    carries still says 1.0.0 until the next upload. The stale `v1.0.0` tag was deleted from
+    origin on 2026-09-24; the CI creates `v0.1.0` after a successful upload, never by hand.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-24, Pickle evidence taken out of git and minified; docs/runs added
+updated:      2026-09-24, stale v1.0.0 tag deleted; the CI will create v0.1.0
 ---
 
 # Housebroken — status
