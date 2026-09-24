@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SettingsBlock>
+  <ModSettings Class="Housebroken.HousebrokenSettings">
+    <obedientFactor>5</obedientFactor>
+    <wellTrainedFactor>-2</wellTrainedFactor>
+    <intermediateSpeciesFactor>NaN</intermediateSpeciesFactor>
+    <advancedSpeciesFactor>Infinity</advancedSpeciesFactor>
+    <indoorFactor>3</indoorFactor>
+    <outdoorFactor>99</outdoorFactor>
+  </ModSettings>
+</SettingsBlock>

@@ -14,8 +14,7 @@ namespace Housebroken.PickleSteps
     {
         internal static Pawn Named(PickleContext ctx, string name)
         {
-            var map = Yard.Map(ctx);
-            var pawn = map.mapPawns.AllPawnsSpawned.FirstOrDefault(p =>
+            var pawn = PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive.FirstOrDefault(p =>
                 (p.Name is NameSingle single && single.Name == name) || p.LabelShort == name);
             ctx.Require(pawn != null, "no spawned pawn named \"" + name + "\"");
             return pawn;
@@ -201,7 +200,7 @@ namespace Housebroken.PickleSteps
             AssertRate(ctx, pawn, factor);
         }
 
-        private static string Explanation(Pawn pawn)
+        internal static string Explanation(Pawn pawn)
         {
             var stat = StatDefOf.FilthRate;
             return stat.Worker.GetExplanationFull(StatRequest.For(pawn), ToStringNumberSense.Absolute,
@@ -209,7 +208,7 @@ namespace Housebroken.PickleSteps
         }
 
         // The translated line up to its placeholder, so the check follows the language of the pass.
-        private static string Prefix(string key)
+        internal static string Prefix(string key)
         {
             var resolved = key.Translate("@@").Resolve();
             var cut = resolved.IndexOf("@@", StringComparison.Ordinal);
@@ -258,6 +257,17 @@ namespace Housebroken.PickleSteps
             var pawn = Named(ctx, name);
             ExplanationHas(ctx, pawn, "Housebroken.Stat.HoldingIt", false);
             ExplanationHas(ctx, pawn, "Housebroken.Stat.Outside", false);
+        }
+
+        [Then("Housebroken explanation for {string} names the training factor exactly once")]
+        public void ExplainsTrainingOnce(PickleContext ctx, string name)
+        {
+            var pawn = Named(ctx, name);
+            var text = Explanation(pawn);
+            var prefix = Prefix("Housebroken.Stat.Trained");
+            int count = 0, at = 0;
+            while ((at = text.IndexOf(prefix, at, StringComparison.Ordinal)) >= 0) { count++; at += prefix.Length; }
+            ctx.Assert(count == 1, pawn.LabelShort + " explanation carries the Housebroken line " + count + " times, expected once, in: " + text);
         }
 
         [Then("Housebroken trainability of {string} is {word}")]

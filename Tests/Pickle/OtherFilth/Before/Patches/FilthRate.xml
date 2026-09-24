@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/StatDef[defName="FilthRate"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/StatDef[defName="FilthRate"]/parts</xpath>
+      <value>
+        <li Class="StatPart_Age"><curve><points><li>(0, 1.5)</li><li>(1000, 1.5)</li></points></curve></li>
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>/Defs/StatDef[defName="FilthRate"]</xpath>
+      <value>
+        <parts>
+          <li Class="StatPart_Age"><curve><points><li>(0, 1.5)</li><li>(1000, 1.5)</li></points></curve></li>
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
