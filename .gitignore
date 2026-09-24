@@ -32,3 +32,9 @@ Source/bin/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# DirectDraw Surface textures. RimWorld loads a .dds in preference to the .png beside it, so a
+# stray one silently overrides the tracked texture. This mod ships none. Listed twice because
+# attribute and ignore patterns are not case-folded on every platform.
+*.dds
+*.DDS
