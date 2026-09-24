@@ -23,18 +23,28 @@ remaining:
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
     messages for item 3806137798 have not been evidenced in this audit.
-  - defect: the distributed metadata and local tag identify 1.0.0, while the maintainer
-    reports the Workshop publication as 0.1.0; reconcile the version record before any
-    further release claim.
+  - defect: `Mod/About/About.xml` still says `modVersion` 1.0.0 and `v1.0.0` exists on origin
+    (commit 21719c6, before the prepublication), while the Workshop item and CHANGELOG.md say
+    0.1.0. Decide which side moves before the CI creates any tag.
   - defect: the local main branch is ahead of origin/main and has not been pushed.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-22, English/French and RIMMSQOL Pickle reports preserved and reviewed; gameplay acceptance pending
+updated:      2026-09-24, CHANGELOG restarted at 0.1.0; tested gate recorded, not yet met
 ---
 
 # Housebroken — status
 
 Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by the session
 that holds this mod, not by the sweep that first wrote it.
+
+## Gate to `tested`, as of 2026-09-24
+
+Three conditions, all required. The stage stays `done` until the third holds.
+
+| Condition | State |
+| --- | --- |
+| No scenario left `@wip` | Met: the four Pickle features carry `@review` and `@requires`, none carries `@wip`. |
+| Every conditional scenario has run | Met for the evidence kept: the RIMMSQOL feature was skipped in the two `runtime-evidence` passes and passed alone in `avec-rimmsqol-English`. Re-check against the revision that is tested. |
+| No manual test left to validate, all green | **Not met.** TF-01 through TF-22 have never been executed in game. |
 
 ## Current result — three distinct Pickle passes, 2026-09-22
 
