@@ -3,7 +3,14 @@
 Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it in game.
 
-## 0.1.0
+## [Unreleased]
+
+### Changed
+
+- `modVersion` in `About.xml` now reads 0.1.0, the version the Workshop item was created with; the uploaded
+  copy still says 1.0.0 until the next upload.
+
+## [0.1.0]
 
 - Creation of the `PublishedFileId.txt` file (`Mod/About/PublishedFileId.txt`): the Workshop item exists, id
   `3806137798`. It was created by the prepublication.

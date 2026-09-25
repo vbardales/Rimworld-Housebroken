@@ -26,8 +26,8 @@ of the SHA-256 of its content and its size in bytes. Files of the monorepo are r
 | --- | --- | --- | --- |
 | `Rimworld-Release-Admin/docs/OPERATIONS.md` | `d403592` 2026-09-25 16:33, clean, `6f556de4bbf7`, 31325 | in full | Only the dry-run section, the publish workflow template (`generate-publish-workflow.sh`, `--require`, `--description-file`, `--gallery-dir`) and "First Workshop publication". Housebroken has a DLL, so the `Source/*.csproj` check passes and the runner's DLL is compared with the committed one: the committed `Mod/Assemblies/Housebroken.dll` is what ships. The rest (credentials, Skill Icons history, Codespace) is the owner's or another mod's |
 | `Housebroken/STATUS.md` | `9b1e07d` 2026-09-25 13:35, clean, `54f859619458`, 29060 | front matter and headings; the historical audits skimmed | Written by this session and by earlier audits. Only the front matter, "Gate to `tested`" and the latest result are live |
-| `Housebroken/README.md` | `b1bcc1b` 2026-09-13, clean, `3fd0623b7ce7`, 4722 | in full | **Stale in three places:** "These scenarios have not yet been executed in game", "Interactive RIMMSQOL compatibility is awaiting in-game validation", "Functional add/remove validation remains pending" |
-| `Housebroken/CHANGELOG.md` | `41d1b55` 2026-09-24, clean, `5a6d9fea09e3`, 2299 | in full | The 0.1.0 section is written `## 0.1.0`; AUDIT and the CI want `## [0.1.0]` |
+| `Housebroken/README.md` | `b1bcc1b` 2026-09-13, clean, `3fd0623b7ce7`, 4722 | in full | **Was stale in three places, corrected the same day:** "These scenarios have not yet been executed in game", "Interactive RIMMSQOL compatibility is awaiting in-game validation", "Functional add/remove validation remains pending" |
+| `Housebroken/CHANGELOG.md` | `41d1b55` 2026-09-24, clean, `5a6d9fea09e3`, 2299 | in full | The 0.1.0 section was written `## 0.1.0`; AUDIT and the CI want `## [0.1.0]`, corrected the same day |
 | `Housebroken/TESTING.md` | `1bbe583` 2026-09-24, clean, `a396acc0b3f0`, 5934 | in full | The eleven passes of TF-01 to TF-22 |
 | `Housebroken/Mod/About/About.xml` | `2c4e14b` 2026-09-24, clean, `66c1402cefd2`, 3134 | in full | THANKS lacks the test tools and RIMMSQOL, and the AI line does not name Codex |
 | `Housebroken/ATTRIBUTION.md`, `LICENSE` | `06fad23`, `ae6ae5fa894c`; `0cd6a55`, `ae6ae5fa894c` | in full | The two distributed copies in `Mod/` are byte for byte identical |
@@ -43,8 +43,15 @@ of the SHA-256 of its content and its size in bytes. Files of the monorepo are r
 
 ## Absent in this repository
 
-`PUBLICATION.md` (required before `published`: order of the captures, the thanks comments, the change note under `### 1.0.0`, the
-answer for the adult-content boxes, dependencies and DLC), `BACKLOG.md`, `NOTES.md`, `BUGS.md`. No workflow under `.github/`.
+`BACKLOG.md`, `NOTES.md`, `BUGS.md`. No workflow under `.github/`. `PUBLICATION.md` was absent when this note was first written and was
+
+added the same day, on the model of `SkillIcons/PUBLICATION.md` (90d51374, read for its structure only).
+
+## Read afterwards, for the publication
+
+| Document | Version | Read | What applies |
+| --- | --- | --- | --- |
+| `WORKSHOP_COMMENTS.md` | modified, uncommitted by another session, 6c7d1a1c0e2-class content; edited here | table and process | One main comment per recipient page for the whole collection. Housebroken was added to the `Covers` of Harmony, Pickle, RimLogging, RIMMSQOL and PickleTools, and a `drafted` row was added for FlyingSloth's mod. The file was left uncommitted because it carries another session's pending rows |
 
 ## Referenced but not read in this pass
 
