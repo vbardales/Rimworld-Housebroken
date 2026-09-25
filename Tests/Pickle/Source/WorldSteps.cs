@@ -25,16 +25,26 @@ namespace Housebroken.PickleSteps
         public async Task FoundSecondMap(PickleContext ctx)
         {
             var first = Yard.Map(ctx);
+            // The nearest tile the game itself accepts for a new settlement. When there is none, the reasons
+            // it gives for the tiles it refused are the message: a guess at the rule would only be a second bug.
             int tile = -1;
-            for (int radius = 1; radius < 40 && tile < 0; radius++)
+            var refused = new System.Collections.Generic.Dictionary<string, int>();
+            var byDistance = Enumerable.Range(0, Find.WorldGrid.TilesCount)
+                .Where(t => t != first.Tile)
+                .OrderBy(t => Find.WorldGrid.ApproxDistanceInTiles(first.Tile, t));
+            foreach (var candidate in byDistance)
             {
-                var candidates = Enumerable.Range(0, Find.WorldGrid.TilesCount)
-                    .Where(t => Find.WorldGrid.ApproxDistanceInTiles(first.Tile, t) == radius
-                        && TileFinder.IsValidTileForNewSettlement(t));
-                if (candidates.Any()) tile = candidates.First();
+                var why = new System.Text.StringBuilder();
+                if (TileFinder.IsValidTileForNewSettlement(candidate, why)) { tile = candidate; break; }
+                var key = why.ToString().Trim();
+                int seen;
+                refused.TryGetValue(key, out seen);
+                refused[key] = seen + 1;
             }
-            ctx.Require(tile >= 0, "no valid tile for a second settlement within 40 tiles of the first map");
-
+            ctx.Require(tile >= 0,
+                "no tile of the world is valid for a second settlement (" + Find.WorldGrid.TilesCount + " tiles, the first map is on "
+                + first.Tile + "). Reasons given, with counts: "
+                + string.Join("; ", refused.OrderByDescending(kv => kv.Value).Take(8).Select(kv => "\"" + kv.Key + "\" x" + kv.Value).ToArray()));
             var settlement = (Settlement)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);
             settlement.SetFaction(Faction.OfPlayer);
             settlement.Tile = tile;
