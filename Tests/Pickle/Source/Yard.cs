@@ -156,35 +156,45 @@ namespace Housebroken.PickleSteps
             return list;
         }
 
+        /// <summary>
+        /// The rectangle with the fewest cells that need clearing, and the first fully clear one if there is any.
+        /// Prepare removes what stands on a cell, replaces the terrain and takes off the roof, so a map drawn by the
+        /// game with rock, trees or water on its west edge still gets a yard: it only costs it that ground.
+        /// </summary>
         private static bool FindClear(Map map, int w, int h, bool atWestEdge, out IntVec3 origin)
         {
             int maxX = map.Size.x - w - 3, maxZ = map.Size.z - h - 3;
+            int best = int.MaxValue;
+            origin = IntVec3.Invalid;
             for (int z = 3; z <= maxZ; z += 2)
             {
-                if (atWestEdge)
+                int x = atWestEdge ? 0 : 3;
+                for (; x <= (atWestEdge ? 0 : maxX); x += 2)
                 {
-                    if (ClearRect(map, 0, z, w, h)) { origin = new IntVec3(0, 0, z); return true; }
-                    continue;
+                    int score = Blocked(map, x, z, w, h, best);
+                    if (score >= best) continue;
+                    best = score;
+                    origin = new IntVec3(x, 0, z);
+                    if (best == 0) return true;
                 }
-                for (int x = 3; x <= maxX; x += 2)
-                    if (ClearRect(map, x, z, w, h)) { origin = new IntVec3(x, 0, z); return true; }
             }
-            origin = IntVec3.Invalid;
-            return false;
+            return origin.IsValid;
         }
 
-        private static bool ClearRect(Map map, int x0, int z0, int w, int h)
+        private static int Blocked(Map map, int x0, int z0, int w, int h, int stopAt)
         {
+            int blocked = 0;
             foreach (var c in Rect(x0, z0, w, h))
             {
-                if (!c.InBounds(map) || !c.Standable(map) || c.GetEdifice(map) != null) return false;
-                if (c.Roofed(map) || map.areaManager.Home[c]) return false;
+                if (!c.InBounds(map)) return int.MaxValue;
                 var terrain = c.GetTerrain(map);
-                if (terrain.passability == Traversability.Impassable || terrain.IsWater) return false;
+                if (!c.Standable(map) || c.GetEdifice(map) != null || c.Roofed(map) || map.areaManager.Home[c]
+                    || terrain.passability == Traversability.Impassable || terrain.IsWater)
+                    blocked++;
+                if (blocked >= stopAt) return blocked;
             }
-            return true;
+            return blocked;
         }
-
         /// <summary>Concrete floor (it carries no mud of its own), nothing lying about, no fog, no roof, not home.</summary>
         private static void Prepare(Map map, IntVec3 c)
         {
