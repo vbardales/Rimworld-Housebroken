@@ -51,7 +51,7 @@ added the same day, on the model of `SkillIcons/PUBLICATION.md` (90d51374, read 
 
 | Document | Version | Read | What applies |
 | --- | --- | --- | --- |
-| `WORKSHOP_COMMENTS.md` | modified, uncommitted by another session, 6c7d1a1c0e2-class content; edited here | table and process | One main comment per recipient page for the whole collection. Housebroken was added to the `Covers` of Harmony, Pickle, RimLogging, RIMMSQOL and PickleTools, and a `drafted` row was added for FlyingSloth's mod. The file was left uncommitted because it carries another session's pending rows |
+| `WORKSHOP_COMMENTS.md` | modified and uncommitted by another session before this session edited it; 17b48700eece after this session's edit | table and process | One main comment per recipient page for the whole collection. Housebroken was added to the `Covers` of Harmony, Pickle, RimLogging, RIMMSQOL and PickleTools, and a `drafted` row was added for FlyingSloth's mod. The file was left uncommitted because it carries another session's pending rows |
 
 ## Referenced but not read in this pass
 
