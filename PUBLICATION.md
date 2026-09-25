@@ -143,10 +143,43 @@ A trained or intelligent animal makes less mess, and does its business outside i
 
 ## Steam description
 
-The text of record is the `<description>` of `Mod/About/About.xml`. **It is not copied here yet**: its THANKS and AI-GENERATED lines are
-still to be corrected (the test tools, RIMMSQOL and Codex are not named), and the mod tree stays frozen while a test run waits in the
-queue. It is copied under this heading, ending with `[url=https://github.com/vbardales/Rimworld-Housebroken]Source code on GitHub[/url]`,
-in the same change.
+The text of record is the <description> of `Mod/About/About.xml`; this is its copy, to be kept identical to it. It ends with the source link, as the workflow expects.
+
+```text
+A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
+
+- Filth rate reduced according to the individual animal's training (obedience, then the later training steps) and to its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
+- Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
+- Mud stays outside: the same animal keeps the mud and blood it picked up on its feet while inside the base, and drops them once out.
+- Clean animals are exempted from the "animal filth" alert.
+
+Everything is adjustable in the mod options. No data is added to the save: the mod can be added to or removed from a game in progress.
+
+Interface in English and French.
+
+Source code and issue tracker:
+https://github.com/vbardales/Rimworld-Housebroken
+
+IF I GO QUIET
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+AI-GENERATED
+
+This mod's code and test suite were written with Claude Code (Anthropic) and Codex (OpenAI), and its images were generated with DALL-E (OpenAI), under human direction, review and testing. Stated openly: designing with these tools is my job.
+
+THANKS
+
+FlyingSloth, for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3525790312]Sentience Catalyst Filth Rate Reducer[/url], which gave me the idea. Housebroken keeps the principle but changes the criterion, from the sentience catalyst to training and trainability. None of their code is used here.
+
+Andreas Pardeike for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url].
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678]Pickle[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696]RimLogging[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401]PickleTools[/url] were used for development and testing only; none is a dependency of the distributed mod. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457]RIMMSQOL[/url] was used to exercise the optional MainButtons customization path during testing.
+
+This mod is MIT licensed.
+
+[url=https://github.com/vbardales/Rimworld-Housebroken]Source code on GitHub[/url]
+```
 
 ## After the upload, in this order
 

@@ -29,7 +29,7 @@ of the SHA-256 of its content and its size in bytes. Files of the monorepo are r
 | `Housebroken/README.md` | `b1bcc1b` 2026-09-13, clean, `3fd0623b7ce7`, 4722 | in full | **Was stale in three places, corrected the same day:** "These scenarios have not yet been executed in game", "Interactive RIMMSQOL compatibility is awaiting in-game validation", "Functional add/remove validation remains pending" |
 | `Housebroken/CHANGELOG.md` | `41d1b55` 2026-09-24, clean, `5a6d9fea09e3`, 2299 | in full | The 0.1.0 section was written `## 0.1.0`; AUDIT and the CI want `## [0.1.0]`, corrected the same day |
 | `Housebroken/TESTING.md` | `1bbe583` 2026-09-24, clean, `a396acc0b3f0`, 5934 | in full | The eleven passes of TF-01 to TF-22 |
-| `Housebroken/Mod/About/About.xml` | `2c4e14b` 2026-09-24, clean, `66c1402cefd2`, 3134 | in full | THANKS lacks the test tools and RIMMSQOL, and the AI line does not name Codex |
+| `Housebroken/Mod/About/About.xml` | `2c4e14b` 2026-09-24, clean, `66c1402cefd2`, 3134 | in full | THANKS lacked the test tools and RIMMSQOL, and the AI line did not name Codex: corrected on 2026-09-25 |
 | `Housebroken/ATTRIBUTION.md`, `LICENSE` | `06fad23`, `ae6ae5fa894c`; `0cd6a55`, `ae6ae5fa894c` | in full | The two distributed copies in `Mod/` are byte for byte identical |
 
 ## Read and not useful: do not read again unless the hash moves and the task changes

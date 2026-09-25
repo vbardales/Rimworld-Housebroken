@@ -28,15 +28,17 @@ If I do not answer within a reasonable time after being contacted, anyone may fr
 
 AI-GENERATED
 
-This mod's code was written with Claude Code (Anthropic) and its images generated with DALL-E (OpenAI), under human direction, review and testing. Stated openly: designing with these tools is my job.
+This mod's code and test suite were written with Claude Code (Anthropic) and Codex (OpenAI), and its images were generated with DALL-E (OpenAI), under human direction, review and testing. Stated openly: designing with these tools is my job.
 
 THANKS
 
-FlyingSloth, for Sentience Catalyst Filth Rate Reducer, which gave me the idea. Housebroken keeps the principle but changes the criterion, from the sentience catalyst to training and trainability. None of their code is used here.
-https://steamcommunity.com/sharedfiles/filedetails/?id=3525790312
+FlyingSloth, for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3525790312]Sentience Catalyst Filth Rate Reducer[/url], which gave me the idea. Housebroken keeps the principle but changes the criterion, from the sentience catalyst to training and trainability. None of their code is used here.
 
-Claude Code (Anthropic) and DALL-E (OpenAI).
-Andreas Pardeike for Harmony.
+Andreas Pardeike for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077]Harmony[/url].
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678]Pickle[/url], [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696]RimLogging[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401]PickleTools[/url] were used for development and testing only; none is a dependency of the distributed mod. [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457]RIMMSQOL[/url] was used to exercise the optional MainButtons customization path during testing.
+
+This mod is MIT licensed.
 
 [url=https://github.com/vbardales/Rimworld-Housebroken]Source code on GitHub[/url]</description>
   <modDependencies>
