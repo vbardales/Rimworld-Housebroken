@@ -28,10 +28,10 @@ remaining:
     carries still says 1.0.0 until the next upload. The stale `v1.0.0` tag was deleted from
     origin on 2026-09-24; the CI creates `v0.1.0` after a successful upload, never by hand.
   - fixed 2026-09-25: the About description now thanks Pickle, RimLogging and PickleTools (development only) and RIMMSQOL, names Codex in the AI line and links the
-    tools. It is copied into PUBLICATION.md's Steam description. The Workshop page shows it only after the next upload.
+    tools. Its source for the CI is Mod/README.template.md (Markdown, converted by the workflow), not a copy in PUBLICATION.md. The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-25, About thanks and Codex line corrected, Steam description copied into PUBLICATION.md
+updated:      2026-09-25, About thanks and Codex line corrected, Steam description moved to Mod/README.template.md
 ---
 
 # Housebroken — status
