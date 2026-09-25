@@ -29,7 +29,7 @@ Feature: Settings page sizes and tooltips
   @requires:nelim.pickletools.hoversteps
   Scenario: TF-16 every tooltip is drawn
     When I open the Housebroken settings dialog
-    And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
+    And Nelim's Pickle Tools: developer mode is turned off for the capture
     And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.ObedientTip"
     Then Nelim's Pickle Tools: the tooltip keyed "Housebroken.Settings.ObedientTip" is drawn
     When I take a screenshot "housebroken tooltip obedience"
@@ -51,6 +51,6 @@ Feature: Settings page sizes and tooltips
     And I take a screenshot "housebroken tooltip clean feet"
     And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.ExemptAlertTip"
     And I take a screenshot "housebroken tooltip alert exemption"
-    And Nelim's Pickle Tools: screenshot mode is disabled
+    And Nelim's Pickle Tools: developer mode is restored
     And I close all dialogs
     Then no errors were logged
