@@ -10,6 +10,7 @@ before that, then minified. A full run leaves about 20 MB, most of it an HTML re
 The disk is full and the shared report folder holds every mod's screenshots (root `AGENTS.md`, "Test evidence").
 For this mod:
 
+- **Write, per run, before dropping the log:** the game build (the first `RimWorld` line of `Player.log`) in the line of the day file.
 - **Keep, per run:** `summary.md` and `junit.xml` (a few KB: what played, what failed), a `log-check.txt` (the result
   of grepping `Player.log` for `^(XML error|Config error|Could not resolve|Could not find)` and for `exception`, both
   expected to be 0), and one line in the table of the day's file.
@@ -38,4 +39,5 @@ Rules kept here:
 | File | Covers |
 | --- | --- |
 | [2026-09-22.md](2026-09-22.md) | The first runs of the Pickle suite: English, French and RIMMSQOL, and two tickets that never ran |
-| [2026-09-24.md](2026-09-24.md) | The first runs of the functional scenarios TF-01 to TF-22 |
+| [2026-09-24.md](2026-09-24.md) | The first runs of the functional scenarios TF-01 to TF-22, and what the first two showed |
+| [2026-09-25.md](2026-09-25.md) | TF-01 to TF-14 played, three small tickets, all green |

@@ -16,9 +16,10 @@ showcase:     complete
 tested_on:
 workshop:      3806137798
 remaining:
-  - unverified: run TF-01 through TF-22 in game, including animal behavior, native settings
-    persistence across restart, new colony and existing-save acceptance; Pickle UI-path passes
-    do not cover these manual scenarios.
+  - unverified: TF-15 through TF-22 have not run (settings persistence across restart, an older or
+    out-of-range settings file, the two routes to the settings, save and reload, a game loaded without
+    the mod, two maps, another mod on the same stat, the page at two scales). Written for Pickle and
+    queued in small tickets; see TESTING.md. TF-01 through TF-14 passed on 2026-09-25 (docs/runs).
   - unverified: RIMMSQOL's Housebroken shortcut reveal/hide path passed once in WSL, but
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
@@ -27,7 +28,7 @@ remaining:
     carries still says 1.0.0 until the next upload. The stale `v1.0.0` tag was deleted from
     origin on 2026-09-24; the CI creates `v0.1.0` after a successful upload, never by hand.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-24, stale v1.0.0 tag deleted; the CI will create v0.1.0
+updated:      2026-09-25, TF-01 to TF-14 played and green under Pickle; TF-15 to TF-22 next
 ---
 
 # Housebroken — status
@@ -43,7 +44,7 @@ Three conditions, all required. The stage stays `done` until the third holds.
 | --- | --- |
 | No scenario left `@wip` | Met: the four Pickle features carry `@review` and `@requires`, none carries `@wip`. |
 | Every conditional scenario has run | Met for the evidence kept: the RIMMSQOL feature was skipped in the two `runtime-evidence` passes and passed alone in `avec-rimmsqol-English`. Re-check against the revision that is tested. |
-| No manual test left to validate, all green | **Not met.** TF-01 through TF-22 have never been executed in game. |
+| No manual test left to validate, all green | **Not met.** TF-01 through TF-14 passed under Pickle on 2026-09-25 (three tickets, 15 scenarios, all green; two claims not played, see `TESTS_FONCTIONNELS.md`). TF-15 through TF-22 have not run. |
 
 ## Current result — three distinct Pickle passes, 2026-09-22
 
