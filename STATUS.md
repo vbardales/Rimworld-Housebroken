@@ -20,6 +20,9 @@ remaining:
     (settings persistence across restart, an older or out-of-range settings file, the two routes to the settings, another mod on the
     same stat, the page at two scales). Written for Pickle and to be queued in small tickets; see TESTING.md. TF-01 through TF-14, TF-15
     reset, TF-17 and TF-19 (second game, caravan) passed on 2026-09-25 (docs/runs).
+  - pending: the CI/CD standard of 2026-09-25 (Rimworld-Release-Admin f196148) puts the description in a ```markdown block under "## Steam description" of
+    PUBLICATION.md, with About.xml generated from it. Housebroken still has Mod/README.template.md (364906c). To migrate at the next publication, once the
+    queued tickets return: move the text into PUBLICATION.md, drop the template and its .steamignore lines, regenerate the workflow, new dry-run.
   - unverified: RIMMSQOL's Housebroken shortcut reveal/hide path passed once in WSL, but
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
