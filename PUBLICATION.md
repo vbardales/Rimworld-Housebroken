@@ -24,7 +24,7 @@ approval) is in `docs/OPERATIONS.md` of `vbardales/Rimworld-Release-Admin`; read
 manual workflow generated for the mod is the route:
 
 ```
-/home/nelim/Rimworld-Release-Admin/scripts/generate-publish-workflow.sh <this repository> \
+Rimworld-Release-Admin/scripts/generate-publish-workflow.sh <this repository> \
   --workshop-id 3806137798 --package-id nelim.housebroken \
   --release-title "Housebroken {version}" \
   --require Assemblies/Housebroken.dll \
