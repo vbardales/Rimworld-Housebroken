@@ -16,10 +16,10 @@ showcase:     complete
 tested_on:
 workshop:      3806137798
 remaining:
-  - unverified: TF-15 through TF-22 have not run (settings persistence across restart, an older or
-    out-of-range settings file, the two routes to the settings, save and reload, a game loaded without
-    the mod, two maps, another mod on the same stat, the page at two scales). Written for Pickle and
-    queued in small tickets; see TESTING.md. TF-01 through TF-14 passed on 2026-09-25 (docs/runs).
+  - unverified: TF-15 (restart chain), TF-16, TF-18 second half (a game loaded without the mod), TF-20, TF-21 and TF-22 have not run
+    (settings persistence across restart, an older or out-of-range settings file, the two routes to the settings, another mod on the
+    same stat, the page at two scales). Written for Pickle and to be queued in small tickets; see TESTING.md. TF-01 through TF-14, TF-15
+    reset, TF-17 and TF-19 (second game, caravan) passed on 2026-09-25 (docs/runs).
   - unverified: RIMMSQOL's Housebroken shortcut reveal/hide path passed once in WSL, but
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
@@ -31,7 +31,7 @@ remaining:
     tools. Its source for the CI is Mod/README.template.md (Markdown, converted by the workflow), not a copy in PUBLICATION.md. The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-25, About thanks and Codex line corrected, Steam description moved to Mod/README.template.md
+updated:      2026-09-25, TF-19 caravan replay green after the yard search fix
 ---
 
 # Housebroken — status
