@@ -30,7 +30,7 @@ layout in both languages.
 proving ground the suite builds on the fixture map: a closed room, a doorway, an unroofed pen, a roofed room
 outside the home area, open ground, and a room touching the map edge. Animals are spawned with a chosen
 training, and the stat, the deposits and the alert are read from the game. Only the walking is replaced, by a
-teleport from cell to cell. **None of these passes has run yet**; each result goes in `docs/runs/`.
+teleport from cell to cell. **All of these passes have run** (2026-09-25 and 2026-09-26); each result is in `docs/runs/`.
 
 | Pass | Command, from the collection root | Features | Covers |
 | --- | --- | --- | --- |

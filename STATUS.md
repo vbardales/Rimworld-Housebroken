@@ -16,10 +16,9 @@ showcase:     complete
 tested_on:
 workshop:      3806137798
 remaining:
-  - unverified: TF-15 (restart chain), TF-16, TF-18 second half (a game loaded without the mod), TF-20, TF-21 and TF-22 have not run
-    (settings persistence across restart, an older or out-of-range settings file, the two routes to the settings, another mod on the
-    same stat, the page at two scales). Written for Pickle and to be queued in small tickets; see TESTING.md. TF-01 through TF-14, TF-15
-    reset, TF-17 and TF-19 (second game, caravan) passed on 2026-09-25 (docs/runs).
+  - passed: TF-01 through TF-22 under Pickle (2026-09-25 and 26, docs/runs/2026-09-25.md). Limits recorded, not defects: walking is a teleport,
+    no click on an alert entry, the caravan goes through game functions, the main-bar tooltip is not observable, the Intermediate slider has no tooltip,
+    and the settings window is clipped at 200 percent.
   - pending: the CI/CD standard of 2026-09-25 (Rimworld-Release-Admin f196148) puts the description in a ```markdown block under "## Steam description" of
     PUBLICATION.md, with About.xml generated from it. Housebroken still has Mod/README.template.md (364906c). To migrate at the next publication, once the
     queued tickets return: move the text into PUBLICATION.md, drop the template and its .steamignore lines, regenerate the workflow, new dry-run.
@@ -34,7 +33,7 @@ remaining:
     tools. Its source for the CI is Mod/README.template.md (Markdown, converted by the workflow), not a copy in PUBLICATION.md. The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-25, TF-19 caravan replay green after the yard search fix
+updated:      2026-09-26, TF-15 to TF-22 all passed under Pickle, recorded in docs/runs
 ---
 
 # Housebroken — status
@@ -50,7 +49,7 @@ Three conditions, all required. The stage stays `done` until the third holds.
 | --- | --- |
 | No scenario left `@wip` | Met: the four Pickle features carry `@review` and `@requires`, none carries `@wip`. |
 | Every conditional scenario has run | Met for the evidence kept: the RIMMSQOL feature was skipped in the two `runtime-evidence` passes and passed alone in `avec-rimmsqol-English`. Re-check against the revision that is tested. |
-| No manual test left to validate, all green | **Not met.** TF-01 through TF-14 passed under Pickle on 2026-09-25 (three tickets, 15 scenarios, all green; two claims not played, see `TESTS_FONCTIONNELS.md`). TF-15 through TF-22 have not run. |
+| No manual test left to validate, all green | **Not met.** TF-01 through TF-14 passed under Pickle on 2026-09-25 (three tickets, 15 scenarios, all green; two claims not played, see `TESTS_FONCTIONNELS.md`). TF-15 through TF-22 passed on 2026-09-25 and 26, each with the limits listed in `TESTS_FONCTIONNELS.md`; what those limits leave (main-bar tooltip, a click on an alert entry, the 200 percent window) is not certified. The owner-side checks (subscriber test, public visibility, thank-you comments) remain. |
 
 ## Current result — three distinct Pickle passes, 2026-09-22
 
