@@ -43,7 +43,7 @@ teleport from cell to cell. **None of these passes has run yet**; each result go
 | Removal | `-DepMap wsl-deps.tf18.map -Filter 34-tf18-write -Then removal-check -ThenWithout nelim.housebroken,nelim.housebroken.pickletests` | 34, then the `Removal` companion | TF-18 second half: a game saved with the mod loads without it |
 | Older file | `-DepMap wsl-deps.tf22-old.map -Filter 23-tf22-old-load -Then 24-tf22-old-read` | 23, 24 | TF-22 fields missing. Seed: `config/tf22-old/` |
 | Out of range | `-DepMap wsl-deps.tf22-range.map -Filter 25-tf22-range-load -Then 26-tf22-range-read` | 25, 26 | TF-22 clamped and non-finite numbers. Seed: `config/tf22-range/` |
-| RIMMSQOL | `-DepMap wsl-deps.rimmsqol-tf.map -Filter '27-shortcut-and-settings'`, and the restart pair again | 27 | TF-21 and the shortcut tooltip |
+| RIMMSQOL | `-DepMap wsl-deps.rimmsqol-tf.map -Filter '27-shortcut-and-settings'`, and the restart pair again | 27 | TF-21 and the shortcut on the main bar (its tooltip is not observable: the main bar does not record tip regions) |
 | Other mod, before | `-DepMap wsl-deps.otherfilth-before.map -Filter 30-other-filth-before` | 30 | TF-20 |
 | Other mod, after | `-DepMap wsl-deps.otherfilth-after.map -Filter 31-other-filth-after` | 31 | TF-20 |
 

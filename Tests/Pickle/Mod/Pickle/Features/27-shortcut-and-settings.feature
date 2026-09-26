@@ -21,9 +21,6 @@ Feature: Settings routes
     When RIMMSQOL reveals the main button "Housebroken_Settings"
     Then the main bar draws the button "Housebroken_Settings"
     When I take a screenshot "housebroken shortcut revealed on the main bar"
-    And Nelim's Pickle Tools: I hover over the tooltip containing "Housebroken"
-    Then Nelim's Pickle Tools: the tooltip containing "Housebroken" is drawn
-    When I take a screenshot "housebroken shortcut tooltip on the main bar"
     When the main bar's button "Housebroken_Settings" is activated
     Then Housebroken sees its settings dialog open
     When Housebroken setting "wellTrainedFactor" is set to "0.5"
