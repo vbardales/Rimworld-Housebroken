@@ -11,9 +11,9 @@ Steam creates every item private, and nothing here changes that: the owner switc
 
 | Item | State |
 | --- | --- |
-| Stage | `done` (`STATUS.md`). `tested` needs TF-15 to TF-22 played, see `TESTING.md` |
-| Version | the item was created as `0.1.0`; the uploaded `About.xml` still says `modVersion` 1.0.0, the repository says 0.1.0 |
-| Workflow | none yet under `.github/`. It is generated for a mod, never copied by hand |
+| Stage | `done` (`STATUS.md`). TF-15 to TF-22 passed under Pickle 2026-09-25/26; `tested` gate not yet certified, see `STATUS.md` |
+| Version | the item was created as `0.1.0`; the owner decided the next upload publishes `1.0.0` (repository and `About.xml` both say 1.0.0 now) |
+| Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
 | Gallery | no image exists (see below) |
 | Thanks comments | drafted below; nothing posted, and nothing can be until the item is public |
 
@@ -48,7 +48,8 @@ tag and the GitHub release after a successful upload: they are not created by ha
 
 **Policy: fail fast** (`AUDIT.md`, `prepublished -> published`). Before the `publish`: no red scenario without a green replay on a
 build that holds its fix, the Workshop gallery, and the owner's manual checks. The regression pass runs after the publication.
-Rollback target, chosen before publishing: the last known good commit, and a tag at each good version.
+Rollback, decided by the owner: switching the Workshop item from public back to private, not a code revert. The last known good
+commit and a tag at each good version are still kept for reference.
 
 ## Screenshots, in this order
 
@@ -119,7 +120,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3806137798
 - **The description** is sent to Steam only when the item is created, or when a workflow sends it with `update_description`. Until then a
   correction is made by hand on the Steam page, never from `About.xml`.
 - **The item is private.** RimWorld never sets its visibility, and neither does the CI.
-- **The uploaded `About.xml` says `modVersion` 1.0.0.** The repository says 0.1.0. The next upload carries the repository's value.
+- **The uploaded item's `About.xml` says `modVersion` 1.0.0** (from before the prepublication's own version was fixed at 0.1.0).
+  The repository now says 1.0.0 again too, so the next upload should read the same, unlike the mismatch this line used to record.
 
 ## Steam change notes
 

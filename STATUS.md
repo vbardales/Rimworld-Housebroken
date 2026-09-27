@@ -31,9 +31,11 @@ remaining:
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
     messages for item 3806137798 have not been evidenced in this audit.
-  - defect: the Workshop item was uploaded before `modVersion` moved to 0.1.0, so the About it
-    carries still says 1.0.0 until the next upload. The stale `v1.0.0` tag was deleted from
-    origin on 2026-09-24; the CI creates `v0.1.0` after a successful upload, never by hand.
+  - fixed 2026-09-27: the owner decided the next publication is `1.0.0` (rollback: switch the item back to private,
+    not a code revert). `modVersion` in `About.xml` moved from 0.1.0 back to 1.0.0, matching what the uploaded item
+    already carries from before its version was fixed at 0.1.0; `CHANGELOG.md` now dates a `## [1.0.0]` section. The
+    stale `v1.0.0` tag was deleted from origin on 2026-09-24; the CI creates `v1.0.0` after a successful upload, never
+    by hand.
   - fixed 2026-09-25: the About description now thanks Pickle, RimLogging and PickleTools (development only) and RIMMSQOL, names Codex in the AI line and links the
     tools. Its source for the CI is now the ```markdown block in PUBLICATION.md (2026-09-27 migration). The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
@@ -47,11 +49,9 @@ updated:      2026-09-26, TF-15 to TF-22 all passed under Pickle, recorded in do
 
 The manual publish workflow (`publish-tag.yml`) is now in place; `Mod/About/About.xml`'s
 description was resynced from `PUBLICATION.md`'s `## Steam description` block (a BBCode-to-plain-
-text reformat only, no wording change). **`CHANGELOG.md` was left untouched**: its `## [Unreleased]`
-section doesn't clearly name the version that `PUBLICATION.md`'s drafted `### 1.0.0` change note
-targets, so the mechanical dating this task can do (adding a dated `## [X.Y.Z]` heading) was
-skipped rather than guessed at. A human should confirm the target version and date that section
-before the first dry-run of a real release.
+text reformat only, no wording change). `CHANGELOG.md`'s ambiguous `## [Unreleased]` section was
+left for a human to date, which the owner then did the same day: `## [1.0.0]`, `modVersion` moved
+back to 1.0.0, rollback set to switching the item back to private rather than a code revert.
 
 Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by the session
 that holds this mod, not by the sweep that first wrote it.

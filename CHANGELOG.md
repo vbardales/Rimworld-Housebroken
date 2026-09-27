@@ -5,10 +5,22 @@ This file serves the repository and the writing of Steam patch notes; RimWorld d
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-09-27
+
+Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
+(3806137798). Rollback, if needed after the upload, is switching the item back to private, not a code revert.
+
+### Added
+
+- A tooltip on the Intermediate trainability slider (`Housebroken.Settings.IntermediateTip`), the only reduction
+  row that had none; English and French.
+
 ### Changed
 
-- `modVersion` in `About.xml` now reads 0.1.0, the version the Workshop item was created with; the uploaded
-  copy still says 1.0.0 until the next upload.
+- `modVersion` in `About.xml` moved from 0.1.0 (the version the Workshop item was created with) to 1.0.0.
+- The Steam description moved to a single Markdown source, the fenced block under "## Steam description" of
+  `PUBLICATION.md`; `Mod/README.template.md` and its `.steamignore` lines are dropped.
+- TF-01 through TF-22 played and passed under Pickle, with their limits recorded in `TESTS_FONCTIONNELS.md`.
 
 ## [0.1.0]
 
