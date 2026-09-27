@@ -40,6 +40,16 @@ updated:      2026-09-26, TF-15 to TF-22 all passed under Pickle, recorded in do
 
 # Housebroken — status
 
+## Note from the CI/CD session — 2026-09-27
+
+The manual publish workflow (`publish-tag.yml`) is now in place; `Mod/About/About.xml`'s
+description was resynced from `PUBLICATION.md`'s `## Steam description` block (a BBCode-to-plain-
+text reformat only, no wording change). **`CHANGELOG.md` was left untouched**: its `## [Unreleased]`
+section doesn't clearly name the version that `PUBLICATION.md`'s drafted `### 1.0.0` change note
+targets, so the mechanical dating this task can do (adding a dated `## [X.Y.Z]` heading) was
+skipped rather than guessed at. A human should confirm the target version and date that section
+before the first dry-run of a real release.
+
 Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by the session
 that holds this mod, not by the sweep that first wrote it.
 
