@@ -12,6 +12,7 @@
 
   <Housebroken.Settings.SpeciesHeader>Trainability of the species</Housebroken.Settings.SpeciesHeader>
   <Housebroken.Settings.Intermediate>Intermediate: -{0}% filth</Housebroken.Settings.Intermediate>
+  <Housebroken.Settings.IntermediateTip>Multiplies with the training reduction. A sentience catalyst raises trainability by one tier, so it can push a species from intermediate to advanced instead.</Housebroken.Settings.IntermediateTip>
   <Housebroken.Settings.Advanced>Advanced: -{0}% filth</Housebroken.Settings.Advanced>
   <Housebroken.Settings.AdvancedTip>Multiplies with the training reduction. A sentience catalyst raises trainability by one tier, so it counts here.</Housebroken.Settings.AdvancedTip>
 

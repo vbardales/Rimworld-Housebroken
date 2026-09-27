@@ -57,7 +57,8 @@ namespace Housebroken
             listing.Gap();
             listing.Label("Housebroken.Settings.SpeciesHeader".Translate());
             settings.intermediateSpeciesFactor = ReductionRow(listing,
-                "Housebroken.Settings.Intermediate", settings.intermediateSpeciesFactor);
+                "Housebroken.Settings.Intermediate", settings.intermediateSpeciesFactor,
+                "Housebroken.Settings.IntermediateTip");
             settings.advancedSpeciesFactor = ReductionRow(listing,
                 "Housebroken.Settings.Advanced", settings.advancedSpeciesFactor,
                 "Housebroken.Settings.AdvancedTip");

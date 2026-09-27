@@ -35,6 +35,8 @@ Feature: Settings page sizes and tooltips
     When I take a screenshot "housebroken tooltip obedience"
     And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.WellTrainedTip"
     And I take a screenshot "housebroken tooltip further training"
+    And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.IntermediateTip"
+    And I take a screenshot "housebroken tooltip intermediate species"
     And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.AdvancedTip"
     And I take a screenshot "housebroken tooltip advanced species"
     And Nelim's Pickle Tools: I hover over the tooltip keyed "Housebroken.Settings.ColonyOnlyTip"

@@ -17,8 +17,11 @@ tested_on:
 workshop:      3806137798
 remaining:
   - passed: TF-01 through TF-22 under Pickle (2026-09-25 and 26, docs/runs/2026-09-25.md). Limits recorded, not defects: walking is a teleport,
-    no click on an alert entry, the caravan goes through game functions, the main-bar tooltip is not observable, the Intermediate slider has no tooltip,
+    no click on an alert entry, the caravan goes through game functions, the main-bar tooltip is not observable,
     and the settings window is clipped at 200 percent.
+  - fixed 2026-09-27: the Intermediate slider had no tooltip (the only reduction row without one). Added
+    Housebroken.Settings.IntermediateTip in English and French, wired in HousebrokenMod.cs, rebuilt. 32-language-review.feature
+    now hovers and captures it too (11 tooltips per language); replay pending.
   - fixed 2026-09-27: migrated to the CI/CD one-source standard (Rimworld-Release-Admin f196148). The description now lives in a
     ```markdown block under "## Steam description" of PUBLICATION.md; Mod/README.template.md and Mod/.steamignore are dropped (no
     workflow existed yet under .github/, so nothing live needed comparing). Still to do, at the next publication: run
