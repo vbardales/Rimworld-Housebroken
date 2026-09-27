@@ -28,14 +28,14 @@ Rimworld-Release-Admin/scripts/generate-publish-workflow.sh <this repository> \
   --workshop-id 3806137798 --package-id nelim.housebroken \
   --release-title "Housebroken {version}" \
   --require Assemblies/Housebroken.dll \
-  --description-markdown Mod/README.template.md
+  --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description
 ```
 
 **Not run.** It writes files under `.github/` and nothing else; reading its diff, committing and pushing are the caller's, and the
 owner decides whether this mod gets a workflow now. What the workflow reads from this repository:
 
 - **The change note**: the fenced block under `### <version>` in "Steam change notes" below.
-- **The description** (only when `update_description` is on): `Mod/README.template.md`, in Markdown, converted to Steam BBCode by the workflow and kept out of the upload by `Mod/.steamignore`.
+- **The description** (only when `update_description` is on): the ```markdown``` block under "## Steam description" of `PUBLICATION.md`, converted to Steam BBCode for the upload and to plain text for `Mod/About/About.xml`.
 - **The GitHub release notes**: the `## [<version>]` section of `CHANGELOG.md`. Date it before publishing.
 - **Identity checks**: `Mod/About/PublishedFileId.txt` must hold `3806137798` and `About.xml` the package ID `nelim.housebroken`.
 - **What ships**: the `Mod/` of the resolved commit, as committed, prebuilt DLL included. The project references game assemblies
@@ -144,14 +144,53 @@ A trained or intelligent animal makes less mess, and does its business outside i
 
 ## Steam description
 
-Sent only when `update_description` is on for a publish. The source is `Mod/README.template.md`, in Markdown, converted to Steam BBCode
-by the workflow itself (`"format": "markdown"` in `.github/publish.config.json`, the `--description-markdown` option of
-`generate-publish-workflow.sh`). The dry-run prints the converted text, its size, its SHA-256 and a line diff against the page, so the
-text sent is read before the approval. It is not copied here: a pasted copy is a second text that can drift. The template sits in
-`Mod/` but `Mod/.steamignore` keeps it, and `README.md`, out of what players receive. Steam's limit is 8000 bytes; the text is about 2.6 KB.
+Sent only when `update_description` is on for a publish. The source is the ```markdown``` block below (the one-source standard set by
+Virginie on 2026-09-25, `Rimworld-Release-Admin` `f196148`): `--description-markdown PUBLICATION.md --description-heading '^## Steam
+description$' --about-from-description`. The dry-run prints the converted BBCode, its size, its SHA-256 and a line diff against the
+page, so the text sent is read before the approval. `--about-from-description` also generates the plain-text `<description>` of
+`Mod/About/About.xml` from this same block, and a publish stops when they differ; `node .github/scripts/sync-about-description.mjs
+--write` reports and rewrites it, its diff read and committed before a new dry-run. The block below already reads the same as the
+current `About.xml` `<description>`, in the order AUDIT.md requires: the pitch, IF I GO QUIET, AI-GENERATED, THANKS, then the GitHub
+link, which is its last line. When one changes, change the other. Steam's limit is 8000 bytes; this block is about 2.4 KB.
 
-The template holds the same content as the `<description>` of `Mod/About/About.xml` (which Steam reads only when an item is created), in
-the order AUDIT.md requires: the pitch, IF I GO QUIET, AI-GENERATED, THANKS, then the GitHub link. When one changes, change the other.
+Migrated from `Mod/README.template.md` on 2026-09-27 (no workflow existed yet under `.github/`, so nothing live to compare against):
+the template and `Mod/.steamignore` are dropped, since nothing in `Mod/` needs hiding from the upload any more.
+
+```markdown
+A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
+
+- Filth rate reduced according to the individual animal's training (obedience, then the later training steps) and to its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
+- Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
+- Mud stays outside: the same animal keeps the mud and blood it picked up on its feet while inside the base, and drops them once out.
+- Clean animals are exempted from the "animal filth" alert.
+
+Everything is adjustable in the mod options. No data is added to the save: the mod can be added to or removed from a game in progress.
+
+Interface in English and French.
+
+Source code and issue tracker:
+[https://github.com/vbardales/Rimworld-Housebroken](https://github.com/vbardales/Rimworld-Housebroken)
+
+## If I go quiet
+
+If I do not answer within a reasonable time after being contacted, anyone may freely update this or any other of my mods, including publishing a continuation of it. All credit must be preserved.
+
+## AI-generated
+
+This mod's code and test suite were written with Claude Code (Anthropic) and Codex (OpenAI), and its images were generated with DALL-E (OpenAI), under human direction, review and testing. Stated openly: designing with these tools is my job.
+
+## Thanks
+
+FlyingSloth, for [Sentience Catalyst Filth Rate Reducer](https://steamcommunity.com/sharedfiles/filedetails/?id=3525790312), which gave me the idea. Housebroken keeps the principle but changes the criterion, from the sentience catalyst to training and trainability. None of their code is used here.
+
+Andreas Pardeike for [Harmony](https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077).
+
+[Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used for development and testing only; none is a dependency of the distributed mod. [RIMMSQOL](https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457) was used to exercise the optional MainButtons customization path during testing.
+
+This mod is MIT licensed.
+
+[Source code on GitHub](https://github.com/vbardales/Rimworld-Housebroken)
+```
 
 This file keeps its name: the change note is read from it, under `### <version>`.
 

@@ -19,9 +19,11 @@ remaining:
   - passed: TF-01 through TF-22 under Pickle (2026-09-25 and 26, docs/runs/2026-09-25.md). Limits recorded, not defects: walking is a teleport,
     no click on an alert entry, the caravan goes through game functions, the main-bar tooltip is not observable, the Intermediate slider has no tooltip,
     and the settings window is clipped at 200 percent.
-  - pending: the CI/CD standard of 2026-09-25 (Rimworld-Release-Admin f196148) puts the description in a ```markdown block under "## Steam description" of
-    PUBLICATION.md, with About.xml generated from it. Housebroken still has Mod/README.template.md (364906c). To migrate at the next publication, once the
-    queued tickets return: move the text into PUBLICATION.md, drop the template and its .steamignore lines, regenerate the workflow, new dry-run.
+  - fixed 2026-09-27: migrated to the CI/CD one-source standard (Rimworld-Release-Admin f196148). The description now lives in a
+    ```markdown block under "## Steam description" of PUBLICATION.md; Mod/README.template.md and Mod/.steamignore are dropped (no
+    workflow existed yet under .github/, so nothing live needed comparing). Still to do, at the next publication: run
+    generate-publish-workflow.sh with --description-markdown PUBLICATION.md --description-heading and --about-from-description, read
+    the About.xml diff, then a new dry-run.
   - unverified: RIMMSQOL's Housebroken shortcut reveal/hide path passed once in WSL, but
     other customization tools and exact integration-version coverage remain unverified.
   - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
@@ -30,7 +32,7 @@ remaining:
     carries still says 1.0.0 until the next upload. The stale `v1.0.0` tag was deleted from
     origin on 2026-09-24; the CI creates `v0.1.0` after a successful upload, never by hand.
   - fixed 2026-09-25: the About description now thanks Pickle, RimLogging and PickleTools (development only) and RIMMSQOL, names Codex in the AI line and links the
-    tools. Its source for the CI is Mod/README.template.md (Markdown, converted by the workflow), not a copy in PUBLICATION.md. The Workshop page shows it only after the next upload.
+    tools. Its source for the CI is now the ```markdown block in PUBLICATION.md (2026-09-27 migration). The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
 updated:      2026-09-26, TF-15 to TF-22 all passed under Pickle, recorded in docs/runs
