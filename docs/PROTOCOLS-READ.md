@@ -58,3 +58,20 @@ added the same day, on the model of `SkillIcons/PUBLICATION.md` (90d51374, read 
 `MOD_SETTINGS.md` (the gate is already `complete` in STATUS.md), `PickleTools/Authoring/README.md` (read on 2026-09-24, version not
 kept), `EXTERNAL_TOOLS.md`, `WORKSHOP_COMMENTS.md` (the registry of thanks comments, needed for the entry of FlyingSloth's mod),
 `PickleTools/Upstream/PENDING.md`.
+## Re-read on 2026-09-28 (the protocols moved: `AGENTS.md`, `AUDIT.md`, `TRANSLATIONS.md` and the others are now owned by the protocols repository, edited in place)
+
+Same rule: a document is re-read only when its hash moves. Every hash below differs from the table above.
+
+| Document | Hash now (12 hex) | Re-read | What changed for this mod |
+| --- | --- | --- | --- |
+| `AGENTS.md` | `6cee468a7521` | in full (condensed) | Same rules, shorter. Evidence: latest report per scenario for the current revision, list before deleting, never delete what a STATUS field points to |
+| `AUDIT.md` | `27bb0c0aac43` | in full | Step 12 (backward audit: replay `options -> l10n` against the current documents, `preTest -> done`), `Art\ModIcon.ico` and `Art\Preview.ico` for `desktop.ini`, the 1.0.0 stays `unreleased` in CHANGELOG above 0.1.0 until `published`, session title `<packageId without nelim.> / <stage>`, `-Language` per pass, fail fast |
+| `TRANSLATIONS.md` | `298f74d226da` | in full | New rule of 2026-09-25 on counts and plurals (`.One`, `.Many`, `.Zero`). Housebroken shows percentages and multipliers only, no counted noun: nothing to split (checked 2026-09-28) |
+| `MOD_SETTINGS.md` | `404916bc99a7` | not re-read | Moved; the gate is `complete` and the task did not touch the settings design |
+| `PUBLISHING.md` | `513f110ae0b6` | not re-read | Moved; publication goes through the CI, `PUBLICATION.md` holds the page |
+| `STYLE_RIMWORLD.md` | `2c6db32396ae` | not re-read | Moved; no image is generated here |
+| `scripts/SEARCHING.md` | `013075b06b89` | not re-read | Moved. Rule taken from the dispatcher's message of 2026-09-28: never `find /` or `grep -r` on `/` or `C:\`, search one named folder |
+| `WORKSHOP_COMMENTS.md` | `4ec43a9b47c1` | not re-read | Moved; registry of thanks comments, needed at publication |
+| `PickleTools/README.md`, `Headless/README.md`, `docs/steps.md` | `628350c7bcc3`, `2310bb974f68`, `2d17e1b10ed7` | not re-read | Moved; read when a step is written or a tool looked up |
+| `Rimworld-Release-Admin/docs/OPERATIONS.md` | `23fcf6423000` | its description-standard lines only | One-source description standard, already applied (2026-09-27) |
+| `Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, `SUBMIT.md` | `08b440a03f74`, `eaca3969c7eb` | not re-read | Moved; commands already in use worked unchanged |

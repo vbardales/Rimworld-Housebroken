@@ -40,7 +40,7 @@ remaining:
     tools. Its source for the CI is now the ```markdown block in PUBLICATION.md (2026-09-27 migration). The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-26, TF-15 to TF-22 all passed under Pickle, recorded in docs/runs
+updated:      2026-09-28, AUDIT.md re-read and applied; final replays queued after the Intermediate tooltip (4e29, a2ed, fa7d, 6f32, a03c)
 ---
 
 # Housebroken — status
