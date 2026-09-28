@@ -11,6 +11,8 @@ detached:     yes
 stage:        done
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
+upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
+  none of its code used; no repo URL in its About.xml, Source/, or the Steam page; a web search found none. Checked 2026-09-28)
 dependencies: declared
 showcase:     complete
 tested_on:
