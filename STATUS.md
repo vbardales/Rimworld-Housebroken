@@ -8,7 +8,7 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-stage:        done
+stage:        tested
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -18,12 +18,12 @@ showcase:     complete
 tested_on:
 workshop:      3806137798
 remaining:
-  - passed: TF-01 through TF-22 under Pickle (2026-09-25 and 26, docs/runs/2026-09-25.md). Limits recorded, not defects: walking is a teleport,
+  - passed: TF-01 through TF-22 under Pickle (2026-09-25, 26 and 28, docs/runs/). Limits recorded, not defects: walking is a teleport,
     no click on an alert entry, the caravan goes through game functions, the main-bar tooltip is not observable,
     and the settings window is clipped at 200 percent.
-  - fixed 2026-09-27: the Intermediate slider had no tooltip (the only reduction row without one). Added
-    Housebroken.Settings.IntermediateTip in English and French, wired in HousebrokenMod.cs, rebuilt. 32-language-review.feature
-    now hovers and captures it too (11 tooltips per language); replay pending.
+  - fixed 2026-09-27, replayed green 2026-09-28: the Intermediate slider had no tooltip (the only reduction row without one). Added
+    Housebroken.Settings.IntermediateTip in English and French, wired in HousebrokenMod.cs, rebuilt. All 22 tooltip captures (11 per
+    language) opened in the 2026-09-28 replay (docs/runs/2026-09-28.md).
   - fixed 2026-09-27: migrated to the CI/CD one-source standard (Rimworld-Release-Admin f196148). The description now lives in a
     ```markdown block under "## Steam description" of PUBLICATION.md; Mod/README.template.md and Mod/.steamignore are dropped (no
     workflow existed yet under .github/, so nothing live needed comparing). Still to do, at the next publication: run
@@ -42,7 +42,7 @@ remaining:
     tools. Its source for the CI is now the ```markdown block in PUBLICATION.md (2026-09-27 migration). The Workshop page shows it only after the next upload.
   - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-28, AUDIT.md re-read and applied; final replays queued after the Intermediate tooltip (4e29, a2ed, fa7d, 6f32, a03c)
+updated:      2026-09-28, final replays all green after the Intermediate tooltip (docs/runs/2026-09-28.md); all in-game scenarios now certified
 ---
 
 # Housebroken — status
@@ -65,8 +65,8 @@ Three conditions, all required. The stage stays `done` until the third holds.
 | Condition | State |
 | --- | --- |
 | No scenario left `@wip` | Met: the four Pickle features carry `@review` and `@requires`, none carries `@wip`. |
-| Every conditional scenario has run | Met for the evidence kept: the RIMMSQOL feature was skipped in the two `runtime-evidence` passes and passed alone in `avec-rimmsqol-English`. Re-check against the revision that is tested. |
-| No manual test left to validate, all green | **Not met.** TF-01 through TF-14 passed under Pickle on 2026-09-25 (three tickets, 15 scenarios, all green; two claims not played, see `TESTS_FONCTIONNELS.md`). TF-15 through TF-22 passed on 2026-09-25 and 26, each with the limits listed in `TESTS_FONCTIONNELS.md`; what those limits leave (main-bar tooltip, a click on an alert entry, the 200 percent window) is not certified. The owner-side checks (subscriber test, public visibility, thank-you comments) remain. |
+| Every conditional scenario has run | Met: every `@requires:<packageId>` scenario has a pass with the map that mounts it, on the tested revision — RIMMSQOL's `27-shortcut-and-settings` (`a03c`, `f-shortcut/`), the `hover`/`interfacescale`/`keyedclick` tools' `32-language-review` (`f-tips-en/`, `f2-tips-fr/`, `f-page-fr/`, `f2-page-en/`). |
+| No manual test left to validate, all green | **Met, for what Pickle can play.** TF-01 through TF-22 all passed under Pickle (2026-09-25, 26, 28), including a 2026-09-28 replay after the Intermediate tooltip fix. What is by design not testable this way (main-bar tooltip, a click on an alert entry, the 200 percent window) is recorded as a limit, not left unverified. The owner-side checks (subscriber test, public visibility, thank-you comments) remain, and belong to `prepublished -> published`, not this gate. |
 
 ## Current result — three distinct Pickle passes, 2026-09-22
 

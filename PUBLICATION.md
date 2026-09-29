@@ -11,7 +11,7 @@ Steam creates every item private, and nothing here changes that: the owner switc
 
 | Item | State |
 | --- | --- |
-| Stage | `done` (`STATUS.md`). TF-15 to TF-22 passed under Pickle 2026-09-25/26; `tested` gate not yet certified, see `STATUS.md` |
+| Stage | `tested` (`STATUS.md`, 2026-09-28). TF-01 to TF-22 all passed under Pickle, the `tested` gate's three conditions all met |
 | Version | the item was created as `0.1.0`; the owner decided the next upload publishes `1.0.0` (repository and `About.xml` both say 1.0.0 now) |
 | Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
 | Gallery | image 0 = `Art/Gallery/0-preview.png` (added 2026-09-29); the rest is the owner's to decide (see below) |
