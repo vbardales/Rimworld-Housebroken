@@ -14,7 +14,7 @@ Steam creates every item private, and nothing here changes that: the owner switc
 | Stage | `done` (`STATUS.md`). TF-15 to TF-22 passed under Pickle 2026-09-25/26; `tested` gate not yet certified, see `STATUS.md` |
 | Version | the item was created as `0.1.0`; the owner decided the next upload publishes `1.0.0` (repository and `About.xml` both say 1.0.0 now) |
 | Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
-| Gallery | no image exists (see below) |
+| Gallery | image 0 = `Art/Gallery/0-preview.png` (added 2026-09-29); the rest is the owner's to decide (see below) |
 | Thanks comments | drafted below; nothing posted, and nothing can be until the item is public |
 
 ## Publishing by CI
@@ -53,17 +53,26 @@ commit and a tag at each good version are still kept for reference.
 
 ## Screenshots, in this order
 
-**No gallery image exists yet, and the order is the owner's to decide.** Steam shows the first one large under the Preview, so the
-most demonstrative goes there rather than the prettiest. What the suite can produce headlessly, and what it cannot:
+**Image 0 is `Art/Gallery/0-preview.png`** (owner's instruction, 2026-09-29): a plain copy of `Mod/About/Preview.png` as it
+stood before the corner badge below, so the header image and the first gallery slide are not the same file once that badge
+is added. Steam shows this first image large under the Preview, so the order after it stays the owner's to decide. What
+the suite can produce headlessly, and what it cannot:
 
 | Candidate | Source | State |
 | --- | --- | --- |
+| 0: Preview, without the corner badge | `Art/Gallery/0-preview.png`, a plain copy | added 2026-09-29 |
 | The settings page, English | `32-language-review.feature`, screenshot mode | played in English on 2026-09-22 (`03-language`), opened and legible; not played at 100 and 200 percent yet |
 | The settings page, French | same, `-Language French` | played on 2026-09-22, opened, accents and slider labels legible |
 | The stat explanation of a trained animal, inside and outside | a dedicated capture scenario on the test yard | not written |
 | A trained animal beside an untrained one in the same room | a dedicated capture scenario | not written |
 
 The gallery itself is a manual step on the Steam page: no library the CI uses can send more than the header image.
+
+**`Mod/About/Preview.png` now carries a corner badge** (owner's instruction, 2026-09-29): `Mod/About/ModIcon.png`, cut out
+of its near-black background (flood fill from the border) and tilted +15°, tucked into the bottom-left corner — the
+emptiest one, since the dog scene fills the right side and a hay bale already sits bottom-right — clipped by the frame on
+its left and bottom edges as if it were poking out of it. Built with the global `sharp` CLI package; the cutout
+intermediate is not kept.
 
 ## Dependencies and DLCs
 
