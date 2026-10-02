@@ -41,3 +41,5 @@ Rules kept here:
 | [2026-09-22.md](2026-09-22.md) | The first runs of the Pickle suite: English, French and RIMMSQOL, and two tickets that never ran |
 | [2026-09-24.md](2026-09-24.md) | The first runs of the functional scenarios TF-01 to TF-22, and what the first two showed |
 | [2026-09-25.md](2026-09-25.md) | TF-01 to TF-14 played, three small tickets, all green |
+| [2026-09-28.md](2026-09-28.md) | The final replays after the Intermediate tooltip fix: tooltips, page at 100 and 200 percent, RIMMSQOL shortcut |
+| [2026-10-02.md](2026-10-02.md) | Evidence trim (190 MB to 1.3 MB) and the latest evidence per scenario |

@@ -17,12 +17,9 @@ RIMMSQOL is a separately requested shortcut integration check.
 | Minimal FR | `wsl-deps.runtime-evidence.map`, French | Same UI paths and FR page | 3 passed, 1 skipped (RIMMSQOL absent); [docs/runs/2026-09-22.md](docs/runs/2026-09-22.md) |
 | With RIMMSQOL EN | `wsl-deps.avec-rimmsqol.map`, English, `04-rimmsqol.feature` | List, reveal, activate, hide and forget the Housebroken shortcut | 1 passed; [docs/runs/2026-09-22.md](docs/runs/2026-09-22.md) |
 
-All three reports ended with `exitReason: passed`; their seven Housebroken captures were
-opened and reviewed. The English RIMMSQOL pass does not establish French shortcut text or
-any persistence behavior owned by RIMMSQOL. A French RIMMSQOL pass is needed only if the
-French revealed-shortcut label and tooltip are claimed as runtime-reviewed. The manual
-TF-16 check remains open for tooltips, reset confirmation, stat explanations and small-screen
-layout in both languages.
+All three reports ended with `exitReason: passed`; their seven Housebroken captures were opened and reviewed. The English
+RIMMSQOL pass does not establish persistence owned by RIMMSQOL. French shortcut text and the page at two scales were played later
+(TF-16, TF-21, `docs/runs/2026-09-28.md`).
 
 ## Passes of the functional scenarios (TF-01 to TF-22)
 
@@ -54,18 +51,31 @@ age stat part, a constant times 1.5, to the same stat, one loaded before Housebr
 What Pickle does not replace, and stays a person's check: hovering is now a step (`HoverSteps` in PickleTools), but
 whether a French sentence reads well, and whether a tooltip covers what it should, is for a person looking at the captures.
 
-## Remaining acceptance
+## Passes, and their order
 
-TF-01..22 have no complete manual execution record yet. In particular, the Pickle UI
-passes do not measure animal filth behavior, validate a new colony or an existing save,
-or prove Housebroken settings persist across a game restart. TF-15 and TF-21 should check
-Housebroken's own values after restart; whether RIMMSQOL remembers a button-visibility
-choice after restart belongs to RIMMSQOL, not Housebroken.
+Three families (`AUDIT.md`): **without the optional mods** (the minimal rows above: Core, DLC, Harmony, the mod), **with the optional
+mods** (the RIMMSQOL, hover, other-filth rows: the tools that exercise a path, none is a `loadAfter` of the mod), and **one per declared
+incompatibility** (none: the mod declares no `incompatibleWith`). The tables above are the full list: 3 passes of the settings page, then
+the 12 passes of TF-01 to TF-22.
 
-For every future WSL Pickle run, use the shared `scripts/Run-PickleWsl.ps1` launcher and
-its `-EvidenceDir` option pointing inside this repository (`Tests/Pickle/Evidence/<run>`,
-ignored by git). Inspect `exitReason`, the discovered/playable scenario count, logs and every
-`@review` capture. Then **minify before handing over** and add one line to `docs/runs/`;
-[docs/runs/README.md](docs/runs/README.md) lists what is kept (summary, JUnit, a log check,
-a few small captures) and what is dropped (PNGs, HTML report, message stream, `Player.log`).
-Never launch the Windows RimWorld.
+**Order.** What has never run or is red is replayed alone, in a small ticket (`-Filter`). The non-regression passes, which replay what
+already ran green, are deposited all together at the end, on the final revision. Today nothing is red and nothing has never run; the
+TF-01 to TF-14 and TF-15 to TF-22 runs of 2026-09-25 predate the Intermediate tooltip commit `6af8e17` (a UI change), so they are the
+non-regression pass to replay after the publication, as small tickets (fail fast).
+
+## State at 2026-10-02
+
+Every scenario TF-01 to TF-22 passed under Pickle; none is `@wip`; every `@requires:<packageId>` scenario ran with the map that mounts
+it; no manual test is left to validate. What stays outside the suite, by design, is recorded in `TESTS_FONCTIONNELS.md` as limits, not
+open tests: walking is a teleport, no click on an alert entry, the main-bar tooltip is not observable, the settings window is clipped at
+200 percent. Whether RIMMSQOL remembers a button-visibility choice after a restart belongs to RIMMSQOL, not to Housebroken.
+
+## Launching and keeping evidence
+
+Never launch the Windows RimWorld. A run is a request: `Submit-PickleRun.ps1 ... -EvidenceDir Tests/Pickle/Evidence/<run>` (see
+`Rimworld-Ticket-Dispatcher/docs/SUBMIT.md`), written with the repository SHA in the `-Label`, since a request carries no SHA and the mod
+tree must stay frozen until `RUN_DONE`. Read `exitReason` and the played/discovered count, open every `@review` capture, then **minify
+before handing over** and add one line to `docs/runs/`. [docs/runs/README.md](docs/runs/README.md) says what is kept (`summary.md`,
+`junit.xml`, `log-check.txt`, a few small JPEGs of what only a picture answers) and what is dropped (PNGs, `report.html`,
+`messages.ndjson`, `Player.log`). `Tests/Pickle/evidence/` is on disk and ignored by git, as are `*.dds` and `*.webm`; the table of the
+latest proof per scenario is in [docs/runs/2026-10-02.md](docs/runs/2026-10-02.md).

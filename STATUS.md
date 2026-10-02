@@ -9,6 +9,7 @@ repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
 stage:        tested
+workflow_stage: tested
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -44,10 +45,35 @@ remaining:
   - unverified: French review by Virginie (TRANSLATIONS.md, 2026-09-30). FRENCH_REVIEW.md generated at the
     mod root against 5da3b7b; no text in the mod agrees with a pawn's gender.
 session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-09-30, translation_fr reset to partial (TRANSLATIONS.md gender-agreement rule), FRENCH_REVIEW.md generated, no gendered text found
+updated:      2026-10-02, audit against the current AUDIT.md: tested confirmed, evidence trimmed to 1.3 MB, docs refreshed (docs/runs/2026-10-02.md)
 ---
 
 # Housebroken — status
+
+## Audit — 2026-10-02
+
+Audited at `d1c7358` (clean for this mod; `.github/publish.config.json` carries another session's uncommitted change, left alone).
+Previous `tested`, retained `tested` (`workflow_stage: tested`, session title `housebroken / tested`).
+
+- **`done -> tested`, the four lines of the current AUDIT.md.** No `@wip` anywhere in `Tests/Pickle/Mod/Pickle/Features`
+  (grep). Every `@requires:<packageId>` has its pass: screenshotmode/screenshotstudio (01-03, 20, 23, 25, 32), RIMMSQOL
+  (04, 27), hoversteps (32), the two other-filth companions (30, 31), the removal companion (34), Odyssey (TF-06, in 11);
+  each folder under `Tests/Pickle/evidence/` has its `summary.md` and `junit.xml`, every log check reads 0 and 0. No manual test is left:
+  the execution record of `TESTS_FONCTIONNELS.md` has no row `Not executed`; its limits are by design. Checked, not replayed: no run was
+  launched today (rule: never launch RimWorld from a session).
+- **Evidence trimmed** from 190 MB to 1.3 MB; `docs/runs/2026-10-02.md` lists what went and what stays. No STATUS field points to a
+  deleted report (the `2026-09-22` folders it cites are kept). `pickle-reports-archive/stalled-Housebroken-0928-2212` deleted. No `.dds`
+  and no evidence is tracked by git (`git ls-files`), and both are in `.gitignore`.
+- **`PublishedFileId.txt` exists** (`3806137798`, commit `61b00c5`) and `CHANGELOG.md` already opens with `## [0.1.0]`, "creation of the
+  `PublishedFileId.txt` file", under `## [Unreleased]` (becomes 1.0.0 at publication). Nothing to initialize.
+- **Origin repository: none.** Sentience Catalyst Filth Rate Reducer (FlyingSloth, 3525790312) gave the idea only, no code used; no
+  repository in its About, Steam page or by search (rechecked 2026-10-02). So no fork and no PR, and no `BACKLOG.md` entry.
+- **Not demoted, but to be seen:** `translation_fr: partial` waits for the owner's review of `FRENCH_REVIEW.md` (TRANSLATIONS.md,
+  2026-09-30). It is an `unverified` entry in `remaining`, not a defect of the mod.
+- **Non-regression:** TF-01 to TF-22 ran on revisions up to `6af8e17` (the Intermediate tooltip, a UI change); the replay of the
+  whole suite on the final revision comes after the publication, as small tickets (`TESTING.md`).
+- **Next, for `prepublished`:** the gallery beyond image 0, the FlyingSloth thank-you once the item is public, the dry-run of the
+  exact SHA and the release notes; `generate-publish-workflow.sh` has been run (`.github/`), its last config change is uncommitted and not mine.
 
 ## Note from the CI/CD session — 2026-09-27
 

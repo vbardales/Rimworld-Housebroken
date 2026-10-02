@@ -75,3 +75,27 @@ Same rule: a document is re-read only when its hash moves. Every hash below diff
 | `PickleTools/README.md`, `Headless/README.md`, `docs/steps.md` | `628350c7bcc3`, `2310bb974f68`, `2d17e1b10ed7` | not re-read | Moved; read when a step is written or a tool looked up |
 | `Rimworld-Release-Admin/docs/OPERATIONS.md` | `23fcf6423000` | its description-standard lines only | One-source description standard, already applied (2026-09-27) |
 | `Rimworld-Ticket-Dispatcher/docs/WELCOME.md`, `SUBMIT.md` | `08b440a03f74`, `eaca3969c7eb` | not re-read | Moved; commands already in use worked unchanged |
+
+## Re-read on 2026-10-02 (audit session, monorepo HEAD `c770fd1e`)
+
+Same rule: a document is re-read only when its hash moves. Hashes are the first 12 hex digits of SHA-256, and sizes in bytes.
+
+| Document | Hash now | Read | What this mod takes from it |
+| --- | --- | --- | --- |
+| `AGENTS.md` | `7a236f03ca15`, 2716 | in full | Evidence: keep the latest report per scenario for the revision in the repository, delete the rest once a newer one replaces it; `pickle-reports-archive/` is trimmed by each session for its own runs (done: `stalled-Housebroken-0928-2212`); history is one text line per run in `docs/runs/` |
+| `AUDIT.md` | `7c00eb1f3b1b`, 69900 | in full | **`done -> tested`** now says it in four lines: no scenario `@wip`; every `@requires:<packageId>` scenario ran with the map that mounts it; no manual test left to validate; `@review` captures opened. Non-regression passes go last, after the new and red ones, on the final revision. Step 12 of the chain, the WSL clean-up and the branch clean-up apply only at `published`. The session title is `<packageId without nelim.> / <workflow_stage>` |
+| `TRANSLATIONS.md` | `e381086a5271`, 14121 | in full | French review by the owner (`FRENCH_REVIEW.md`), no pawn-gender text in this mod; `translation_fr` stays `partial` until she reviews |
+| `PUBLISHING.md` | `30a1c36885ed`, 65104 | the start, "Mods qui ajoutent des animaux", "Dépôt", "Juste après", "À chaque mise à jour" | If an origin repository exists, a PR to it is systematic and goes in `BACKLOG.md` (none exists here, see below). The four animal-mod integrations concern mods that **add** animals: Housebroken adds none, so none applies |
+
+Not re-read, unchanged: `MOD_SETTINGS.md` (`404916bc99a7`), `scripts/SEARCHING.md` (`013075b06b89`),
+`PickleTools/Headless/README.md` (`2310bb974f68`), `Rimworld-Release-Admin/docs/OPERATIONS.md` (`23fcf6423000`),
+`Rimworld-Ticket-Dispatcher/docs/WELCOME.md` (`08b440a03f74`) and `SUBMIT.md` (`eaca3969c7eb`).
+
+Moved but not useful to this task (no image generated, no comment posted, no step written, no tool looked up), so
+not read: `STYLE_RIMWORLD.md` (`5a054cf3a04b`), `WORKSHOP_COMMENTS.md` (`3fb37586f04b`, only its Housebroken rows were
+searched: Harmony, Pickle, RimLogging, RIMMSQOL `posted`, PickleTools `not_applicable`, FlyingSloth `drafted`),
+`PickleTools/README.md` (`40e44a5d2c12`), `PickleTools/docs/steps.md` (`6cb87154cdb9`).
+
+Mod documents of this repository: `STATUS.md`, `CHANGELOG.md`, `TESTING.md`, `PUBLICATION.md` (to the Steam description),
+`TESTS_FONCTIONNELS.md` (the execution record), `docs/runs/`, `Tests/Pickle/` features and `About.xml` were read. `README.md`
+and `ATTRIBUTION.md` were checked for the origin question only. `BACKLOG.md`, `NOTES.md` and `BUGS.md` do not exist here.
