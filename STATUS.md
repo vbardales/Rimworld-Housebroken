@@ -72,6 +72,7 @@ Previous `tested`, retained `tested` (`workflow_stage: tested`, session title `h
   2026-09-30). It is an `unverified` entry in `remaining`, not a defect of the mod.
 - **Non-regression:** TF-01 to TF-22 ran on revisions up to `6af8e17` (the Intermediate tooltip, a UI change); the replay of the
   whole suite on the final revision comes after the publication, as small tickets (`TESTING.md`).
+- **Code review 2026-10-05** (`/code-review`, low effort, `61b00c5` to `1509201`): no finding. Reviewed commit `1509201eeabb7e1ef53895a5ce6ad004173b0283`; the working tree then also held uncommitted changes (`.github/`, `Art/`, `.gitignore`), read for `.github/` only.
 - **Next, for `prepublished`:** the gallery beyond image 0, the FlyingSloth thank-you once the item is public, the dry-run of the
   exact SHA and the release notes; `generate-publish-workflow.sh` has been run (`.github/`), its last config change is uncommitted and not mine.
 
@@ -503,3 +504,7 @@ but a living source, `forbidden` a written refusal, `original` owing nothing to 
 
 `remaining`: `feature` for something missing from a first release, `defect` for a known fault
 left unfixed, `unverified` for what could not be checked.
+
+## Preview source migration — 2026-10-03
+
+Preview generation now uses the shared renderer with `Art/Preview.config.json`. Canonical sources and publishable outputs were preserved; transient QA belongs in ignored `Art/.render/`.
