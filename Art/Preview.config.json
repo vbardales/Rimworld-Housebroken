@@ -1,0 +1,30 @@
+{
+  "title": "Housebroken",
+  "titleSize": 46,
+  "titleParts": [
+    {
+      "text": "Housebroken"
+    }
+  ],
+  "suffix": "",
+  "tag": "",
+  "copyLines": [
+    "A trained animal makes less mess, and goes outside."
+  ],
+  "backgroundFile": "Preview-source.png",
+  "backgroundSize": "cover",
+  "palette": {
+    "veil": "#3F3021",
+    "inkPrimary": "#F2ECE1",
+    "inkSecondary": "#E7BB78",
+    "accent": "#42B9F5",
+    "badgeInk": "#17120E"
+  },
+  "modIconSource": "ModIcon-source.png",
+  "iconBadge": {
+    "file": "ModIcon-badge.png",
+    "corner": "bottom-left",
+    "width": 220,
+    "outline": false
+  }
+}
