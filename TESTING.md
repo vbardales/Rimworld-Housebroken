@@ -51,6 +51,14 @@ age stat part, a constant times 1.5, to the same stat, one loaded before Housebr
 What Pickle does not replace, and stays a person's check: hovering is now a step (`HoverSteps` in PickleTools), but
 whether a French sentence reads well, and whether a tooltip covers what it should, is for a person looking at the captures.
 
+## Gallery photographs (written 2026-10-06, not played)
+
+`40-gallery.feature` takes the two photographs for the Workshop page on the Sanctuaire de Nelim (`Nelims-tribe`, `PickleTools/docs/GALERIE.md`),
+with `wsl-deps.gallery.map`. Places chosen after reading the whole list of `SANCTUAIRE-LIEUX.md`: `hearth-hall` (a roofed room of the
+colonist's house, so the indoor rule applies) and `statue-garden` (open ground, the outdoor rule). Nothing is cleared or re-roofed; only the
+animals of the hall are removed. Each scenario asserts the filth rate it shows (0 and 1 indoors, 2 outdoors). The cell coordinates are first
+guesses: a blocked cell fails the step by naming it. Not yet submitted: Virginie is still reviewing the framings. Images then go to `Art/Gallery/1-` and `2-`.
+
 ## Passes, and their order
 
 Three families (`AUDIT.md`): **without the optional mods** (the minimal rows above: Core, DLC, Harmony, the mod), **with the optional
