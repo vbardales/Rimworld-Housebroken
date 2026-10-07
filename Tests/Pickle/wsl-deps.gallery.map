@@ -1,5 +1,8 @@
-# Gallery photographs on the Sanctuaire de Nelim (docs/GALERIE.md of PickleTools).
+# Gallery photographs on the Sanctuaire de Nelim, now in the SanctuaryBacklot repository (docs/GALERIE.md there).
+# The save Nelims-tribe and the "Nelim's Sanctuary:" steps come from the Backlot; the animals, the decor and screenshot mode
+# from PickleTools ("Nelim's Pickle Tools:" steps). Animals only here: no body or trouser mods, no facial animation.
 #   Run-PickleWsl.ps1 -Mod Housebroken -DepMap wsl-deps.gallery.map -Filter 40-gallery
+nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
 nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
 nelim.pickletools.stagedecor path:PickleTools/StageDecor/Mod
