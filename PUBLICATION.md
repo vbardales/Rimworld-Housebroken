@@ -13,9 +13,10 @@ Steam creates every item private, and nothing here changes that: the owner switc
 | --- | --- |
 | Stage | `tested` (`STATUS.md`, 2026-09-28). TF-01 to TF-22 all passed under Pickle, the `tested` gate's three conditions all met |
 | Version | the item was created as `0.1.0`; the owner decided the next upload publishes `1.0.0` (repository and `About.xml` both say 1.0.0 now) |
+| Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
 | Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
-| Gallery | image 0 = `Art/Gallery/0-preview.png` (added 2026-09-29); the rest is the owner's to decide (see below) |
-| Thanks comments | drafted below; nothing posted, and nothing can be until the item is public |
+| Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (regenerated 2026-10-05 by `scripts/Render-Preview.cjs`); `40-gallery.feature` written for images 1 and 2, not yet played (see below) |
+| Thanks comments | drafted below; nothing posted, and nothing can be until the item is public. The FlyingSloth page was removed by Steam (checked 2026-10-07), so that comment may be impossible |
 
 ## Publishing by CI
 
@@ -60,19 +61,15 @@ the suite can produce headlessly, and what it cannot:
 
 | Candidate | Source | State |
 | --- | --- | --- |
-| 0: Preview, without the corner badge | `Art/Gallery/0-preview.png`, a plain copy | added 2026-09-29 |
+| 0: the Preview, with the ModIcon corner badge | `Art/Gallery/0-preview.png`, written by the renderer, byte for byte the Preview | regenerated 2026-10-05 |
 | The settings page, English | `32-language-review.feature`, screenshot mode | played in English on 2026-09-22 (`03-language`), opened and legible; not played at 100 and 200 percent yet |
 | The settings page, French | same, `-Language French` | played on 2026-09-22, opened, accents and slider labels legible |
-| The stat explanation of a trained animal, inside and outside | a dedicated capture scenario on the test yard | not written |
-| A trained animal beside an untrained one in the same room | a dedicated capture scenario | not written |
+| Indoors: a trained husky beside an untrained cow, the cow's mess on the floor | `40-gallery.feature`, scenario 1, hearth hall of the Sanctuaire de Nelim | written 2026-10-06, not yet played green (first run failed on my own expectations, fixed) |
+| Outdoors: the same husky lets it go in the statue garden | `40-gallery.feature`, scenario 2 | same |
 
 The gallery itself is a manual step on the Steam page: no library the CI uses can send more than the header image.
 
-**`Mod/About/Preview.png` now carries a corner badge** (owner's instruction, 2026-09-29): `Mod/About/ModIcon.png`, cut out
-of its near-black background (flood fill from the border) and tilted +15°, tucked into the bottom-left corner — the
-emptiest one, since the dog scene fills the right side and a hay bale already sits bottom-right — clipped by the frame on
-its left and bottom edges as if it were poking out of it. Built with the global `sharp` CLI package; the cutout
-intermediate is not kept.
+**`Mod/About/Preview.png` carries the ModIcon in its bottom-left corner** (owner's rule, 2026-09-29), tilted +15°, drawn by the shared renderer from `Art/Preview.config.json` (`iconBadge`, asset `Art/ModIcon-badge.png`), with `Mod/About/ModIcon.png` itself produced from `Art/ModIcon-source.png` (`modIconSource`). Regenerate with `node ../scripts/Render-Preview.cjs` from the repository root; it rewrites `Art/Gallery/0-preview.png` in the same pass.
 
 ## Dependencies and DLCs
 
@@ -102,7 +99,7 @@ for the whole collection.
 
 | Recipient | Workshop ID | Register | What to do |
 | --- | --- | --- | --- |
-| Sentience Catalyst Filth Rate Reducer (FlyingSloth) | 3525790312 | `drafted` on 2026-09-25 | post the draft below |
+| Sentience Catalyst Filth Rate Reducer (FlyingSloth) | 3525790312 | `drafted` on 2026-09-25 | **page removed by Steam** (notice "violates Steam Community & Content Guidelines", read 2026-10-07): comments are probably impossible. Owner to confirm; if so, record that impossibility in the register instead of posting. The thanks stay in the description (its link is kept: it names the source of the idea) |
 | Harmony | 2009463077 | `posted` | Housebroken added to its `Covers`; nothing to post |
 | Pickle | 3791648678 | `posted` | added to `Covers`; nothing to post |
 | RimLogging | 3733484696 | `posted` | added to `Covers`; nothing to post |
@@ -198,7 +195,7 @@ Andreas Pardeike for [Harmony](https://steamcommunity.com/sharedfiles/filedetail
 
 [Pickle](https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), [RimLogging](https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and [PickleTools](https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used for development and testing only; none is a dependency of the distributed mod. [RIMMSQOL](https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457) was used to exercise the optional MainButtons customization path during testing.
 
-This mod is MIT licensed.
+This mod is MIT licensed. Credits and licence details: [ATTRIBUTION.md](https://github.com/vbardales/Rimworld-Housebroken/blob/main/ATTRIBUTION.md).
 
 [Source code on GitHub](https://github.com/vbardales/Rimworld-Housebroken)
 ```
