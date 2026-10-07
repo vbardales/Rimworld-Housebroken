@@ -72,6 +72,7 @@ Previous `tested`, retained `tested` (`workflow_stage: tested`, session title `h
   2026-09-30). It is an `unverified` entry in `remaining`, not a defect of the mod.
 - **Non-regression:** TF-01 to TF-22 ran on revisions up to `6af8e17` (the Intermediate tooltip, a UI change); the replay of the
   whole suite on the final revision comes after the publication, as small tickets (`TESTING.md`).
+- **Publication tree, 2026-10-07:** the tested `Mod/` and the one to publish differ only by the `<description>` of `About.xml` (one added ATTRIBUTION line, synced from PUBLICATION.md), commit `6218fd1`. The workflow template is current (`be96be2`, stamp 82de20b8aa50). The gallery scenario `40-gallery` passed 2 of 2 on 2026-10-07 but its pictures are not usable yet (docs/runs/2026-10-07.md).
 - **Code review 2026-10-05** (`/code-review`, low effort, `61b00c5` to `1509201`): no finding. Reviewed commit `1509201eeabb7e1ef53895a5ce6ad004173b0283`; the working tree then also held uncommitted changes (`.github/`, `Art/`, `.gitignore`), read for `.github/` only.
 - **Next, for `prepublished`:** the gallery beyond image 0, the FlyingSloth thank-you once the item is public, the dry-run of the
   exact SHA and the release notes; `generate-publish-workflow.sh` has been run (`.github/`), its last config change is uncommitted and not mine.
