@@ -38,7 +38,7 @@ Andreas Pardeike for Harmony (https://steamcommunity.com/sharedfiles/filedetails
 
 Pickle (https://steamcommunity.com/sharedfiles/filedetails/?id=3791648678), RimLogging (https://steamcommunity.com/sharedfiles/filedetails/?id=3733484696) and PickleTools (https://steamcommunity.com/sharedfiles/filedetails/?id=3806142401) were used for development and testing only; none is a dependency of the distributed mod. RIMMSQOL (https://steamcommunity.com/sharedfiles/filedetails/?id=1084452457) was used to exercise the optional MainButtons customization path during testing.
 
-This mod is MIT licensed.
+This mod is MIT licensed. Credits and licence details: ATTRIBUTION.md (https://github.com/vbardales/Rimworld-Housebroken/blob/main/ATTRIBUTION.md).
 
 Source code on GitHub (https://github.com/vbardales/Rimworld-Housebroken)</description>
   <modDependencies>
