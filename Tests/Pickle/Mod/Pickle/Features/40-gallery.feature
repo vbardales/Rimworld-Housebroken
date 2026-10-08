@@ -1,4 +1,4 @@
-@review @gallery @requires:nelim.sanctuarybacklot @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.stagedecor @requires:nelim.pickletools.screenshotmode
+@review @gallery @requires:nelim.sanctuarybacklot @requires:nelim.pickletools.screenshotstudio @requires:nelim.pickletools.screenshotmode
 Feature: Housebroken gallery photographs, on the Sanctuaire de Nelim
 
   # Two families of steps, told apart by their prefix:
@@ -15,7 +15,7 @@ Feature: Housebroken gallery photographs, on the Sanctuaire de Nelim
   # rule, so the hearth hall (x 172-190, z 106-124, cells (184,120), (187,120) and (188,120) are free there, away from the doors); open ground
   # with a real garden behind it for the outdoor rule, so the statue garden. Neither is cleared or re-roofed. The frame is
   # the cell at zoom 11. The animals wander during the 251 ticks the rate cache needs (a run of 2026-10-08 lost Rex out of the
-  # hall and another out of the frame), so each is put back on its cell afterwards by this mod's own step; the rate is read there.
+  # hall and another out of the frame), so each is put back near its cell afterwards by this mod's own step; the rate is read there. The dropping is not a placed prop: the animal steps in place through the game's own entry point, so what lies on its cell is what the mod lets through (the cow leaves one, Rex indoors none).
 
   Background:
     Given the save "Nelims-tribe" is loaded
@@ -38,12 +38,14 @@ Feature: Housebroken gallery photographs, on the Sanctuaire de Nelim
     And Housebroken puts "Daisy" at the cell (187, 120)
     Then Housebroken filth rate of "Rex" is "0" times its base rate
     And Housebroken filth rate of "Daisy" is "1" times its base rate
-    When Nelim's Pickle Tools: I place the decor "Filth_AnimalFilth" at (188, 120)
-    And Nelim's Pickle Tools: I frame the cell (185, 118) at zoom 11
+    When Housebroken lets "Daisy" step 2000 times where it stands
+    And Housebroken lets "Rex" step 2000 times where it stands
+    Then Housebroken finds animal filth on the cell of "Daisy"
+    And Housebroken finds no animal filth on the cell of "Rex"
+    When Nelim's Pickle Tools: I frame the cell (185, 118) at zoom 11
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     And I take a screenshot "gallery indoors"
     And Nelim's Pickle Tools: screenshot mode is disabled
-    And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged
 
   Scenario: Gallery 2, outdoors the trained husky lets it go
@@ -55,10 +57,10 @@ Feature: Housebroken gallery photographs, on the Sanctuaire de Nelim
     And Housebroken lets 251 game ticks pass
     And Housebroken puts "Rex" at the cell (152, 95)
     Then Housebroken filth rate of "Rex" is "0.3" times its base rate
-    When Nelim's Pickle Tools: I place the decor "Filth_AnimalFilth" at (151, 95)
+    When Housebroken lets "Rex" step 4000 times where it stands
+    Then Housebroken finds animal filth on the cell of "Rex"
     And Nelim's Pickle Tools: I frame the cell (152, 95) at zoom 11
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     And I take a screenshot "gallery outdoors"
     And Nelim's Pickle Tools: screenshot mode is disabled
-    And Nelim's Pickle Tools: the decor is removed
     Then no errors were logged

@@ -110,6 +110,32 @@ namespace Housebroken.PickleSteps
                 + t.droppedThickness + ", carried load lost " + t.loadsLost + " times";
         }
 
+        // The mod's own path, in place: the game's step-by-cell entry point run where the animal stands, so a dropping
+        // that appears on its cell is what the mod lets through (nothing is staged).
+        [When("Housebroken lets {string} step {int} times where it stands", TimeoutSeconds = 60f)]
+        public void StepInPlace(PickleContext ctx, string name, int steps)
+        {
+            var pawn = AnimalSteps.Named(ctx, name);
+            pawn.jobs?.StopAll();
+            for (int i = 0; i < steps; i++) pawn.filth.Notify_EnteredNewCell();
+        }
+
+        [Then("Housebroken finds animal filth on the cell of {string}")]
+        public void FilthOnCell(PickleContext ctx, string name)
+        {
+            var pawn = AnimalSteps.Named(ctx, name);
+            ctx.Assert(pawn.Position.GetThingList(pawn.Map).OfType<Filth>().Any(f => f.def == ThingDefOf.Filth_AnimalFilth),
+                "no animal filth on the cell of " + name + " " + pawn.Position);
+        }
+
+        [Then("Housebroken finds no animal filth on the cell of {string}")]
+        public void NoFilthOnCell(PickleContext ctx, string name)
+        {
+            var pawn = AnimalSteps.Named(ctx, name);
+            ctx.Assert(!pawn.Position.GetThingList(pawn.Map).OfType<Filth>().Any(f => f.def == ThingDefOf.Filth_AnimalFilth),
+                "animal filth on the cell of " + name + " " + pawn.Position);
+        }
+
         [Then("Housebroken counted no manure from {string}")]
         public void NoManure(PickleContext ctx, string name)
         {

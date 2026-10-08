@@ -157,13 +157,17 @@ namespace Housebroken.PickleSteps
         [When("Housebroken puts {string} at {string}")]
         public void Put(PickleContext ctx, string name, string place) { PutAt(ctx, Named(ctx, name), place); }
 
+        // The nearest standable cell to the one asked for, within three cells: the Sanctuary's cell lists are read
+        // from a save that a later edit may have changed, and a photograph needs the animal near the cell, not on it.
         [When("Housebroken puts {string} at the cell \\({int}, {int}\\)")]
         public void PutAtCell(PickleContext ctx, string name, int x, int z)
         {
             var pawn = Named(ctx, name);
-            var cell = new IntVec3(x, 0, z);
-            ctx.Require(cell.InBounds(pawn.Map) && cell.Standable(pawn.Map),
-                "cell (" + x + ", " + z + ") is out of the map or not standable");
+            var map = pawn.Map;
+            var wanted = new IntVec3(x, 0, z);
+            var cell = GenRadial.RadialCellsAround(wanted, 3f, true)
+                .FirstOrDefault(c => c.InBounds(map) && c.Standable(map) && c.GetFirstPawn(map) == null);
+            ctx.Require(cell.IsValid && cell.InBounds(map), "no standable cell within 3 of (" + x + ", " + z + ")");
             pawn.jobs?.StopAll();
             pawn.Position = cell;
             pawn.Notify_Teleported(false, true);
