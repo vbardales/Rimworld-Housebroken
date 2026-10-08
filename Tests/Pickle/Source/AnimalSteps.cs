@@ -157,6 +157,18 @@ namespace Housebroken.PickleSteps
         [When("Housebroken puts {string} at {string}")]
         public void Put(PickleContext ctx, string name, string place) { PutAt(ctx, Named(ctx, name), place); }
 
+        [When("Housebroken puts {string} at the cell \\({int}, {int}\\)")]
+        public void PutAtCell(PickleContext ctx, string name, int x, int z)
+        {
+            var pawn = Named(ctx, name);
+            var cell = new IntVec3(x, 0, z);
+            ctx.Require(cell.InBounds(pawn.Map) && cell.Standable(pawn.Map),
+                "cell (" + x + ", " + z + ") is out of the map or not standable");
+            pawn.jobs?.StopAll();
+            pawn.Position = cell;
+            pawn.Notify_Teleported(false, true);
+        }
+
         [When("Housebroken removes the home area from the cell of {string}")]
         public void RemoveHome(PickleContext ctx, string name)
         {
