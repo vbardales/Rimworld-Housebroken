@@ -58,7 +58,7 @@ Feature: Housebroken gallery photographs, on the Sanctuaire de Nelim
     And Housebroken puts "Rex" at the cell (152, 95)
     Then Housebroken filth rate of "Rex" is "0.3" times its base rate
     When Housebroken lets "Rex" step 4000 times where it stands
-    Then Housebroken finds animal filth on the cell of "Rex"
+    Then Housebroken finds animal filth within 2 cells of "Rex"
     And Nelim's Pickle Tools: I frame the cell (152, 95) at zoom 11
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     And I take a screenshot "gallery outdoors"

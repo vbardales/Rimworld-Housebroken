@@ -128,6 +128,16 @@ namespace Housebroken.PickleSteps
                 "no animal filth on the cell of " + name + " " + pawn.Position);
         }
 
+        // Outdoors the dropping may land on a neighbouring cell (the game looks for a place when its own is taken).
+        [Then("Housebroken finds animal filth within {int} cells of {string}")]
+        public void FilthNear(PickleContext ctx, int radius, string name)
+        {
+            var pawn = AnimalSteps.Named(ctx, name);
+            var found = GenRadial.RadialCellsAround(pawn.Position, radius, true).Where(c => c.InBounds(pawn.Map))
+                .Any(c => c.GetThingList(pawn.Map).OfType<Filth>().Any(x => x.def == ThingDefOf.Filth_AnimalFilth));
+            ctx.Assert(found, "no animal filth within " + radius + " cells of " + name + " " + pawn.Position);
+        }
+
         [Then("Housebroken finds no animal filth on the cell of {string}")]
         public void NoFilthOnCell(PickleContext ctx, string name)
         {

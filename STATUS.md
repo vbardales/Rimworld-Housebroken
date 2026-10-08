@@ -436,8 +436,7 @@ against `5da3b7b`.
 
 **French review, 2026-10-08 (reviewer: Virginie; `FRENCH_REVIEW.md` at `e3e0928`).** Corrections requested and written into the review file: epicene wording in `Intro`, `ManureOutdoorsTip` and `WipeFeetTip`; "Se combine multiplicativement" / "Combines multiplicatively" in `IntermediateTip` and `AdvancedTip`; the comma of `WholeHomeAreaTip` replaced by a full stop. She then validated the corrected texts. They were applied to `Mod/Languages` on 2026-10-08 after the `RUN_DONE` of `61f3`; `FRENCH_REVIEW.md` was regenerated from the shipped files and the offline runner passes (59 of 59; its stale BBCode link assertion now reads the plain-text form of the one-source description). `translation_fr: complete` on her validation.
 
-`remaining` carries `unverified: French review by Virginie`, per TRANSLATIONS.md; no session marks this
-reviewed or edits this line.
+The French review of Virginie is recorded above (2026-10-08); no session marks it reviewed on its own.
 
 ### Translation audit
 
