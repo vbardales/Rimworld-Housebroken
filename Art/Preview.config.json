@@ -22,7 +22,7 @@
   },
   "modIconSource": "ModIcon-source.png",
   "iconBadge": {
-    "file": "ModIcon-badge.png",
+    "file": "ModIcon-source.png",
     "corner": "bottom-left",
     "width": 220,
     "outline": false

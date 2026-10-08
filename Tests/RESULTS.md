@@ -17,7 +17,7 @@ the September 12 result of 52 successful tests.
   targets reported. The process-only execution-policy override enables the local
   checker; it does not change the machine policy.
 - `node Art/render-preview.cjs` with the bundled Node modules: size and contrast
-  checks passed. Direct final-image and thumbnail inspection passed; see Art/README.md.
+  checks passed. Direct final-image and thumbnail inspection passed; see STATUS.md, "Art sources and regeneration".
 - All original manual scenarios TF-01 through TF-20 retained in English;
   TF-21 and TF-22 add optional shortcut and legacy-settings checks. None executed.
 

@@ -69,7 +69,7 @@ the suite can produce headlessly, and what it cannot:
 
 The gallery itself is a manual step on the Steam page: no library the CI uses can send more than the header image.
 
-**`Mod/About/Preview.png` carries the ModIcon in its bottom-left corner** (owner's rule, 2026-09-29), tilted +15°, drawn by the shared renderer from `Art/Preview.config.json` (`iconBadge`, asset `Art/ModIcon-badge.png`), with `Mod/About/ModIcon.png` itself produced from `Art/ModIcon-source.png` (`modIconSource`). Regenerate with `node ../scripts/Render-Preview.cjs` from the repository root; it rewrites `Art/Gallery/0-preview.png` in the same pass.
+**`Mod/About/Preview.png` carries the ModIcon in its bottom-left corner** (owner's rule, 2026-09-29), tilted +15°, drawn by the shared renderer from `Art/Preview.config.json` (`iconBadge`, asset `Art/ModIcon-source.png`, kept trimmed of transparent padding), with `Mod/About/ModIcon.png` itself produced from `Art/ModIcon-source.png` (`modIconSource`). Sources and regeneration are described in STATUS.md, "Art sources and regeneration". Regenerate with `node ../scripts/Render-Preview.cjs` from the repository root; it rewrites `Art/Gallery/0-preview.png` in the same pass.
 
 ## Dependencies and DLCs
 

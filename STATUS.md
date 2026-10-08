@@ -260,7 +260,7 @@ validation documentation. No commit, push or publication was performed.
   and badge are unclipped; no suffix or reduced linking word applies. Segoe UI is used.
   Art/preview-palette.json is the only palette source for Art/preview.html and
   Art/render-preview.cjs. Measured minimum contrast: title 9.59:1, summary 7.40:1,
-  badge 8.40:1. See Art/README.md for the generation prompt and reproduction command.
+  badge 8.40:1. See "Art sources and regeneration" below for the reproduction command.
   About now ends with the exact Steam-formatted GitHub source link, checked by a test.
 - **options:** all eleven useful settings remain accessible through native Mod options.
   A MainButtonDef with buttonVisible=false inherits native revealable visibility and
@@ -508,3 +508,12 @@ left unfixed, `unverified` for what could not be checked.
 ## Preview source migration — 2026-10-03
 
 Preview generation now uses the shared renderer with `Art/Preview.config.json`. Canonical sources and publishable outputs were preserved; transient QA belongs in ignored `Art/.render/`.
+
+## Art sources and regeneration
+
+Moved here from `Art/README.md` on 2026-10-08 (the folder holds images and `Preview.config.json` only).
+
+- Sources: `Art/Preview-source.png` (text-free illustration), `Art/ModIcon-source.png` (the owner's icon, trimmed of its transparent padding on 2026-10-08 on her express authorisation, 1180 x 1078), `Art/Preview.config.json`. `Art/Preview-original.png` and `Art/ModIcon-original.png` keep the earlier versions.
+- The config reads `ModIcon-source.png` for both the delivered ModIcon (`modIconSource`) and the Preview corner badge (`iconBadge.file`). There is no separate badge file: the shared renderer refuses a source with excessive transparent padding, so the source itself stays trimmed. Do not re-add padding when the owner replaces it; trim it first.
+- Regenerate from the mod root: `node ../scripts/Render-Preview.cjs`. It writes `Mod/About/ModIcon.png` (128 x 128), `Mod/About/Preview.png` (ModIcon badge bottom-left), `Art/Gallery/0-preview.png` (byte-identical copy of the Preview), `Art/Preview.ico` and `Art/ModIcon.ico`. QA files go to `Art/.render/`, ignored by git.
+- Gallery pictures `Art/Gallery/1-…` and later come from Pickle runs, not from the renderer (see PUBLICATION.md and TESTING.md).
