@@ -19,7 +19,7 @@ This is 1.0.0, dated at prepublication as AUDIT.md requires; Steam receives it o
 - The Steam description moved to a single Markdown source, the fenced block under "## Steam description" of
   `PUBLICATION.md`; `Mod/README.template.md` and its `.steamignore` lines are dropped.
 - The manure-outside texts (description, README, `ManureOutdoorsTip` in English and French) now say the held filth is dropped only on built flooring outside: the game never lets an animal soil bare natural ground.
--  no longer says an unroofed pasture gets manure: only built flooring in the open does.
+- The tooltip of "Whole home area counts as inside" no longer says an unroofed pasture gets manure: only built flooring in the open does.
 - Settings texts reworded in French (`ColonyOnlyTip`, `OutdoorTip`, `WipeFeet`) and in the English description.
 - TF-01 through TF-22 played and passed under Pickle, with their limits recorded in `TESTS_FONCTIONNELS.md`.
 
