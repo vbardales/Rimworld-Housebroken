@@ -49,17 +49,17 @@ Feature: Housebroken gallery photographs, on the Sanctuaire de Nelim
     Then no errors were logged
 
   Scenario: Gallery 2, outdoors the trained husky lets it go
-    Given Nelim's Sanctuary: I am at the sanctuary "statue-garden"
-    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Rex" is spawned at (152, 95)
+    Given Nelim's Sanctuary: I am at the sanctuary "calm-zone"
+    And Nelim's Pickle Tools: an adult animal of kind "Husky" named "Rex" is spawned at (200, 187)
     And Housebroken teaches "Rex" the training "Tameness"
     And Housebroken teaches "Rex" the training "Obedience"
     And Housebroken teaches "Rex" the training "Haul"
     And Housebroken lets 251 game ticks pass
-    And Housebroken puts "Rex" at the cell (152, 95)
+    And Housebroken puts "Rex" at the cell (200, 187)
     Then Housebroken filth rate of "Rex" is "0.3" times its base rate
     When Housebroken lets "Rex" step 4000 times where it stands
     Then Housebroken finds animal filth within 2 cells of "Rex"
-    And Nelim's Pickle Tools: I frame the cell (152, 95) at zoom 11
+    And Nelim's Pickle Tools: I frame the cell (200, 187) at zoom 11
     And Nelim's Pickle Tools: screenshot mode is enabled around the open windows
     And I take a screenshot "gallery outdoors"
     And Nelim's Pickle Tools: screenshot mode is disabled
