@@ -3,9 +3,9 @@
 Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it in game.
 
-## [Unreleased]
+## [1.0.0] - 2026-10-08
 
-This becomes 1.0.0 when published. Per AUDIT.md, it remains unreleased above 0.1.0 until then and receives its date at prepublication. Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
+This is 1.0.0, dated at prepublication as AUDIT.md requires; Steam receives it only when published. Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
 (3806137798). Rollback, if needed after the upload, is switching the item back to private, not a code revert.
 
 ### Added
@@ -18,6 +18,8 @@ This becomes 1.0.0 when published. Per AUDIT.md, it remains unreleased above 0.1
 - `modVersion` in `About.xml` moved from 0.1.0 (the version the Workshop item was created with) to 1.0.0.
 - The Steam description moved to a single Markdown source, the fenced block under "## Steam description" of
   `PUBLICATION.md`; `Mod/README.template.md` and its `.steamignore` lines are dropped.
+- The manure-outside texts (description, README, `ManureOutdoorsTip` in English and French) now say the held filth is dropped only on built flooring outside: the game never lets an animal soil bare natural ground.
+- Settings texts reworded in French (`ColonyOnlyTip`, `OutdoorTip`, `WipeFeet`) and in the English description.
 - TF-01 through TF-22 played and passed under Pickle, with their limits recorded in `TESTS_FONCTIONNELS.md`.
 
 ## [0.1.0]

@@ -9,7 +9,7 @@ repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
 stage:        tested
-workflow_stage: tested
+workflow_stage: prepublished
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -73,6 +73,7 @@ Previous `tested`, retained `tested` (`workflow_stage: tested`, session title `h
 - **Publication tree, 2026-10-07:** the tested `Mod/` and the one to publish differ only by the `<description>` of `About.xml` (one added ATTRIBUTION line, synced from PUBLICATION.md), commit `6218fd1`. The workflow template is current (`be96be2`, stamp 82de20b8aa50). The gallery scenario `40-gallery` passed 2 of 2 on 2026-10-07 but its pictures are not usable yet (docs/runs/2026-10-07.md).
 - **Code review 2026-10-05** (`/code-review`, low effort, `61b00c5` to `1509201`): no finding. Reviewed commit `1509201eeabb7e1ef53895a5ce6ad004173b0283`; the working tree then also held uncommitted changes (`.github/`, `Art/`, `.gitignore`), read for `.github/` only.
 - **Wording review, 2026-10-08 (second pass):** three French settings texts (`ColonyOnlyTip`, `OutdoorTip`, `WipeFeet`), the first Steam-description bullet (also in `About.xml`) and two CHANGELOG sentences reworded; `PUBLICATION.md` gallery rows and the image 0 description corrected. Text only, no logic: offline runner 59/59, `FRENCH_REVIEW.md` regenerated.
+- **Prepublished, 2026-10-08:** gallery (images 0, 1, 2) accepted by the owner; CHANGELOG `## [1.0.0]` dated; PUBLICATION.md read again; DLL unchanged since the sources (commit 6af8e17). `stage` stays `tested`, `workflow_stage` is `prepublished`. Next: dry-run of the exact pushed SHA, then `publish` approved by the owner only; the regression pass follows the publication (fail-fast policy). Nothing is committed between the final dry-run and the publish, so its run ID and SHA are recorded here afterwards.
 - **Next, for `prepublished`:** the FlyingSloth thank-you once the item is public, the dry-run of the
   exact SHA and the release notes; `generate-publish-workflow.sh` has been run (`.github/`), its last config change is uncommitted and not mine.
 

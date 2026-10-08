@@ -85,7 +85,7 @@ game's own `TrainableUtility.GetTrainability`, so it needs Odyssey only when the
 
 **None of them.** The mod adds no content of its own beyond a stat part and two patches. The two images that ship were opened on
 2026-09-25: `Preview.png` shows a husky walking across a barn floor toward an open door, a straw bale on either side and a small
-dropping outside; `ModIcon.png` is an orange mascot with a kennel and a bowl. No character, no scene.
+dropping outside; `ModIcon.png` is an orange mascot with a kennel and a bowl. The gallery pictures were opened on 2026-10-08: `1-indoors.png` a husky and a cow in a wooden hall, `2-outdoors.png` a husky on a cream floor, both with small droppings. No character, no scene.
 
 ## Messages for the mods this one draws from
 
@@ -129,7 +129,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=3806137798
 
 ## Steam change notes
 
-Sent as written (BBCode), under 8000 bytes. The `1.0.0` note is drafted and must be read once more against the final `CHANGELOG.md`.
+Sent as written (BBCode), under 8000 bytes. The `1.0.0` note was read against the final `CHANGELOG.md` on 2026-10-08.
 
 ### 1.0.0
 
