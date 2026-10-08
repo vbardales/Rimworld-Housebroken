@@ -15,7 +15,7 @@ Steam creates every item private, and nothing here changes that: the owner switc
 | Version | the item was created as `0.1.0`; the owner decided the next upload publishes `1.0.0` (repository and `About.xml` both say 1.0.0 now) |
 | Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
 | Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
-| Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (regenerated 2026-10-05 by `scripts/Render-Preview.cjs`); `40-gallery.feature` written for images 1 and 2, not yet played (see below) |
+| Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (regenerated 2026-10-05 by `scripts/Render-Preview.cjs`); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |
 | Thanks comments | drafted below; nothing posted, and nothing can be until the item is public. The FlyingSloth page was removed by Steam (checked 2026-10-07), so that comment may be impossible |
 
 ## Publishing by CI
@@ -54,9 +54,7 @@ commit and a tag at each good version are still kept for reference.
 
 ## Screenshots, in this order
 
-**Image 0 is `Art/Gallery/0-preview.png`** (owner's instruction, 2026-09-29): a plain copy of `Mod/About/Preview.png` as it
-stood before the corner badge below, so the header image and the first gallery slide are not the same file once that badge
-is added. Steam shows this first image large under the Preview, so the order after it stays the owner's to decide. What
+**Image 0 is `Art/Gallery/0-preview.png`** (owner's instruction, 2026-09-29): a byte-for-byte copy of `Mod/About/Preview.png`, ModIcon corner badge included, written by the renderer in the same pass, so the header image and the first gallery slide are the same file. Steam shows this first image large under the Preview, so the order after it stays the owner's to decide. What
 the suite can produce headlessly, and what it cannot:
 
 | Candidate | Source | State |
@@ -167,7 +165,7 @@ the template and `Mod/.steamignore` are dropped, since nothing in `Mod/` needs h
 ```markdown
 A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
 
-- Filth rate reduced according to the individual animal's training (obedience, then the later training steps) and to its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
+- An animal's filth rate is reduced according to its individual training (obedience, then later training steps) and its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
 - Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
 - Mud stays outside: the same animal keeps the mud and blood it picked up on its feet while inside the base, and drops them once out.
 - Clean animals are exempted from the "animal filth" alert.

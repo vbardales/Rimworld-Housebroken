@@ -5,7 +5,7 @@ This file serves the repository and the writing of Steam patch notes; RimWorld d
 
 ## [Unreleased]
 
-Becomes 1.0.0 at publication (AUDIT.md: stays unreleased, above 0.1.0, until published; dated when prepublished). Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
+This becomes 1.0.0 when published. Per AUDIT.md, it remains unreleased above 0.1.0 until then and receives its date at prepublication. Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
 (3806137798). Rollback, if needed after the upload, is switching the item back to private, not a code revert.
 
 ### Added
@@ -25,8 +25,7 @@ Becomes 1.0.0 at publication (AUDIT.md: stays unreleased, above 0.1.0, until pub
 - Creation of the `PublishedFileId.txt` file (`Mod/About/PublishedFileId.txt`): the Workshop item exists, id
   `3806137798`. It was created by the prepublication.
 
-The content of this version is everything described below: the first version, then the fixes and additions made
-before the prepublication.
+This version contains the first version and the fixes and additions made before prepublication, described below.
 
 ## First version — RimWorld 1.6
 

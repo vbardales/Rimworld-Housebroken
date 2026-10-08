@@ -17,7 +17,7 @@
   <Housebroken.Settings.AdvancedTip>Se combine multiplicativement avec la réduction due au dressage. Le catalyseur de sentience fait monter la dressabilité d'un cran : il compte donc ici.</Housebroken.Settings.AdvancedTip>
 
   <Housebroken.Settings.ColonyOnly>Animaux de la colonie uniquement</Housebroken.Settings.ColonyOnly>
-  <Housebroken.Settings.ColonyOnlyTip>Laisse les animaux sauvages et ceux des visiteurs tels quels.</Housebroken.Settings.ColonyOnlyTip>
+  <Housebroken.Settings.ColonyOnlyTip>Ne modifie pas les animaux sauvages ni ceux des visiteurs.</Housebroken.Settings.ColonyOnlyTip>
 
   <Housebroken.Settings.ManureOutdoors>Fumier à l'extérieur de la base</Housebroken.Settings.ManureOutdoors>
   <Housebroken.Settings.ManureOutdoorsTip>Les réglages ci-dessus rendent certains animaux plus propres : leur saleté est retenue dans la base, puis déposée à l'extérieur. Les animaux sans réduction ne sont pas concernés.</Housebroken.Settings.ManureOutdoorsTip>
@@ -26,9 +26,9 @@
   <Housebroken.Settings.Indoor>Dans la base : −{0} % de saleté</Housebroken.Settings.Indoor>
   <Housebroken.Settings.IndoorTip>À 100 %, l'animal ne dépose plus rien du tout à l'intérieur.</Housebroken.Settings.IndoorTip>
   <Housebroken.Settings.Outdoor>Dehors : ×{0} % de saleté</Housebroken.Settings.Outdoor>
-  <Housebroken.Settings.OutdoorTip>À 200 % par défaut : ce qui a été retenu dans la base ressort dehors, au lieu de disparaître. À 100 %, la colonie produit simplement moins de saleté au total. La valeur juste dépend du temps que les bêtes passent réellement dehors.</Housebroken.Settings.OutdoorTip>
+  <Housebroken.Settings.OutdoorTip>À 200 % par défaut : ce qui a été retenu dans la base ressort dehors, au lieu de disparaître. À 100 %, la colonie produit simplement moins de saleté au total. La valeur appropriée dépend du temps que les animaux passent réellement dehors.</Housebroken.Settings.OutdoorTip>
 
-  <Housebroken.Settings.WipeFeet>Ne rapporte pas la boue dans la base</Housebroken.Settings.WipeFeet>
+  <Housebroken.Settings.WipeFeet>Ne pas rapporter de boue dans la base</Housebroken.Settings.WipeFeet>
   <Housebroken.Settings.WipeFeetTip>Chez un animal assez propre, la boue et le sang ramassés par les pattes restent retenus dans la base, puis sont déposés une fois dehors. Sans ce réglage, le dressage ne change rien à ce qu'un animal traîne derrière lui : la saleté transportée suit un tout autre chemin que celle qu'il produit.</Housebroken.Settings.WipeFeetTip>
 
   <Housebroken.Settings.ExemptAlert>Exempter les animaux propres de l'alerte « saleté animale »</Housebroken.Settings.ExemptAlert>

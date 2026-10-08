@@ -10,7 +10,7 @@
   </supportedVersions>
   <description>A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
 
-- Filth rate reduced according to the individual animal's training (obedience, then the later training steps) and to its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
+- An animal's filth rate is reduced according to its individual training (obedience, then later training steps) and its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
 - Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
 - Mud stays outside: the same animal keeps the mud and blood it picked up on its feet while inside the base, and drops them once out.
 - Clean animals are exempted from the "animal filth" alert.
