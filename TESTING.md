@@ -70,17 +70,11 @@ mods** (the RIMMSQOL, hover, other-filth rows: the tools that exercise a path, n
 incompatibility** (none: the mod declares no `incompatibleWith`). The tables above are the full list: 3 passes of the settings page, then
 the 12 passes of TF-01 to TF-22.
 
-**Order.** What has never run or is red is replayed alone, in a small ticket (`-Filter`). The non-regression passes, which replay what
-already ran green, are deposited all together at the end, on the final revision. Today nothing is red and nothing has never run; the
-TF-01 to TF-14 and TF-15 to TF-22 runs of 2026-09-25 predate the Intermediate tooltip commit `6af8e17` (a UI change), so they are the
-non-regression pass to replay after the publication, as small tickets (fail fast).
+**Order.** What has never run or is red is replayed alone, in a small ticket (`-Filter`). The non-regression passes, which replay what already ran green, are deposited together on the final revision; for Housebroken they were queued after the publication, as small tickets (fail fast), and their verdicts are in `docs/runs/2026-10-08.md`.
 
-## State at 2026-10-02
+## State
 
-Every scenario TF-01 to TF-22 passed under Pickle; none is `@wip`; every `@requires:<packageId>` scenario ran with the map that mounts
-it; no manual test is left to validate. What stays outside the suite, by design, is recorded in `TESTS_FONCTIONNELS.md` as limits, not
-open tests: walking is a teleport, no click on an alert entry, the main-bar tooltip is not observable, the settings window is clipped at
-200 percent. Whether RIMMSQOL remembers a button-visibility choice after a restart belongs to RIMMSQOL, not to Housebroken.
+Every scenario TF-01 to TF-22 passed under Pickle (2026-09-25, 26, 28); none is `@wip`; the gallery passed 2026-10-08. The limits (walking is a teleport, no click on an alert entry, the main-bar tooltip is not observable, the settings window is clipped at 200 percent) are recorded in `TESTS_FONCTIONNELS.md` as limits, not open tests. Whether RIMMSQOL remembers a button-visibility choice after a restart belongs to RIMMSQOL. The non-regression replay on the published revision was queued 2026-10-08 (`docs/runs/2026-10-08.md`).
 
 ## Launching and keeping evidence
 

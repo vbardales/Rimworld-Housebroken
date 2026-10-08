@@ -11,12 +11,12 @@ Steam creates every item private, and nothing here changes that: the owner switc
 
 | Item | State |
 | --- | --- |
-| Stage | `tested` (`STATUS.md`, 2026-09-28). TF-01 to TF-22 all passed under Pickle, the `tested` gate's three conditions all met |
-| Version | the item was created as `0.1.0`; the owner decided the next upload publishes `1.0.0` (repository and `About.xml` both say 1.0.0 now) |
+| Stage | `published` (`STATUS.md`, 2026-10-08), version 1.0.0, public since 2026-10-08 |
+| Version | 1.0.0 published (tag `v1.0.0`, release `Housebroken 1.0.0`, SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`); repository and `About.xml` say 1.0.0 |
 | Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
-| Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
+| Workflow | `publish-tag.yml` under `.github/`, template stamp `82de20b8aa50` |
 | Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (regenerated 2026-10-05 by `scripts/Render-Preview.cjs`); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |
-| Thanks comments | all done: the four collective comments already cover Housebroken, and the FlyingSloth comment was posted by the owner on 2026-10-08 |
+| Thanks comments | all done (see below) |
 
 ## Publishing by CI
 
@@ -89,60 +89,24 @@ dropping outside; `ModIcon.png` is an orange mascot with a kennel and a bowl. Th
 
 ## Messages for the mods this one draws from
 
-Steam comments take BBCode, and a bare Workshop URL becomes a widget, hence the link alone on the last line. Under 1000 characters each.
-**Post them once the item is public.** A link to a private item opens for nobody and the widget does not render.
-
-The register of the collection (`WORKSHOP_COMMENTS.md`) decides whether a comment is still needed: one main comment per recipient page
-for the whole collection.
-
-| Recipient | Workshop ID | Register | What to do |
-| --- | --- | --- | --- |
-| Sentience Catalyst Filth Rate Reducer (FlyingSloth) | 3525790312 | `posted` on 2026-10-08 | posted by the owner once the item was public; the register is updated |
-| Harmony | 2009463077 | `posted` | Housebroken added to its `Covers`; nothing to post |
-| Pickle | 3791648678 | `posted` | added to `Covers`; nothing to post |
-| RimLogging | 3733484696 | `posted` | added to `Covers`; nothing to post |
-| RIMMSQOL | 1084452457 | `posted` | added to `Covers`; nothing to post |
-| PickleTools | 3806142401 | `not_applicable` | the same author's project, no self-comment |
-
-### Sentience Catalyst Filth Rate Reducer (FlyingSloth) — posted 2026-10-08
-
-The source of the idea, and only of the idea: no code and no file of that mod was read.
-
-```
-Housebroken is out :) The idea came from your Sentience Catalyst Filth Rate Reducer: you showed me that the FilthRate stat is the place to look. I kept the principle but the criterion is training and trainability now, no code of yours used. Thank you for the nudge!
-
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806137798]Housebroken[/url]
-```
+All posted or covered (register `WORKSHOP_COMMENTS.md`): Harmony, Pickle, RimLogging and RIMMSQOL name Housebroken in their collective
+comment; PickleTools is the same author's project (no self-comment); the FlyingSloth thank-you was posted by the owner on 2026-10-08
+(its text is in `docs/runs/2026-10-08.md`). For a next version: comments only when the register says one is missing, BBCode, link hidden
+behind `[url=…]`, under 1000 characters, posted once the item is public.
 
 ## What the upload cannot take back
 
 - **`About/PublishedFileId.txt`** holds `3806137798` and is committed and pushed. Lost, the next upload creates a second item.
 - **The description** is sent to Steam only when the item is created, or when a workflow sends it with `update_description`. Until then a
   correction is made by hand on the Steam page, never from `About.xml`.
-- **The item is private.** RimWorld never sets its visibility, and neither does the CI.
-- **The uploaded item's `About.xml` says `modVersion` 1.0.0** (from before the prepublication's own version was fixed at 0.1.0).
-  The repository now says 1.0.0 again too, so the next upload should read the same, unlike the mismatch this line used to record.
+- **Visibility** is never sent by the CI nor by RimWorld; the item is public since 2026-10-08, set by the owner. Rollback, decided by the
+  owner: switch it back to private, not a code revert.
 
 ## Steam change notes
 
-Sent as written (BBCode), under 8000 bytes. The `1.0.0` note was read against the final `CHANGELOG.md` on 2026-10-08.
-
-### 1.0.0
-
-```
-[b]Housebroken 1.0.0[/b]
-
-A trained or intelligent animal makes less mess, and keeps it out of your base. The held filth is dropped only on built flooring outside.
-
-[list]
-[*]Filth rate reduced by the animal's training (obedience, then further training) and by its species' trainability. The sentience catalyst counts.
-[*]Manure outside: a clean enough animal holds it inside the base, then drops it on built flooring outside.
-[*]Mud and blood on its feet stay outside the base too.
-[*]Clean animals leave the "animal filth" alert.
-[*]Every value is adjustable in Mod options; a hidden main-bar shortcut opens the same page for customization mods.
-[*]No data is added to the save: safe to add to or remove from a game in progress.
-[/list]
-```
+Sent as written (BBCode), under 8000 bytes, read by the workflow from the fenced block under `### <version>`. The notes of 1.0.0, already
+sent, are in `docs/runs/2026-10-08.md`. For the next version, write a `### <version>` block here, from the `## [<version>]` section of
+`CHANGELOG.md`, before the dry-run.
 
 ## Steam description
 
