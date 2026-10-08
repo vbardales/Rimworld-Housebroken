@@ -20,7 +20,7 @@
   <Housebroken.Settings.ColonyOnlyTip>Leave wild animals and visitors' animals untouched.</Housebroken.Settings.ColonyOnlyTip>
 
   <Housebroken.Settings.ManureOutdoors>Manure outside the base</Housebroken.Settings.ManureOutdoors>
-  <Housebroken.Settings.ManureOutdoorsTip>An animal already made cleaner by the settings above holds it while inside the base, and relieves itself once outside. Animals with no reduction at all are unaffected.</Housebroken.Settings.ManureOutdoorsTip>
+  <Housebroken.Settings.ManureOutdoorsTip>An animal already made cleaner by the settings above holds its filth while inside the base, then drops it only on built flooring outside. Animals with no reduction at all are unaffected.</Housebroken.Settings.ManureOutdoorsTip>
   <Housebroken.Settings.WholeHomeArea>Whole home area counts as "inside"</Housebroken.Settings.WholeHomeArea>
   <Housebroken.Settings.WholeHomeAreaTip>Off: only roofed rooms of the home area count, so an unroofed pasture still gets manure. On: nothing is dropped anywhere in the home area.</Housebroken.Settings.WholeHomeAreaTip>
   <Housebroken.Settings.Indoor>Inside the base: -{0}% filth</Housebroken.Settings.Indoor>
