@@ -16,7 +16,7 @@ Steam creates every item private, and nothing here changes that: the owner switc
 | Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
 | Workflow | `publish-tag.yml` generated under `.github/` (2026-09-27) |
 | Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (regenerated 2026-10-05 by `scripts/Render-Preview.cjs`); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |
-| Thanks comments | drafted below; nothing posted, and nothing can be until the item is public. The FlyingSloth page was removed by Steam (checked 2026-10-07), so that comment may be impossible |
+| Thanks comments | all done: the four collective comments already cover Housebroken, and the FlyingSloth comment was posted by the owner on 2026-10-08 |
 
 ## Publishing by CI
 
@@ -97,25 +97,21 @@ for the whole collection.
 
 | Recipient | Workshop ID | Register | What to do |
 | --- | --- | --- | --- |
-| Sentience Catalyst Filth Rate Reducer (FlyingSloth) | 3525790312 | `drafted` on 2026-09-25 | **page removed by Steam** (notice "violates Steam Community & Content Guidelines", read 2026-10-07): comments are probably impossible. Owner to confirm; if so, record that impossibility in the register instead of posting. The thanks stay in the description (its link is kept: it names the source of the idea) |
+| Sentience Catalyst Filth Rate Reducer (FlyingSloth) | 3525790312 | `posted` on 2026-10-08 | posted by the owner once the item was public; the register is updated |
 | Harmony | 2009463077 | `posted` | Housebroken added to its `Covers`; nothing to post |
 | Pickle | 3791648678 | `posted` | added to `Covers`; nothing to post |
 | RimLogging | 3733484696 | `posted` | added to `Covers`; nothing to post |
 | RIMMSQOL | 1084452457 | `posted` | added to `Covers`; nothing to post |
 | PickleTools | 3806142401 | `not_applicable` | the same author's project, no self-comment |
 
-### Sentience Catalyst Filth Rate Reducer (FlyingSloth) — drafted
+### Sentience Catalyst Filth Rate Reducer (FlyingSloth) — posted 2026-10-08
 
 The source of the idea, and only of the idea: no code and no file of that mod was read.
 
 ```
-Hello! 🐾 I just released Housebroken, and the idea came straight from your Sentience Catalyst Filth Rate Reducer, so thank you for it!
+Housebroken is out :) The idea came from your Sentience Catalyst Filth Rate Reducer: you showed me that the FilthRate stat is the place to look. I kept the principle but the criterion is training and trainability now, no code of yours used. Thank you for the nudge!
 
-Your mod made me look at where a colony's mess really comes from: one stat, FilthRate, read every time an animal steps onto a new cell. Housebroken keeps that principle but changes the criterion. An animal makes less mess as it learns obedience and more training, and as its species is easier to train (the sentience catalyst still counts, through the trainability it adds). It also holds it until it is outside the base, and keeps its feet clean. 💛
-
-No code or file of yours was used, only the idea. Thank you for pointing me at the right stat! 🙏
-
-https://steamcommunity.com/sharedfiles/filedetails/?id=3806137798
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3806137798]Housebroken[/url]
 ```
 
 ## What the upload cannot take back
