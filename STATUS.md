@@ -13,510 +13,80 @@ workflow_stage: published
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
-  none of its code used; no repo URL in its About.xml, Source/, or the Steam page; a web search found none. Checked 2026-09-28)
+  none of its code used; no repo URL in its About.xml, Source/, or the Steam page. Checked 2026-09-28 and 2026-10-02)
 dependencies: declared
 showcase:     complete
-tested_on:
+tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision queued 2026-10-08 (docs/runs/2026-10-08.md)
 workshop:      3806137798
 remaining:
-  - passed: TF-01 through TF-22 under Pickle (2026-09-25, 26 and 28, docs/runs/). Limits recorded, not defects: walking is a teleport,
-    no click on an alert entry, the caravan goes through game functions, the main-bar tooltip is not observable,
-    and the settings window is clipped at 200 percent.
-  - fixed 2026-09-27, replayed green 2026-09-28: the Intermediate slider had no tooltip (the only reduction row without one). Added
-    Housebroken.Settings.IntermediateTip in English and French, wired in HousebrokenMod.cs, rebuilt. All 22 tooltip captures (11 per
-    language) opened in the 2026-09-28 replay (docs/runs/2026-09-28.md).
-  - fixed 2026-09-27: migrated to the CI/CD one-source standard (Rimworld-Release-Admin f196148). The description now lives in a
-    ```markdown block under "## Steam description" of PUBLICATION.md; Mod/README.template.md and Mod/.steamignore are dropped (no
-    workflow existed yet under .github/, so nothing live needed comparing). Still to do, at the next publication: run
-    generate-publish-workflow.sh with --description-markdown PUBLICATION.md --description-heading and --about-from-description, read
-    the About.xml diff, then a new dry-run.
-  - unverified: RIMMSQOL's Housebroken shortcut reveal/hide path passed once in WSL, but
-    other customization tools and exact integration-version coverage remain unverified.
-  - unverified: subscriber test, public-visibility confirmation and posted Workshop thank-you
-    messages for item 3806137798 have not been evidenced in this audit.
-  - fixed 2026-09-27: the owner decided the next publication is `1.0.0` (rollback: switch the item back to private,
-    not a code revert). `modVersion` in `About.xml` moved from 0.1.0 back to 1.0.0, matching what the uploaded item
-    already carries from before its version was fixed at 0.1.0; `CHANGELOG.md` now dates a `## [1.0.0]` section. The
-    stale `v1.0.0` tag was deleted from origin on 2026-09-24; the CI creates `v1.0.0` after a successful upload, never
-    by hand.
-  - fixed 2026-09-25: the About description now thanks Pickle, RimLogging and PickleTools (development only) and RIMMSQOL, names Codex in the AI line and links the
-    tools. Its source for the CI is now the ```markdown block in PUBLICATION.md (2026-09-27 migration). The Workshop page shows it only after the next upload.
-  - unverified: PUBLICATION.md has no gallery image. Nothing has been posted on Steam.
-session:      local_4d2743f4-5c98-4ccc-95af-33bbae4bd890
-updated:      2026-10-02, audit against the current AUDIT.md: tested confirmed, evidence trimmed to 1.3 MB, docs refreshed (docs/runs/2026-10-02.md)
+  - unverified: the non-regression replay of TF-01 to TF-22 on the published revision (`c360021`) is queued as small tickets;
+    its verdicts go to docs/runs/2026-10-08.md. A red one is a defect of the published version (rollback = new publication, AUDIT.md).
+  - unverified: RIMMSQOL's Housebroken shortcut reveal/hide passed once in WSL; other customization tools and exact
+    integration-version coverage are not verified. Persistence of the choice belongs to RIMMSQOL.
+  - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
+    functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
+session:      local_77aa9676-e414-489e-a71a-4bfee8d7b106
+updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
 ---
 
 # Housebroken — status
 
-## Audit — 2026-10-02
+## State
 
-Audited at `d1c7358` (clean for this mod; `.github/publish.config.json` carries another session's uncommitted change, left alone).
-Previous `tested`, retained `tested` (`workflow_stage: tested`, session title `housebroken / tested`).
+Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.0.0, on RimWorld 1.6.
 
-- **`done -> tested`, the four lines of the current AUDIT.md.** No `@wip` anywhere in `Tests/Pickle/Mod/Pickle/Features`
-  (grep). Every `@requires:<packageId>` has its pass: screenshotmode/screenshotstudio (01-03, 20, 23, 25, 32), RIMMSQOL
-  (04, 27), hoversteps (32), the two other-filth companions (30, 31), the removal companion (34), Odyssey (TF-06, in 11);
-  each folder under `Tests/Pickle/evidence/` has its `summary.md` and `junit.xml`, every log check reads 0 and 0. No manual test is left:
-  the execution record of `TESTS_FONCTIONNELS.md` has no row `Not executed`; its limits are by design. Checked, not replayed: no run was
-  launched today (rule: never launch RimWorld from a session).
-- **Evidence trimmed** from 190 MB to 1.3 MB; `docs/runs/2026-10-02.md` lists what went and what stays. No STATUS field points to a
-  deleted report (the `2026-09-22` folders it cites are kept). `pickle-reports-archive/stalled-Housebroken-0928-2212` deleted. No `.dds`
-  and no evidence is tracked by git (`git ls-files`), and both are in `.gitignore`.
-- **`PublishedFileId.txt` exists** (`3806137798`, commit `61b00c5`) and `CHANGELOG.md` already opens with `## [0.1.0]`, "creation of the
-  `PublishedFileId.txt` file", under `## [Unreleased]` (becomes 1.0.0 at publication). Nothing to initialize.
-- **Origin repository: none.** Sentience Catalyst Filth Rate Reducer (FlyingSloth, 3525790312) gave the idea only, no code used; no
-  repository in its About, Steam page or by search (rechecked 2026-10-02). So no fork and no PR, and no `BACKLOG.md` entry.
-- **Not demoted, but to be seen:** `translation_fr: partial` waits for the owner's review of `FRENCH_REVIEW.md` (TRANSLATIONS.md,
-  2026-09-30). It is an `unverified` entry in `remaining`, not a defect of the mod.
-- **Non-regression:** TF-01 to TF-22 ran on revisions up to `6af8e17` (the Intermediate tooltip, a UI change); the replay of the
-  whole suite on the final revision comes after the publication, as small tickets (`TESTING.md`).
-- **Publication tree, 2026-10-07:** the tested `Mod/` and the one to publish differ only by the `<description>` of `About.xml` (one added ATTRIBUTION line, synced from PUBLICATION.md), commit `6218fd1`. The workflow template is current (`be96be2`, stamp 82de20b8aa50). The gallery scenario `40-gallery` passed 2 of 2 on 2026-10-07 but its pictures are not usable yet (docs/runs/2026-10-07.md).
-- **Code review 2026-10-05** (`/code-review`, low effort, `61b00c5` to `1509201`): no finding. Reviewed commit `1509201eeabb7e1ef53895a5ce6ad004173b0283`; the working tree then also held uncommitted changes (`.github/`, `Art/`, `.gitignore`), read for `.github/` only.
-- **Wording review, 2026-10-08 (second pass):** three French settings texts (`ColonyOnlyTip`, `OutdoorTip`, `WipeFeet`), the first Steam-description bullet (also in `About.xml`) and two CHANGELOG sentences reworded; `PUBLICATION.md` gallery rows and the image 0 description corrected. Text only, no logic: offline runner 59/59, `FRENCH_REVIEW.md` regenerated.
-- **Prepublished, 2026-10-08:** gallery (images 0, 1, 2) accepted by the owner; CHANGELOG `## [1.0.0]` dated; PUBLICATION.md read again; DLL unchanged since the sources (commit 6af8e17). `stage` stays `tested`, `workflow_stage` is `prepublished`. Next: dry-run of the exact pushed SHA, then `publish` approved by the owner only; the regression pass follows the publication (fail-fast policy). Nothing is committed between the final dry-run and the publish, so its run ID and SHA are recorded here afterwards.
-- **Published to Steam, 2026-10-08:** dry-run [37798996377](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/37798996377) then publish run [37800930249](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/37800930249) on SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`, version 1.0.0, options update_preview and update_description, `steam-production` approved by the owner. Both jobs green; the CI created tag `v1.0.0` and the GitHub release `Housebroken 1.0.0`. `PublishedFileId.txt` unchanged (3806137798). **Switched to public by the owner on 2026-10-08**, who also read the public page and did the manual Steam steps (gallery 0, 1, 2, Harmony as required item, subscriptions): all OK, stated 2026-10-08. FlyingSloth thank-you posted by the owner, stated 2026-10-08, so `stage` is `published`. The regression pass (TESTING.md) follows, one small ticket at a time.
-- **Next, for `prepublished`:** the FlyingSloth thank-you once the item is public, the dry-run of the
-  exact SHA and the release notes; `generate-publish-workflow.sh` has been run (`.github/`), its last config change is uncommitted and not mine.
-
-## Note from the CI/CD session — 2026-09-27
-
-The manual publish workflow (`publish-tag.yml`) is now in place; `Mod/About/About.xml`'s
-description was resynced from `PUBLICATION.md`'s `## Steam description` block (a BBCode-to-plain-
-text reformat only, no wording change). `CHANGELOG.md`'s ambiguous `## [Unreleased]` section was
-left for a human to date, which the owner then did the same day: `## [1.0.0]`, `modVersion` moved
-back to 1.0.0, rollback set to switching the item back to private rather than a code revert.
-
-Kept at the root, never inside `Mod/`, so Steam never receives it. Maintained by the session
-that holds this mod, not by the sweep that first wrote it.
-
-## Gate to `tested`, as of 2026-09-24
-
-Three conditions, all required. The stage stays `done` until the third holds.
-
-| Condition | State |
-| --- | --- |
-| No scenario left `@wip` | Met: the four Pickle features carry `@review` and `@requires`, none carries `@wip`. |
-| Every conditional scenario has run | Met: every `@requires:<packageId>` scenario has a pass with the map that mounts it, on the tested revision — RIMMSQOL's `27-shortcut-and-settings` (`a03c`, `f-shortcut/`), the `hover`/`interfacescale`/`keyedclick` tools' `32-language-review` (`f-tips-en/`, `f2-tips-fr/`, `f-page-fr/`, `f2-page-en/`). |
-| No manual test left to validate, all green | **Met, for what Pickle can play.** TF-01 through TF-22 all passed under Pickle (2026-09-25, 26, 28), including a 2026-09-28 replay after the Intermediate tooltip fix. What is by design not testable this way (main-bar tooltip, a click on an alert entry, the 200 percent window) is recorded as a limit, not left unverified. The owner-side checks (subscriber test, public visibility, thank-you comments) remain, and belong to `prepublished -> published`, not this gate. |
-
-## Current result — three distinct Pickle passes, 2026-09-22
-
-After the first queued French/RIMMSQOL tickets disappeared without running, the maintainer
-authorized a requeue. The French `runtime-evidence` pass (PID 28556; machine log `LOCK`
-23:19:39, `STAGE` 23:21:03, `UNLOCK` 23:24:25) completed with 3 passed, 0 failed and
-1 skipped: the optional RIMMSQOL case was not staged in that pass. Its report was copied
-from shared archive `0922-2324`, then minified on 2026-09-24 to
-`Tests/Pickle/evidence/2026-09-22/runtime-evidence-French/` (summary, JUnit, a log check
-and two captures; `docs/runs/`). All three Housebroken
-screenshots were opened before that; the French labels and accents are legible, with no visible raw
-keys or clipping. The native path and MainButtons shortcut show the same settings page.
-
-The separate English `avec-rimmsqol` pass (PID 13800; `LOCK` 23:27:03, `STAGE` 23:27:37,
-`UNLOCK` 23:29:25) completed with 1 passed, 0 failed and 0 skipped. Its report
-was copied from archive `0922-2329`, then minified on 2026-09-24 to
-`Tests/Pickle/evidence/2026-09-22/avec-rimmsqol-English/`, with only the Housebroken
-capture. That capture was opened: the settings page is legible and unclipped after the
-RIMMSQOL reveal/activation path. The scenario also asserted the initial hidden state,
-main-bar appearance, subsequent hide and forgotten choice. It did **not** test whether
-RIMMSQOL persists button visibility across a game restart; that belongs to RIMMSQOL,
-not Housebroken.
-
-Together with the earlier English pass below, these are three distinct evidence sets,
-so this session retains all three and has no redundant older Housebroken report to cycle.
-Only Housebroken screenshots were copied; shared archives and other mods' reports were
-left intact. The reports are on disk and ignored by git, minified to text plus a few
-captures; `docs/runs/README.md` says which proofs to keep. The Pickle reports establish these UI paths only, not TF-01..22 gameplay,
-new/existing save acceptance, or a general compatibility guarantee. `stage: done`
-remains unchanged.
-
-`TESTING.md` now names the required minimal English/French and optional RIMMSQOL passes,
-links their preserved evidence, and separates the remaining manual acceptance. TF-21 was
-corrected so a post-restart RIMMSQOL visibility choice is no longer a Housebroken test.
-The 59-case offline runner passed again; the development-only steps project compiled with
-zero warnings/errors. Its rebuilt DLL was restored to the tracked hash above so the
-delivered companion remains the exact binary used by these Pickle runs.
-
-### Earlier English pass
-
-The WSL `runtime-evidence` English pass launched under the shared lock (PID 33800;
-machine log `LOCK` 17:44:53, `STAGE` 17:45:11, `UNLOCK` 17:46:59). Its report has
-`exitReason: passed`: three scenarios passed, none failed, and the RIMMSQOL scenario
-was skipped because its optional dependencies were not staged. The full report was copied
-from archive `0922-1746` before the shared archive rotated, then minified on 2026-09-24 to
-`Tests/Pickle/evidence/2026-09-22/runtime-evidence-English/` (see `docs/runs/`). All three
-captures were opened before that; each shows the Housebroken settings page with its
-controls legible and unclipped. This includes the capture from the MainButtons shortcut;
-an earlier description of that image as a blank window was incorrect. These screenshots
-show the English page, not animal behavior or French rendering. At that point French,
-RIMMSQOL and TF-01..22 remained open; `stage: done` was unchanged.
-
-Earlier on 2026-09-22, French and RIMMSQOL tickets (PIDs 38980 and 13640) entered the
-shared queue. Both ticket processes disappeared before obtaining `LOCK`: the machine log
-contains no `LOCK`, `STAGE` or `UNLOCK` for either PID, and no Housebroken report was produced.
-Read-only checks found neither process alive and no RimWorldLinux process. A single request
-to requeue the French pass was rejected by automatic approval review; it did not launch.
-Neither ticket provided evidence; the successful replacement runs are documented above.
-
-## Historical workflow audit, 2026-09-22
-
-**done -> preTest.** The prior `done` claim was no longer supported by the current shared
-workflow: `Tests/` has no Pickle/Gherkin suite and no written scope justification for its
-absence. `AUDIT.md` requires that artifact before `done`; this is an observed documentation/test
-gap, not an assertion that a runtime scenario has failed. The next cumulative transition is
-therefore `preTest -> done`.
-
-## Current result — Pickle suite written, 2026-09-22
-
-**preTest -> done.** `Tests/Pickle/` now provides a non-distributed companion mod
-`Housebroken - Pickle tests`, four Gherkin features and explicit WSL pass maps. The scope is
-documented in `Tests/Pickle/README.md`: it exercises only real-game concerns absent from the
-offline runner — native settings rendering/write path, the hidden MainButtons shortcut,
-RIMMSQOL reveal/hide, and English/French review captures. Deterministic rate, serialization and
-XML contracts remain in the 59-case .NET runner; the broad animal/map scenarios remain in
-`TESTS_FONCTIONNELS.md` until dedicated observable fixtures justify their Gherkin form.
-
-`dotnet build Tests/Pickle/Source/Housebroken.PickleSteps.csproj -c Release` succeeded with zero
-warnings/errors and produced `Tests/Pickle/Mod/Pickle/Assemblies/Housebroken.PickleSteps.dll`
-(SHA256 `566A8F07A9BB9F0C71A5A396AAFCF6D7C9DA5D4E4845B76C09D2F6799C539653`). No Pickle or RimWorld
-run was launched. Execution, complete reports, review of each `@review` capture, gameplay
-scenarios and the RIMMSQOL integration outcome remain **unverified**, not failed.
-
-Audited revision: `61b00c5baa4ea69e7a4a2b65d71a556aa1534533`; the audit began with only
-the untracked `Mod/About/PublishedFileId.txt` requested for commit and ended with the working
-tree otherwise clean. This audit committed that file as `61b00c5` at the maintainer's request.
-It contains `3806137798`, the item reported by the maintainer as the public 0.1.0 Workshop
-publication. `git ls-remote` verified that
-`origin/main` remains `0cd6a5595caf3d7ee7a7dea178a9d4a1be558ede`, so this publication-ID
-commit is not pushed. The local checkout has no `PUBLICATION.md`, no capture order or
-thank-you-message drafts, and no local evidence of a subscriber test, public-visibility
-change or messages having been posted. Those independent publication facts remain unverified.
-
-### 2026-09-22 audit evidence
-
-- **horsMonoRepo — validated.** This is an autonomous Git checkout with an `origin` GitHub
-  remote, a configured `origin/main` upstream, English root documentation, original MIT
-  licensing and byte-identical distributed LICENSE/ATTRIBUTION copies. Package ID
-  `nelim.housebroken`, name `Housebroken`, folder and repository identity agree.
-- **ModIcon générée / Preview générée / preOptions — validated.** Direct inspection found a
-  readable 128 x 128 PNG icon (21,277 bytes) and the 896 x 504 Preview PNG (460,606 bytes),
-  under the 1 MB limit. The preview has a high overhead RimWorld-like view, distinct blue
-  version accent and legible uncropped English overlay. `About.xml` has an English description
-  ending in the exact Steam-formatted source link; its original-work licence/title decision is
-  coherent with ATTRIBUTION.md.
-- **options — validated technically.** Eleven useful persisted settings use the native Mod
-  options page; the hidden (`buttonVisible=false`) MainButtons definition opens the same
-  `Dialog_ModSettings`. The 59 passing runner cases cover defaults, effect logic, XML-backed
-  Scribe round trips, old values, normalization, slider bounds, shared dialog/cache write and
-  reset. This certifies the mod-side technical contract only; native UI, disk and RIMMSQOL
-  interaction remain unverified in `tested`.
-- **l10n — validated technically.** The runner checked XML parsing, Keyed parity,
-  placeholders, production-source key coverage and both French MainButton DefInjected paths;
-  59 passed, 0 failed. English source fields cover the MainButton English text; no redundant
-  English DefInjected file is required. Runtime FR/EN layout remains unverified.
-- **preTest — validated.** Harmony is the only hard dependency and its About declaration
-  matches source use. The conditional FilthRate patch and DLC load order entries are coherent.
-  `TESTS_FONCTIONNELS.md` supplies TF-01..22 with preconditions/actions/expected results.
-  `dotnet build Source/Housebroken.csproj -c Release --no-restore -t:Rebuild
-  -p:OutputPath=../.build/audit-2026-09-22/` succeeded with zero warnings/errors; its DLL and
-  `Mod/Assemblies/Housebroken.dll` share SHA256
-  `8DF40BAEF199F4A896390C438AEB42DAB1623227A029521F92F3C779462E871A`.
-- **done and later — not established.** No Pickle/Gherkin test artifact exists. No gameplay,
-  log, UI, save, translated-layout or integration run was launched or claimed. Since `done` is
-  not established, `tested`, `prepublished` and `published` cannot be cumulative statuses.
-  Separately, the published-item ID is now committed locally, but a local `v1.0.0` tag and
-  `About.xml` `modVersion` `1.0.0` conflict with the reported 0.1.0 publication; the audit
-  records the conflict rather than changing release metadata.
-
-### Next transition
-
-Add a focused Pickle/Gherkin suite (or a documented, evidence-based scope justification) that
-keeps only behavior a running game can establish, then execute the existing offline checks
-against the delivered DLL. Do not treat this missing artifact as a failed in-game test.
-
-## Superseded current result — audit fixes, 2026-09-13
-
-**dansMonoRepo -> done.** All cumulative technical gates are now satisfied under the
-user's override placing interactive settings verification at `done -> tested`.
-`done` means ready for final in-game acceptance, not already tested in game.
-
-Revision remains `79b58f6cb1bee4ed1aa3b41dfb184c86884cb131` plus the uncommitted
-working tree. The pre-existing local changes listed in the audit below were preserved.
-The fixes modify About, Preview, the shipped DLL, settings/UI source, English/French
-resources, README, changelog, manual scenarios and the test suite; they add the shortcut
-source/Def, French injection, technical settings tests, artwork sources/composition and
-validation documentation. No commit, push or publication was performed.
-
-### Revalidated transitions
-
-- **horsMonoRepo:** the tracked functional manual is now English, retaining TF-01..20
-  and the historical not-executed result. Independent GitHub public-repository and
-  pushed-commit checks from this audit remain valid. Identity, original MIT licence
-  and identical distributed licence/attribution copies are unchanged.
-- **ModIcon générée:** required implementation is complete. Release build succeeds
-  with zero warnings/errors; updated DLL is installed in Mod/Assemblies. The previously
-  verified 128 x 128 ModIcon is unchanged.
-- **Preview générée / preOptions:** built-in image editing produced a corrected high
-  view with the dog seen from behind. Art/Preview.png is the new text-free source;
-  both older images are retained. Final 896 x 504 PNG is 460,606 bytes and was directly
-  inspected at full size and 268 px wide. Camera reservation resolved. The blue rule
-  and 1.6 badge are distinct from the warm wood/secondary family. Title, English summary
-  and badge are unclipped; no suffix or reduced linking word applies. Segoe UI is used.
-  Art/preview-palette.json is the only palette source for Art/preview.html and
-  Art/render-preview.cjs. Measured minimum contrast: title 9.59:1, summary 7.40:1,
-  badge 8.40:1. See "Art sources and regeneration" below for the reproduction command.
-  About now ends with the exact Steam-formatted GitHub source link, checked by a test.
-- **options:** all eleven useful settings remain accessible through native Mod options.
-  A MainButtonDef with buttonVisible=false inherits native revealable visibility and
-  opens Dialog_ModSettings with the same HousebrokenMod.Instance. No extra dependency.
-  Six new technical cases exercise field round trips through an XML-backed Scribe
-  boundary double, legacy defaults, numeric normalization, production slider logic,
-  shared dialog/write/cache behavior and reset confirmation. Original logic tests
-  cover setting effects and interactions. Global scope, application timing and stored
-  numeric limits are explained in both languages. This is a complete technical gate;
-  native disk persistence and interactive access remain pending at tested.
-- **l10n:** all existing and new Keyed resources passed nonempty/parity/placeholder and
-  source-usage checks. Shortcut label/description have native English Def source and
-  French DefInjected entries; Check-DefInjected.ps1 checked 2 keys with 0 errors and
-  no unresolved targets reported. New scope and shortcut text reviewed in both languages.
-  No redundant English DefInjected file is needed. Runtime layout remains pending.
-- **preTest:** Harmony is still the only external mandatory dependency. The shortcut
-  uses only native RimWorld APIs. No LoadFolders or additional conditional packages
-  were introduced; the existing FilthRate conditional patch remains coherent.
-- **done:** 59 tests passed, 0 failed (47 original logic, 6 XML, 6 settings cases).
-  TF-01..22 have preconditions, actions and expected results, including a new colony,
-  existing saves, translated UI, optional shortcut and older settings. Tests/RESULTS.md
-  records commands, observed results, DLL identity and precise boundary-double limits.
-- **tested:** not established. All applicable in-game scenarios and log/UI checks must
-  run; no RIMMSQOL version or native engine integration is claimed as tested.
-
-Shipped DLL SHA256:
-`8DF40BAEF199F4A896390C438AEB42DAB1623227A029521F92F3C779462E871A`.
-
-### Next transition
-
-Execute and record the applicable TF-01..22 variants in RimWorld 1.6, including native
-settings persistence and RIMMSQOL reveal/hide behavior, then resolve any observed
-failure and run the affected regressions. Missing executions are unverified checks,
-not known defects. No remaining technical or artwork defect was observed in this pass.
-
-## Historical audit — 2026-09-13, before the fixes
-
-The findings below describe the pre-fix tree and are preserved as history. Current
-validation fields and the section above supersede them for changed components.
-
-Audited revision: `79b58f6cb1bee4ed1aa3b41dfb184c86884cb131`, plus the working
-tree present at audit start: modified `Mod/About/About.xml`, `STATUS.md`,
-`Tests/Program.cs`, `Tests/README.md`, and untracked `Tests/XmlTests.cs`.
-Those changes were preserved. This audit edits only this status document;
-build outputs are under ignored `.build/`. No development, image generation,
-publication, commit or in-game test was performed.
-
-The standalone repository is `C:/Users/nelim/Documents/rimworld/Housebroken`;
-the distributed root is its `Mod/` directory. `detached: yes` remains factual.
-The stage now uses the prompt's literal workflow names:
-`dansMonoRepo -> horsMonoRepo -> ModIcon générée -> Preview générée -> preOptions
--> options -> l10n -> preTest -> done -> tested`.
-`dansMonoRepo` is the cumulative gate baseline here, not a claim that the folder
-was moved back into a monorepo. Previous stage: `done`. The first transition is
-blocked by the French tracked test document, so no later cumulative stage can
-be retained. No monorepo remote is required or requested.
-
-### Ordered transition findings
-
-1. **To horsMonoRepo — defect.** Standalone Git root confirmed with
-   `git rev-parse --show-toplevel`. `gh repo view vbardales/Rimworld-Housebroken
-   --json name,visibility,url,defaultBranchRef` confirmed PUBLIC, main and the
-   configured origin URL. `git ls-remote origin HEAD` returned the audited SHA,
-   establishing a pushed commit. README, attribution, changelog and MIT licence
-   exist; LICENSE and ATTRIBUTION copies in Mod are byte-identical to the roots.
-   Original-work classification agrees with attribution and source inventory:
-   FlyingSloth is credited for inspiration, with no upstream files included;
-   no new licence is assigned to third-party material. Name Housebroken,
-   packageId nelim.housebroken, folder Housebroken and repository
-   Rimworld-Housebroken are coherent. However, `git ls-files
-   TESTS_FONCTIONNELS.md` confirms that the French manual is repository content,
-   contrary to the English-documentation gate. Translating its content while
-   preserving scenarios and execution history is the strictly necessary next step.
-2. **To ModIcon générée — independent build/icon checks validated; development
-   completeness not established.** Release rebuild succeeded, zero warnings and
-   errors, and matches the shipped DLL byte for byte (details below). ModIcon
-   is PNG, 128 x 128, 21,277 bytes. Direct inspection shows the single mascot
-   and accompanying object with a clear silhouette. The missing settings shortcut
-   remains required implementation work; these artifact checks do not certify
-   that all development is finished.
-3. **To Preview générée — file checks validated, visual reservation.** Preview
-   is PNG, 896 x 504, 480,677 bytes, below 1 MB. Directly inspected the delivered
-   image: title and English summary fit, with no clipping. A concrete camera
-   reservation remains: the frontal dog and tall back wall, with floor lines
-   converging into depth, look lower and more perspective-driven than the required
-   high near-orthographic view. This is an image observation, not a missing
-   historical generation report or missing screenshot-comparison requirement.
-4. **To preOptions — defect.** English description and unsuffixed original title
-   are appropriate. The description ends with the Harmony credit, not
-   `[url=https://github.com/vbardales/Rimworld-Housebroken]Source code on GitHub[/url]`.
-   The raw URL earlier in the description does not satisfy PUBLISHING.md.
-   The Preview also has no version badge. Its amber rule is close to the dominant
-   golden wood family; accent separation merits review. No secondary-colour title
-   element is needed for the single-word name with no tag or suffix. Art retains
-   `Preview-source.png`; no palette JSON or composition HTML exists. Their absence
-   is recorded for future reproducibility, not treated as missing generation proof.
-5. **To options — defect / partial.** See Settings audit below. No in-game
-   verification is required to pass this gate under the user's override.
-6. **To l10n — existing-resource checks independently validated.** See Translation
-   audit below. The cumulative transition remains gated by settings. New shortcut
-   text must be audited when it exists; current resource checks remain valid.
-7. **To preTest — dependency declaration independently validated.** Source uses
-   Verse/RimWorld, UnityEngine and Harmony. Harmony is the only external required
-   mod and is declared with loadAfter; RimWorld 1.6 is supported. DLC loadAfter
-   entries do not make DLC mandatory. Trainability uses the native utility, so
-   the catalyst is not a separate required mod. No LoadFolders or version-specific
-   content exists; the root FilthRate patch handles parts present/absent without
-   conditional package dependencies. No optional customization integration was tested.
-8. **To done — existing tests validated within scope.** The runner's 52 cases
-   passed (47 logic and 5 XML cases). Twenty manual scenarios have preconditions,
-   actions and expected results, including settings, FR/EN and existing saves.
-   Shortcut scenarios are absent and must accompany its implementation. No actual
-   serialization or settings-window callback test is supplied. Green XML tests
-   use fixture append semantics, not RimWorld's patch engine. Their repository-link
-   assertion only checks URL containment and misses the required final link format.
-9. **To tested — non verified.** Manual scenarios explicitly remain unexecuted.
-   No game logs, FR/EN runtime rendering, settings persistence, new-game/existing-save
-   validation or RIMMSQOL integration success is claimed. These are pending checks,
-   not observed runtime defects. The available checks used .NET reference assemblies
-   and doubles, not an active RimWorld validation session.
-
-### Commands and artifact evidence
-
-- `dotnet run --project Tests/Housebroken.Tests.csproj -c Release`: exit 0,
-  **52 passed, 0 failed**, including the pre-existing untracked XML tests.
-- `dotnet build Source/Housebroken.csproj -c Release --no-restore -t:Rebuild
-  -p:OutputPath=../.build/audit-release/`: exit 0, zero warnings/errors after retry
-  with local SDK access. Initial sandbox denial of Microsoft SDKs was an environment
-  restriction, not a source failure. Reference packages: RimWorld 1.6.4871,
-  Harmony 2.4.2, Publicizer 2.3.2; SDK 8.0.424.
-- `Get-FileHash` on shipped and rebuilt DLL: identical SHA256
-  `EC2FEBC669BAC999B76760418589AE6A0BD27CEC94901DB599BD6F3FC46C0948`.
-  The shipped DLL was not overwritten. Mod contains no build intermediates,
-  game assemblies or bundled Harmony runtime.
-- Image dimensions/format read with System.Drawing; both delivered PNGs directly
-  viewed. No generation-history evidence was required.
-
-### Settings audit
-
-Useful settings: six numeric factors (obedient .5, well-trained .25, intermediate
-.8, advanced .6, indoor 0, outdoor 2) and five booleans (colony-only, outdoor manure,
-wipe-feet and alert exemption true; whole-home false). They affect actual production
-logic, exercised by the linked-source tests. The primary page uses the native
-Mod settings overrides and needs no XML editing or customization dependency.
-Reduction sliders clamp to 0..100%; outdoor multiplier to 100..400%. Conditional
-indoor/outdoor controls follow manureOutdoors. Reset restores all eleven fields;
-the runner verifies this. Settings are global via ModSettings/Scribe; WriteSettings
-clears the trait cache, whose normal expiry is 250 ticks. Runtime callback timing
-and disk persistence are not established by those observations.
-
-**Defect:** neither definitions nor source implement a MainButton or MainTabWindow
-shortcut. Hidden-by-default and revealability cannot be satisfied by total absence.
-**Non verified:** Tests exclude HousebrokenMod and use an inert Scribe_Values double,
-so serialization round trips, missing/older stored values and UI application callbacks
-are not tested. The slider code bounds ordinary input, but no independent UI-boundary
-execution is covered. Record applicable technical checks when closing this gate;
-interactive game and RIMMSQOL checks belong to `tested`, not `options`.
-
-### Translation audit — 2026-09-30, gender-agreement rule and systematic review
-
-`translation_fr` was reset to `unchecked` by the 2026-09-30 TRANSLATIONS.md update (French gender-agreement
-rule, systematic review by Virginie) and is set to `partial` here; it cannot be `complete` until Virginie
-reviews the French text herself. Read every French file in full (no pattern search): `Mod/Languages/French/
-Keyed/Housebroken.xml` (22 keys) and `Mod/Languages/French/DefInjected/MainButtonDef/Housebroken.xml` (2
-keys) — the whole of the mod's French. **No text in this mod agrees with a pawn's gender**: every string is
-either an impersonal settings label/tooltip, a stat-explanation line about "l'animal" (a common noun,
-grammatically masculine regardless of the animal's actual sex — not a `PAWN_gender` agreement), or the
-MainButtons shortcut label/description. No `{PAWN_gender ? ... }` switch, letter, message or thought text
-exists, so the neutral o-series convention and the "player choice for gendered French" settings page do not
-apply here: adding either would be inventing a need the mod has none of. None of the 24 rows is flagged as
-uncertain (terminology, tone or agreement) in `FRENCH_REVIEW.md`, generated by `scripts/Make-FrenchReview.ps1`
-against `5da3b7b`.
-
-**French review, 2026-10-08 (reviewer: Virginie; `FRENCH_REVIEW.md` at `e3e0928`).** Corrections requested and written into the review file: epicene wording in `Intro`, `ManureOutdoorsTip` and `WipeFeetTip`; "Se combine multiplicativement" / "Combines multiplicatively" in `IntermediateTip` and `AdvancedTip`; the comma of `WholeHomeAreaTip` replaced by a full stop. She then validated the corrected texts. They were applied to `Mod/Languages` on 2026-10-08 after the `RUN_DONE` of `61f3`; `FRENCH_REVIEW.md` was regenerated from the shipped files and the offline runner passes (59 of 59; its stale BBCode link assertion now reads the plain-text form of the one-source description). `translation_fr: complete` on her validation.
-
-The French review of Virginie is recorded above (2026-10-08); no session marks it reviewed on its own.
-
-### Translation audit
-
-Reviewed all production C# and all distributed XML, both language dictionaries,
-dynamic key selection in StatPart_Housebroken and key arguments in the slider helpers.
-Existing settings labels, tooltips, reset confirmation and stat explanations resolve
-through Keyed/Translate. English/French entries are nonempty, matching and have matching
-numeric placeholders; the executed XML tests check duplicates through dictionary
-construction, source key coverage and placeholders. French text was also read directly.
-The unchanged proper mod name in SettingsCategory is an identity, not an untranslated
-UI sentence. No owned Def label, nested translatable field, grammar resource or
-DefInjected path exists: Check-DefInjected.ps1 is **not applicable, justified**.
-The patch only attaches a StatPart to the native FilthRate Def. No dependency-owned
-translation key is called by this mod. Current localization fields certify resource
-readiness only; final cumulative l10n awaits settings and any newly introduced text.
-FR/EN rendering and layout are unverified until game validation.
-
-### Optional follow-up, separate from gate blockers
-
-Strengthen the existing metadata assertion to enforce the exact final Steam link,
-and retain palette/composition files on the next artwork revision. Preserve all
-historical results below; a documentation-only correction does not invalidate the
-unchanged DLL or the logic tests.
-
-## Historical notes — retained from before the 2026-09-13 audit
-
-Manual functional test scenarios were written on 2026-09-12 in
-`TESTS_FONCTIONNELS.md`. They have not been executed; runtime verification remains open.
-
-Automated tests added on 2026-09-12: 52 passing cases against linked production
-sources with game boundary doubles (`Tests/README.md`). Release compilation against
-the RimWorld reference assemblies passes with no warnings or errors. Cache reuse
-now rejects clock rewinds and a different pawn sharing an old pawn ID.
-
-Publication audit: the original title `Housebroken` needs no continuation suffix.
-The About description includes the GitHub repository link. XML contract tests cover
-both FilthRate patch branches, preservation of existing parts, metadata, and English /
-French translation keys and placeholders. They do not execute RimWorld's patch engine.
-Source and patch comments are already in English; the old defect entry was stale.
-
-Detached from the monorepo on 2026-09-12 and living in its own repository at
-`https://github.com/vbardales/Rimworld-Housebroken`, public. The junction from `RimWorld/Mods`
-points at `Housebroken/Mod` and was not touched: the folder never moved, and the four
-identifiers were already aligned, so nothing was renamed.
-
-Nothing here is owed to another mod. FlyingSloth's Sentience Catalyst Filth Rate Reducer gave
-the idea and is thanked in the About, but no code, def or asset of theirs is used: the
-criterion changed from the catalyst to training and trainability. Hence `licence: original`,
-MIT.
+- **Published revision:** SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`. Dry-run
+  [37798996377](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/37798996377), publish run
+  [37800930249](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/37800930249) with `update_preview` and `update_description`,
+  `steam-production` approved by the owner. The CI created tag `v1.0.0` and the GitHub release `Housebroken 1.0.0`.
+  `Mod/About/PublishedFileId.txt` holds `3806137798`.
+- **Tested tree vs published tree:** they differ only by the `<description>` of `About.xml` (synced from `PUBLICATION.md`), the
+  French and English settings texts reworded on 2026-10-08 (`ColonyOnlyTip`, `OutdoorTip`, `WipeFeet`, `ManureOutdoorsTip`,
+  `WholeHomeAreaTip`, `IntermediateTip`, `AdvancedTip`, `Intro`, `WipeFeetTip`), text only, no logic. DLL unchanged since `6af8e17`.
+- **Gallery:** `Art/Gallery/0-preview.png` (the Preview), `1-indoors.png`, `2-outdoors.png`, all accepted by the owner 2026-10-08
+  and uploaded by hand. Outdoors scene: the game never lets an animal soil bare natural ground (`FilthMaker.CanMakeFilth`), so
+  the held filth is dropped only on built flooring outside; the description, README and `ManureOutdoorsTip` say so.
+- **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
+  thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
+- **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08.
+- **Code review:** last reviewed commit `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`:
+  one finding, `WholeHomeAreaTip` contradicting the built-flooring rule, fixed in `c07e748`). Earlier: `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
 
 ## What it is made of
 
-A `StatPart` on `FilthRate` carries the whole reduction, added by a conditional XML patch that
-tolerates either load order. Two Harmony patches do the rest: one holds the drop while the
-animal is inside the base, one keeps the animal out of the vanilla filth alert. Four settings,
-no save data, safe to add to or remove from a running game.
+A `StatPart` on `FilthRate` carries the whole reduction, added by a conditional XML patch that tolerates either load order. Two
+Harmony patches do the rest: one holds the drop while the animal is inside the base (`Patch_TryDropFilth`), one keeps the animal out
+of the vanilla filth alert. Eleven settings (six numeric factors: obedient .5, well-trained .25, intermediate .8, advanced .6, indoor 0,
+outdoor 2; five booleans: colony-only, outdoor manure, wipe-feet and alert exemption true, whole-home false), no save data, safe to add
+to or remove from a running game. Settings: Mod options -> Housebroken (native overrides); a hidden `MainButtonDef` shortcut opens the
+same page for RIMMSQOL and compatible customization mods. English and French; no text agrees with a pawn's gender, so no French
+gender-agreement convention applies.
 
-## Field vocabulary
+## Findings that still count
 
-`stage`: `port`, `showcase`, `preTest`, `done`, `tested`, `published`. `done` means the work is
-finished, not that it is published.
-
-`licence`: `open` an explicit licence, `silent` no licence and a dead source, `alive` no licence
-but a living source, `forbidden` a written refusal, `original` owing nothing to anyone.
-
-`remaining`: `feature` for something missing from a first release, `defect` for a known fault
-left unfixed, `unverified` for what could not be checked.
-
-## Preview source migration — 2026-10-03
-
-Preview generation now uses the shared renderer with `Art/Preview.config.json`. Canonical sources and publishable outputs were preserved; transient QA belongs in ignored `Art/.render/`.
+- **Settings:** sliders clamp (reductions 0..100 %, outdoor 100..400 %), conditional controls follow `manureOutdoors`, reset restores
+  all eleven fields, values are global through ModSettings/Scribe, `WriteSettings` clears the trait cache (normal expiry 250 ticks).
+  Persistence, older files and out-of-range values were played under Pickle (TF-15, TF-22).
+- **Translation:** every French and English key resolves, placeholders match (checked by the XML tests). `Check-DefInjected.ps1` is not
+  applicable: no owned Def label or nested translatable field. `FRENCH_REVIEW.md` is generated by `scripts/Make-FrenchReview.ps1`
+  and was reviewed by the owner on 2026-10-08 (two rounds, validated); no session marks it reviewed on its own.
+- **Passes:** the pass list, commands and limits are in `TESTING.md`; what each run showed is in `docs/runs/`.
 
 ## Art sources and regeneration
 
-Moved here from `Art/README.md` on 2026-10-08 (the folder holds images and `Preview.config.json` only).
+- Sources: `Art/Preview-source.png` (text-free illustration), `Art/ModIcon-source.png` (the owner's icon, trimmed of its transparent
+  padding on 2026-10-08 on her express authorisation, 1180 x 1078), `Art/Preview.config.json`. `Art/Preview-original.png` and
+  `Art/ModIcon-original.png` keep the earlier versions.
+- The config reads `ModIcon-source.png` for both the delivered ModIcon (`modIconSource`) and the Preview corner badge
+  (`iconBadge.file`). There is no separate badge file: the shared renderer refuses a source with excessive transparent padding, so
+  the source itself stays trimmed. Do not re-add padding when the owner replaces it; trim it first.
+- Regenerate from the mod root: `node ../scripts/Render-Preview.cjs`. It writes `Mod/About/ModIcon.png` (128 x 128),
+  `Mod/About/Preview.png` (ModIcon badge bottom-left), `Art/Gallery/0-preview.png` (byte-identical copy of the Preview),
+  `Art/Preview.ico` and `Art/ModIcon.ico`. QA files go to `Art/.render/`, ignored by git.
+- Gallery pictures `Art/Gallery/1-…` and later come from Pickle runs, not from the renderer (`PUBLICATION.md`, `TESTING.md`).
 
-- Sources: `Art/Preview-source.png` (text-free illustration), `Art/ModIcon-source.png` (the owner's icon, trimmed of its transparent padding on 2026-10-08 on her express authorisation, 1180 x 1078), `Art/Preview.config.json`. `Art/Preview-original.png` and `Art/ModIcon-original.png` keep the earlier versions.
-- The config reads `ModIcon-source.png` for both the delivered ModIcon (`modIconSource`) and the Preview corner badge (`iconBadge.file`). There is no separate badge file: the shared renderer refuses a source with excessive transparent padding, so the source itself stays trimmed. Do not re-add padding when the owner replaces it; trim it first.
-- Regenerate from the mod root: `node ../scripts/Render-Preview.cjs`. It writes `Mod/About/ModIcon.png` (128 x 128), `Mod/About/Preview.png` (ModIcon badge bottom-left), `Art/Gallery/0-preview.png` (byte-identical copy of the Preview), `Art/Preview.ico` and `Art/ModIcon.ico`. QA files go to `Art/.render/`, ignored by git.
-- Gallery pictures `Art/Gallery/1-…` and later come from Pickle runs, not from the renderer (see PUBLICATION.md and TESTING.md).
+## Field vocabulary
+
+`stage`: `port`, `showcase`, `preTest`, `done`, `tested`, `published`. `licence`: `open` an explicit licence, `silent` no licence and a
+dead source, `alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing to anyone. `remaining`:
+`feature` for something missing from a first release, `defect` for a known fault left unfixed, `unverified` for what could not be checked.
