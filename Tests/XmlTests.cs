@@ -65,7 +65,7 @@ internal static class XmlTests
             Require((string)about.Element("name") == "Housebroken", "Unexpected title");
             Require((string)about.Element("packageId") == "nelim.housebroken", "Unexpected package ID");
             Require((string)about.Element("url") == url && about.Element("description").Value.Contains(url), "Repository link missing");
-            Require(about.Element("description").Value.TrimEnd().EndsWith($"[url={url}]Source code on GitHub[/url]", StringComparison.Ordinal), "Final Steam repository link missing");
+            Require(about.Element("description").Value.TrimEnd().EndsWith($"Source code on GitHub ({url})", StringComparison.Ordinal), "Final repository link missing (the description is the plain text of the Markdown block of PUBLICATION.md, whose last line is the link)");
             Require(about.Element("supportedVersions").Elements("li").Any(x => x.Value == "1.6"), "Missing supported version");
             Require(about.Element("modDependencies").Elements("li").Any(x => (string)x.Element("packageId") == "brrainz.harmony"), "Harmony dependency missing");
         });
