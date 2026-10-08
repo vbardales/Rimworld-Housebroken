@@ -136,11 +136,11 @@ Sent as written (BBCode), under 8000 bytes. The `1.0.0` note is drafted and must
 ```
 [b]Housebroken 1.0.0[/b]
 
-A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
+A trained or intelligent animal makes less mess, and keeps it out of your base. The held filth is dropped only on built flooring outside.
 
 [list]
 [*]Filth rate reduced by the animal's training (obedience, then further training) and by its species' trainability. The sentience catalyst counts.
-[*]Manure outside: a clean enough animal holds it inside the base and relieves itself once out.
+[*]Manure outside: a clean enough animal holds it inside the base, then drops it on built flooring outside.
 [*]Mud and blood on its feet stay outside the base too.
 [*]Clean animals leave the "animal filth" alert.
 [*]Every value is adjustable in Mod options; a hidden main-bar shortcut opens the same page for customization mods.
@@ -163,10 +163,10 @@ Migrated from `Mod/README.template.md` on 2026-09-27 (no workflow existed yet un
 the template and `Mod/.steamignore` are dropped, since nothing in `Mod/` needs hiding from the upload any more.
 
 ```markdown
-A trained or intelligent animal makes less mess, and does its business outside instead of in your base.
+A trained or intelligent animal makes less mess, and keeps it out of your base. The held filth is dropped only on built flooring outside.
 
 - An animal's filth rate is reduced according to its individual training (obedience, then later training steps) and its species' trainability (intermediate, advanced). The sentience catalyst counts, since it raises trainability by one step.
-- Manure outside: a clean enough animal holds it while inside the base, and relieves itself once out.
+- Manure outside: a clean enough animal holds it while inside the base, then drops it on built flooring outside.
 - Mud stays outside: the same animal keeps the mud and blood it picked up on its feet while inside the base, and drops them once out.
 - Clean animals are exempted from the "animal filth" alert.
 

@@ -1,7 +1,7 @@
 # Housebroken
 
-A trained or intelligent animal makes less mess, and does its business outside instead of in
-your base. RimWorld 1.6.
+A trained or intelligent animal makes less mess, and keeps it out of your base. The held filth is
+dropped only on built flooring outside. RimWorld 1.6.
 
 ## What the mod does
 
@@ -18,7 +18,8 @@ A husky (advanced) that has learned obedience and hauling: 0.25 × 0.6 = **0.15*
 less filth. The sentience catalyst raises trainability by one step, so it counts here on its own.
 
 **2. Manure outside.** An animal that already gets a reduction holds it while inside the base,
-and relieves itself once out. "Inside the base" means a roofed room of the home area — the very
+then drops it on built flooring outside: the game never lets an animal soil bare natural ground.
+"Inside the base" means a roofed room of the home area — the very
 definition the vanilla alert already uses — and an option widens it to the whole home area. The
 "outside" slider sits at 200 % by default: what was held in comes back out rather than vanishing.
 At 100 %, the colony simply produces less filth overall.
