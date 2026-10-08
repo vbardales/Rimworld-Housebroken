@@ -22,7 +22,7 @@
   <Housebroken.Settings.ManureOutdoors>Fumier à l'extérieur de la base</Housebroken.Settings.ManureOutdoors>
   <Housebroken.Settings.ManureOutdoorsTip>Les réglages ci-dessus rendent certains animaux plus propres : ils retiennent leur saleté dans la base et ne la déposent que sur des sols construits à l'extérieur. Les animaux sans réduction ne sont pas concernés.</Housebroken.Settings.ManureOutdoorsTip>
   <Housebroken.Settings.WholeHomeArea>Toute la zone de résidence compte comme « dans la base »</Housebroken.Settings.WholeHomeArea>
-  <Housebroken.Settings.WholeHomeAreaTip>Décoché : seules les pièces couvertes de la zone de résidence comptent. Un pâturage à ciel ouvert reçoit donc du fumier. Coché : plus rien n'est déposé nulle part dans la zone de résidence.</Housebroken.Settings.WholeHomeAreaTip>
+  <Housebroken.Settings.WholeHomeAreaTip>Décoché : seules les pièces couvertes de la zone de résidence comptent. Un sol construit à ciel ouvert reçoit donc encore du fumier. Coché : plus rien n'est déposé nulle part dans la zone de résidence.</Housebroken.Settings.WholeHomeAreaTip>
   <Housebroken.Settings.Indoor>Dans la base : −{0} % de saleté</Housebroken.Settings.Indoor>
   <Housebroken.Settings.IndoorTip>À 100 %, l'animal ne dépose plus rien du tout à l'intérieur.</Housebroken.Settings.IndoorTip>
   <Housebroken.Settings.Outdoor>Dehors : ×{0} % de saleté</Housebroken.Settings.Outdoor>
