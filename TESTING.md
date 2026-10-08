@@ -51,17 +51,17 @@ age stat part, a constant times 1.5, to the same stat, one loaded before Housebr
 What Pickle does not replace, and stays a person's check: hovering is now a step (`HoverSteps` in PickleTools), but
 whether a French sentence reads well, and whether a tooltip covers what it should, is for a person looking at the captures.
 
-## Gallery photographs (green on 2026-10-07, pictures rejected, rewritten 2026-10-08)
+## Gallery photographs (both pictures accepted by the owner, 2026-10-08)
 
 `40-gallery.feature` takes two photographs for the Workshop page on the Sanctuaire de Nelim. The Sanctuary now lives in its own repository,
 `SanctuaryBacklot` (save `Nelims-tribe`, named places, `docs/GALERIE.md`). Three families of steps, told apart by prefix:
 `Nelim's Sanctuary:` (SB: load place, animals removed), `Nelim's Pickle Tools:` (NPT: animals, decor, screenshot mode) and `Housebroken` (this mod).
 `wsl-deps.gallery.map` stages `SanctuaryBacklot/Mod` and the PickleTools it needs; the fixture is never staged from ScreenshotStudio (a duplicate fails Pickle).
 
-Places: `hearth-hall` (roofed room of the colonist's house, indoor rule) and `statue-garden` (open ground, outdoor rule); free cells read in `SANCTUAIRE-CASES.md`.
+Places: `hearth-hall` (roofed room of the colonist's house, indoor rule) and `calm-zone` (cream floor built in the open, outdoor rule; natural soil never receives an animal's dropping, so open ground such as `statue-garden` cannot be used); free cells read in `SANCTUAIRE-CASES.md`.
 Each scenario asserts the filth rate it shows (0 and 1 indoors, 0.3 outdoors). The run of 2026-10-07 was green but the pictures were rejected: the
-frame followed one animal that wandered during the 251 ticks, with no cow and no dropping in view. The frame is now the cell at zoom 11. Replay, open the
-captures, then copy the kept ones to `Art/Gallery/1-` and `2-`.
+frame followed one animal that wandered during the 251 ticks, with no cow and no dropping in view. The frame is now the cell at zoom 11. Kept as `Art/Gallery/1-indoors.png` and `2-outdoors.png` (run 61f3 and run e924). To replay, open the
+captures, then copy the kept ones to `Art/Gallery/`.
 
 ## Passes, and their order
 

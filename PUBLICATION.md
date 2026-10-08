@@ -64,8 +64,8 @@ the suite can produce headlessly, and what it cannot:
 | 0: the Preview, with the ModIcon corner badge | `Art/Gallery/0-preview.png`, written by the renderer, byte for byte the Preview | regenerated 2026-10-05 |
 | The settings page, English | `32-language-review.feature`, screenshot mode | played in English on 2026-09-22 (`03-language`), opened and legible; not played at 100 and 200 percent yet |
 | The settings page, French | same, `-Language French` | played on 2026-09-22, opened, accents and slider labels legible |
-| Indoors: a trained husky beside an untrained cow, the cow's mess on the floor | `40-gallery.feature`, scenario 1, hearth hall of the Sanctuaire de Nelim | written 2026-10-06, not yet played green (first run failed on my own expectations, fixed) |
-| Outdoors: the same husky lets it go in the statue garden | `40-gallery.feature`, scenario 2 | same |
+| Indoors: a trained husky beside an untrained cow, the cow's mess on the floor | `Art/Gallery/1-indoors.png`, from `40-gallery.feature` scenario 1 (hearth hall) | played green and accepted by the owner, 2026-10-08 |
+| Outdoors: the same husky lets it go | `Art/Gallery/2-outdoors.png`, from `40-gallery.feature` scenario 2 (`calm-zone`, a built floor in the open) | played green and accepted by the owner, 2026-10-08 |
 
 The gallery itself is a manual step on the Steam page: no library the CI uses can send more than the header image.
 
