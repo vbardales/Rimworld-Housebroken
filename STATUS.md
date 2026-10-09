@@ -25,7 +25,8 @@ remaining:
     integration-version coverage are not verified. Persistence of the choice belongs to RIMMSQOL.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
-session:      local_77aa9676-e414-489e-a71a-4bfee8d7b106
+publication_changelog_review: 1fc57f4a7628d9c7bcfc0fe88999441cf25a9fc0 (PUBLICATION.md and CHANGELOG.md reviewed by the owner, corrections applied 2026-10-09)
+session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
 ---
 
