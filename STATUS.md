@@ -16,19 +16,14 @@ upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, w
   none of its code used; no repo URL in its About.xml, Source/, or the Steam page. Checked 2026-09-28 and 2026-10-02)
 dependencies: declared
 showcase:     complete
-tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision 2026-10-08 and 2026-10-09, all green except TF-20 after (docs/runs/2026-10-08.md)
+tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision 2026-10-08 and 2026-10-09, all green (TF-20 after green on replay 15f8 after the staging fix 265e0c1; docs/runs/2026-10-08.md)
 workshop:      3806137798
 remaining:
-  - unverified: TF-20 "other filth after" (scenario 31, `wsl-deps.otherfilth-after.map`) is red on the published revision (runs `81de`, `4f7f`,
-    2026-10-09). Fault of the Pickle staging, not of the mod: since `stage-pickle-wsl.sh` commit `1350a7a` the tested mod and its suite are sorted last, so a
-    map mod cannot load after it (green on 2026-09-25, `d56c`). The code is unchanged. Waiting for a map marker or PICKLE_LEGACY_ORDER=1 through
-    Submit-PickleRun (asked of the owner via TicketManager, PickleTools session archived); WELCOME.md contradicts the script. Replay then.
-    TF-20 before and the other 21 TF are green.
   - unverified: RIMMSQOL's Housebroken shortcut reveal/hide passed once in WSL; other customization tools and exact
     integration-version coverage are not verified. Persistence of the choice belongs to RIMMSQOL.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
-code_review_sha: 6560a18fa893883989ebe1df07d633fbaba80d8f (no code change in Source, Defs, Patches or the DLL up to HEAD 2026-10-09)
+code_review_sha: 6560a18fa893883989ebe1df07d633fbaba80d8f  # no code change in Source, Defs, Patches or the DLL up to HEAD 2026-10-09
 publication_changelog_review_sha: 1fc57f4a7628d9c7bcfc0fe88999441cf25a9fc0  # was `publication_changelog_review`: <sha> (PUBLICATION.md and CHANGELOG.md reviewed by the owner, corrections applied 2026-10-09)
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
