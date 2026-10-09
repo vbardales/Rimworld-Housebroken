@@ -32,8 +32,9 @@ Rimworld-Release-Admin/scripts/generate-publish-workflow.sh <this repository> \
   --description-markdown PUBLICATION.md --description-heading '^## Steam description$' --about-from-description
 ```
 
-**Not run.** It writes files under `.github/` and nothing else; reading its diff, committing and pushing are the caller's, and the
-owner decides whether this mod gets a workflow now. What the workflow reads from this repository:
+**Run for 1.0.0.** Published on 2026-10-08 at SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`: dry-run 37798996377, publish run 37800930249
+(`update_preview` and `update_description`, `steam-production` approved by the owner). The CI created tag `v1.0.0` and the release. Procedure for the next
+version: same route, a green dry-run of the exact commit first. What the workflow reads from this repository:
 
 - **The change note**: the fenced block under `### <version>` in "Steam change notes" below.
 - **The description** (only when `update_description` is on): the ```markdown``` block under "## Steam description" of `PUBLICATION.md`, converted to Steam BBCode for the upload and to plain text for `Mod/About/About.xml`.
@@ -165,6 +166,6 @@ This file keeps its name: the change note is read from it, under `### <version>`
 1. Commit `Mod/About/PublishedFileId.txt` if the upload changed it (it must not).
 2. Read the public page: description, change note, images. A green release proves nothing about Steam.
 3. Record the evidence in `STATUS.md`: run IDs, SHA, date.
-4. The owner, by hand on Steam, when a `1.0.0` goes to production: change the visibility, subscribe to the comments, and "Watch all
-   activity" of the mod and of its parent, Harmony. Record the date in `STATUS.md` before marking `published`.
+4. The owner, by hand on Steam, only for a new item or a visibility change (done for 1.0.0 on 2026-10-08): change the visibility, subscribe to the
+   comments, and "Watch all activity" of the mod and of its parent, Harmony. Record the date in `STATUS.md`.
 5. Post the comment above once the item is public, then update the register.

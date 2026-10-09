@@ -12,7 +12,7 @@
 
   <Housebroken.Settings.SpeciesHeader>Dressabilité de l'espèce</Housebroken.Settings.SpeciesHeader>
   <Housebroken.Settings.Intermediate>Intermédiaire : −{0} % de saleté</Housebroken.Settings.Intermediate>
-  <Housebroken.Settings.IntermediateTip>Se combine multiplicativement avec la réduction due au dressage. Le catalyseur de sentience fait monter la dressabilité d'un cran : il peut donc faire passer une espèce d'intermédiaire à avancée.</Housebroken.Settings.IntermediateTip>
+  <Housebroken.Settings.IntermediateTip>Se combine multiplicativement avec la réduction due au dressage. Le catalyseur de sentience fait monter la dressabilité d'un cran : il peut donc faire passer une espèce de la catégorie intermédiaire à la catégorie avancée.</Housebroken.Settings.IntermediateTip>
   <Housebroken.Settings.Advanced>Avancée : −{0} % de saleté</Housebroken.Settings.Advanced>
   <Housebroken.Settings.AdvancedTip>Se combine multiplicativement avec la réduction due au dressage. Le catalyseur de sentience fait monter la dressabilité d'un cran : il compte donc ici.</Housebroken.Settings.AdvancedTip>
 

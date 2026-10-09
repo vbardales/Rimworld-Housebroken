@@ -5,7 +5,7 @@ This file serves the repository and the writing of Steam patch notes; RimWorld d
 
 ## [1.0.0] - 2026-10-08
 
-This is 1.0.0, dated at prepublication as AUDIT.md requires; Steam receives it only when published. Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
+This is 1.0.0, dated at prepublication as AUDIT.md requires; Steam received it when it was published, on 2026-10-08. Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
 (3806137798). Rollback, if needed after the upload, is switching the item back to private, not a code revert.
 
 ### Added
