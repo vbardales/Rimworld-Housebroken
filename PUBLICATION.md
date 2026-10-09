@@ -34,10 +34,11 @@ Rimworld-Release-Admin/scripts/generate-publish-workflow.sh <this repository> \
 
 **Run for 1.0.0.** Published on 2026-10-08 at SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`: dry-run 37798996377, publish run 37800930249
 (`update_preview` and `update_description`, `steam-production` approved by the owner). The CI created tag `v1.0.0` and the release. Procedure for the next
-version: same route, a green dry-run of the exact commit first. What the workflow reads from this repository:
+version: same route, a green dry-run of the exact commit first, `update_preview` and `update_description` on only when the image or the description changed. What the workflow reads from this repository:
 
 - **The change note**: the fenced block under `### <version>` in "Steam change notes" below.
 - **The description** (only when `update_description` is on): the ```markdown``` block under "## Steam description" of `PUBLICATION.md`, converted to Steam BBCode for the upload and to plain text for `Mod/About/About.xml`.
+- **The header image** (only when `update_preview` is on): `Mod/About/Preview.png`. Turn it on only when the Preview changed since the published version.
 - **The GitHub release notes**: the `## [<version>]` section of `CHANGELOG.md`. Date it before publishing.
 - **Identity checks**: `Mod/About/PublishedFileId.txt` must hold `3806137798` and `About.xml` the package ID `nelim.housebroken`.
 - **What ships**: the `Mod/` of the resolved commit, as committed, prebuilt DLL included. The project references game assemblies
