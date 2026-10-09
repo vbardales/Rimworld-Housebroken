@@ -168,4 +168,4 @@ This file keeps its name: the change note is read from it, under `### <version>`
 3. Record the evidence in `STATUS.md`: run IDs, SHA, date.
 4. The owner, by hand on Steam, only for a new item or a visibility change (done for 1.0.0 on 2026-10-08): change the visibility, subscribe to the
    comments, and "Watch all activity" of the mod and of its parent, Harmony. Record the date in `STATUS.md`.
-5. Post the comment above once the item is public, then update the register.
+5. Post the comment above once the item is public, then update the register (done for 1.0.0 on 2026-10-08).
