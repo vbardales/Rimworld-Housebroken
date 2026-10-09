@@ -77,8 +77,8 @@ gender-agreement convention applies.
 ## Art sources and regeneration
 
 - Sources: `Art/Preview-source.png` (text-free illustration), `Art/ModIcon-source.png` (the owner's icon, trimmed of its transparent
-  padding on 2026-10-08 on her express authorisation, 1180 x 1078), `Art/Preview.config.json`. `Art/Preview-original.png` and
-  `Art/ModIcon-original.png` keep the earlier versions.
+  padding on 2026-10-08 on her express authorisation, 1180 x 1078), `Art/Preview.config.json`. The earlier versions (`*-original.png`)
+  were deleted on 2026-10-09 (closing pass; git history keeps them).
 - The config reads `ModIcon-source.png` for both the delivered ModIcon (`modIconSource`) and the Preview corner badge
   (`iconBadge.file`). There is no separate badge file: the shared renderer refuses a source with excessive transparent padding, so
   the source itself stays trimmed. Do not re-add padding when the owner replaces it; trim it first.
