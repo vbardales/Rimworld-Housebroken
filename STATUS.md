@@ -27,6 +27,7 @@ remaining:
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
 code_review_sha: 6560a18fa893883989ebe1df07d633fbaba80d8f (no code change in Source, Defs, Patches or the DLL up to HEAD 2026-10-09)
 publication_changelog_review: 1fc57f4a7628d9c7bcfc0fe88999441cf25a9fc0 (PUBLICATION.md and CHANGELOG.md reviewed by the owner, corrections applied 2026-10-09)
+wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
 ---
