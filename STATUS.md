@@ -19,7 +19,7 @@ showcase:     complete
 tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision 2026-10-08 and 2026-10-09, all green (TF-20 after green on replay 15f8 after the staging fix 265e0c1; docs/runs/2026-10-08.md)
 workshop:      3806137798
 remaining:
-- passed, out of scope (owner's rule, 2026-10-09: what belongs to RIMMSQOL is not retested): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and RIMMSQOL versions are RIMMSQOL's, not Housebroken's, and are not tested here.
+  - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
 code_review_sha: 6560a18fa893883989ebe1df07d633fbaba80d8f  # no code change in Source, Defs, Patches or the DLL up to HEAD 2026-10-09
