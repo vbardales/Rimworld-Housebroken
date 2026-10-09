@@ -16,11 +16,14 @@ upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, w
   none of its code used; no repo URL in its About.xml, Source/, or the Steam page. Checked 2026-09-28 and 2026-10-02)
 dependencies: declared
 showcase:     complete
-tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision queued 2026-10-08 (docs/runs/2026-10-08.md)
+tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision 2026-10-08 and 2026-10-09, all green except TF-20 after (docs/runs/2026-10-08.md)
 workshop:      3806137798
 remaining:
-  - unverified: the non-regression replay of TF-01 to TF-22 on the published revision (`c360021`) is queued as small tickets;
-    its verdicts go to docs/runs/2026-10-08.md. A red one is a defect of the published version (rollback = new publication, AUDIT.md).
+  - unverified: TF-20 "other filth after" (scenario 31, `wsl-deps.otherfilth-after.map`) is red on the published revision (runs `81de`, `4f7f`,
+    2026-10-09). Fault of the Pickle staging, not of the mod: since `stage-pickle-wsl.sh` commit `1350a7a` the tested mod and its suite are sorted last, so a
+    map mod cannot load after it (green on 2026-09-25, `d56c`). The code is unchanged. Waiting for a map marker or PICKLE_LEGACY_ORDER=1 through
+    Submit-PickleRun (asked of the owner via TicketManager, PickleTools session archived); WELCOME.md contradicts the script. Replay then.
+    TF-20 before and the other 21 TF are green.
   - unverified: RIMMSQOL's Housebroken shortcut reveal/hide passed once in WSL; other customization tools and exact
     integration-version coverage are not verified. Persistence of the choice belongs to RIMMSQOL.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
