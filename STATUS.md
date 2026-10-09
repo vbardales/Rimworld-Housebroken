@@ -25,6 +25,7 @@ remaining:
     integration-version coverage are not verified. Persistence of the choice belongs to RIMMSQOL.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
+code_review_sha: 6560a18fa893883989ebe1df07d633fbaba80d8f (no code change in Source, Defs, Patches or the DLL up to HEAD 2026-10-09)
 publication_changelog_review: 1fc57f4a7628d9c7bcfc0fe88999441cf25a9fc0 (PUBLICATION.md and CHANGELOG.md reviewed by the owner, corrections applied 2026-10-09)
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
@@ -50,7 +51,7 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
 - **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
 - **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08.
-- **Code review:** last reviewed commit `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`:
+- **Code review** (field `code_review_sha`): last reviewed commit `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`:
   one finding, `WholeHomeAreaTip` contradicting the built-flooring rule, fixed in `c07e748`). Earlier: `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
 
 ## What it is made of
