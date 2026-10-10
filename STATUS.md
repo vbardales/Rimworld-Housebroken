@@ -8,7 +8,7 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-workflow_stage: followUp[1.0.0]
+workflow_stage: dormant
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -21,13 +21,13 @@ remaining:
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
-  - unverified (2026-10-10): the new Preview (with the echo) is in the repository and in the GitHub social preview, not on Steam: the Steam header image still holds the previous one. Steam gets the Preview only with a `publish` that has `update_preview` on.
+  - unverified (2026-10-10, decision of the owner: 1.0.0 is enough for now, a 1.0.1 may come later): the French texts of `IntermediateTip` and `Scope` and the Preview with the echo are in `main` (see `[Unreleased]` in `CHANGELOG.md`) and in the GitHub social preview, not on Steam. The French page showing `Scope` is not replayed under Pickle yet. A 1.0.1 would send the Preview with `update_preview` on and the description untouched.
 code_review_sha: 87242a2d93ac22a7802d5aa674d9a1f66a669c9e  # no code change in Source, Defs, Patches or the DLL since 6560a18; range f54316a..87242a2 reviewed 2026-10-10: one French Keyed string (Settings.Scope), CHANGELOG, no finding
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
-updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
-protocols_read_sha: 80ee01299918bd5fd757286ce3489a370cb4351d
+updated:      2026-10-10, dormant: 1.0.0 published 2026-10-08, non-regression green, closing pass done (STATUS.md, TESTING.md, PUBLICATION.md, evidence trimmed to 29 MB, WSL clean 2026-10-09, one branch); older dated sections are in docs/runs/
+protocols_read_sha: 9f58f59d4c756c649e692d7501d531325cbefa74
 echo_review_sha: bb4a2859da166d7b9c8ec5ffd85d70d1bebba950  # Preview echo validated by the owner in chat 2026-10-10, with the accepted gallery in hand
 social_preview_sha256: 5277f259fda8db251706dedb501455ef513108dc5d3ba5c74fba3141f4a5e3b3  # Mod/About/Preview.png with the husky echo, uploaded by the owner as the GitHub social preview 2026-10-10; og:image now c39f6b70-0f7f-41a3-91f3-bb6185f9b148
 ---
@@ -97,6 +97,6 @@ gender-agreement convention applies.
 
 ## Field vocabulary
 
-`workflow_stage`: the chain in AUDIT.md (this mod: `followUp[1.0.0]`; the old `stage` field and its codes are retired). `licence`: `open` an explicit licence, `silent` no licence and a
+`workflow_stage`: the chain in AUDIT.md (this mod: `dormant`; the old `stage` field and its codes are retired). `licence`: `open` an explicit licence, `silent` no licence and a
 dead source, `alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing to anyone. `remaining`:
 `feature` for something missing from a first release, `defect` for a known fault left unfixed, `unverified` for what could not be checked.
