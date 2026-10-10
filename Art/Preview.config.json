@@ -11,8 +11,24 @@
   "copyLines": [
     "A trained animal makes less mess, and goes outside."
   ],
+  "layout": "panel",
+  "panelAnchor": "top-left",
   "backgroundFile": "Preview-source.png",
   "backgroundSize": "cover",
+  "echo": {
+    "file": "echo.png",
+    "preSized": true,
+    "mode": "alpha",
+    "color": "var(--accent)",
+    "width": 800,
+    "height": 520,
+    "opacity": 1,
+    "veil": false,
+    "panelTop": 5,
+    "panelRight": -2,
+    "panelWidth": 50,
+    "flipX": false
+  },
   "palette": {
     "veil": "#3F3021",
     "inkPrimary": "#F2ECE1",
