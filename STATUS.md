@@ -21,7 +21,7 @@ remaining:
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
-code_review_sha: 6560a18fa893883989ebe1df07d633fbaba80d8f  # no code change in Source, Defs, Patches or the DLL up to HEAD 2026-10-09
+code_review_sha: a843855f30c382122b7ddd1e5db33b7c0ffc579c  # no code change in Source, Defs, Patches or the DLL since 6560a18; range 6560a18..a843855 reviewed 2026-10-10: 3 Keyed text edits (WholeHomeAreaTip EN and FR, IntermediateTip FR), no finding
 publication_changelog_review_sha: 1fc57f4a7628d9c7bcfc0fe88999441cf25a9fc0  # was `publication_changelog_review`: <sha> (PUBLICATION.md and CHANGELOG.md reviewed by the owner, corrections applied 2026-10-09)
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
@@ -49,8 +49,10 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
 - **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
 - **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08.
-- **Code review** (field `code_review_sha`): last reviewed commit `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`:
-  one finding, `WholeHomeAreaTip` contradicting the built-flooring rule, fixed in `c07e748`). Earlier: `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
+- **Code review** (field `code_review_sha`): last reviewed commit `a843855f30c382122b7ddd1e5db33b7c0ffc579c` (2026-10-10, range `6560a18..a843855`: no code change,
+  three Keyed text edits, `WholeHomeAreaTip` EN and FR now agree with the built-flooring rule, `IntermediateTip` FR reworded, no finding).
+  Earlier: `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`: one finding, `WholeHomeAreaTip`
+  contradicting the built-flooring rule, fixed in `c07e748`); `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
 
 ## What it is made of
 
