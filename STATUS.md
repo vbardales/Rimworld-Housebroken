@@ -22,7 +22,7 @@ remaining:
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
   - unverified (2026-10-10): the new Preview (with the echo) is in the repository only. The GitHub social preview and the Steam header image still hold the previous one, and `social_preview_sha256` is not recorded. Steam gets the Preview only with a `publish` that has `update_preview` on.
-code_review_sha: a843855f30c382122b7ddd1e5db33b7c0ffc579c  # no code change in Source, Defs, Patches or the DLL since 6560a18; range 6560a18..a843855 reviewed 2026-10-10: 3 Keyed text edits (WholeHomeAreaTip EN and FR, IntermediateTip FR), no finding
+code_review_sha: f54316a083bb02bd40ddb83eaa7d264be67f755c  # no code change in Source, Defs, Patches or the DLL since 6560a18; range a843855..f54316a reviewed 2026-10-10: Preview echo (config block, echo.png, re-rendered Preview), no finding
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
@@ -51,9 +51,13 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
 - **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
 - **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08.
-- **Code review** (field `code_review_sha`): last reviewed commit `a843855f30c382122b7ddd1e5db33b7c0ffc579c` (2026-10-10, range `6560a18..a843855`: no code change,
-  three Keyed text edits, `WholeHomeAreaTip` EN and FR now agree with the built-flooring rule, `IntermediateTip` FR reworded, no finding).
-  Earlier: `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`: one finding, `WholeHomeAreaTip`
+- **Code review** (field `code_review_sha`): last reviewed commit `f54316a083bb02bd40ddb83eaa7d264be67f755c` (2026-10-10, range `a843855..f54316a`: no code change; the
+  Preview echo only: the `echo` block of `Art/Preview.config.json`, `Art/echo.png`, the re-rendered `Preview.png`, `0-preview.png` and `Preview.ico`.
+  The Preview is 896 x 504, 590 KB, and `0-preview.png` is byte for byte its copy. No finding. Note, not a defect: the config declares
+  `width: 800, height: 520` for an echo of 1536 x 1024; the renderer uses them only as a box ratio (`--echoAspect`) and the mask is `contain`, so the
+  drawing is not distorted; left as validated).
+  Earlier: `a843855f30c382122b7ddd1e5db33b7c0ffc579c` (range `6560a18..a843855`: three Keyed text edits, `WholeHomeAreaTip` EN and FR now agree with the
+  built-flooring rule, `IntermediateTip` FR reworded, no finding); `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`: one finding, `WholeHomeAreaTip`
   contradicting the built-flooring rule, fixed in `c07e748`); `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
 
 ## What it is made of
