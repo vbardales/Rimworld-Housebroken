@@ -8,8 +8,7 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-stage:        published
-workflow_stage: published
+workflow_stage: followUp[1.0.0]
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -87,6 +86,6 @@ gender-agreement convention applies.
 
 ## Field vocabulary
 
-`stage`: `port`, `showcase`, `preTest`, `done`, `tested`, `published`. `licence`: `open` an explicit licence, `silent` no licence and a
+`workflow_stage`: the chain in AUDIT.md (this mod: `followUp[1.0.0]`; the old `stage` field and its codes are retired). `licence`: `open` an explicit licence, `silent` no licence and a
 dead source, `alive` no licence but a living source, `forbidden` a written refusal, `original` owing nothing to anyone. `remaining`:
 `feature` for something missing from a first release, `defect` for a known fault left unfixed, `unverified` for what could not be checked.
