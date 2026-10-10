@@ -3,9 +3,18 @@
 Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it in game.
 
+## [Unreleased]
+
+Changes in `main` since the published `1.0.0` (revision `c360021`). Steam has none of them yet.
+
+### Changed
+
+- French: `Housebroken.Settings.IntermediateTip` now reads "de la catégorie intermédiaire à la catégorie avancée", and `Housebroken.Settings.Scope` says non-finite numbers "sont remplacés par leur valeur par défaut". Text only, no logic.
+- The Preview image carries a line-art echo of the husky and its droppings. The GitHub social preview is already updated; the Steam header image changes only with a publish that sends the Preview.
+
 ## [1.0.0] - 2026-10-08
 
-This is 1.0.0, dated at prepublication as AUDIT.md requires; Steam received it when it was published, on 2026-10-08. Decided by the owner: this is the first real publication, uploaded on top of the `0.1.0` prepublication item
+This is the first real publication, decided by the owner, uploaded on top of the `0.1.0` prepublication item
 (3806137798). Rollback, if needed after the upload, is switching the item back to private, not a code revert.
 
 ### Added
