@@ -1,6 +1,6 @@
 # Housebroken — runtime acceptance plan
 
-`done` means ready for in-game acceptance, not `tested`. The offline runner is
+The mod is at `followUp[1.0.0]` (`STATUS.md`): every pass below has run. The offline runner is
 `Tests/Housebroken.Tests.csproj`; the development-only Pickle suite and its pass maps are in
 `Tests/Pickle/`. The manual scenarios are in `TESTS_FONCTIONNELS.md`.
 
@@ -74,7 +74,7 @@ the 12 passes of TF-01 to TF-22.
 
 ## State
 
-Every scenario TF-01 to TF-22 passed under Pickle (2026-09-25, 26, 28); none is `@wip`; the gallery passed 2026-10-08. The limits (walking is a teleport, no click on an alert entry, the main-bar tooltip is not observable, the settings window is clipped at 200 percent) are recorded in `TESTS_FONCTIONNELS.md` as limits, not open tests. Whether RIMMSQOL remembers a button-visibility choice after a restart belongs to RIMMSQOL. The non-regression replay on the published revision was queued 2026-10-08 (`docs/runs/2026-10-08.md`).
+Every scenario TF-01 to TF-22 passed under Pickle (2026-09-25, 26, 28); none is `@wip`; the gallery passed 2026-10-08. The limits (walking is a teleport, no click on an alert entry, the main-bar tooltip is not observable, the settings window is clipped at 200 percent) are recorded in `TESTS_FONCTIONNELS.md` as limits, not open tests. Whether RIMMSQOL remembers a button-visibility choice after a restart belongs to RIMMSQOL. The non-regression replay on the published revision `c360021` is complete and green (2026-10-08 and 2026-10-09; TF-20 after green on replay `15f8` once the Pickle staging order was fixed, not the mod); the verdict of each ticket is in `docs/runs/2026-10-08.md`.
 
 ## Launching and keeping evidence
 

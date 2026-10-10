@@ -2,7 +2,7 @@
 localization: complete
 translation_en: complete
 translation_fr: complete
-settings_audit: complete
+settings_audit: passed
 mod:          Housebroken
 packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
