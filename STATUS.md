@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: unchecked
 settings_audit: passed
 mod:          Housebroken
 packageId:    nelim.housebroken
@@ -21,8 +21,9 @@ remaining:
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
+  - unverified (2026-10-10): French review by the owner of the two French texts changed after her review of 2026-10-08, `Housebroken.Settings.IntermediateTip` (`1fc57f4`) and `Housebroken.Settings.Scope` (`87242a2`); `translation_fr` stays `unchecked` until then. The page showing `Scope` (TF-16, French) is to be replayed after the change; both texts are in `main` only, not on Steam.
   - unverified (2026-10-10): the new Preview (with the echo) is in the repository and in the GitHub social preview, not on Steam: the Steam header image still holds the previous one. Steam gets the Preview only with a `publish` that has `update_preview` on.
-code_review_sha: f54316a083bb02bd40ddb83eaa7d264be67f755c  # no code change in Source, Defs, Patches or the DLL since 6560a18; range a843855..f54316a reviewed 2026-10-10: Preview echo (config block, echo.png, re-rendered Preview), no finding
+code_review_sha: 87242a2d93ac22a7802d5aa674d9a1f66a669c9e  # no code change in Source, Defs, Patches or the DLL since 6560a18; range f54316a..87242a2 reviewed 2026-10-10: one French Keyed string (Settings.Scope), CHANGELOG, no finding
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
