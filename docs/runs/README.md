@@ -44,3 +44,5 @@ Rules kept here:
 | [2026-09-28.md](2026-09-28.md) | The final replays after the Intermediate tooltip fix: tooltips, page at 100 and 200 percent, RIMMSQOL shortcut |
 | [2026-10-02.md](2026-10-02.md) | Evidence trim (190 MB to 1.3 MB) and the latest evidence per scenario |
 | [2026-10-07.md](2026-10-07.md) | The gallery scenario: two green runs after one fix, pictures not usable yet |
+| [2026-10-08.md](2026-10-08.md) | Non-regression on the published revision, ticket by ticket, and the texts sent at publication |
+| [2026-10-10.md](2026-10-10.md) | French tooltips replayed after the `IntermediateTip` rewording, green |
