@@ -22,7 +22,7 @@ remaining:
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
   - unverified (2026-10-10, decision of the owner: 1.0.0 is enough for now, a 1.0.1 may come later): the French texts of `IntermediateTip` and `Scope` and the Preview with the echo are in `main` (see `[Unreleased]` in `CHANGELOG.md`) and in the GitHub social preview, not on Steam. The French page showing `Scope` is not replayed under Pickle yet. A 1.0.1 would send the Preview with `update_preview` on and the description untouched.
-code_review_sha: 87242a2d93ac22a7802d5aa674d9a1f66a669c9e  # no code change in Source, Defs, Patches or the DLL since 6560a18; range f54316a..87242a2 reviewed 2026-10-10: one French Keyed string (Settings.Scope), CHANGELOG, no finding
+code_review_sha: 47cfe2ba6374072ee3bfa49f185781a2c3654474  # no code change in Source, Defs, Patches or the DLL since 6560a18; range 87242a2..47cfe2b reviewed 2026-10-10: build intermediates path .build to build in three Directory.Build.props, no finding
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
