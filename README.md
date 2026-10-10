@@ -75,7 +75,7 @@ mod is still to be played (TF-18, second half).
 ```
 Mod/       published to the Workshop; target of the junction into RimWorld/Mods
 Source/    never published
-.build/    build intermediates, ignored by git
+build/    build intermediates, ignored by git
 ```
 
 The Workshop uploader sends the mod folder as it stands, with no filtering —

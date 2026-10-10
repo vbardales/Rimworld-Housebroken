@@ -8,7 +8,7 @@ dotnet run --project Tests/Housebroken.Tests.csproj -c Release
 
 The executable prints each result and exits with code 1 if any test fails, or 0
 if all pass. This is a package-free runner; use `dotnet run`, not `dotnet test`.
-Build outputs stay under `.build/tests/`, outside the Workshop folder.
+Build outputs stay under `build/tests/`, outside the Workshop folder.
 
 The project compiles the actual production sources for `Cleanliness`,
 `StatPart_Housebroken`, both patch bodies, `HousebrokenSettings`, `HousebrokenMod`

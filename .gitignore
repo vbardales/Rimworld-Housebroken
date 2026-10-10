@@ -10,7 +10,7 @@
 # Directory.Build.props sends them outside the published folder: they must never end up in it,
 # since Mod/ goes to the Workshop as it stands. An obj/ left there would ship the publicised
 # Assembly-CSharp.dll to every subscriber.
-.build/
+build/
 Source/obj/
 Source/bin/
 

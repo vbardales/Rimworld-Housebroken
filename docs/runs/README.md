@@ -26,7 +26,7 @@ For this mod:
 - **A run of a superseded build proves nothing about the current one.** After a change to `Source/`, to `Mod/` or to
   the Pickle steps, the older folders go once a run of the new build exists; until then they are the only record of
   what the old build did.
-- **Never in git:** `evidence/`, `.build/`, `*.webm`, `*.dds`. The repository holds these text files and nothing else.
+- **Never in git:** `evidence/`, `build/`, `*.webm`, `*.dds`. The repository holds these text files and nothing else.
 
 Rules kept here:
 
