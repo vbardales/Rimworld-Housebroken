@@ -21,7 +21,7 @@ remaining:
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
-  - unverified (2026-10-10): the new Preview (with the echo) is in the repository only. The GitHub social preview and the Steam header image still hold the previous one, and `social_preview_sha256` is not recorded. Steam gets the Preview only with a `publish` that has `update_preview` on.
+  - unverified (2026-10-10): the new Preview (with the echo) is in the repository and in the GitHub social preview, not on Steam: the Steam header image still holds the previous one. Steam gets the Preview only with a `publish` that has `update_preview` on.
 code_review_sha: f54316a083bb02bd40ddb83eaa7d264be67f755c  # no code change in Source, Defs, Patches or the DLL since 6560a18; range a843855..f54316a reviewed 2026-10-10: Preview echo (config block, echo.png, re-rendered Preview), no finding
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
@@ -29,6 +29,7 @@ session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
 protocols_read_sha: 80ee01299918bd5fd757286ce3489a370cb4351d
 echo_review_sha: bb4a2859da166d7b9c8ec5ffd85d70d1bebba950  # Preview echo validated by the owner in chat 2026-10-10, with the accepted gallery in hand
+social_preview_sha256: 5277f259fda8db251706dedb501455ef513108dc5d3ba5c74fba3141f4a5e3b3  # Mod/About/Preview.png with the husky echo, uploaded by the owner as the GitHub social preview 2026-10-10; og:image now c39f6b70-0f7f-41a3-91f3-bb6185f9b148
 ---
 
 # Housebroken — status
@@ -91,7 +92,7 @@ gender-agreement convention applies.
 - Regenerate from the mod root: `node ../scripts/Render-Preview.cjs`. It writes `Mod/About/ModIcon.png` (128 x 128),
   `Mod/About/Preview.png` (ModIcon badge bottom-left), `Art/Gallery/0-preview.png` (byte-identical copy of the Preview),
   `Art/Preview.ico` and `Art/ModIcon.ico`. QA files go to `Art/.render/`, ignored by git.
-- **Echo (2026-10-10, owner's decision: keep this one):** `Art/echo.png`, a solid blue husky line-art made by hand and declared in `Art/Preview.config.json` (`echo`, `preSized`, `veil: false`, accent colour, opacity 1). It sits at the right of the title panel and shows the subject of the gallery (the husky and its droppings). It overlaps the end of the title and the word "and" of the summary line; legibility checked on the 896 x 504 render and on the 268 px render, accepted by the owner. Validated commit in `echo_review_sha`. The GitHub social preview and the Steam header image still hold the previous Preview (see `remaining`).
+- **Echo (2026-10-10, owner's decision: keep this one):** `Art/echo.png`, a solid blue husky line-art made by hand and declared in `Art/Preview.config.json` (`echo`, `preSized`, `veil: false`, accent colour, opacity 1). It sits at the right of the title panel and shows the subject of the gallery (the husky and its droppings). It overlaps the end of the title and the word "and" of the summary line; legibility checked on the 896 x 504 render and on the 268 px render, accepted by the owner. Validated commit in `echo_review_sha`. The GitHub social preview was updated by the owner on 2026-10-10 (`social_preview_sha256`); the Steam header image still holds the previous Preview (see `remaining`).
 - Gallery pictures `Art/Gallery/1-…` and later come from Pickle runs, not from the renderer (`PUBLICATION.md`, `TESTING.md`).
 
 ## Field vocabulary
