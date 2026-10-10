@@ -22,7 +22,7 @@ remaining:
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
 code_review_sha: a843855f30c382122b7ddd1e5db33b7c0ffc579c  # no code change in Source, Defs, Patches or the DLL since 6560a18; range 6560a18..a843855 reviewed 2026-10-10: 3 Keyed text edits (WholeHomeAreaTip EN and FR, IntermediateTip FR), no finding
-publication_changelog_review_sha: 1fc57f4a7628d9c7bcfc0fe88999441cf25a9fc0  # was `publication_changelog_review`: <sha> (PUBLICATION.md and CHANGELOG.md reviewed by the owner, corrections applied 2026-10-09)
+publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
