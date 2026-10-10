@@ -2,7 +2,7 @@
 
 What the Workshop page needs and the rest of the repository does not hold. Written on 2026-09-25 for the `1.0.0`
 and for whoever updates this mod next. Rules: `AUDIT.md`, `PUBLISHING.md` and `Rimworld-Release-Admin/docs/OPERATIONS.md`
-of the collection, summarised in `docs/PROTOCOLS-READ.md`.
+of the collection (the protocols read are recorded by `protocols_read_sha` in `STATUS.md`).
 
 Workshop item: **3806137798**, created by the `0.1.0` prepublication (commit `61b00c5`, `Mod/About/PublishedFileId.txt`).
 Steam creates every item private, and nothing here changes that: the owner switches it to public herself.
@@ -11,11 +11,11 @@ Steam creates every item private, and nothing here changes that: the owner switc
 
 | Item | State |
 | --- | --- |
-| Stage | `published` (`STATUS.md`, 2026-10-08), version 1.0.0, public since 2026-10-08 |
+| Stage | `followUp[1.0.0]` (`STATUS.md`), version 1.0.0, public since 2026-10-08 |
 | Version | 1.0.0 published (tag `v1.0.0`, release `Housebroken 1.0.0`, SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`); repository and `About.xml` say 1.0.0 |
 | Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
 | Workflow | `publish-tag.yml` under `.github/`, template stamp `82de20b8aa50` |
-| Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (regenerated 2026-10-05 by `scripts/Render-Preview.cjs`); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |
+| Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (re-rendered 2026-10-10 by `scripts/Render-Preview.cjs`, with the husky echo); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |
 | Thanks comments | all done (see below) |
 
 ## Publishing by CI
@@ -61,7 +61,7 @@ the suite can produce headlessly, and what it cannot:
 
 | Candidate | Source | State |
 | --- | --- | --- |
-| 0: the Preview, with the ModIcon corner badge | `Art/Gallery/0-preview.png`, written by the renderer, byte for byte the Preview | regenerated 2026-10-05 |
+| 0: the Preview, with the ModIcon corner badge | `Art/Gallery/0-preview.png`, written by the renderer, byte for byte the Preview | re-rendered 2026-10-10 (husky echo added; not yet on Steam or in the GitHub social preview) |
 | The settings page, English | `32-language-review.feature`, screenshot mode | played in English on 2026-09-22 (`03-language`), opened and legible; not played at 100 and 200 percent yet |
 | The settings page, French | same, `-Language French` | played on 2026-09-22, opened, accents and slider labels legible |
 | Indoors: a trained husky beside an untrained cow, the cow's mess on the floor | `Art/Gallery/1-indoors.png`, from `40-gallery.feature` scenario 1 (hearth hall) | played green and accepted by the owner, 2026-10-08 |
