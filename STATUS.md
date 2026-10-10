@@ -27,7 +27,7 @@ publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PU
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-08, published; STATUS.md cleaned to the current state (older dated sections are one line each in docs/runs/2026-10-08.md; the full text is in git)
-protocols_read_sha: 6591dbc87e6e41defa0dcf1fc510aac5ca522048
+protocols_read_sha: 80ee01299918bd5fd757286ce3489a370cb4351d
 echo_review_sha: bb4a2859da166d7b9c8ec5ffd85d70d1bebba950  # Preview echo validated by the owner in chat 2026-10-10, with the accepted gallery in hand
 ---
 
