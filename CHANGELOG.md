@@ -7,10 +7,14 @@ This file serves the repository and the writing of Steam patch notes; RimWorld d
 
 Changes in `main` since the published `1.0.0` (revision `c360021`). Steam has none of them yet.
 
+### Added
+
+- `Mod/About/About.xml`: `<li>1.7</li>` in `supportedVersions`, next to `1.6`. 19 logic scenarios (features 10 to 14, 28, 29, 33) ran green on RimWorld 1.7.4976 in English (ticket `5455`); the settings-window, RIMMSQOL, gallery and French scenarios were not replayed on 1.7, and the 1.7 install ships no French pack. The Preview badge now reads 1.7.
+
 ### Changed
 
 - French: `Housebroken.Settings.IntermediateTip` now reads "de la catégorie intermédiaire à la catégorie avancée", and `Housebroken.Settings.Scope` says non-finite numbers "sont remplacés par leur valeur par défaut". Text only, no logic.
-- The Preview image carries a line-art echo of the husky and its droppings. The GitHub social preview is already updated; the Steam header image changes only with a publish that sends the Preview.
+- The echo file is now `Art/echo-source.png` (renamed from `echo.png`, same drawing). The Preview image carries a line-art echo of the husky and its droppings. The GitHub social preview is already updated; the Steam header image changes only with a publish that sends the Preview.
 
 ## [1.0.0] - 2026-10-08
 

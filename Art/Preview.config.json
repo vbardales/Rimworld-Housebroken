@@ -16,7 +16,7 @@
   "backgroundFile": "Preview-source.png",
   "backgroundSize": "cover",
   "echo": {
-    "file": "echo.png",
+    "file": "echo-source.png",
     "preSized": true,
     "mode": "alpha",
     "color": "var(--accent)",

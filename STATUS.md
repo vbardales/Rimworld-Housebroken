@@ -27,8 +27,8 @@ code_review_sha: 47cfe2ba6374072ee3bfa49f185781a2c3654474  # no code change in S
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
-updated:      2026-10-13, playTests[1.1.0]: minor bump for the RimWorld 1.7 pass (AUDIT.md "Passe 1.7"); tested_1_7 not yet run, no 1.7 in supportedVersions before a green 1.7 run
-protocols_read_sha: 2f4e0002e2543fcde57999c51ff8b2f0dfc8efdb
+updated:      2026-10-13, playTests[1.1.0]: 1.7 declared in supportedVersions after the green 1.7 run (tested_1_7 yes), Preview badge 1.7, echo file renamed echo-source.png
+protocols_read_sha: 86cf2bf7fd989021fbad0ac45602a2109a7a3aa7
 echo_review_sha: bb4a2859da166d7b9c8ec5ffd85d70d1bebba950  # Preview echo validated by the owner in chat 2026-10-10, with the accepted gallery in hand
 social_preview_sha256: 5277f259fda8db251706dedb501455ef513108dc5d3ba5c74fba3141f4a5e3b3  # Mod/About/Preview.png with the husky echo, uploaded by the owner as the GitHub social preview 2026-10-10; og:image now c39f6b70-0f7f-41a3-91f3-bb6185f9b148
 ---
@@ -54,7 +54,7 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
 - **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08.
 - **Code review** (field `code_review_sha`): last reviewed commit `f54316a083bb02bd40ddb83eaa7d264be67f755c` (2026-10-10, range `a843855..f54316a`: no code change; the
-  Preview echo only: the `echo` block of `Art/Preview.config.json`, `Art/echo.png`, the re-rendered `Preview.png`, `0-preview.png` and `Preview.ico`.
+  Preview echo only: the `echo` block of `Art/Preview.config.json`, `Art/echo-source.png`, the re-rendered `Preview.png`, `0-preview.png` and `Preview.ico`.
   The Preview is 896 x 504, 590 KB, and `0-preview.png` is byte for byte its copy. No finding. Note, not a defect: the config declares
   `width: 800, height: 520` for an echo of 1536 x 1024; the renderer uses them only as a box ratio (`--echoAspect`) and the mask is `contain`, so the
   drawing is not distorted; left as validated).
@@ -93,7 +93,7 @@ gender-agreement convention applies.
 - Regenerate from the mod root: `node ../scripts/Render-Preview.cjs`. It writes `Mod/About/ModIcon.png` (128 x 128),
   `Mod/About/Preview.png` (ModIcon badge bottom-left), `Art/Gallery/0-preview.png` (byte-identical copy of the Preview),
   `Art/Preview.ico` and `Art/ModIcon.ico`. QA files go to `Art/.render/`, ignored by git.
-- **Echo (2026-10-10, owner's decision: keep this one):** `Art/echo.png`, a solid blue husky line-art made by hand and declared in `Art/Preview.config.json` (`echo`, `preSized`, `veil: false`, accent colour, opacity 1). It sits at the right of the title panel and shows the subject of the gallery (the husky and its droppings). It overlaps the end of the title and the word "and" of the summary line; legibility checked on the 896 x 504 render and on the 268 px render, accepted by the owner. Validated commit in `echo_review_sha`. The GitHub social preview was updated by the owner on 2026-10-10 (`social_preview_sha256`); the Steam header image still holds the previous Preview (see `remaining`).
+- **Echo (2026-10-10, owner's decision: keep this one):** `Art/echo-source.png`, a solid blue husky line-art made by hand and declared in `Art/Preview.config.json` (`echo`, `preSized`, `veil: false`, accent colour, opacity 1). It sits at the right of the title panel and shows the subject of the gallery (the husky and its droppings). It overlaps the end of the title and the word "and" of the summary line; legibility checked on the 896 x 504 render and on the 268 px render, accepted by the owner. Validated commit in `echo_review_sha`. The GitHub social preview was updated by the owner on 2026-10-10 (`social_preview_sha256`); the Steam header image still holds the previous Preview (see `remaining`).
 - Gallery pictures `Art/Gallery/1-…` and later come from Pickle runs, not from the renderer (`PUBLICATION.md`, `TESTING.md`).
 
 ## Field vocabulary
