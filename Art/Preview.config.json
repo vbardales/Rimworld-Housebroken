@@ -41,6 +41,7 @@
     "file": "ModIcon-source.png",
     "corner": "bottom-left",
     "width": 220,
-    "outline": false
+    "outline": false,
+    "translate": "-12.5%,12.5%"
   }
 }
