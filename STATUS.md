@@ -29,7 +29,7 @@ wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Hous
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-13, playTests[1.1.0]: 1.7 declared in supportedVersions after the green 1.7 run (tested_1_7 yes), Preview badge 1.7, echo file renamed echo-source.png
 protocols_read_sha: 86cf2bf7fd989021fbad0ac45602a2109a7a3aa7
-echo_review_sha: bb4a2859da166d7b9c8ec5ffd85d70d1bebba950  # Preview echo validated by the owner in chat 2026-10-10, with the accepted gallery in hand
+echo_review_sha: 0bd8fee1009495504290ed663210e8a069c58393  # Preview echo (Art/echo-source.png, same drawing, renamed) validated by the owner in chat 2026-10-13 with the 1.7 badge Preview
 social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b164ef213  # Mod/About/Preview.png with the 1.7 badge and the translated ModIcon badge, uploaded by the session through Claude in Chrome 2026-10-13 on the owner's order
 ---
 
