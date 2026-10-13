@@ -13,7 +13,7 @@ Changes in `main` since the published `1.0.0` (revision `c360021`). Steam has no
 
 ### Changed
 
-- French: `Housebroken.Settings.IntermediateTip` now reads "de la catégorie intermédiaire à la catégorie avancée", and `Housebroken.Settings.Scope` says non-finite numbers "sont remplacés par leur valeur par défaut". Text only, no logic.
+- French: `Housebroken.Settings.Intro` now says the animals "retiennent leur saleté jusqu'à leur sortie de la base" (it said the filth stays held inside the base, the opposite of the behaviour). `Housebroken.Settings.IntermediateTip` now reads "de la catégorie intermédiaire à la catégorie avancée", and `Housebroken.Settings.Scope` says non-finite numbers "sont remplacés par leur valeur par défaut". Text only, no logic.
 - The echo file is now `Art/echo-source.png` (renamed from `echo.png`, same drawing). The Preview image carries a line-art echo of the husky and its droppings. The GitHub social preview is already updated; the Steam header image changes only with a publish that sends the Preview.
 
 ## [1.0.0] - 2026-10-08
