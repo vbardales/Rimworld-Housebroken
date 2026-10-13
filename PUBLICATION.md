@@ -11,8 +11,8 @@ Steam creates every item private, and nothing here changes that: the owner switc
 
 | Item | State |
 | --- | --- |
-| Stage | `followUp[1.0.0]` (`STATUS.md`), version 1.0.0, public since 2026-10-08 |
-| Version | 1.0.0 published (tag `v1.0.0`, release `Housebroken 1.0.0`, SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`); repository and `About.xml` say 1.0.0 |
+| Stage | `writeDocs[1.1.0]` (`STATUS.md`), version 1.1.0 in preparation, 1.0.0 public since 2026-10-08 |
+| Version | 1.0.0 published (tag `v1.0.0`, release `Housebroken 1.0.0`, SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`); repository and `About.xml` say 1.1.0 (RimWorld 1.7 declared after a green 1.7 run, French texts, Preview with the echo and the 1.7 badge) |
 | Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
 | Workflow | `publish-tag.yml` under `.github/`, template stamp `82de20b8aa50` |
 | Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (re-rendered 2026-10-10 by `scripts/Render-Preview.cjs`, with the husky echo); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |
@@ -73,7 +73,7 @@ The gallery itself is a manual step on the Steam page: no library the CI uses ca
 
 ## Dependencies and DLCs
 
-**No DLC is required.** `supportedVersions` declares 1.6 only, there is no `LoadFolders.xml` and no `IfModActive` branch.
+**No DLC is required.** `supportedVersions` declares 1.6 and 1.7, there is no `LoadFolders.xml` and no `IfModActive` branch.
 
 | Declared | packageId | Actually required |
 | --- | --- | --- |
@@ -109,6 +109,19 @@ behind `[url=…]`, under 1000 characters, posted once the item is public.
 Sent as written (BBCode), under 8000 bytes, read by the workflow from the fenced block under `### <version>`. The notes of 1.0.0, already
 sent, are in `docs/runs/2026-10-08.md`. For the next version, write a `### <version>` block here, from the `## [<version>]` section of
 `CHANGELOG.md`, before the dry-run.
+
+### 1.1.0
+
+Sent with `update_preview` on, `update_description` off, `update_tags` on (the 1.7 tag, a minor version: AUDIT.md, "Passe 1.7").
+
+```bbcode
+[b]1.1.0[/b]
+[list]
+[*]Now declared for the latest RimWorld version as well (1.7). The logic scenarios ran green there, in English.
+[*]French: the settings texts for the intermediate-to-advanced range and for out-of-range values now read more clearly.
+[*]New header image.
+[/list]
+```
 
 ## Steam description
 
