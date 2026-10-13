@@ -8,7 +8,7 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-workflow_stage: publish[1.1.0]
+workflow_stage: followUp[1.1.0]
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -19,6 +19,8 @@ tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-
 workshop:      3806137798
 tested_1_7:   yes  # 2026-10-13, ticket 5455, 19 of 19 logic scenarios (features 10-14, 28, 29, 33), RimWorld 1.7.4976 rev1043, English, no dependency map, on 5106f83; settings-window, RIMMSQOL, restart-pair and gallery features and French not replayed; no supportedVersions change before Virginie confirms
 remaining:
+  - defect (2026-10-14): the Workshop tag `1.7` was not applied by the 1.1.0 publish: the page still shows `Mod, 1.6`. `update_tags=true` was sent, but `steamcmd` ignores the `tags` key and this repository's workflow (template stamp 7a8f3a601751) has no `steam-set-tags.mjs` step, and `steam-production` has no `STEAM_REFRESH_TOKEN` (Rimworld-Release-Admin `docs/OPERATIONS.md`, "Workshop tags: the refresh token"). To the CI/CD session; meanwhile the owner can add the tag by hand on the Steam page.
+  - unverified (2026-10-14): the 1.1.0 change note on the Steam page (the content and the Preview were uploaded, `Upload finished ... OK`).
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
@@ -27,8 +29,8 @@ code_review_sha: aacff732fcd224604ece68f4eb6278c75ca3be9c  # range 47cfe2b..aacf
 publication_changelog_review_sha: 9bf1e8164c5eaa9da43bb91d8fdefab29508689d  # PUBLICATION.md and CHANGELOG.md for the 1.1 line, and the French Settings.Intro, validated by the owner in chat 2026-10-13 (the commit only dates the section)
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
-updated:      2026-10-13, playTests[1.1.0]: 1.7 declared in supportedVersions after the green 1.7 run (tested_1_7 yes), Preview badge 1.7, echo file renamed echo-source.png
-protocols_read_sha: 65e09838c8023b798d4ba0ff04df04284a96f11e
+updated:      2026-10-14, followUp[1.1.0]: 1.1.0 published 2026-10-13 (dry-run 38472925054, publish 38473065934, tag v1.1.0, release Housebroken 1.1.0, SHA 5ca8a794a8c1f6fce08109ec6447d74842213f56), 1.7 declared, Preview sent; tag 1.7 on the page missing (see remaining); non-regression to run
+protocols_read_sha: 1eba2baf4d52f146b4fe4f01d90bdd9f0988979e
 echo_review_sha: 0bd8fee1009495504290ed663210e8a069c58393  # Preview echo (Art/echo-source.png, same drawing, renamed) validated by the owner in chat 2026-10-13 with the 1.7 badge Preview
 social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b164ef213  # Mod/About/Preview.png with the 1.7 badge and the translated ModIcon badge, uploaded by the session through Claude in Chrome 2026-10-13 on the owner's order
 ---
@@ -37,9 +39,10 @@ social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b1
 
 ## State
 
-Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.0.0, on RimWorld 1.6.
+Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.1.0 (published 2026-10-13), on RimWorld 1.6 and 1.7.
 
-- **Published revision:** SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`. Dry-run
+- **Published revision 1.1.0:** SHA `5ca8a794a8c1f6fce08109ec6447d74842213f56`. Dry-run [38472925054](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/38472925054), publish run [38473065934](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/38473065934) with `update_preview` and `update_tags` (description untouched), `steam-production` approved by the owner. Tag `v1.1.0` and release `Housebroken 1.1.0` created by the CI.
+- **Published revision 1.0.0:** SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`. Dry-run
   [37798996377](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/37798996377), publish run
   [37800930249](https://github.com/vbardales/Rimworld-Housebroken/actions/runs/37800930249) with `update_preview` and `update_description`,
   `steam-production` approved by the owner. The CI created tag `v1.0.0` and the GitHub release `Housebroken 1.0.0`.
