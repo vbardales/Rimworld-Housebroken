@@ -3,9 +3,9 @@
 Format inspired by [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 This file serves the repository and the writing of Steam patch notes; RimWorld does not display it in game.
 
-## [Unreleased]
+## [1.1.0] - 2026-10-13
 
-Changes in `main` since the published `1.0.0` (revision `c360021`). Steam has none of them yet.
+Changes since the published `1.0.0` (revision `c360021`).
 
 ### Added
 
