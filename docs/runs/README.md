@@ -46,3 +46,4 @@ Rules kept here:
 | [2026-10-07.md](2026-10-07.md) | The gallery scenario: two green runs after one fix, pictures not usable yet |
 | [2026-10-08.md](2026-10-08.md) | Non-regression on the published revision, ticket by ticket, and the texts sent at publication |
 | [2026-10-10.md](2026-10-10.md) | French tooltips replayed after the `IntermediateTip` rewording, green |
+| [2026-10-13.md](2026-10-13.md) | RimWorld 1.7 pass: 19 of 19 logic scenarios green, English |
