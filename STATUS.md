@@ -1,7 +1,7 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: complete
+translation_fr: partial
 settings_audit: passed
 mod:          Housebroken
 packageId:    nelim.housebroken
@@ -19,6 +19,7 @@ tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-
 workshop:      3806137798
 tested_1_7:   yes  # 2026-10-13, ticket 5455, 19 of 19 logic scenarios (features 10-14, 28, 29, 33), RimWorld 1.7.4976 rev1043, English, no dependency map, on 5106f83; settings-window, RIMMSQOL, restart-pair and gallery features and French not replayed; no supportedVersions change before Virginie confirms
 remaining:
+  - unverified (2026-10-13): the owner's review of the French `Housebroken.Settings.Intro`, reworded after her last review (the filth is held until the animal leaves the base). The review line of `FRENCH_REVIEW.md` is hers to write.
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
