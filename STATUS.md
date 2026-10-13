@@ -1,14 +1,14 @@
 ---
 localization: complete
 translation_en: complete
-translation_fr: partial
+translation_fr: complete
 settings_audit: passed
 mod:          Housebroken
 packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-workflow_stage: writeDocs[1.1.0]
+workflow_stage: prepareRelease[1.1.0]
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -19,17 +19,16 @@ tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-
 workshop:      3806137798
 tested_1_7:   yes  # 2026-10-13, ticket 5455, 19 of 19 logic scenarios (features 10-14, 28, 29, 33), RimWorld 1.7.4976 rev1043, English, no dependency map, on 5106f83; settings-window, RIMMSQOL, restart-pair and gallery features and French not replayed; no supportedVersions change before Virginie confirms
 remaining:
-  - unverified (2026-10-13): the owner's review of the French `Housebroken.Settings.Intro`, reworded after her last review (the filth is held until the animal leaves the base). The review line of `FRENCH_REVIEW.md` is hers to write.
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
   - unverified (2026-10-10, decision of the owner: 1.0.0 is enough for now, a 1.0.1 may come later): the French texts of `IntermediateTip` and `Scope` and the Preview with the echo are in `main` (see `[Unreleased]` in `CHANGELOG.md`) and in the GitHub social preview, not on Steam. The French page showing `Scope` is not replayed under Pickle yet. A 1.0.1 would send the Preview with `update_preview` on and the description untouched.
 code_review_sha: aacff732fcd224604ece68f4eb6278c75ca3be9c  # range 47cfe2b..aacff73 reviewed 2026-10-13: About.xml modVersion and <li>1.7</li>, one French Keyed text (Settings.Intro), no code change, no finding
-publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
+publication_changelog_review_sha: 809a908fac4a9e8575f0ea4a49b31d7f60dfe9fd  # PUBLICATION.md and CHANGELOG.md for the 1.1 line, and the French Settings.Intro, validated by the owner in chat 2026-10-13
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-13, playTests[1.1.0]: 1.7 declared in supportedVersions after the green 1.7 run (tested_1_7 yes), Preview badge 1.7, echo file renamed echo-source.png
-protocols_read_sha: 86cf2bf7fd989021fbad0ac45602a2109a7a3aa7
+protocols_read_sha: 65e09838c8023b798d4ba0ff04df04284a96f11e
 echo_review_sha: 0bd8fee1009495504290ed663210e8a069c58393  # Preview echo (Art/echo-source.png, same drawing, renamed) validated by the owner in chat 2026-10-13 with the 1.7 badge Preview
 social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b164ef213  # Mod/About/Preview.png with the 1.7 badge and the translated ModIcon badge, uploaded by the session through Claude in Chrome 2026-10-13 on the owner's order
 ---
