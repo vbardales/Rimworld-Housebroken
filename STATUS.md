@@ -8,7 +8,7 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-workflow_stage: dormant
+workflow_stage: playTests[1.1.0]
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -26,8 +26,8 @@ code_review_sha: 47cfe2ba6374072ee3bfa49f185781a2c3654474  # no code change in S
 publication_changelog_review_sha: 76aeb3e0e6c01ee34e3f0e991e9579083e6c2722  # PUBLICATION.md and CHANGELOG.md reviewed by the owner, confirmed in chat 2026-10-10
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
-updated:      2026-10-10, dormant: 1.0.0 published 2026-10-08, non-regression green, closing pass done (STATUS.md, TESTING.md, PUBLICATION.md, evidence trimmed to 29 MB, WSL clean 2026-10-09, one branch); older dated sections are in docs/runs/
-protocols_read_sha: e8f5738ee2228246ab626d3fd9ba5f9e1faf7cbf
+updated:      2026-10-13, playTests[1.1.0]: minor bump for the RimWorld 1.7 pass (AUDIT.md "Passe 1.7"); tested_1_7 not yet run, no 1.7 in supportedVersions before a green 1.7 run
+protocols_read_sha: 2f4e0002e2543fcde57999c51ff8b2f0dfc8efdb
 echo_review_sha: bb4a2859da166d7b9c8ec5ffd85d70d1bebba950  # Preview echo validated by the owner in chat 2026-10-10, with the accepted gallery in hand
 social_preview_sha256: 5277f259fda8db251706dedb501455ef513108dc5d3ba5c74fba3141f4a5e3b3  # Mod/About/Preview.png with the husky echo, uploaded by the owner as the GitHub social preview 2026-10-10; og:image now c39f6b70-0f7f-41a3-91f3-bb6185f9b148
 ---
