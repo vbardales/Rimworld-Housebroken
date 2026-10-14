@@ -11,8 +11,8 @@ Steam creates every item private, and nothing here changes that: the owner switc
 
 | Item | State |
 | --- | --- |
-| Stage | `writeDocs[1.1.0]` (`STATUS.md`), version 1.1.0 in preparation, 1.0.0 public since 2026-10-08 |
-| Version | 1.0.0 published (tag `v1.0.0`, release `Housebroken 1.0.0`, SHA `c360021adbb3ad7f71e27bbfc753f18b8b04da3c`); repository and `About.xml` say 1.1.0 (RimWorld 1.7 declared after a green 1.7 run, French texts, Preview with the echo and the 1.7 badge) |
+| Stage | `dormant` (`STATUS.md`), version 1.1.0 published 2026-10-13, public since 2026-10-08 |
+| Version | 1.1.0 published (tag `v1.1.0`, release `Housebroken 1.1.0`, SHA `5ca8a794a8c1f6fce08109ec6447d74842213f56`; RimWorld 1.7 declared after a green 1.7 run, French texts, Preview with the echo and the 1.7 badge); 1.0.0 was `c360021` |
 | Mode | **CI** (public repository): dry-run of the exact commit, `publish` with the full 40-character SHA, `steam-production` approved by the owner only |
 | Workflow | `publish-tag.yml` under `.github/`, template stamp `82de20b8aa50` |
 | Gallery | image 0 = `Art/Gallery/0-preview.png`, byte for byte the `Preview.png` (re-rendered 2026-10-10 by `scripts/Render-Preview.cjs`, with the husky echo); images 1 and 2 (`Art/Gallery/1-indoors.png`, `2-outdoors.png`) played green by `40-gallery.feature` and accepted by the owner on 2026-10-08 (see below) |

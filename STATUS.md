@@ -8,14 +8,14 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-workflow_stage: followUp[1.1.0]
+workflow_stage: dormant
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
   none of its code used; no repo URL in its About.xml, Source/, or the Steam page. Checked 2026-09-28 and 2026-10-02)
 dependencies: declared
 showcase:     complete
-tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression replay on the published revision 2026-10-08 and 2026-10-09, all green (TF-20 after green on replay 15f8 after the staging fix 265e0c1; docs/runs/2026-10-08.md)
+tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-08; non-regression on the published 1.1.0 (5ca8a79) 2026-10-14, 13 tickets, all green (docs/runs/2026-10-14.md); RimWorld 1.7 pass 2026-10-13 (docs/runs/2026-10-13.md)
 workshop:      3806137798
 tested_1_7:   yes  # 2026-10-13, ticket 5455, 19 of 19 logic scenarios (features 10-14, 28, 29, 33), RimWorld 1.7.4976 rev1043, English, no dependency map, on 5106f83; settings-window, RIMMSQOL, restart-pair and gallery features and French not replayed; no supportedVersions change before Virginie confirms
 remaining:
@@ -28,8 +28,8 @@ code_review_sha: aacff732fcd224604ece68f4eb6278c75ca3be9c  # range 47cfe2b..aacf
 publication_changelog_review_sha: 9bf1e8164c5eaa9da43bb91d8fdefab29508689d  # PUBLICATION.md and CHANGELOG.md for the 1.1 line, and the French Settings.Intro, validated by the owner in chat 2026-10-13 (the commit only dates the section)
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
-updated:      2026-10-14, followUp[1.1.0]: 1.1.0 published 2026-10-13 (dry-run 38472925054, publish 38473065934, tag v1.1.0, release Housebroken 1.1.0, SHA 5ca8a794a8c1f6fce08109ec6447d74842213f56), 1.7 declared, Preview sent; tag 1.7 on the page missing (see remaining); non-regression to run; STEAM_REFRESH_TOKEN set in steam-production 2026-10-14 by the owner (read by name, a publish with update_tags can now set the Workshop tags); Workshop tags Mod, 1.6, 1.7 set 2026-10-14; .github at stamp bb16e313d7ac
-protocols_read_sha: 1eba2baf4d52f146b4fe4f01d90bdd9f0988979e
+updated:      2026-10-14, dormant: 1.1.0 published 2026-10-13 (dry-run 38472925054, publish 38473065934, tag v1.1.0, SHA 5ca8a794a8c1f6fce08109ec6447d74842213f56), RimWorld 1.7 declared (tested_1_7 yes), Workshop tags Mod, 1.6, 1.7, STEAM_REFRESH_TOKEN set, non-regression green, closing pass done (evidence trimmed to 29 MB, one branch); older dated sections are in docs/runs/
+protocols_read_sha: 583ce1259235b54ebacca29e1116689d1d24e589
 echo_review_sha: 0bd8fee1009495504290ed663210e8a069c58393  # Preview echo (Art/echo-source.png, same drawing, renamed) validated by the owner in chat 2026-10-13 with the 1.7 badge Preview
 social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b164ef213  # Mod/About/Preview.png with the 1.7 badge and the translated ModIcon badge, uploaded by the session through Claude in Chrome 2026-10-13 on the owner's order
 ---
@@ -54,7 +54,7 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
   the held filth is dropped only on built flooring outside; the description, README and `ManureOutdoorsTip` say so.
 - **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
-- **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08.
+- **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08 (not rerun for 1.1.0: no code change since; `Run-UnitTests.ps1` finds no `RimWorldManaged` property in the project, to fix before the next code change).
 - **Code review** (field `code_review_sha`): last reviewed commit `f54316a083bb02bd40ddb83eaa7d264be67f755c` (2026-10-10, range `a843855..f54316a`: no code change; the
   Preview echo only: the `echo` block of `Art/Preview.config.json`, `Art/echo-source.png`, the re-rendered `Preview.png`, `0-preview.png` and `Preview.ico`.
   The Preview is 896 x 504, 590 KB, and `0-preview.png` is byte for byte its copy. No finding. Note, not a defect: the config declares

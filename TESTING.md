@@ -1,6 +1,6 @@
 # Housebroken — runtime acceptance plan
 
-The mod is at `followUp[1.0.0]` (`STATUS.md`): every pass below has run. The offline runner is
+The mod is at `dormant` after 1.1.0 (`STATUS.md`): every pass below has run, the last full non-regression on 2026-10-14 (`docs/runs/2026-10-14.md`). The offline runner is
 `Tests/Housebroken.Tests.csproj`; the development-only Pickle suite and its pass maps are in
 `Tests/Pickle/`. The manual scenarios are in `TESTS_FONCTIONNELS.md`.
 
