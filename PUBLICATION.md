@@ -106,22 +106,9 @@ behind `[url=…]`, under 1000 characters, posted once the item is public.
 
 ## Steam change notes
 
-Sent as written (BBCode), under 8000 bytes, read by the workflow from the fenced block under `### <version>`. The notes of 1.0.0, already
-sent, are in `docs/runs/2026-10-08.md`. For the next version, write a `### <version>` block here, from the `## [<version>]` section of
+Sent as written (BBCode), under 8000 bytes, read by the workflow from the fenced block under `### <version>`. The notes already sent (1.0.0, 1.1.0) are in
+`docs/runs/2026-10-08.md` and `docs/runs/2026-10-14.md`. For the next version, write a `### <version>` block here, from the `## [<version>]` section of
 `CHANGELOG.md`, before the dry-run.
-
-### 1.1.0
-
-Sent with `update_preview` on, `update_description` off, `update_tags` on (the 1.7 tag, a minor version: AUDIT.md, "Passe 1.7").
-
-```bbcode
-[b]1.1.0[/b]
-[list]
-[*]Now declared for the latest RimWorld version as well (1.7). The logic scenarios ran green there, in English.
-[*]French: the settings texts for the intermediate-to-advanced range and for out-of-range values now read more clearly.
-[*]New header image.
-[/list]
-```
 
 ## Steam description
 
