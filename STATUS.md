@@ -53,7 +53,7 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
   the held filth is dropped only on built flooring outside; the description, README and `ManureOutdoorsTip` say so.
 - **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
-- **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-08 (not rerun for 1.1.0: no code change since; `Run-UnitTests.ps1` finds no `RimWorldManaged` property in the project, to fix before the next code change).
+- **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-14 through `scripts/Run-UnitTests.ps1 -ModRoot .` (the project now declares `GameManaged`, the property that script requires; the runner reads no game assembly).
 - **Code review** (field `code_review_sha`): last reviewed commit `f54316a083bb02bd40ddb83eaa7d264be67f755c` (2026-10-10, range `a843855..f54316a`: no code change; the
   Preview echo only: the `echo` block of `Art/Preview.config.json`, `Art/echo-source.png`, the re-rendered `Preview.png`, `0-preview.png` and `Preview.ico`.
   The Preview is 896 x 504, 590 KB, and `0-preview.png` is byte for byte its copy. No finding. Note, not a defect: the config declares

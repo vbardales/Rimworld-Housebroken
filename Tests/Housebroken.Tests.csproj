@@ -3,6 +3,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Declared only because scripts/Run-UnitTests.ps1 passes the game folder under this name. This runner
+         references no game assembly (GameDoubles.cs stands in for them), so the value is never read. -->
+    <GameManaged Condition="'$(GameManaged)' == ''"></GameManaged>
   </PropertyGroup>
   <ItemGroup>
     <!-- Pickle has its own net48 project and real runner references; keep its companion sources
