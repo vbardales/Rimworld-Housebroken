@@ -23,7 +23,7 @@ remaining:
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
   - unverified (2026-10-10, decision of the owner: 1.0.0 is enough for now, a 1.0.1 may come later): the French texts of `IntermediateTip` and `Scope` and the Preview with the echo are in `main` (see `[Unreleased]` in `CHANGELOG.md`) and in the GitHub social preview, not on Steam. The French page showing `Scope` is not replayed under Pickle yet. A 1.0.1 would send the Preview with `update_preview` on and the description untouched.
-code_review_sha: aacff732fcd224604ece68f4eb6278c75ca3be9c  # range 47cfe2b..aacff73 reviewed 2026-10-13: About.xml modVersion and <li>1.7</li>, one French Keyed text (Settings.Intro), no code change, no finding
+code_review_sha: 17d034f302014127d8cd27d0dd17e6927dc20780  # range 47cfe2b..17d034f reviewed 2026-10-14: About.xml modVersion and <li>1.7</li>, one French Keyed text (Settings.Intro), two PackageReference pins in Source/Housebroken.csproj (rebuilt DLL identical byte for byte to the shipped one), no code change, no finding
 publication_changelog_review_sha: 9bf1e8164c5eaa9da43bb91d8fdefab29508689d  # PUBLICATION.md and CHANGELOG.md for the 1.1 line, and the French Settings.Intro, validated by the owner in chat 2026-10-13 (the commit only dates the section)
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
@@ -53,6 +53,7 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
   the held filth is dropped only on built flooring outside; the description, README and `ManureOutdoorsTip` say so.
 - **Owner's steps done, stated 2026-10-08:** public page read, gallery uploaded, Harmony as required item, subscriptions, FlyingSloth
   thank-you posted (the other recipients already cover Housebroken in their collective comment; register `WORKSHOP_COMMENTS.md`).
+- **Build reproducibility (2026-10-14):** the shipped DLL referenced `0Harmony 2.4.2.0`; the floating `Lib.Harmony 2.*` now resolves 2.4.3, so a rebuild differed (`Build-Mod.ps1 -Check`: CHANGED). Pinned `Lib.Harmony 2.4.2` and `Krafs.Rimworld.Ref 1.6.4871`: the rebuild is byte for byte the shipped DLL (SAME). `Krafs.Publicizer 2.*` stays floating (build tool, no effect on the output).
 - **Offline runner:** `Tests/Housebroken.Tests.csproj`, 59 of 59 pass on 2026-10-14 through `scripts/Run-UnitTests.ps1 -ModRoot .` (the project now declares `GameManaged`, the property that script requires; the runner reads no game assembly).
 - **Code review** (field `code_review_sha`): last reviewed commit `f54316a083bb02bd40ddb83eaa7d264be67f755c` (2026-10-10, range `a843855..f54316a`: no code change; the
   Preview echo only: the `echo` block of `Art/Preview.config.json`, `Art/echo-source.png`, the re-rendered `Preview.png`, `0-preview.png` and `Preview.ico`.
