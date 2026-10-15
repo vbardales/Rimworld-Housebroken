@@ -1,7 +1,7 @@
-# Gallery photographs on the Sanctuaire de Nelim, now in the SanctuaryBacklot repository (docs/GALERIE.md there).
-# The save Nelims-tribe and the "Nelim's Sanctuary:" steps come from the Backlot; the animals, the decor and screenshot mode
-# from PickleTools ("Nelim's Pickle Tools:" steps). Animals only here: no body or trouser mods, no facial animation.
-#   Run-PickleWsl.ps1 -Mod Housebroken -DepMap wsl-deps.gallery.map -Filter 40-gallery
+# Gallery photographs on the Sanctuaire de Nelim (docs/GALERIE.md of the SanctuaryBacklot repository), series "A morning with Rex" (2026-10-15).
+# Same set as SanctuaryBacklot/Tests/Pickle/wsl-deps.sanctuary.map (bodies, trousers, Facial Animation, EyeGenes3, Show Hair) plus the Backlot itself, ScreenshotMode and ColonistRace:
+# Nelim is in frame, so her body, trousers, face and brown eyes must draw as they do in the owner's save. The seeds are in config/gallery/ (copies of the Backlot's config/sanctuary/).
+#   Submit-PickleRun.ps1 -Mod Housebroken -DepMap wsl-deps.gallery.map -Filter 40-gallery
 nelim.sanctuarybacklot path:SanctuaryBacklot/Mod
 nelim.pickletools.screenshotstudio path:PickleTools/ScreenshotStudio/Mod
 nelim.pickletools.camerazoom path:PickleTools/CameraZoom/Mod
@@ -9,4 +9,23 @@ nelim.pickletools.stagedecor path:PickleTools/StageDecor/Mod
 nelim.pickletools.screenshotmode path:PickleTools/ScreenshotMode/Mod
 nelim.pickletools.clearscreen path:PickleTools/ClearScreen/Mod
 nelim.pickletools.coatsteps path:PickleTools/CoatSteps/Mod
+nelim.pickletools.colonistrace path:PickleTools/ColonistRace/Mod
 nelim.pickletools   path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+tiagocc0.FemaleBodyVariants 3798082132
+tiagocc0.FemaleApparelVariants 3799726535
+wdi.realistic.bodies 3527486510
+ab.vplrf 2986402536
+nelim.venustouch.waistlines path:VenusTouchWaistlines/Mod
+Nals.FacialAnimation 1635901197
+nals.facialanimationexperimentals 2581693737
+VanillaExpanded.VTEXE.FacialAnims 2816938779
+Newton.AKNExtras.FacialAnimations 2889716301
+lucius.eyegenes3 3745223213
+astryl.FacialAnimationPerformancePatch 3790129900
+vk.addeyes.EX 3694711465
+sd.fa.movingvanillaeyes 3753978140
+SleepyFrieren.beautygenefa 3685072616
+ria.cuterkidsforfacialanimation 3807706870
+Moshii.NLFA.InitFix 3609895011
+ccj.nlfaloadfix 3721489042
+RaccoonCuddler.ShowHair 3255379190

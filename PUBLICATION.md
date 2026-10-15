@@ -64,8 +64,19 @@ the suite can produce headlessly, and what it cannot:
 | 0: the Preview, with the ModIcon corner badge | `Art/Gallery/0-preview.png`, written by the renderer, byte for byte the Preview | re-rendered 2026-10-10 (husky echo added; not yet on Steam or in the GitHub social preview) |
 | The settings page, English | `32-language-review.feature`, screenshot mode | played in English on 2026-09-22 (`03-language`), opened and legible; not played at 100 and 200 percent yet |
 | The settings page, French | same, `-Language French` | played on 2026-09-22, opened, accents and slider labels legible |
-| Indoors: a trained husky beside an untrained cow, the cow's mess on the floor | `Art/Gallery/1-indoors.png`, from `40-gallery.feature` scenario 1 (hearth hall) | played green and accepted by the owner, 2026-10-08 |
-| Outdoors: the same husky lets it go | `Art/Gallery/2-outdoors.png`, from `40-gallery.feature` scenario 2 (`calm-zone`, a built floor in the open) | played green and accepted by the owner, 2026-10-08 |
+| 1: the hall. Nelim between Rex and Daisy, the cow's mess on the boards | `Art/Gallery/1-indoors.png`, from `40-gallery.feature` scenario 1 (hearth hall), subtitle by `scripts/Add-Subtitle.ps1` | planned 2026-10-15, not played yet (replaces the pair accepted on 2026-10-08) |
+| 2: the lesson. Nelim and Rex side by side, the boards clean | `Art/Gallery/2-lesson.png`, scenario 2 (hearth hall), subtitle | planned 2026-10-15, not played yet |
+| 3: the garden path. Rex lets it go outside, on built floor | `Art/Gallery/3-outdoors.png`, scenario 3 (`calm-zone`), subtitle | planned 2026-10-15, not played yet |
+
+### Gallery subtitles
+
+Each scene without an interface window carries one line of English at the bottom, like a film subtitle (owner's order, 2026-10-15). The text is written onto the picture by `scripts/Add-Subtitle.ps1` (white, black outline, centred); the untouched capture stays in the run evidence. The settings-page pictures have no subtitle. Story: one morning, Nelim keeps a husky, Rex, and a cow, Daisy.
+
+| Picture | Subtitle |
+| --- | --- |
+| `1-indoors.png` | Daisy has been in the hall since dawn. Her morning shows on the floor. |
+| `2-lesson.png` | Tame, obedient, hauling. Three lessons, and Rex keeps his manners indoors. |
+| `3-outdoors.png` | Out in the open, on built floor, he finally lets go. |
 
 The gallery itself is a manual step on the Steam page: no library the CI uses can send more than the header image.
 
@@ -87,7 +98,7 @@ game's own `TrainableUtility.GetTrainability`, so it needs Odyssey only when the
 
 **None of them.** The mod adds no content of its own beyond a stat part and two patches. The two images that ship were opened on
 2026-09-25: `Preview.png` shows a husky walking across a barn floor toward an open door, a straw bale on either side and a small
-dropping outside; `ModIcon.png` is an orange mascot with a kennel and a bowl. The gallery pictures were opened on 2026-10-08: `1-indoors.png` a husky and a cow in a wooden hall, `2-outdoors.png` a husky on a cream floor, both with small droppings. No character, no scene.
+dropping outside; `ModIcon.png` is an orange mascot with a kennel and a bowl. The gallery pictures of 2026-10-08 (a husky and a cow in a wooden hall, a husky on a cream floor, small droppings) are replaced by the series of 2026-10-15 (Nelim with Rex and Daisy, the same droppings); the new pictures are to be opened before this answer is confirmed.
 
 ## Messages for the mods this one draws from
 

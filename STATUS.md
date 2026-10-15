@@ -8,7 +8,7 @@ packageId:    nelim.housebroken
 repo:         Rimworld-Housebroken
 visibility:   public
 detached:     yes
-workflow_stage: dormant
+workflow_stage: shootGallery[1.1.1]
 licence:      original
 licence_at:   original work, MIT (LICENSE and Mod/LICENSE)
 upstream_mod_remotes: N/A (Sentience Catalyst Filth Rate Reducer, FlyingSloth, workshop 3525790312, gave the idea only,
@@ -19,6 +19,7 @@ tested_on:    TF-01 to TF-22 under Pickle (2026-09-25, 26, 28); gallery 2026-10-
 workshop:      3806137798
 tested_1_7:   yes  # 2026-10-13, ticket 5455, 19 of 19 logic scenarios (features 10-14, 28, 29, 33), RimWorld 1.7.4976 rev1043, English, no dependency map, on 5106f83; settings-window, RIMMSQOL, restart-pair and gallery features and French not replayed; no supportedVersions change before Virginie confirms
 remaining:
+  - feature (2026-10-15, owner order): new gallery series "A morning with Rex" (Nelim, Rex and Daisy, three pictures, one English subtitle each, texts in PUBLICATION.md "Gallery subtitles"). Scenarios, shot plan, `wsl-deps.gallery.map` and seeds are written and Check-Steps resolves every step; NOT played, no picture opened yet. Needs: a Pickle ticket (`-DepMap wsl-deps.gallery.map -Filter 40-gallery`), the pictures opened and read against the plan, `scripts/Add-Subtitle.ps1`, candidates in `Art/Gallery/`, the owner's acceptance, a manual upload to the Steam page. The pair accepted on 2026-10-08 stays in `Art/Gallery/` until then.
   - passed, out of scope (owner's rules, 2026-10-09: what belongs to RIMMSQOL is not retested; only the latest version of a third-party mod is tested at any given time): the shortcut reveal/hide passed once in WSL; persistence of the choice, other customization tools and older RIMMSQOL versions are not tested here.
   - passed, limits recorded and not defects: walking is a teleport, no click on an alert entry, the caravan goes through game
     functions, the main-bar tooltip is not observable, the settings window is clipped at 200 percent (TESTS_FONCTIONNELS.md).
@@ -27,8 +28,8 @@ code_review_sha: 17d034f302014127d8cd27d0dd17e6927dc20780  # range 47cfe2b..17d0
 publication_changelog_review_sha: 9bf1e8164c5eaa9da43bb91d8fdefab29508689d  # PUBLICATION.md and CHANGELOG.md for the 1.1 line, and the French Settings.Intro, validated by the owner in chat 2026-10-13 (the commit only dates the section)
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
-updated:      2026-10-14, dormant: 1.1.0 published 2026-10-13 (dry-run 38472925054, publish 38473065934, tag v1.1.0, SHA 5ca8a794a8c1f6fce08109ec6447d74842213f56), RimWorld 1.7 declared (tested_1_7 yes), Workshop tags Mod, 1.6, 1.7, STEAM_REFRESH_TOKEN set, non-regression green, closing pass done (evidence trimmed to 29 MB, one branch); older dated sections are in docs/runs/
-protocols_read_sha: 365bc5e7ed448e16d54cfddabad386ef26fad04d
+updated:      2026-10-15, shootGallery[1.1.1]: gallery series redone on the owner's order (written, not played); 1.1.0 stays the published version; older dated sections are in docs/runs/
+protocols_read_sha: 6eeb289af92096fa3a7ee40825e3b5221030873d
 echo_review_sha: 0bd8fee1009495504290ed663210e8a069c58393  # Preview echo (Art/echo-source.png, same drawing, renamed) validated by the owner in chat 2026-10-13 with the 1.7 badge Preview
 social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b164ef213  # Mod/About/Preview.png with the 1.7 badge and the translated ModIcon badge, uploaded by the session through Claude in Chrome 2026-10-13 on the owner's order
 ---
