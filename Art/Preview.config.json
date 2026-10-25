@@ -26,6 +26,7 @@
     "badgeInk": "#17120E"
   },
   "icon": {
-    "file": "ModIcon-source.png"
+    "file": "ModIcon-source.png",
+    "corner": "bottom-left"
   }
 }
