@@ -1,33 +1,22 @@
 {
-  "title": "Housebroken",
-  "titleSize": 46,
-  "titleParts": [
-    {
-      "text": "Housebroken"
-    }
-  ],
-  "suffix": "",
-  "tag": "",
-  "copyLines": [
-    "A trained animal makes less mess, and goes outside."
-  ],
-  "layout": "panel",
-  "panelAnchor": "top-left",
+  "panel": {
+    "title": "Housebroken",
+    "titleSize": 46,
+    "titleParts": [
+      {
+        "text": "Housebroken"
+      }
+    ],
+    "copyLines": [
+      "A trained animal makes less mess, and goes outside."
+    ]
+  },
   "backgroundFile": "Preview-source.png",
-  "backgroundSize": "cover",
   "echo": {
     "file": "echo-source.png",
-    "preSized": true,
-    "mode": "alpha",
     "color": "var(--accent)",
     "width": 800,
-    "height": 520,
-    "opacity": 1,
-    "veil": false,
-    "panelTop": 5,
-    "panelRight": -2,
-    "panelWidth": 50,
-    "flipX": false
+    "height": 520
   },
   "palette": {
     "veil": "#3F3021",
@@ -36,12 +25,7 @@
     "accent": "#42B9F5",
     "badgeInk": "#17120E"
   },
-  "modIconSource": "ModIcon-source.png",
-  "iconBadge": {
-    "file": "ModIcon-source.png",
-    "corner": "bottom-left",
-    "width": 220,
-    "outline": false,
-    "translate": "-12.5%,12.5%"
+  "icon": {
+    "file": "ModIcon-source.png"
   }
 }
