@@ -64,9 +64,9 @@ the suite can produce headlessly, and what it cannot:
 | 0: the Preview, with the ModIcon corner badge | `Art/Gallery/0-preview.png`, written by the renderer, byte for byte the Preview | re-rendered 2026-10-10 (husky echo added; not yet on Steam or in the GitHub social preview) |
 | The settings page, English | `32-language-review.feature`, screenshot mode | played in English on 2026-09-22 (`03-language`), opened and legible; not played at 100 and 200 percent yet |
 | The settings page, French | same, `-Language French` | played on 2026-09-22, opened, accents and slider labels legible |
-| 1: the hall. Nelim crosses the hall carrying kibble, Shogun and Daisy facing South, the cow's mess on the boards | `Art/Gallery/1-indoors.png`, from `40-gallery.feature` scenario 1 (hearth hall), subtitle by `../scripts/Add-Subtitle.ps1` | planned 2026-10-15, rewritten 2026-10-25 (Shogun, paused mid-gesture), not played yet (replaces the pair accepted on 2026-10-08) |
-| 2: the lesson. Shogun holds a log in his mouth beside Nelim, the boards clean | `Art/Gallery/2-lesson.png`, scenario 2 (hearth hall), subtitle | rewritten 2026-10-25, not played yet |
-| 3: the garden path. Shogun walks South toward the camera, his mess behind him on built floor | `Art/Gallery/3-outdoors.png`, scenario 3 (`calm-zone`), subtitle | rewritten 2026-10-25, not played yet |
+| 1: the hall (wide). Nelim carries hay across the hall, Shogun and Daisy walk South, Daisy's droppings on the boards, Shogun's path clean | `Art/Gallery/1-indoors.png`, from `40-gallery.feature` scenario 1 (hearth hall), subtitle by `../scripts/Add-Subtitle.ps1` | planned 2026-10-15, shotlist rewritten 2026-10-26 (Shogun, paused mid-gesture), not played yet (replaces the pair accepted on 2026-10-08) |
+| 2: the lesson (close). Shogun and Nelim, holding his kibble reward, meet over clean boards, Daisy's trail at the edge | `Art/Gallery/2-lesson.png`, scenario 2 (hearth hall), subtitle | rewritten 2026-10-26, not played yet |
+| 3: the garden path (medium). Shogun walks South on the cream built floor, his mess behind him, Nelim follows | `Art/Gallery/3-outdoors.png`, scenario 3 (`calm-zone`), subtitle | rewritten 2026-10-26, not played yet |
 
 ### Gallery subtitles
 
@@ -74,9 +74,9 @@ Each scene without an interface window carries one line of English at the bottom
 
 | Picture | Subtitle |
 | --- | --- |
-| `1-indoors.png` | Daisy has been in the hall since dawn. Her morning shows on the floor. |
+| `1-indoors.png` | Since dawn, Daisy marks the hall. Shogun's path stays clean. |
 | `2-lesson.png` | Tame, obedient, hauling. Three lessons, and Shogun keeps his manners indoors. |
-| `3-outdoors.png` | Out in the open, on built floor, he finally lets go. |
+| `3-outdoors.png` | Out in the open, on built floor, he lets it go. |
 
 The gallery itself is a manual step on the Steam page: no library the CI uses can send more than the header image.
 

@@ -65,6 +65,18 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
   built-flooring rule, `IntermediateTip` FR reworded, no finding); `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`: one finding, `WholeHomeAreaTip`
   contradicting the built-flooring rule, fixed in `c07e748`); `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
 
+## Shotlist (2026-10-26, series "A morning with Shogun", full lines in the header of `40-gallery.feature`)
+
+Story: one clear morning, 09:00 to about 09:30, Nelim feeds Daisy (spawned cow, the control) and Shogun (labrador of the NSB save), rewards him, lets him out. Director pass by an Opus sub-agent, kept: no shared cells, droppings trail for Daisy, zoom 5 for the opening, frame fixes, continuous morning (scene 3 at 09:30), "finally" dropped from subtitle 3, Nelim smiles in all three, daylily kept outdoors only (a bonsai pot indoors), Daisy kept in scene 2 at the frame edge instead of vanishing. Not kept: Train job for the reward (Shogun already knows every training, the job would not run), gate gesture (no step), "behind-left" view (a top-down game has none).
+
+| scene | a time | b decor | c living | d pawns | e action and instant | f composition | g subject | j thumbnail | estimate | main risk |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 hall, opening, wide | hearth-hall, 09:00+251 ticks, Clear | couches (185,123) (187,122), armchair, lamp, bonsai pot (183,123), hay (189,118), kibble (186,118) | Shogun and Daisy walking South, front view | Nelim teal shirt, her hair, smile, carries hay | mid-stride, 26 ticks; before: fetched hay, after: sets it down | zoom 5 on (187,120), animals foreground, furniture background, lamplight | two animals, one mess | droppings 14 px at 268 px, read on capture | 4 | collisions on cells, droppings contrast on boards |
+| 2 hall, close | same hall, 09:00+460 ticks, Clear | bonsai pot, Daisy's trail at the edge | Shogun walking, Daisy out of frame | same shirt, smile, carries kibble | meeting mid-stride, 20 ticks; before: called, after: gets the kibble | zoom 3.5 on (185,120), clean boards foreground | the trained dog keeps his manners | dog and woman 3 cells | 4 | carried kibble reads as a small box |
+| 3 calm-zone, closing, medium | calm-zone, 09:00+1250 ticks, Clear | two daylilies fully grown (197,185) (203,186) | Shogun walking South, front view | same shirt, smile, follows him | mid-stride, 45 ticks; before: let out, after: reaches the path | zoom 4 on (200,188), daylilies foreground | outdoors he lets it go | dropping on cream floor | 4 | follow job not played, dropping position at the tick |
+
+Self-check 2026-10-26: no criterion left weak or missing on paper, mean 4. Played verdicts to add after the run.
+
 ## What it is made of
 
 A `StatPart` on `FilthRate` carries the whole reduction, added by a conditional XML patch that tolerates either load order. Two
