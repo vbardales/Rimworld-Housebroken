@@ -30,7 +30,7 @@ publication_changelog_review_sha: 9bf1e8164c5eaa9da43bb91d8fdefab29508689d  # PU
 wsl_cleanup: 2026-10-09, nothing removed. The only Workshop item named by a Housebroken `wsl-deps` map is RIMMSqol 1084452457, still named by the maps of many other mods (kept). The other entries are local `path:` mods (PickleTools, SanctuaryBacklot, Housebroken test mods), staged and emptied by stage-pickle-wsl.sh, none downloaded.
 session:      local_f471ae05-1325-4c5f-b3af-4ca7cfd99079
 updated:      2026-10-15, shootGallery[1.1.1]: gallery series redone on the owner's order (written, not played); 1.1.0 stays the published version; older dated sections are in docs/runs/
-protocols_read_sha: 6279223094d0290a04cb125d3b40bf276703da08
+protocols_read_sha: 355ead251709e5b8cd51ba404e8d9d490a8253c4
 echo_review_sha: 0bd8fee1009495504290ed663210e8a069c58393  # Preview echo (Art/echo-source.png, same drawing, renamed) validated by the owner in chat 2026-10-13 with the 1.7 badge Preview
 social_preview_sha256: 3d46c189fdcc2f936d97300f7ee06e0a6e46fdd9f1b89d0a5efff03b164ef213  # Mod/About/Preview.png with the 1.7 badge and the translated ModIcon badge, uploaded by the session through Claude in Chrome 2026-10-13 on the owner's order
 ---

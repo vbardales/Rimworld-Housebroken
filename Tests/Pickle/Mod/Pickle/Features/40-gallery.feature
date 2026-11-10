@@ -1,6 +1,6 @@
 # SHOTLIST of the gallery, one line per image, written 2026-11-10 (full story, cast and rules in the header below the Feature line):
 #   1. opening, wide. hearth-hall, 09:00 plus 251 ticks, Clear, warm lamplight indoors, zoom 4 on (187, 120) (x 178-196, z 115-125). Left half clean,
-#        right half soiled: Shogun walks East from (185, 118) to (186, 118) onto his kibble bowl at (186, 118) over clean boards; Daisy walks West from
+#        right half soiled: Shogun walks East from (184, 119) to (185, 119) onto his kibble bowl at (185, 119) over clean boards (the hall fence stands one row up); Daisy walks West from
 #        (190, 118) to (189, 118) onto a pile of hay at (189, 118), her three droppings on the boards around (190-192, 119) behind her. Nelim walks South
 #        toward the camera from (184, 122) to (184, 120), smiling, her high ponytail (Highpony, the fixture hair), empty-handed (nothing carried: the hay hid her face), caught about 26 ticks into her
 #        walk. Background (north): the hall's own couches, armchair and lamp (not staged), plus a staged
@@ -80,7 +80,7 @@ Feature: Housebroken gallery photographs, A morning with Shogun, on the Sanctuai
     And Housebroken teaches "Shogun" the training "Haul"
     And Housebroken teaches "Daisy" the training "Tameness"
     And Housebroken lets 251 game ticks pass
-    And Housebroken puts "Shogun" at the cell (185, 118)
+    And Housebroken puts "Shogun" at the cell (184, 119)
     And Housebroken puts "Daisy" at the cell (190, 119)
     Then Housebroken filth rate of "Shogun" is "0" times its base rate
     And Housebroken filth rate of "Daisy" is "1" times its base rate
@@ -95,7 +95,7 @@ Feature: Housebroken gallery photographs, A morning with Shogun, on the Sanctuai
     Then Housebroken finds animal filth on the cell of "Daisy"
     Given Nelim's Pickle Tools: I place the decor "PlantPot_Bonsai" at (183, 123)
     And Nelim's Pickle Tools: 20 of the item "Hay" are spawned at (189, 118)
-    And Nelim's Pickle Tools: 20 of the item "Kibble" are spawned at (186, 118)
+    And Nelim's Pickle Tools: 20 of the item "Kibble" are spawned at (185, 119)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_BasicShirt" dyed rgb (38, 128, 134)
     And Nelim's Pickle Tools: "Nelim" wears "Apparel_Pants" dyed rgb (52, 58, 78)
     And Nelim's Pickle Tools: "Nelim" stands at (184, 122) facing South
@@ -103,7 +103,7 @@ Feature: Housebroken gallery photographs, A morning with Shogun, on the Sanctuai
     And Nelim's Pickle Tools: "Nelim" face kit is "smile"
     And Nelim's Pickle Tools: "Nelim" face is held neutral
     When Nelim's Pickle Tools: "Nelim" is forced to walk to (184, 120)
-    And Nelim's Pickle Tools: "Shogun" is forced to walk to (186, 118)
+    And Nelim's Pickle Tools: "Shogun" is forced to walk to (185, 119)
     And Nelim's Pickle Tools: "Daisy" is forced to walk to (189, 118)
     And Nelim's Pickle Tools: I advance the paused game by exactly 26 ticks
     And Nelim's Pickle Tools: I frame the cell (187, 120) at zoom 4
