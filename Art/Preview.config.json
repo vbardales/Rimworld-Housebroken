@@ -3,14 +3,18 @@
     "title": "Housebroken",
     "titleSize": 46,
     "titleParts": [
-      { "text": "Housebroken" }
+      {
+        "text": "Housebroken"
+      }
     ],
     "copyLines": [
       "A trained animal makes less mess, and goes outside."
     ]
   },
   "backgroundFile": "Preview-source.png",
-  "echo": { "file": "echo-source.png" },
+  "echo": {
+    "file": "echo-source.png"
+  },
   "palette": {
     "veil": "#3F3021",
     "inkPrimary": "#F2ECE1",
