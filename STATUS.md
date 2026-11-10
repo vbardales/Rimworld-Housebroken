@@ -66,6 +66,34 @@ Published on the Workshop (item 3806137798), public since 2026-10-08, version 1.
   built-flooring rule, `IntermediateTip` FR reworded, no finding); `6560a18fa893883989ebe1df07d633fbaba80d8f` (`/code-review`, low effort, range `1509201..6560a18`: one finding, `WholeHomeAreaTip`
   contradicting the built-flooring rule, fixed in `c07e748`); `1509201eeabb7e1ef53895a5ce6ad004173b0283`, no finding.
 
+## NSB
+
+Sync run 2026-11-10 (`sync-nsb-npt`). Places read: 2026-11-10 Tribe read: 2026-11-10 Steps read: 2026-11-10
+
+Rules said back (owner, 2026-11-05 and 2026-11-07): everything in NSB is free (places, colonists, domestic animals); a colonist or domestic animal outside NSB needs the owner's express validation; a colonist's properties change only with it; every outfit is free; every animal the mod includes must be in the gallery (rule 5).
+
+Changed in NSB since the shotlist (2026-10-26): `hearth-hall` and its corners (`sleeping-nook`, `sofa-corner`, `dining-nook`), `fire-pit` and `prestige-hall` were embellished and validated by the owner on 2026-11-07 and 2026-11-08 (`VALIDE.md`); the final decor save is the fixture `Nelims-tribe-decor-mods-z3.rws` (sha256 6bfb4a48..., 2026-11-09), needing the decor mods in the DepMap. The old undecorated `Nelims-tribe` stays and is what `40-gallery.feature` loads today (`the save "Nelims-tribe" is loaded`, decor placed by hand). The free zones `calm-zone` and `exhibition-zone` stay free (validated 2026-11-07). Left alone for now: the fixture and scenarios (the three scenes are being recomposed anyway). Decision for the recomposition: judge whether to move the hall scenes to the z3 fixture (richer hall helps criterion b, `GALLERY.md` 2026-11-07 rule "decor too thin = weak").
+
+Changed in NPT since the shotlist (Steps read), used by the recomposition: `the animal "X" faces <dir>` and `... stands at (x, y) facing <dir>` (animal turned and held, for the profile problem of pictures 1 to 3); `"X" face kit is "smile"` (a smile is scene liberty, not a colonist property: `VALIDE.md`, "Liberte de scene"); `"X" carries the item "Y"` (exists, not needed since the kibble is no longer carried); `I frame the area centred on the point (x, y) at root size N`; `the animals except "A", "B" and "C" are kept out of the area ...` (keeps stray animals out of a frame). Known limit kept: the animal sprites have side views for north and south, no real front view.
+
+| Place | Shots | Changes made for the gallery | Last read |
+|---|---|---|---|
+| `hearth-hall` | 1, 2 | bonsai pot (183, 123), hay (189, 118), kibble (186, 118), Daisy's trail at (189, 120), hour 9, Clear; hall validated and embellished in NSB 2026-11-08 | 2026-11-10 |
+| `calm-zone` | 3 | two daylilies fully grown (197, 185) (203, 186), hour 9 plus 1250 ticks; zone kept free in NSB | 2026-11-10 |
+
+| Colonist | Shots | Outfit per shot | Last read of its profile | Exceptions |
+|---|---|---|---|---|
+| Nelim (in NSB) | 1, 2, 3 | same in all three (continuity): `Apparel_BasicShirt` dyed teal (38, 128, 134), `Apparel_Pants` dyed dark slate (52, 58, 78) (bare legs seen in the 2026-10-31 run; her fixture look and hair kept) | 2026-11-10 (`VALIDE.md` rows and `NELIM-PROFIL.md` one grep, the file not opened in full) | none; smile and facing South are scene liberty, no property of hers changed |
+
+| Animal | Shots | Outfit | Last read of its sheet | Exceptions |
+|---|---|---|---|---|
+| Shogun (LabradorRetriever59410, labrador, bonded to Nelim, in NSB) | 1, 2, 3 | none added: his own `Apparel_leatherdogcollar` (validated 2026-11-06) | 2026-11-10 (`CATALOGUE-ANIMAUX.md` and `VALIDE.md`, `SHOGUN-PROFIL.md` not opened) | none |
+| Daisy (a cow spawned by the scenario, the untrained control) | 1, (2 at the frame edge) | none | not an NSB animal: NSB lists "Vache" as anonymous fauna, usable as an animal of its species without an NSB name or role | named by the owner's order of 2026-10-15 ("Nelim, Shogun of the NSB save and Daisy"); no other validation asked, the scenario does not play her as an NSB character |
+
+| Animal the mod includes (rule 5) | Shots that show it |
+|---|---|
+| none: the mod adds no animal (a `StatPart` and two Harmony patches act on existing animals) | not applicable |
+
 ## Shotlist (2026-10-26, series "A morning with Shogun", full lines in the header of `40-gallery.feature`)
 
 Story: one clear morning, 09:00 to about 09:30, Nelim feeds Daisy (spawned cow, the control) and Shogun (labrador of the NSB save), rewards him, lets him out. Director pass by an Opus sub-agent, kept: no shared cells, droppings trail for Daisy, zoom 5 for the opening, frame fixes, continuous morning (scene 3 at 09:30), "finally" dropped from subtitle 3, Nelim smiles in all three, daylily kept outdoors only (a bonsai pot indoors), Daisy kept in scene 2 at the frame edge instead of vanishing. Not kept: Train job for the reward (Shogun already knows every training, the job would not run), gate gesture (no step), "behind-left" view (a top-down game has none).
